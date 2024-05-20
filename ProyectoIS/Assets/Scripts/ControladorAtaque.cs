@@ -1,40 +1,81 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ControladorDeAtaque : MonoBehaviour
 {
     public LayerMask capaEnemigos;
-    public float rangoAtaque = 1f;
-    public Transform puntoAtaque;
-     private int ataqueJugador;
-     public Atributos atributos;
+    public PolygonCollider2D areaAtaque;
+    private int ataqueJugador;
+    public Atributos atributos;
+    private Vector2 direccionMovimiento;
+
     void Start()
     {
-        capaEnemigos = LayerMask.GetMask("Enemigo");
         ataqueJugador = atributos.ataque;
+        areaAtaque.isTrigger = true;
     }
 
-    void Update(){
-        if(Input.GetKeyDown(KeyCode.Space)){
+    void Update()
+    {
+        direccionMovimiento = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             Atacar();
         }
-        
+
         ActualizarPuntoAtaque();
     }
 
-    void Atacar(){
-        Collider2D[] enemigos = Physics2D.OverlapCircleAll(puntoAtaque.position, rangoAtaque, capaEnemigos);
-        foreach(Collider2D enemigo in enemigos){
-             int dano = ataqueJugador + Random.Range(-3, 4);
-             enemigo.GetComponent<Enemigo>().RecibirDano(dano);
-                        
+    void Atacar()
+    {
+        ContactFilter2D filter = new ContactFilter2D();
+        filter.SetLayerMask(capaEnemigos);
+
+        List<Collider2D> resultados = new List<Collider2D>();
+        areaAtaque.OverlapCollider(filter, resultados);
+
+        foreach (Collider2D enemigo in resultados)
+        {
+            Enemigo enemigoComponent = enemigo.GetComponent<Enemigo>();
+            if (enemigoComponent != null)
+            {
+                int dano = ataqueJugador + Random.Range(-3, 4);
+                enemigoComponent.RecibirDano(dano);
+                Debug.Log("Enemigo recibió " + dano + " puntos de daño.");
+            }
         }
-
     }
 
-    void ActualizarPuntoAtaque(){
+    void ActualizarPuntoAtaque()
+    {
+        if (direccionMovimiento != Vector2.zero)
+        {
+            Vector3 nuevaPosicion = transform.position + (Vector3)direccionMovimiento * 0.5f;
+            areaAtaque.transform.position = nuevaPosicion;
+            Quaternion nuevaRotacion = Quaternion.identity;
 
-    }
-    void OnDrawGizmosSelected(){
-        Gizmos.DrawWireSphere(puntoAtaque.position, rangoAtaque);
+            if (direccionMovimiento == Vector2.up)
+            {
+                nuevaRotacion.z = 1;
+                nuevaRotacion.w = 0;
+            }
+            else if (direccionMovimiento == Vector2.down)
+            {
+                nuevaRotacion.z = 0;
+                nuevaRotacion.w = 1;
+            }
+            else if (direccionMovimiento == Vector2.right)
+            {
+                nuevaRotacion.z = Mathf.Sqrt(0.5f);
+                nuevaRotacion.w = Mathf.Sqrt(0.5f);
+            }
+            else if (direccionMovimiento == Vector2.left)
+            {
+                nuevaRotacion.z = -Mathf.Sqrt(0.5f);
+                nuevaRotacion.w = Mathf.Sqrt(0.5f);
+            }
+            areaAtaque.transform.localRotation = nuevaRotacion;
+        }
     }
 }
