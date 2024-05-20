@@ -46,36 +46,16 @@ public class ControladorDeAtaque : MonoBehaviour
             }
         }
     }
-
     void ActualizarPuntoAtaque()
+{
+    if (direccionMovimiento != Vector2.zero)
     {
-        if (direccionMovimiento != Vector2.zero)
-        {
-            Vector3 nuevaPosicion = transform.position + (Vector3)direccionMovimiento * 0.5f;
-            areaAtaque.transform.position = nuevaPosicion;
-            Quaternion nuevaRotacion = Quaternion.identity;
+        Vector3 nuevaPosicion = transform.position + (Vector3)direccionMovimiento * 0.5f;
+        areaAtaque.transform.position = nuevaPosicion;
 
-            if (direccionMovimiento == Vector2.up)
-            {
-                nuevaRotacion.z = 1;
-                nuevaRotacion.w = 0;
-            }
-            else if (direccionMovimiento == Vector2.down)
-            {
-                nuevaRotacion.z = 0;
-                nuevaRotacion.w = 1;
-            }
-            else if (direccionMovimiento == Vector2.right)
-            {
-                nuevaRotacion.z = Mathf.Sqrt(0.5f);
-                nuevaRotacion.w = Mathf.Sqrt(0.5f);
-            }
-            else if (direccionMovimiento == Vector2.left)
-            {
-                nuevaRotacion.z = -Mathf.Sqrt(0.5f);
-                nuevaRotacion.w = Mathf.Sqrt(0.5f);
-            }
-            areaAtaque.transform.localRotation = nuevaRotacion;
-        }
+        float angle = Mathf.Atan2(direccionMovimiento.y, direccionMovimiento.x) * Mathf.Rad2Deg;
+        areaAtaque.transform.rotation = Quaternion.Euler(0, 0, angle + 90); 
     }
+}
+
 }
