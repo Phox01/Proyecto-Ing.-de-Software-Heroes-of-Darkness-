@@ -93,11 +93,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5628018141983903106}
+  - component: {fileID: 5628018141983903119}
   - component: {fileID: 5628018141983903107}
   - component: {fileID: 5628018141983903116}
   - component: {fileID: 5628018141983903117}
   - component: {fileID: 4616719885696106401}
-  - component: {fileID: 4235269300653427740}
   m_Layer: 20
   m_Name: PF Player
   m_TagString: Player
@@ -121,6 +121,19 @@ Transform:
   - {fileID: 5628018140324151391}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5628018141983903119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5628018141983903104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd146093740c5d43b5909c7913f3109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!212 &5628018141983903107
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -162,7 +175,7 @@ SpriteRenderer:
   m_SortingLayerID: -1869315837
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: ec47f75fe8aff1644ac73998f4ad31b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4647679183d3eb4eb1ecf42251e9aff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -207,9 +220,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.0019779205, y: 0.2133249}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0.03125, z: 0, w: 0.9375}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.65625, y: 1.5}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 15.36, y: 5.12}
     newSize: {x: 0.65625, y: 1.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
@@ -266,16 +279,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4235269300653427740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5628018141983903104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b27ea1dadec92b4390fcba494530972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
