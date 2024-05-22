@@ -113,11 +113,11 @@ TextureImporter:
       name: attack side_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 616
+        x: 16
+        y: 872
         width: 192
         height: 216
-      alignment: 9
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: attack side_1
       rect:
         serializedVersion: 2
-        x: 336
-        y: 616
+        x: 416
+        y: 872
         width: 192
         height: 224
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: attack side_2
       rect:
         serializedVersion: 2
-        x: 48
-        y: 328
+        x: 40
+        y: 456
         width: 216
         height: 232
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: attack side_3
       rect:
         serializedVersion: 2
-        x: 336
-        y: 328
+        x: 408
+        y: 464
         width: 232
         height: 216
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: attack side_4
       rect:
         serializedVersion: 2
-        x: 32
-        y: 40
+        x: 8
+        y: 72
         width: 256
         height: 208
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,6 +210,27 @@ TextureImporter:
       bones: []
       spriteID: f9cd30f596d42df4fb40afa0f2cafd01
       internalID: -1685921274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack side_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 72
+        width: 367
+        height: 208
+      alignment: 9
+      pivot: {x: 0.3156331, y: 0.48838213}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821f37f7e38f3324398d5c75c8e0b439
+      internalID: 796258629
       vertices: []
       indices: 
       edges: []
@@ -230,6 +251,8 @@ TextureImporter:
       attack side_2: 75098287
       attack side_3: -1675569754
       attack side_4: -1685921274
+      attack side_5: 796258629
+      attack side_6: -423097226
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

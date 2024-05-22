@@ -114,11 +114,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 632
+        y: 968
         width: 216
         height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: Sword attack_1
       rect:
         serializedVersion: 2
-        x: 288
-        y: 632
+        x: 400
+        y: 968
         width: 232
         height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: Sword attack_2
       rect:
         serializedVersion: 2
-        x: 600
-        y: 600
+        x: 824
+        y: 936
         width: 208
         height: 208
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -177,11 +177,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 24
-        y: 296
-        width: 208
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 445
+        width: 215
+        height: 331
+      alignment: 9
+      pivot: {x: 0.538023, y: 0.6728838}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: Sword attack_4
       rect:
         serializedVersion: 2
-        x: 352
-        y: 328
+        x: 464
+        y: 552
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: Sword attack_5
       rect:
         serializedVersion: 2
-        x: 360
-        y: 296
-        width: 152
-        height: 232
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 441
+        y: 416
+        width: 198
+        height: 336
+      alignment: 9
+      pivot: {x: 0.5391513, y: 0.6730343}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: Sword attack_6
       rect:
         serializedVersion: 2
-        x: 640
-        y: 336
+        x: 864
+        y: 560
         width: 160
         height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,99 +257,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword attack_7
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 24
-        width: 232
-        height: 184
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f6086d45bfc9064b900f88fa6dc93af
-      internalID: -23736899
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword attack_8
-      rect:
-        serializedVersion: 2
-        x: 328
-        y: 8
-        width: 224
-        height: 216
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ba64d5206dbe2f46b0ae64e90ac9c43
-      internalID: 1881290278
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword attack_9
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 8
-        width: 160
-        height: 272
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60c4417aed220e645b23bd6c045f491d
-      internalID: 2005597793
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword attack_10
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 144
-        width: 56
-        height: 112
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 45330522daab0714a88a8e27fbf3ef6b
-      internalID: 1401859692
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Sword attack_11
       rect:
         serializedVersion: 2
-        x: 776
-        y: 136
-        width: 16
-        height: 48
+        x: 40
+        y: 64
+        width: 232
+        height: 184
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -357,6 +273,48 @@ TextureImporter:
       bones: []
       spriteID: 770860d72ef20d64ca514c6ff16bd615
       internalID: 2073789882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword attack_12
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 40
+        width: 224
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25ad012abdac3344490aa78ea987282c
+      internalID: 967809807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword attack_13
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 24
+        width: 235
+        height: 368
+      alignment: 9
+      pivot: {x: 0.43042564, y: 0.2830272}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76eb612b8cd2f594db2ef1a58e384dcf
+      internalID: 1626743050
       vertices: []
       indices: 
       edges: []
@@ -376,6 +334,10 @@ TextureImporter:
       Sword attack_1: 1533834069
       Sword attack_10: 1401859692
       Sword attack_11: 2073789882
+      Sword attack_12: 967809807
+      Sword attack_13: 1626743050
+      Sword attack_14: 340123182
+      Sword attack_15: 859095783
       Sword attack_2: -1718651510
       Sword attack_3: 1122268329
       Sword attack_4: -451831322

@@ -113,12 +113,12 @@ TextureImporter:
       name: attack side B_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 616
+        x: 192
+        y: 872
         width: 192
-        height: 224
+        height: 216
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: attack side B_1
       rect:
         serializedVersion: 2
-        x: 312
-        y: 616
-        width: 216
-        height: 232
+        x: 592
+        y: 872
+        width: 192
+        height: 224
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: attack side B_2
       rect:
         serializedVersion: 2
-        x: 8
-        y: 328
-        width: 232
-        height: 216
+        x: 144
+        y: 456
+        width: 216
+        height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: attack side B_3
       rect:
         serializedVersion: 2
-        x: 288
-        y: 328
-        width: 256
+        x: 560
+        y: 464
+        width: 232
         height: 216
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: attack side B_4
       rect:
         serializedVersion: 2
-        x: 48
-        y: 40
-        width: 192
-        height: 216
+        x: 136
+        y: 72
+        width: 256
+        height: 208
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,6 +210,27 @@ TextureImporter:
       bones: []
       spriteID: 01e1729e822a81146898c3e7b1a24dde
       internalID: 2140587421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack side B_6
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 72
+        width: 369
+        height: 208
+      alignment: 9
+      pivot: {x: 0.70586944, y: 0.4874059}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be7c079daa312a14495a96226cc2502b
+      internalID: 1413307479
       vertices: []
       indices: 
       edges: []
@@ -230,6 +251,9 @@ TextureImporter:
       attack side B_2: -265408460
       attack side B_3: 1255484272
       attack side B_4: 2140587421
+      attack side B_5: 1033880366
+      attack side B_6: 1413307479
+      attack side B_7: 1794503577
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
