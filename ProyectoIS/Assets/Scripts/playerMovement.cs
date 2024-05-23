@@ -18,5 +18,10 @@ public class playerMovement : MonoBehaviour
     }
     void FixedUpdate(){
         rb.MovePosition(rb.position+movement*moveSpeed*Time.fixedDeltaTime);
+        if (movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1) {
+            animator.SetFloat("lastMoveX", movement.x);
+            animator.SetFloat("lastMoveY", movement.y);
+
+        }
     }
 }
