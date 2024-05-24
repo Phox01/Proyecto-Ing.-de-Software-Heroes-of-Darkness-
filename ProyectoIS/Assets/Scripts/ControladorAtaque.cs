@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 public class ControladorDeAtaque : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class ControladorDeAtaque : MonoBehaviour
     private int ataqueJugador;
     public Atributos atributos;
     private Vector2 direccionMovimiento;
+    public Animator animator;
+
 
     void Start()
     {
@@ -19,8 +22,9 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         direccionMovimiento = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")==false)
         {
+            
             Atacar();
         }
 
@@ -29,6 +33,7 @@ public class ControladorDeAtaque : MonoBehaviour
 
     void Atacar()
     {
+        animator.SetTrigger("Attack");
         ContactFilter2D filter = new ContactFilter2D();
         filter.SetLayerMask(capaEnemigos);
 
@@ -45,6 +50,8 @@ public class ControladorDeAtaque : MonoBehaviour
                 Debug.Log("Enemigo recibió " + dano + " puntos de daño.");
             }
         }
+
+
     }
     void ActualizarPuntoAtaque()
 {
