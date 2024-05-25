@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 2f;
     public Rigidbody2D rb;
     public Animator animator;
     Vector2 movement;
@@ -31,7 +31,7 @@ public class playerMovement : MonoBehaviour
     }
     void FixedUpdate(){
         if (animator.GetBool("CanMove") == true) { 
-            rb.MovePosition(rb.position+movement*moveSpeed*Time.fixedDeltaTime);
+            rb.MovePosition(rb.position+movement.normalized*moveSpeed*Time.fixedDeltaTime);
         }
         if (movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1) {
             animator.SetFloat("lastMoveX", movement.x);
