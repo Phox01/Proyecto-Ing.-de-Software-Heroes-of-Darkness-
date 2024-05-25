@@ -6,7 +6,8 @@ public class ControladorDeAtaque : MonoBehaviour
 {
     public LayerMask capaEnemigos;
     public PolygonCollider2D areaAtaque;
-    private int ataqueJugador;
+    private int playerAttack;
+    private int currentHealth;
     public Atributos atributos;
     private Vector2 direccionMovimiento;
     public Animator animator;
@@ -14,7 +15,8 @@ public class ControladorDeAtaque : MonoBehaviour
 
     void Start()
     {
-        ataqueJugador = atributos.ataque;
+        playerAttack = atributos.attack;
+        currentHealth = atributos.health;
         areaAtaque.isTrigger = true;
     }
 
@@ -25,13 +27,13 @@ public class ControladorDeAtaque : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")==false)
         {
             
-            Atacar();
+            Attack();
         }
 
         ActualizarPuntoAtaque();
     }
 
-    void Atacar()
+    void Attack()
     {
         animator.SetTrigger("Attack");
         ContactFilter2D filter = new ContactFilter2D();
@@ -39,15 +41,16 @@ public class ControladorDeAtaque : MonoBehaviour
 
         List<Collider2D> resultados = new List<Collider2D>();
         areaAtaque.OverlapCollider(filter, resultados);
-
+        Debug.Log("Espadazo");
         foreach (Collider2D enemigo in resultados)
         {
             Enemigo enemigoComponent = enemigo.GetComponent<Enemigo>();
             if (enemigoComponent != null)
             {
-                int dano = ataqueJugador + Random.Range(-3, 4);
-                enemigoComponent.RecibirDano(dano);
-                Debug.Log("Enemigo recibió " + dano + " puntos de daño.");
+                Debug.Log("AAAAAAAAAA");
+                int damage = playerAttack + Random.Range(-3, 4);
+                enemigoComponent.GetDamaged(damage);
+                Debug.Log("Enemigo recibió " + damage + " puntos de daño.");
             }
         }
 
@@ -65,4 +68,13 @@ public class ControladorDeAtaque : MonoBehaviour
     }
 }
 
+     public void GetDamaged(int damage)
+    {
+        currentHealth -= damage;
+        Debug.Log(damage);
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
