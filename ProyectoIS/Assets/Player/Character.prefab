@@ -116,7 +116,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2246307013429363687}
@@ -280,6 +280,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  dashSpeed: 3
+  dashDuration: 0.2
+  dashCooldown: 1
   rb: {fileID: -943055159064034969}
   animator: {fileID: 463257830025792183}
 --- !u!114 &1466321024153592857
@@ -312,5 +315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22849f7914a055c49ac8905afaef186e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 100
-  ataque: 10
+  health: 0
+  attack: 0
+  currentHealth: 0
