@@ -4,8 +4,8 @@ using UnityEngine;
 public class EnemyConfig
 {
     public GameObject enemyPrefab;
-    public int initialCount; 
-    public int totalCount;  
+    public int initialCount;
+    public int totalCount;
 }
 
 public class EnemySpawner : MonoBehaviour
@@ -17,24 +17,17 @@ public class EnemySpawner : MonoBehaviour
     public Vector2 spawnAreaMin;
     public Vector2 spawnAreaMax;
 
-    private int[] spawnedNumber; 
+    private int[] spawnedNumber;
+    private bool isInitialized = false;
 
     void Start()
     {
-        spawnedNumber = new int[enemies.Length];
-
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            for (int j = 0; j < enemies[i].initialCount; j++)
-            {
-                SpawnEnemy(i);
-                spawnedNumber[i]++;
-            }
-        }
     }
 
     void Update()
     {
+        if (!isInitialized)
+            return;
         if (timer < spawnRate)
         {
             timer += Time.deltaTime;
@@ -48,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     SpawnEnemy(i);
                     spawnedNumber[i]++;
-                    break;  
+                    break;
                 }
             }
         }
@@ -61,5 +54,24 @@ public class EnemySpawner : MonoBehaviour
         Vector3 spawnPosition = new Vector3(randomX, randomY, transform.position.z);
 
         Instantiate(enemies[enemyIndex].enemyPrefab, spawnPosition, transform.rotation);
+    }
+    void SpawnInitialEnemies()
+    {
+        spawnedNumber = new int[enemies.Length];
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            for (int j = 0; j < enemies[i].initialCount; j++)
+            {
+                SpawnEnemy(i);
+                spawnedNumber[i]++;
+            }
+        }
+    }
+    
+    public void InitializeEnemies(EnemyConfig[] configs)
+    {
+        enemies = configs;
+        isInitialized = true;
+        SpawnInitialEnemies();
     }
 }
