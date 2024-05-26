@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7915267310168552167}
   - component: {fileID: 5945002590715623737}
   - component: {fileID: 1224071206075437620}
+  - component: {fileID: -343548670573237277}
   - component: {fileID: 2026221182730330021}
   - component: {fileID: 6898215237749744452}
-  m_Layer: 23
+  m_Layer: 2
   m_Name: Bat_Enemy
   m_TagString: Murcielago
   m_Icon: {fileID: 0}
@@ -160,6 +161,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.35}
   m_EdgeRadius: 0
+--- !u!114 &-343548670573237277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5053068258751461530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a3d39227a08a6428251b5fa5236159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.2
 --- !u!114 &2026221182730330021
 MonoBehaviour:
   m_ObjectHideFlags: 0
