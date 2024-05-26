@@ -41,13 +41,11 @@ public class ControladorDeAtaque : MonoBehaviour
 
         List<Collider2D> resultados = new List<Collider2D>();
         areaAtaque.OverlapCollider(filter, resultados);
-        Debug.Log("Espadazo");
         foreach (Collider2D enemigo in resultados)
         {
             Enemigo enemigoComponent = enemigo.GetComponent<Enemigo>();
             if (enemigoComponent != null)
             {
-                Debug.Log("AAAAAAAAAA");
                 int damage = playerAttack + Random.Range(-3, 4);
                 enemigoComponent.GetDamaged(damage);
                 Debug.Log("Enemigo recibió " + damage + " puntos de daño.");
