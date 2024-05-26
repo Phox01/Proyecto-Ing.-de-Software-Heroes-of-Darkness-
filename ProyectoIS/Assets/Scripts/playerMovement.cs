@@ -5,38 +5,78 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     public float moveSpeed = 2f;
+    public float dashSpeed = 3f; 
+    public float dashDuration = 0.2f; 
+    public float dashCooldown = 1f; 
     public Rigidbody2D rb;
     public Animator animator;
-    Vector2 movement;
+
+    private Vector2 movement;
+    private bool isDashing = false;
+    private float dashTime;
+    private float lastDashTime;
+
     void Update()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) // check if "bash" is playing...
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
             animator.SetBool("CanMove", false);
         }
         else
         {
-            animator.SetBool("CanMove", true); // "bash" is NOT playing -> walk
+            animator.SetBool("CanMove", true); 
         }
 
-
-        if (animator.GetBool("CanMove") == true)
+        if (animator.GetBool("CanMove"))
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
             animator.SetFloat("Horizontal", movement.x);
             animator.SetFloat("Vertical", movement.y);
             animator.SetFloat("Speed", movement.sqrMagnitude);
+
+            if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > lastDashTime + dashCooldown)
+            {
+                StartDash();
+            }
+        }
+
+        if (isDashing && Time.time >= dashTime)
+        {
+            EndDash();
         }
     }
-    void FixedUpdate(){
-        if (animator.GetBool("CanMove") == true) { 
-            rb.MovePosition(rb.position+movement.normalized*moveSpeed*Time.fixedDeltaTime);
-        }
-        if (movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1) {
-            animator.SetFloat("lastMoveX", movement.x);
-            animator.SetFloat("lastMoveY", movement.y);
 
+    void FixedUpdate()
+    {
+        if (animator.GetBool("CanMove"))
+        {
+            if (isDashing)
+            {
+                rb.MovePosition(rb.position + movement.normalized * dashSpeed * Time.fixedDeltaTime);
+            }
+            else
+            {
+                rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
+            }
+
+            if (movement.x != 0 || movement.y != 0)
+            {
+                animator.SetFloat("lastMoveX", movement.x);
+                animator.SetFloat("lastMoveY", movement.y);
+            }
         }
+    }
+
+    private void StartDash()
+    {
+        isDashing = true;
+        dashTime = Time.time + dashDuration;
+        lastDashTime = Time.time;
+    }
+
+    private void EndDash()
+    {
+        isDashing = false;
     }
 }
