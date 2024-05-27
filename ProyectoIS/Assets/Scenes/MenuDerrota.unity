@@ -441,7 +441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: haz  sido derrotado
+  m_text: has sido derrotado
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ceb9eae861593a43b6ceb30747e702e, type: 2}
   m_sharedMaterial: {fileID: 8153663550893488191, guid: 4ceb9eae861593a43b6ceb30747e702e,
