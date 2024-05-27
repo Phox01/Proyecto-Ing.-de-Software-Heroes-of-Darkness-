@@ -18,7 +18,7 @@ public class playerMovement : MonoBehaviour
 
     void Update()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3"))
         {
             animator.SetBool("CanMove", false);
         }
@@ -70,6 +70,7 @@ public class playerMovement : MonoBehaviour
 
     private void StartDash()
     {
+        animator.SetBool("Dash", true);
         isDashing = true;
         dashTime = Time.time + dashDuration;
         lastDashTime = Time.time;
@@ -78,5 +79,6 @@ public class playerMovement : MonoBehaviour
     private void EndDash()
     {
         isDashing = false;
+        animator.SetBool("Dash", false);
     }
 }

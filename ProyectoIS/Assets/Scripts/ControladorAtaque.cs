@@ -24,7 +24,7 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         direccionMovimiento = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
 
-        if (Input.GetKeyDown(KeyCode.Space) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")==false)
+        if (Input.GetKeyDown(KeyCode.Space) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1")==false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2")==false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3")==false)
         {
             
             Attack();
@@ -35,6 +35,7 @@ public class ControladorDeAtaque : MonoBehaviour
 
     void Attack()
     {
+        
         animator.SetTrigger("Attack");
         ContactFilter2D filter = new ContactFilter2D();
         filter.SetLayerMask(capaEnemigos);
@@ -51,6 +52,11 @@ public class ControladorDeAtaque : MonoBehaviour
                 Debug.Log("Enemigo recibió " + damage + " puntos de daño.");
             }
         }
+        int count=animator.GetInteger("NumbAtt")+1;
+        if (count==4){
+            count=1;
+        }
+        animator.SetInteger("NumbAtt", count);
 
 
     }
