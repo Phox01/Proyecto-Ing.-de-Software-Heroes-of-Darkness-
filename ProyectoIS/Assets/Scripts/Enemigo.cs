@@ -8,13 +8,18 @@ public class Enemigo : MonoBehaviour
     int attack;
     public int defensaMax;
     int defensa;
+    int netDamage;
     void Start(){
         vida = vidaMax;
         attack = maxAttack;
         defensa = defensaMax;
     }
     public void GetDamaged(int damage){
-        vida -= damage -defensa;
+        netDamage = damage-defensa;
+        if(netDamage>0){
+            vida -= netDamage;
+            Debug.Log(damage );
+            }
         if(vida<=0){
             Destroy(gameObject);
         }

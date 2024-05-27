@@ -17,17 +17,22 @@ public class EnemySpawner : MonoBehaviour
     public Vector2 spawnAreaMin;
     public Vector2 spawnAreaMax;
 
+    public Transform playerTransform; 
+    public float minSpawnDistanceFromPlayer = 5f; 
+
     private int[] spawnedNumber;
     private bool isInitialized = false;
 
     void Start()
     {
+       
     }
 
     void Update()
     {
         if (!isInitialized)
             return;
+        
         if (timer < spawnRate)
         {
             timer += Time.deltaTime;
@@ -49,12 +54,17 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy(int enemyIndex)
     {
-        float randomX = Random.Range(spawnAreaMin.x, spawnAreaMax.x);
-        float randomY = Random.Range(spawnAreaMin.y, spawnAreaMax.y);
-        Vector3 spawnPosition = new Vector3(randomX, randomY, transform.position.z);
+        Vector3 spawnPosition;
+        do
+        {
+            float randomX = Random.Range(spawnAreaMin.x, spawnAreaMax.x);
+            float randomY = Random.Range(spawnAreaMin.y, spawnAreaMax.y);
+            spawnPosition = new Vector3(randomX, randomY, transform.position.z) + transform.position;
+        } while (Vector3.Distance(spawnPosition, playerTransform.position) < minSpawnDistanceFromPlayer);
 
         Instantiate(enemies[enemyIndex].enemyPrefab, spawnPosition, transform.rotation);
     }
+
     void SpawnInitialEnemies()
     {
         spawnedNumber = new int[enemies.Length];
@@ -67,11 +77,35 @@ public class EnemySpawner : MonoBehaviour
             }
         }
     }
-    
+
     public void InitializeEnemies(EnemyConfig[] configs)
     {
         enemies = configs;
         isInitialized = true;
         SpawnInitialEnemies();
+    }
+
+    public void Initialize()
+    {
+        if (enemies.Length > 0)
+        {
+            spawnedNumber = new int[enemies.Length];
+            SpawnInitialEnemies();
+        }
+        isInitialized = true; 
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Vector3 bottomLeft = new Vector3(spawnAreaMin.x, spawnAreaMin.y, 0) + transform.position;
+        Vector3 topLeft = new Vector3(spawnAreaMin.x, spawnAreaMax.y, 0) + transform.position;
+        Vector3 topRight = new Vector3(spawnAreaMax.x, spawnAreaMax.y, 0) + transform.position;
+        Vector3 bottomRight = new Vector3(spawnAreaMax.x, spawnAreaMin.y, 0) + transform.position;
+
+        Gizmos.DrawLine(bottomLeft, topLeft);
+        Gizmos.DrawLine(topLeft, topRight);
+        Gizmos.DrawLine(topRight, bottomRight);
+        Gizmos.DrawLine(bottomRight, bottomLeft);
     }
 }

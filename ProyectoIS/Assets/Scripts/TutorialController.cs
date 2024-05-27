@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class TutorialController : MonoBehaviour
 {
-    public EnemySpawner enemySpawner;
-    public GameObject enemyPrefab1; // Asigna estos en el Inspector
-
+    public EnemySpawner[] enemySpawners;
+    public Transform playerTransform; 
     void Start()
     {
         InitializeTutorial();
@@ -12,24 +11,20 @@ public class TutorialController : MonoBehaviour
 
     void InitializeTutorial()
     {
-        // Lógica específica para la escena del tutorial
         StartDialogue();
-        SpawnInitialEnemies();
+        InitializeSpawners();
     }
 
     void StartDialogue()
     {
-        // Implementar la lógica del diálogo aquí
-        // dialogueManager.StartDialogue(someDialogue); // Ajusta según tu implementación de diálogos
     }
 
-    void SpawnInitialEnemies()
+    void InitializeSpawners()
     {
-        EnemyConfig[] tutorialEnemies = new EnemyConfig[]
+        foreach (var spawner in enemySpawners)
         {
-            new EnemyConfig() { enemyPrefab = enemyPrefab1, initialCount = 3, totalCount = 10 },
-        };
-
-        enemySpawner.InitializeEnemies(tutorialEnemies);
+            spawner.playerTransform = playerTransform; 
+            spawner.Initialize();
+        }
     }
 }

@@ -11,7 +11,6 @@ public class Minotaurus : MonoBehaviour
     public float speed;
     public float time;
     private Animator animator;
-    private bool isMoving;
     public Vector3 targetPosition;
 
     void Start()
@@ -38,14 +37,12 @@ public class Minotaurus : MonoBehaviour
         }
 
         targetPosition = routePoints[random].transform.position;
-        if (Vector3.Distance(transform.position, targetPosition) > 0.1f) //Hay que arreglar la condición para que el personaje reproduzca la animación de Idle
+        if (Vector3.Distance(transform.position, targetPosition) > 0.1f) //Hay que arreglar la condiciï¿½n para que el personaje reproduzca la animaciï¿½n de Idle
         {
-            isMoving = true;
             animator.SetBool("isMoving", true);
         }
         else
         {
-            isMoving = false;
             animator.SetBool("isMoving", false);
 
         }

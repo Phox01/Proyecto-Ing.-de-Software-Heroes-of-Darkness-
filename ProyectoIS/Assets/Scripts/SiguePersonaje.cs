@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SiguePersonaje : MonoBehaviour
 {
-    [SerializeField] private float speed = 1.5f;
+    [SerializeField] private float speed;
+    [SerializeField] private LayerMask layerMask;
     private GameObject player;
 
     private bool hasLineOfSight = false;
@@ -24,7 +25,7 @@ public class SiguePersonaje : MonoBehaviour
 
     private void FixedUpdate()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
         if (ray.collider != null)
         {
             hasLineOfSight = ray.collider.CompareTag("Player");

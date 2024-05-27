@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemigo
   - Point
+  - Murcielago
   layers:
   - Default
   - TransparentFX
@@ -30,8 +31,8 @@ TagManager:
   - Layer 1
   - Layer 2
   - Layer 3
-  - Enemigo
-  - 
+  - Enemy
+  - AttackArea
   - 
   - 
   - 

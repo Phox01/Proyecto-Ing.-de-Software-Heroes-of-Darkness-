@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -343548670573237277}
   - component: {fileID: 2026221182730330021}
   - component: {fileID: 6898215237749744452}
-  m_Layer: 2
+  m_Layer: 23
   m_Name: Bat_Enemy
   m_TagString: Murcielago
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.71, y: 0.137, z: -0.006687823}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -173,7 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73a3d39227a08a6428251b5fa5236159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speed: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 25165824
 --- !u!114 &2026221182730330021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMax: 30
   maxAttack: 10
-  defensaMax: 10
+  defensaMax: 5
 --- !u!95 &6898215237749744452
 Animator:
   serializedVersion: 5
