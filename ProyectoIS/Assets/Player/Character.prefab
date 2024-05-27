@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2246307013429363687}
   - component: {fileID: 4590175799631657072}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2408081796377427450}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.31, y: -4.16, z: -0.0054685604}
+  m_LocalPosition: {x: -0.31, y: -4.16, z: -0.00546856}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 7817561878576813476}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.3214875, y: 0.3214875, z: 0.3214875}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2246307013429363687}
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  dashSpeed: 3
+  dashSpeed: 12
   dashDuration: 0.2
   dashCooldown: 1
   rb: {fileID: -943055159064034969}
@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22849f7914a055c49ac8905afaef186e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  attack: 0
+  health: 100
+  attack: 10
   currentHealth: 0
+  barraDeVida: {fileID: 0}
