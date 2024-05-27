@@ -5,9 +5,12 @@ public class Atributos : MonoBehaviour
     public int health;
     public int attack;
     public int currentHealth;
-    void Start()
+    public BarraVida barraDeVida;
+
+    public void Start()
     {
         // Inicializa currentHealth al valor de health al comienzo del juego
         currentHealth = health;
+        barraDeVida.InicializarBarraDeVida(currentHealth);
     }
 }
