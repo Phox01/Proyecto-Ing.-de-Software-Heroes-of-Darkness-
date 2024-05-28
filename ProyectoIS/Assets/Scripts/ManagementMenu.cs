@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuInicial : MonoBehaviour
+public class ManagementMenu : MonoBehaviour
 {
     public void Jugar()
     {
@@ -15,5 +15,17 @@ public class MenuInicial : MonoBehaviour
     {
         Debug.Log("Saliendo del juego...");
         Application.Quit();
+    }
+
+    public void TerminarPartida()
+    {
+        SceneManager.LoadScene(0);
+
+    }
+
+    public void VolverJugar()
+    {
+        SceneManager.LoadScene(1);
+
     }
 }

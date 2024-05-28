@@ -381,7 +381,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 990643729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1726833f6a1226f46918c3eb3386b216, type: 3}
+  m_Script: {fileID: 11500000, guid: 27d6a5a998786184bba8b595e7628a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1193308891
@@ -814,7 +814,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 990643734}
-        m_TargetAssemblyTypeName: MenuTerminar, Assembly-CSharp
+        m_TargetAssemblyTypeName: ManagementMenu, Assembly-CSharp
         m_MethodName: TerminarPartida
         m_Mode: 1
         m_Arguments:
