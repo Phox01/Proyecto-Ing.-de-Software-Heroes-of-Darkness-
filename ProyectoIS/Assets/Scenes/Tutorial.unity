@@ -12189,7 +12189,6 @@ Transform:
   - {fileID: 701209365}
   - {fileID: 654356259}
   - {fileID: 385995618}
-  - {fileID: 999276560}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &460775209 stripped
@@ -75559,7 +75558,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977879113}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea0af1ee38ae9544faaba9b150092f11, type: 3}
   m_Name: 
@@ -75572,7 +75571,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 25165824
 --- !u!114 &977879120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75580,7 +75579,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977879113}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73a3d39227a08a6428251b5fa5236159, type: 3}
   m_Name: 
@@ -75894,7 +75893,7 @@ PrefabInstance:
     - target: {fileID: 387287654252624058, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 3500161249293299981, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
         type: 3}
