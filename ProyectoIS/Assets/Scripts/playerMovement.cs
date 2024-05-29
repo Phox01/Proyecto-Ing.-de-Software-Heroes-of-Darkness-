@@ -15,7 +15,13 @@ public class playerMovement : MonoBehaviour
     private bool isDashing = false;
     private float dashTime;
     private float lastDashTime;
+    public static playerMovement Instance;
 
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Update()
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3"))
