@@ -15,11 +15,13 @@ public class Enemigo : MonoBehaviour
     public bool gettingKnockedBack { get; private set; }
     [SerializeField] private float knockBackTime = .2f;
     private Rigidbody2D rb;
+    private MusicManagement musicManagement;
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        musicManagement = FindObjectOfType<MusicManagement>();
     }
 
     void Start(){
@@ -40,6 +42,7 @@ public class Enemigo : MonoBehaviour
             Debug.Log(damage );
             }
         if(vida<=0){
+            musicManagement.SeleccionAudio(3, 1f);
             Destroy(gameObject);
         }
     }
