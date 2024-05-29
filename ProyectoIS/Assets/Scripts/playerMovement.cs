@@ -16,17 +16,20 @@ public class playerMovement : MonoBehaviour
     private float dashTime;
     private float lastDashTime;
     public static playerMovement Instance;
+    private MusicManagement musicManagement;
 
 
     private void Awake()
     {
         Instance = this;
+        musicManagement = FindObjectOfType<MusicManagement>();
     }
     void Update()
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3"))
         {
             animator.SetBool("CanMove", false);
+            musicManagement.SeleccionAudio(0, 1f);
         }
         else
         {

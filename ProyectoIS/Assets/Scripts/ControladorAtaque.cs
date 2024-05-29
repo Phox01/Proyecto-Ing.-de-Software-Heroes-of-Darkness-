@@ -11,6 +11,7 @@ public class ControladorDeAtaque : MonoBehaviour
     public Atributos atributos;
     private Vector2 direccionMovimiento;
     public Animator animator;
+    private MusicManagement musicManagement;
 
 
     void Start()
@@ -18,6 +19,7 @@ public class ControladorDeAtaque : MonoBehaviour
         playerAttack = atributos.attack;
         currentHealth = atributos.health;
         areaAtaque.isTrigger = true;
+        musicManagement = FindObjectOfType<MusicManagement>();
     }
 
     void Update()
@@ -49,6 +51,7 @@ public class ControladorDeAtaque : MonoBehaviour
             {
                 int damage = playerAttack + Random.Range(-3, 4);
                 enemigoComponent.GetDamaged(damage);
+                musicManagement.SeleccionAudio(1, 1f);
                 Debug.Log("Enemigo recibió " + damage + " puntos de daño.");
             }
         }

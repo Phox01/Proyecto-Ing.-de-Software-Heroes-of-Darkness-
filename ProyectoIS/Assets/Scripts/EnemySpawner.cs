@@ -22,10 +22,11 @@ public class EnemySpawner : MonoBehaviour
 
     private int[] spawnedNumber;
     private bool isInitialized = false;
+    
 
     void Start()
     {
-       
+        
     }
 
     void Update()
@@ -76,6 +77,7 @@ public class EnemySpawner : MonoBehaviour
                 spawnedNumber[i]++;
             }
         }
+        
     }
 
     public void InitializeEnemies(EnemyConfig[] configs)
