@@ -29,7 +29,7 @@ public class playerMovement : MonoBehaviour
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3"))
         {
             animator.SetBool("CanMove", false);
-            musicManagement.SeleccionAudio(0, 1f);
+            
         }
         else
         {
