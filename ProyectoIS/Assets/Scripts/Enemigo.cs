@@ -30,6 +30,9 @@ public class Enemigo : MonoBehaviour
         attack = maxAttack;
         defensa = defensaMax;
     }
+
+
+    
     public void GetDamaged(int damage){
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
         
@@ -55,8 +58,8 @@ public class Enemigo : MonoBehaviour
             ControladorDeAtaque jugador = other.GetComponent<ControladorDeAtaque>();
             if (jugador != null)
             {
-                Debug.Log("damge doned");
                 jugador.GetDamaged(attack);
+                Debug.Log("damge doned");
             }
         }
     }

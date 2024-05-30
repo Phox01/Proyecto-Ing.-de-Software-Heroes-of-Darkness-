@@ -7,6 +7,7 @@ public class playerMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     public int moveDuo = 1;
     public float dashSpeed = 3f; 
+    public float attackImpulse= 2f; 
     public float dashDuration = 0.2f; 
     public float dashCooldown = 1f; 
     public Rigidbody2D rb;
@@ -29,6 +30,10 @@ public class playerMovement : MonoBehaviour
     }
     void Update()
     {
+        if(animator.GetFloat("Speed")==0){
+            musicManagement.AudioLoop(3, 0.3f);
+        }
+
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3"))
         {
             animator.SetBool("CanMove", false);
@@ -45,6 +50,7 @@ public class playerMovement : MonoBehaviour
             animator.SetFloat("Horizontal", movement.x);
             animator.SetFloat("Vertical", movement.y);
             animator.SetFloat("Speed", movement.sqrMagnitude);
+            
             if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > lastDashTime + dashCooldown)
             {
                 StartDash();
@@ -63,10 +69,10 @@ public class playerMovement : MonoBehaviour
     {
         if (animator.GetBool("CanMove"))
         {
+            lastMovement.x= (int)animator.GetFloat("lastMoveX");
+            lastMovement.y= (int)animator.GetFloat("lastMoveY");
             if (isDashing)
             {
-                lastMovement.x= (int)animator.GetFloat("lastMoveX");
-                lastMovement.y= (int)animator.GetFloat("lastMoveY");
                 rb.MovePosition(rb.position + dashSpeed* lastMovement.normalized * Time.fixedDeltaTime);
             }
             else
@@ -87,6 +93,7 @@ public class playerMovement : MonoBehaviour
 
     private void StartDash()
     {
+        musicManagement.SeleccionAudio(4, 0.3f);
         animator.SetBool("Dash", true);
         isDashing = true;
         dashTime = Time.time + dashDuration;

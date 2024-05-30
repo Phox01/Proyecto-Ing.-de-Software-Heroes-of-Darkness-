@@ -26,7 +26,6 @@ public class MusicManagement : MonoBehaviour
         controlAudio.volume = volumen;
         controlAudio.loop=true;
         controlAudio.Play();
-        Debug.Log("is runing maaaan");
     }
 
     public void StopAudio()
