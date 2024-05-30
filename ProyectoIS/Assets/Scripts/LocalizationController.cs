@@ -1,19 +1,32 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
 
+[Serializable]
+public class DialogueKeys
+{
+    public List<string> keys; 
+}
+
 public class LocalizationController : MonoBehaviour
 {
-    public LocalizeStringEvent localizeStringEvent; // Solo un LocalizeStringEvent
-    private string[] keys;
-    private string[] lines;
+    public LocalizeStringEvent localizeStringEvent;
+    public List<DialogueKeys> dialoguesKeysList; 
+    private List<string[]> dialogues;
     public event Action OnLocalizationReady;
 
     public string tablename;
 
-    public void InitializeKeys(string[] keys)
+    void Start()
+    {
+        dialogues = new List<string[]>();
+        InitializeKeys();
+    }
+
+    public void InitializeKeys()
     {
         if (localizeStringEvent == null)
         {
@@ -21,52 +34,52 @@ public class LocalizationController : MonoBehaviour
             return;
         }
 
-        if (keys == null || keys.Length == 0)
+        if (dialoguesKeysList == null || dialoguesKeysList.Count == 0)
         {
-            Debug.LogError("Keys array is not assigned or empty.");
+            Debug.LogError("Dialogues keys list is not assigned or empty.");
             return;
         }
-
-        this.keys = keys;
-        lines = new string[keys.Length];
 
         StartCoroutine(UpdateLocalizedStrings());
     }
 
     private IEnumerator UpdateLocalizedStrings()
     {
-        int loadedCount = 0;
-
-        for (int i = 0; i < keys.Length; i++)
+        foreach (var dialogueKeys in dialoguesKeysList)
         {
-            int capturedIndex = i; // Necesario para capturar el índice correctamente en el delegado
+            string[] lines = new string[dialogueKeys.keys.Count];
+            int loadedCount = 0;
 
-            bool isUpdated = false;
-            localizeStringEvent.StringReference.SetReference(tablename, keys[i]);
-            localizeStringEvent.OnUpdateString.AddListener((localizedString) =>
+            for (int i = 0; i < dialogueKeys.keys.Count; i++)
             {
-                lines[capturedIndex] = localizedString;
-                Debug.Log($"Line {capturedIndex} updated: {localizedString}");
-                isUpdated = true;
-            });
+                int capturedIndex = i; 
 
-            // Forzar la actualización inicial
-            localizeStringEvent.RefreshString();
+                bool isUpdated = false;
+                localizeStringEvent.StringReference.SetReference(tablename, dialogueKeys.keys[i]);
+                localizeStringEvent.OnUpdateString.AddListener((localizedString) =>
+                {
+                    lines[capturedIndex] = localizedString;
+                    Debug.Log($"Line {capturedIndex} updated: {localizedString}");
+                    isUpdated = true;
+                });
 
-            // Esperar hasta que la línea se haya actualizado
-            yield return new WaitUntil(() => isUpdated);
-            localizeStringEvent.OnUpdateString.RemoveAllListeners();
+                localizeStringEvent.RefreshString();
 
-            loadedCount++;
-            if (loadedCount == keys.Length)
-            {
-                OnLocalizationReady?.Invoke();
+                yield return new WaitUntil(() => isUpdated);
+                localizeStringEvent.OnUpdateString.RemoveAllListeners();
+
+                loadedCount++;
+                if (loadedCount == dialogueKeys.keys.Count)
+                {
+                    dialogues.Add(lines);
+                }
             }
         }
+        OnLocalizationReady?.Invoke();
     }
 
-    public string[] GetLocalizedLines()
+    public List<string[]> GetAllLocalizedLines()
     {
-        return lines;
+        return dialogues;
     }
 }

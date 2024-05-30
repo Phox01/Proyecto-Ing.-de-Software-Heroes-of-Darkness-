@@ -75732,7 +75732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &707226081
 RectTransform:
   m_ObjectHideFlags: 0
@@ -113362,6 +113362,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localizeStringEvent: {fileID: 1739172740}
+  dialoguesKeysList:
+  - keys:
+    - Prueba
+    - Prueba 1
+  - keys:
+    - Prueba 2
   tablename: Tutorial
 --- !u!114 &1739172742
 MonoBehaviour:
@@ -113379,9 +113385,6 @@ MonoBehaviour:
   localizationController: {fileID: 1739172741}
   dialoguePanel: {fileID: 707226080}
   textSpeed: 0.05
-  localizationKeys:
-  - Prueba
-  - Prueba 2
 --- !u!1 &1806125988
 GameObject:
   m_ObjectHideFlags: 0

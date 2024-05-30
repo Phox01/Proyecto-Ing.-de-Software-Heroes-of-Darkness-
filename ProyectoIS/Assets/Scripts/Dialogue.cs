@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -8,8 +9,7 @@ public class Dialogue : MonoBehaviour
     public LocalizationController localizationController;
     public GameObject dialoguePanel;
     public float textSpeed;
-    public string[] localizationKeys; // Agregamos las claves de localización
-
+    public List<string[]> dialogues;
     private string[] lines;
     private int index;
 
@@ -27,20 +27,30 @@ public class Dialogue : MonoBehaviour
             return;
         }
 
-        if (localizationKeys == null || localizationKeys.Length == 0)
-        {
-            Debug.LogError("Localization keys are not assigned or empty.");
-            return;
-        }
-
         textComponent.text = string.Empty;
+        dialogues = new List<string[]>();
         localizationController.OnLocalizationReady += OnLocalizationReady;
-        localizationController.InitializeKeys(localizationKeys); // Pasar las claves al controlador de localización
     }
 
     void OnLocalizationReady()
     {
-        lines = localizationController.GetLocalizedLines();
+        dialogues = localizationController.GetAllLocalizedLines();
+    }
+
+    public bool IsDialogueIndexValid(int dialogueIndex)
+    {
+        return dialogueIndex >= 0 && dialogueIndex < dialogues.Count && dialogues[dialogueIndex] != null && dialogues[dialogueIndex].Length > 0;
+    }
+
+    public void InitializeDialogue(int dialogueIndex)
+    {
+        if (!IsDialogueIndexValid(dialogueIndex))
+        {
+            Debug.LogError("Dialogue index is out of range or dialogue is empty.");
+            return;
+        }
+
+        lines = dialogues[dialogueIndex];
         StartDialogue();
     }
 
@@ -48,11 +58,11 @@ public class Dialogue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if (textComponent.text == lines[index])
+            if (lines != null && textComponent.text == lines[index])
             {
                 NextLine();
             }
-            else
+            else if (lines != null)
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
@@ -62,15 +72,9 @@ public class Dialogue : MonoBehaviour
 
     void StartDialogue()
     {
-        if (lines == null || lines.Length == 0)
-        {
-            Debug.LogError("Lines array is not initialized or empty.");
-            return;
-        }
-
         dialoguePanel.SetActive(true);
         index = 0;
-        Time.timeScale = 0f; // Pausar el tiempo del juego
+        Time.timeScale = 0f; 
         StartCoroutine(TypeLine());
     }
 
@@ -89,7 +93,7 @@ public class Dialogue : MonoBehaviour
             elapsed = 0f;
             while (elapsed < textSpeed)
             {
-                elapsed += Time.unscaledDeltaTime; // Usar Time.unscaledDeltaTime para ignorar el timeScale
+                elapsed += Time.unscaledDeltaTime; 
                 yield return null;
             }
         }
@@ -106,7 +110,7 @@ public class Dialogue : MonoBehaviour
         else
         {
             dialoguePanel.SetActive(false);
-            Time.timeScale = 1f; // Reanudar el tiempo del juego
+            Time.timeScale = 1f; 
         }
     }
 }
