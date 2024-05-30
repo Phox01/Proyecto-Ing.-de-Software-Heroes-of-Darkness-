@@ -1,6 +1,13 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using System;
+
+[Serializable]
+public class DialogueData
+{
+    public string[] localizationKeys;
+}
 
 public class Dialogue : MonoBehaviour
 {
@@ -8,12 +15,13 @@ public class Dialogue : MonoBehaviour
     public LocalizationController localizationController;
     public GameObject dialoguePanel;
     public float textSpeed;
-    public string[] localizationKeys; // Agregamos las claves de localización
+    public string[][] localizationKeys; // Array of arrays for multiple dialogues
 
-    private string[] lines;
-    private int index;
+    private string[][] lines;
+    private int dialogueIndex;
+    private int lineIndex;
 
-    void Start()
+    public void Start()
     {
         if (textComponent == null)
         {
@@ -35,7 +43,7 @@ public class Dialogue : MonoBehaviour
 
         textComponent.text = string.Empty;
         localizationController.OnLocalizationReady += OnLocalizationReady;
-        localizationController.InitializeKeys(localizationKeys); // Pasar las claves al controlador de localización
+        localizationController.InitializeKeys(localizationKeys); // Pass the keys to the localization controller
     }
 
     void OnLocalizationReady()
@@ -48,48 +56,48 @@ public class Dialogue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if (textComponent.text == lines[index])
+            if (textComponent.text == lines[dialogueIndex][lineIndex])
             {
                 NextLine();
             }
             else
             {
                 StopAllCoroutines();
-                textComponent.text = lines[index];
+                textComponent.text = lines[dialogueIndex][lineIndex];
             }
         }
     }
 
     void StartDialogue()
     {
-        if (lines == null || lines.Length == 0)
+        if (lines == null || lines.Length == 0 || lines[dialogueIndex].Length == 0)
         {
             Debug.LogError("Lines array is not initialized or empty.");
             return;
         }
 
         dialoguePanel.SetActive(true);
-        index = 0;
-        Time.timeScale = 0f; // Pausar el tiempo del juego
+        lineIndex = 0;
+        Time.timeScale = 0f; // Pause game time
         StartCoroutine(TypeLine());
     }
 
     IEnumerator TypeLine()
     {
-        if (lines == null || lines.Length == 0 || lines[index] == null)
+        if (lines == null || lines.Length == 0 || lines[dialogueIndex].Length == 0 || lines[dialogueIndex][lineIndex] == null)
         {
             Debug.LogError("Current line is null or lines array is not initialized properly.");
             yield break;
         }
 
         float elapsed = 0f;
-        foreach (char c in lines[index].ToCharArray())
+        foreach (char c in lines[dialogueIndex][lineIndex].ToCharArray())
         {
             textComponent.text += c;
             elapsed = 0f;
             while (elapsed < textSpeed)
             {
-                elapsed += Time.unscaledDeltaTime; // Usar Time.unscaledDeltaTime para ignorar el timeScale
+                elapsed += Time.unscaledDeltaTime; // Use Time.unscaledDeltaTime to ignore the timeScale
                 yield return null;
             }
         }
@@ -97,16 +105,21 @@ public class Dialogue : MonoBehaviour
 
     void NextLine()
     {
-        if (index < lines.Length - 1)
+        if (lineIndex < lines[dialogueIndex].Length - 1)
         {
-            index++;
+            lineIndex++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
         else
         {
             dialoguePanel.SetActive(false);
-            Time.timeScale = 1f; // Reanudar el tiempo del juego
+            Time.timeScale = 1f; // Resume game time
+            if (dialogueIndex < lines.Length - 1)
+            {
+                dialogueIndex++;
+                StartDialogue();
+            }
         }
     }
 }

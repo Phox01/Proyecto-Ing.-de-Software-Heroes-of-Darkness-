@@ -1,9 +1,13 @@
+using System.Collections;
 using UnityEngine;
 
 public class TutorialController : MonoBehaviour
 {
     public EnemySpawner[] enemySpawners;
-    public Transform playerTransform; 
+    public Transform playerTransform;
+    public Dialogue dialogue;
+    public DialogueData[] dialogues; // Array of DialogueData to assign from the inspector
+
     void Start()
     {
         InitializeTutorial();
@@ -11,12 +15,14 @@ public class TutorialController : MonoBehaviour
 
     void InitializeTutorial()
     {
-        StartDialogue();
+        string[][] dialoguesKeys = new string[dialogues.Length][];
+        for (int i = 0; i < dialogues.Length; i++)
+        {
+            dialoguesKeys[i] = dialogues[i].localizationKeys;
+        }
+        dialogue.localizationKeys = dialoguesKeys;
+        dialogue.Start(); // Initialize the dialogue
         InitializeSpawners();
-    }
-
-    void StartDialogue()
-    {
     }
 
     void InitializeSpawners()

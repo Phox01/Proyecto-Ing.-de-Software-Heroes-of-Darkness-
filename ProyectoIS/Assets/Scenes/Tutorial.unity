@@ -75941,9 +75941,6 @@ GameObject:
   - component: {fileID: 1071790615}
   - component: {fileID: 1071790617}
   - component: {fileID: 1071790616}
-  - component: {fileID: 1071790620}
-  - component: {fileID: 1071790622}
-  - component: {fileID: 1071790621}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -76067,67 +76064,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071790614}
   m_CullTransparentMesh: 1
---- !u!114 &1071790620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071790614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 905bec0a45c5c2c4e99916412af2b345, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textComponent: {fileID: 1071790616}
-  localizationController: {fileID: 1071790622}
-  dialoguePanel: {fileID: 707226080}
-  textSpeed: 0.05
-  localizationKeys:
-  - Prueba
-  - Prueba 1
-  - Prueba
---- !u!114 &1071790621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071790614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: 
-    m_TableEntryReference:
-      m_KeyId: 0
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls: []
-  references:
-    version: 2
-    RefIds: []
---- !u!114 &1071790622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071790614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89baae6d9cdbc984dbb5c2a18875c07c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  localizeStringEvent: {fileID: 1071790621}
 --- !u!1 &1114219136
 GameObject:
   m_ObjectHideFlags: 0
@@ -113343,6 +113279,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1739172739}
   - component: {fileID: 1739172738}
+  - component: {fileID: 1739172742}
+  - component: {fileID: 1739172741}
+  - component: {fileID: 1739172740}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -113366,6 +113305,11 @@ MonoBehaviour:
   - {fileID: 1806125989}
   - {fileID: 199910532}
   playerTransform: {fileID: 2038801858}
+  dialogue: {fileID: 1739172742}
+  dialogues:
+  - localizationKeys:
+    - Prueba 1
+    - Prueba
 --- !u!4 &1739172739
 Transform:
   m_ObjectHideFlags: 0
@@ -113381,6 +113325,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1739172740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739172737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &1739172741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739172737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89baae6d9cdbc984dbb5c2a18875c07c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizeStringEvent: {fileID: 1739172740}
+--- !u!114 &1739172742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739172737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905bec0a45c5c2c4e99916412af2b345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1071790616}
+  localizationController: {fileID: 1739172741}
+  dialoguePanel: {fileID: 707226080}
+  textSpeed: 0.05
 --- !u!1 &1806125988
 GameObject:
   m_ObjectHideFlags: 0

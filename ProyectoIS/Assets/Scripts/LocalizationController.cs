@@ -6,12 +6,12 @@ using UnityEngine.Localization.Components;
 
 public class LocalizationController : MonoBehaviour
 {
-    public LocalizeStringEvent localizeStringEvent; // Solo un LocalizeStringEvent
-    private string[] keys;
-    private string[] lines;
+    public LocalizeStringEvent localizeStringEvent;
+    private string[][] keys;
+    private string[][] lines;
     public event Action OnLocalizationReady;
 
-    public void InitializeKeys(string[] keys)
+    public void InitializeKeys(string[][] keys)
     {
         if (localizeStringEvent == null)
         {
@@ -26,7 +26,11 @@ public class LocalizationController : MonoBehaviour
         }
 
         this.keys = keys;
-        lines = new string[keys.Length];
+        lines = new string[keys.Length][];
+        for (int i = 0; i < keys.Length; i++)
+        {
+            lines[i] = new string[keys[i].Length];
+        }
 
         StartCoroutine(UpdateLocalizedStrings());
     }
@@ -37,23 +41,27 @@ public class LocalizationController : MonoBehaviour
 
         for (int i = 0; i < keys.Length; i++)
         {
-            int capturedIndex = i; // Necesario para capturar el índice correctamente en el delegado
-
-            bool isUpdated = false;
-            localizeStringEvent.StringReference.SetReference("Tutorial", keys[i]);
-            localizeStringEvent.OnUpdateString.AddListener((localizedString) =>
+            for (int j = 0; j < keys[i].Length; j++)
             {
-                lines[capturedIndex] = localizedString;
-                Debug.Log($"Line {capturedIndex} updated: {localizedString}");
-                isUpdated = true;
-            });
+                int capturedDialogueIndex = i;
+                int capturedLineIndex = j;
 
-            // Forzar la actualización inicial
-            localizeStringEvent.RefreshString();
+                bool isUpdated = false;
+                localizeStringEvent.StringReference.SetReference("Tutorial", keys[i][j]);
+                localizeStringEvent.OnUpdateString.AddListener((localizedString) =>
+                {
+                    lines[capturedDialogueIndex][capturedLineIndex] = localizedString;
+                    Debug.Log($"Line {capturedDialogueIndex}-{capturedLineIndex} updated: {localizedString}");
+                    isUpdated = true;
+                });
 
-            // Esperar hasta que la línea se haya actualizado
-            yield return new WaitUntil(() => isUpdated);
-            localizeStringEvent.OnUpdateString.RemoveAllListeners();
+                // Force the initial update
+                localizeStringEvent.RefreshString();
+
+                // Wait until the line is updated
+                yield return new WaitUntil(() => isUpdated);
+                localizeStringEvent.OnUpdateString.RemoveAllListeners();
+            }
 
             loadedCount++;
             if (loadedCount == keys.Length)
@@ -63,7 +71,7 @@ public class LocalizationController : MonoBehaviour
         }
     }
 
-    public string[] GetLocalizedLines()
+    public string[][] GetLocalizedLines()
     {
         return lines;
     }

@@ -23,6 +23,10 @@ MonoBehaviour:
     m_Key: Prueba 1
     m_Metadata:
       m_Items: []
+  - m_Id: 257714570649600
+    m_Key: Prueba 2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
