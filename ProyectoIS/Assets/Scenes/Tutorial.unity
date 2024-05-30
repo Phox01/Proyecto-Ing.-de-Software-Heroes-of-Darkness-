@@ -76083,6 +76083,10 @@ MonoBehaviour:
   localizationController: {fileID: 1071790622}
   dialoguePanel: {fileID: 707226080}
   textSpeed: 0.05
+  localizationKeys:
+  - Prueba
+  - Prueba 1
+  - Prueba
 --- !u!114 &1071790621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76097,9 +76101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: GUID:d012cdc6491e7864397ad9c58a9120cb
+      m_TableCollectionName: 
     m_TableEntryReference:
-      m_KeyId: 18273525760
+      m_KeyId: 0
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -76123,8 +76127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89baae6d9cdbc984dbb5c2a18875c07c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localizedStrings:
-  - {fileID: 1071790621}
+  localizeStringEvent: {fileID: 1071790621}
 --- !u!1 &1114219136
 GameObject:
   m_ObjectHideFlags: 0

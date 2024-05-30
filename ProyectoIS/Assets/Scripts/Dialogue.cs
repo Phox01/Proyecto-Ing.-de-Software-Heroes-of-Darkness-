@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
     public LocalizationController localizationController;
     public GameObject dialoguePanel;
     public float textSpeed;
+    public string[] localizationKeys; // Agregamos las claves de localización
 
     private string[] lines;
     private int index;
@@ -26,8 +27,15 @@ public class Dialogue : MonoBehaviour
             return;
         }
 
+        if (localizationKeys == null || localizationKeys.Length == 0)
+        {
+            Debug.LogError("Localization keys are not assigned or empty.");
+            return;
+        }
+
         textComponent.text = string.Empty;
         localizationController.OnLocalizationReady += OnLocalizationReady;
+        localizationController.InitializeKeys(localizationKeys); // Pasar las claves al controlador de localización
     }
 
     void OnLocalizationReady()
@@ -60,7 +68,9 @@ public class Dialogue : MonoBehaviour
             return;
         }
 
+        dialoguePanel.SetActive(true);
         index = 0;
+        Time.timeScale = 0f; // Pausar el tiempo del juego
         StartCoroutine(TypeLine());
     }
 
@@ -72,10 +82,16 @@ public class Dialogue : MonoBehaviour
             yield break;
         }
 
+        float elapsed = 0f;
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
-            yield return new WaitForSeconds(textSpeed);
+            elapsed = 0f;
+            while (elapsed < textSpeed)
+            {
+                elapsed += Time.unscaledDeltaTime; // Usar Time.unscaledDeltaTime para ignorar el timeScale
+                yield return null;
+            }
         }
     }
 
@@ -90,6 +106,7 @@ public class Dialogue : MonoBehaviour
         else
         {
             dialoguePanel.SetActive(false);
+            Time.timeScale = 1f; // Reanudar el tiempo del juego
         }
     }
 }
