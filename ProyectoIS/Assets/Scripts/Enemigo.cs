@@ -42,7 +42,7 @@ public class Enemigo : MonoBehaviour
             Debug.Log(damage );
             }
         if(vida<=0){
-            musicManagement.SeleccionAudio(3, 1f);
+            musicManagement.SeleccionAudio(4, 1f);
             Destroy(gameObject);
         }
     }
