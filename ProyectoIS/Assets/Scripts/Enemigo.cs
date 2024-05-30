@@ -32,7 +32,7 @@ public class Enemigo : MonoBehaviour
     }
     public void GetDamaged(int damage){
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
-        
+        Debug.Log("uwu");
         
         
         

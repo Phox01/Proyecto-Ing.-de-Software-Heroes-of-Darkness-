@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEngine;
 
 public class Minotaurus : MonoBehaviour
 {
@@ -18,6 +17,7 @@ public class Minotaurus : MonoBehaviour
     private GameObject player;
     private bool hasLineOfSight = false;
     [SerializeField] private LayerMask layerMask;
+    private bool isAttacking;
 
     void Start()
     {
@@ -26,7 +26,7 @@ public class Minotaurus : MonoBehaviour
         routePoints = GameObject.FindGameObjectsWithTag("Point");
         player = GameObject.FindGameObjectWithTag("Player");
         random = Random.Range(0, routePoints.Length);
-        speed = 2;
+        speed = 3;
     }
 
     void Update()
@@ -44,8 +44,21 @@ public class Minotaurus : MonoBehaviour
         {
             Debug.Log(hasLineOfSight);
             Debug.Log(speed);
+            if (!animator.GetBool("isAttacking")) { 
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            
+            }
 
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            //LÓGICA DE ATAQUE
+            float distanceToPlayer = Vector3.Distance(transform.position, Character.transform.position);
+            if (distanceToPlayer <= 2)
+            {
+                animator.SetBool("isAttacking", true);
+            }
+            else
+            {
+                animator.SetBool("isAttacking", false);
+            }
         }
         else
         {
