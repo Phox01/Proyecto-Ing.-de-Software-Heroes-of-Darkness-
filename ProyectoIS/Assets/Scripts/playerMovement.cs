@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    public float moveSpeed = 2f;
+    [SerializeField] float moveSpeed = 5f;
+    public int moveDuo = 1;
     public float dashSpeed = 3f; 
     public float dashDuration = 0.2f; 
     public float dashCooldown = 1f; 
@@ -18,6 +19,8 @@ public class playerMovement : MonoBehaviour
     public static playerMovement Instance;
     private MusicManagement musicManagement;
 
+    private Vector2 lastMovement;
+
 
     private void Awake()
     {
@@ -29,7 +32,6 @@ public class playerMovement : MonoBehaviour
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3"))
         {
             animator.SetBool("CanMove", false);
-            
         }
         else
         {
@@ -43,7 +45,6 @@ public class playerMovement : MonoBehaviour
             animator.SetFloat("Horizontal", movement.x);
             animator.SetFloat("Vertical", movement.y);
             animator.SetFloat("Speed", movement.sqrMagnitude);
-
             if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > lastDashTime + dashCooldown)
             {
                 StartDash();
@@ -54,6 +55,8 @@ public class playerMovement : MonoBehaviour
         {
             EndDash();
         }
+
+        
     }
 
     void FixedUpdate()
@@ -62,19 +65,24 @@ public class playerMovement : MonoBehaviour
         {
             if (isDashing)
             {
-                rb.MovePosition(rb.position + movement.normalized * dashSpeed * Time.fixedDeltaTime);
+                lastMovement.x= (int)animator.GetFloat("lastMoveX");
+                lastMovement.y= (int)animator.GetFloat("lastMoveY");
+                rb.MovePosition(rb.position + dashSpeed* lastMovement.normalized * Time.fixedDeltaTime);
             }
             else
             {
                 rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
+                if (movement.x != 0 || movement.y != 0)
+                {
+
+                    animator.SetFloat("lastMoveX", movement.x);
+                    animator.SetFloat("lastMoveY", movement.y);
+
+                }
             }
 
-            if (movement.x != 0 || movement.y != 0)
-            {
-                animator.SetFloat("lastMoveX", movement.x);
-                animator.SetFloat("lastMoveY", movement.y);
-            }
         }
+        
     }
 
     private void StartDash()

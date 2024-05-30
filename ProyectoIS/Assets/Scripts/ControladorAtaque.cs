@@ -39,7 +39,18 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         
         animator.SetTrigger("Attack");
-        musicManagement.SeleccionAudio(0, 1f);
+        if (animator.GetInteger("NumbAtt")==1)
+        {
+            musicManagement.SeleccionAudio(0, 1f);
+            
+        }if (animator.GetInteger("NumbAtt")==2)
+        {
+            musicManagement.SeleccionAudio(1, 1f);
+   
+        }else{
+            musicManagement.SeleccionAudio(2, 1f);
+
+        }
         ContactFilter2D filter = new ContactFilter2D();
         filter.SetLayerMask(capaEnemigos);
 
@@ -52,7 +63,7 @@ public class ControladorDeAtaque : MonoBehaviour
             {
                 int damage = playerAttack + Random.Range(-3, 4);
                 enemigoComponent.GetDamaged(damage);
-                musicManagement.SeleccionAudio(1, 1f);
+                musicManagement.SeleccionAudio(4, 1f);
                 Debug.Log("Enemigo recibió " + damage + " puntos de daño.");
             }
         }

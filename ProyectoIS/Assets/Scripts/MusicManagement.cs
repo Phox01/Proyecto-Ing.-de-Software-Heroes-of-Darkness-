@@ -16,5 +16,23 @@ public class MusicManagement : MonoBehaviour
     public void SeleccionAudio(int indice, float volumen)
     {
         controlAudio.PlayOneShot(audios[indice], volumen);
+        
+        
     }
+
+    public void AudioLoop(int indice, float volumen)
+    {
+        controlAudio.clip = audios[indice];
+        controlAudio.volume = volumen;
+        controlAudio.loop=true;
+        controlAudio.Play();
+        Debug.Log("is runing maaaan");
+    }
+
+    public void StopAudio()
+    {
+        controlAudio.Stop();
+    }
+
+    
 }
