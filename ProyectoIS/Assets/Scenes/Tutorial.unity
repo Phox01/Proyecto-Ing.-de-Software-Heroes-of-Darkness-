@@ -113306,10 +113306,6 @@ MonoBehaviour:
   - {fileID: 199910532}
   playerTransform: {fileID: 2038801858}
   dialogue: {fileID: 1739172742}
-  dialogues:
-  - localizationKeys:
-    - Prueba 1
-    - Prueba
 --- !u!4 &1739172739
 Transform:
   m_ObjectHideFlags: 0
@@ -113366,6 +113362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localizeStringEvent: {fileID: 1739172740}
+  tablename: Tutorial
 --- !u!114 &1739172742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113382,6 +113379,9 @@ MonoBehaviour:
   localizationController: {fileID: 1739172741}
   dialoguePanel: {fileID: 707226080}
   textSpeed: 0.05
+  localizationKeys:
+  - Prueba
+  - Prueba 2
 --- !u!1 &1806125988
 GameObject:
   m_ObjectHideFlags: 0
