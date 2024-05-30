@@ -39,6 +39,7 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         
         animator.SetTrigger("Attack");
+        musicManagement.SeleccionAudio(0, 1f);
         ContactFilter2D filter = new ContactFilter2D();
         filter.SetLayerMask(capaEnemigos);
 
