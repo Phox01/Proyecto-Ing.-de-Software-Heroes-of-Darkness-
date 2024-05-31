@@ -9,9 +9,10 @@ public class Dialogue : MonoBehaviour
     public LocalizationController localizationController;
     public GameObject dialoguePanel;
     public float textSpeed;
-    public List<string[]> dialogues;
+    private List<string[]> dialogues;
     private string[] lines;
     private int index;
+    private Dictionary<int, bool> dialogueStarted;
 
     void Start()
     {
@@ -29,10 +30,16 @@ public class Dialogue : MonoBehaviour
 
         textComponent.text = string.Empty;
         dialogues = new List<string[]>();
+        dialogueStarted = new Dictionary<int, bool>();
         localizationController.OnLocalizationReady += OnLocalizationReady;
     }
 
     void OnLocalizationReady()
+    {
+        dialogues = localizationController.GetAllLocalizedLines();
+    }
+
+    public void SetupDialogue()
     {
         dialogues = localizationController.GetAllLocalizedLines();
     }
@@ -42,16 +49,28 @@ public class Dialogue : MonoBehaviour
         return dialogueIndex >= 0 && dialogueIndex < dialogues.Count && dialogues[dialogueIndex] != null && dialogues[dialogueIndex].Length > 0;
     }
 
-    public void InitializeDialogue(int dialogueIndex)
+    public void StartDialogue(int dialogueIndex, bool isRepeatable)
     {
-        if (!IsDialogueIndexValid(dialogueIndex))
+        if (!dialogueStarted.ContainsKey(dialogueIndex))
         {
-            Debug.LogError("Dialogue index is out of range or dialogue is empty.");
-            return;
+            dialogueStarted[dialogueIndex] = false;
         }
 
-        lines = dialogues[dialogueIndex];
-        StartDialogue();
+        if (!dialogueStarted[dialogueIndex] || isRepeatable)
+        {
+            if (IsDialogueIndexValid(dialogueIndex))
+            {
+                StopAllCoroutines();  
+                textComponent.text = string.Empty; 
+                lines = dialogues[dialogueIndex];
+                dialogueStarted[dialogueIndex] = !isRepeatable;
+                StartDialogue();
+            }
+            else
+            {
+                Debug.LogError("Invalid dialogue index.");
+            }
+        }
     }
 
     void Update()
@@ -74,7 +93,7 @@ public class Dialogue : MonoBehaviour
     {
         dialoguePanel.SetActive(true);
         index = 0;
-        Time.timeScale = 0f; 
+        Time.timeScale = 0f;
         StartCoroutine(TypeLine());
     }
 
@@ -86,16 +105,10 @@ public class Dialogue : MonoBehaviour
             yield break;
         }
 
-        float elapsed = 0f;
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
-            elapsed = 0f;
-            while (elapsed < textSpeed)
-            {
-                elapsed += Time.unscaledDeltaTime; 
-                yield return null;
-            }
+            yield return new WaitForSecondsRealtime(textSpeed); 
         }
     }
 
@@ -109,8 +122,9 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
+            textComponent.text = string.Empty;  
             dialoguePanel.SetActive(false);
-            Time.timeScale = 1f; 
+            Time.timeScale = 1f;
         }
     }
 }

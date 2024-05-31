@@ -7,8 +7,6 @@ public class TutorialController : MonoBehaviour
     public EnemySpawner[] enemySpawners;
     public Transform playerTransform;
     public Dialogue dialogue;
-    private bool localizationReady = false;
-    private Dictionary<int, bool> dialogueStarted; 
 
     void Start()
     {
@@ -18,9 +16,7 @@ public class TutorialController : MonoBehaviour
     void InitializeTutorial()
     {
         InitializeSpawners();
-        dialogueStarted = new Dictionary<int, bool>();
         dialogue.localizationController.OnLocalizationReady += OnLocalizationReady;
-        dialogue.localizationController.InitializeKeys();
     }
 
     void InitializeSpawners()
@@ -34,35 +30,19 @@ public class TutorialController : MonoBehaviour
 
     void OnLocalizationReady()
     {
-        localizationReady = true;
+        dialogue.SetupDialogue();
     }
 
     void Update()
     {
-        if (localizationReady && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.O))
         {
-            StartDialogue(2);
-        }
-    }
-
-    public void StartDialogue(int dialogueIndex)
-    {
-        if (!dialogueStarted.ContainsKey(dialogueIndex))
-        {
-            dialogueStarted[dialogueIndex] = false;
+            dialogue.StartDialogue(0, false); // Ejemplo para iniciar diálogo no repetible 
         }
 
-        if (!dialogueStarted[dialogueIndex])
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            if (dialogue.IsDialogueIndexValid(dialogueIndex))
-            {
-                dialogue.InitializeDialogue(dialogueIndex);
-                dialogueStarted[dialogueIndex] = true;
-            }
-            else
-            {
-                Debug.LogError("Invalid dialogue index.");
-            }
+            dialogue.StartDialogue(1, true); // Ejemplo para iniciar diálogo repetible 
         }
     }
 }
