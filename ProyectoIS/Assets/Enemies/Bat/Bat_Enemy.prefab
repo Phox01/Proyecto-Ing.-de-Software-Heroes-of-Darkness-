@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1224071206075437620}
   - component: {fileID: 2026221182730330021}
   - component: {fileID: 6898215237749744452}
-  - component: {fileID: 2697022417225054214}
   m_Layer: 23
   m_Name: Bat_Enemy
   m_TagString: Murcielago
@@ -205,17 +204,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2697022417225054214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5053068258751461530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af6380b96d9a424caf298f90d7a846e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whiteFlah: {fileID: 2100000, guid: d891a3ae01d14914b87d0efd1e23958c, type: 2}
-  restoreMatTime: 0.2
