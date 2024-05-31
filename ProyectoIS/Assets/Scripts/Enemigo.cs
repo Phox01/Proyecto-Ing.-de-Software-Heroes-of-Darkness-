@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemigo : MonoBehaviour
 {
@@ -93,7 +94,7 @@ void Flip()
     
     public void GetDamaged(int damage){
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
-        
+        Debug.Log("uwu");
         
         
 
@@ -112,6 +113,9 @@ void Flip()
 
                 
             }
+            musicManagement.SeleccionAudio(4, 1f);
+            Destroy(gameObject);
+            SceneManager.LoadScene(2);
         }
     }
 

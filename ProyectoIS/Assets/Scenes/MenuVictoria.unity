@@ -418,7 +418,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 23, y: 299}
+  m_AnchoredPosition: {x: 41, y: 290}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1193308893
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FELICIDADES POR TU VICTORIA
+  m_text: FELICIDADES POR terminar el tutorial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ceb9eae861593a43b6ceb30747e702e, type: 2}
   m_sharedMaterial: {fileID: 8153663550893488191, guid: 4ceb9eae861593a43b6ceb30747e702e,
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.15
+  m_fontSize: 45.55
   m_fontSizeBase: 0
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -506,7 +506,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -207.80539, y: -2.8819675, z: -190.48822, w: 7.822998}
+  m_margin: {x: -271.69354, y: -2.8819675, z: -248.97766, w: 7.822998}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
