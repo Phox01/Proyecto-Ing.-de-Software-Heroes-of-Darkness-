@@ -16,6 +16,15 @@ public class Enemigo : MonoBehaviour
     [SerializeField] private float knockBackTime = .2f;
     private Rigidbody2D rb;
     private MusicManagement musicManagement;
+    [SerializeField] private float speed;
+    [SerializeField] private LayerMask layerMask;
+    private GameObject player;
+    public GameObject Character;
+    private bool hasLineOfSight = false;
+    private bool isFacingRight = true; // Assume the enemy is facing right initially
+    public Animator animator;
+
+
 
 
     private void Awake()
@@ -29,8 +38,57 @@ public class Enemigo : MonoBehaviour
         vida = vidaMax;
         attack = maxAttack;
         defensa = defensaMax;
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+    void Update()
+    {
+        //LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
+        if (player.transform.position.x < transform.position.x && isFacingRight)
+    {
+        Flip();
+    }
+    else if (player.transform.position.x > transform.position.x &&!isFacingRight)
+    {
+        Flip();
+    }
+        if (hasLineOfSight)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        }
     }
 
+void Flip()
+{
+    isFacingRight =!isFacingRight;
+    Vector3 Scaler = transform.localScale;
+    Scaler.x *= -1;
+    transform.localScale = Scaler;
+}
+
+    private void FixedUpdate()
+    {
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
+        if (ray.collider != null)
+        {
+            hasLineOfSight = ray.collider.CompareTag("Player");
+            if (hasLineOfSight)
+            {
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")==false){
+                    Ataque();
+
+                }
+                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
+            }
+            else
+            {
+                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
+            }
+        }
+    }
+
+    void Ataque(){
+        animator.SetBool("Attack", true);
+    }
 
     
     public void GetDamaged(int damage){
@@ -38,17 +96,28 @@ public class Enemigo : MonoBehaviour
         
         
         
-        
+
         netDamage = damage-defensa;
         if(netDamage>0){
             vida -= netDamage;
-            Debug.Log(damage );
+            animator.SetInteger("life", vida);
+            animator.SetBool("Attack", false);
+            Debug.Log(vida );
             }
         if(vida<=0){
-            musicManagement.SeleccionAudio(4, 1f);
-            Destroy(gameObject);
+
+            if (animator.GetInteger("life")<=0)
+            {
+                OnDieAnimationComplete();
+
+                
+            }
         }
     }
+
+    public void OnDieAnimationComplete(){
+        Destroy(gameObject);
+        }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -72,7 +141,6 @@ public class Enemigo : MonoBehaviour
         gettingKnockedBack = true;
         
         Vector2 diference = (transform.position - damageSource.position).normalized * knockBackThrust * rb.mass;
-        Debug.Log(diference);
         rb.AddForce(diference, ForceMode2D.Impulse);
         StartCoroutine(KnockRoutine());
     }

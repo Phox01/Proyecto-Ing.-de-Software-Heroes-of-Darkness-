@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1224071206075437620}
   - component: {fileID: 2026221182730330021}
   - component: {fileID: 6898215237749744452}
-  - component: {fileID: -9055381233971711739}
   m_Layer: 23
   m_Name: Bat_Enemy
   m_TagString: Murcielago
@@ -177,6 +176,13 @@ MonoBehaviour:
   maxAttack: 10
   defensaMax: 5
   knockBackTime: 0.2
+  speed: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 25165824
+  Character: {fileID: 6944310338585305875, guid: 45d990cf2685bb84fbd5241290a15364,
+    type: 3}
+  animator: {fileID: 6898215237749744452}
 --- !u!95 &6898215237749744452
 Animator:
   serializedVersion: 5
@@ -198,19 +204,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-9055381233971711739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5053068258751461530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a3d39227a08a6428251b5fa5236159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 25165824

@@ -30,9 +30,7 @@ public class playerMovement : MonoBehaviour
     }
     void Update()
     {
-        if(animator.GetFloat("Speed")==0){
-            musicManagement.AudioLoop(3, 0.3f);
-        }
+
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3"))
         {
@@ -67,6 +65,9 @@ public class playerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+                if(animator.GetFloat("Speed")==0){
+            musicManagement.AudioLoop(3, 0.3f);
+        }
         if (animator.GetBool("CanMove"))
         {
             lastMovement.x= (int)animator.GetFloat("lastMoveX");
