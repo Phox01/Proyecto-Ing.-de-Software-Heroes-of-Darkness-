@@ -12184,7 +12184,6 @@ GameObject:
   m_Component:
   - component: {fileID: 312955294}
   - component: {fileID: 312955296}
-  - component: {fileID: 312955295}
   m_Layer: 5
   m_Name: Barra de vida
   m_TagString: Untagged
@@ -12213,18 +12212,6 @@ RectTransform:
   m_AnchoredPosition: {x: 12, y: -21}
   m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &312955295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312955293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c24d0a7ac306135458d80b367a4e11a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &312955296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12275,19 +12262,7 @@ MonoBehaviour:
   m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 312955295}
-        m_TargetAssemblyTypeName: BarraVida, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &321597116
 GameObject:
   m_ObjectHideFlags: 0
@@ -76334,6 +76309,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1466321024153592857, guid: 45d990cf2685bb84fbd5241290a15364,
+        type: 3}
+      propertyPath: sliderVidas
+      value: 
+      objectReference: {fileID: 312955296}
     - target: {fileID: 2246307013429363687, guid: 45d990cf2685bb84fbd5241290a15364,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -76406,9 +76386,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7817561878576813476, guid: 45d990cf2685bb84fbd5241290a15364,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817561878576813476, guid: 45d990cf2685bb84fbd5241290a15364,
+        type: 3}
       propertyPath: barraDeVida
       value: 
-      objectReference: {fileID: 312955295}
+      objectReference: {fileID: 0}
     - target: {fileID: 9032429245289091484, guid: 45d990cf2685bb84fbd5241290a15364,
         type: 3}
       propertyPath: dashSpeed
@@ -76435,6 +76420,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2038801884}
+    - targetCorrespondingSourceObject: {fileID: 6944310338585305875, guid: 45d990cf2685bb84fbd5241290a15364,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2038801892}
   m_SourcePrefab: {fileID: 100100000, guid: 45d990cf2685bb84fbd5241290a15364, type: 3}
 --- !u!1001 &1368382092
 PrefabInstance:
@@ -76453,6 +76442,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 387287654252624058, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
+        type: 3}
+      propertyPath: m_TagString
+      value: Jefe0
       objectReference: {fileID: 0}
     - target: {fileID: 3500161249293299981, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
         type: 3}
@@ -113682,7 +113676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.07374513, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -114129,6 +114123,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2038801892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460775209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b21c7b2b737fdb42a6af0a32f580680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidas: 100
+  sliderVidas: {fileID: 312955296}
 --- !u!1 &2058259727
 GameObject:
   m_ObjectHideFlags: 0

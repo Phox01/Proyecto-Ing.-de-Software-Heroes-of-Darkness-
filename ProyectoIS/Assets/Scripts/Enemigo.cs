@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemigo : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class Enemigo : MonoBehaviour
         if(vida<=0){
             musicManagement.SeleccionAudio(4, 1f);
             Destroy(gameObject);
+            SceneManager.LoadScene(2);
         }
     }
 
