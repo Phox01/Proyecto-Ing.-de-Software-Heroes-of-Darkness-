@@ -18,6 +18,7 @@ public class playerMovement : MonoBehaviour
     private float lastDashTime;
     public static playerMovement Instance;
     private MusicManagement musicManagement;
+    private Atributos mtributos;
 
     private Vector2 lastMovement;
 
@@ -98,4 +99,12 @@ public class playerMovement : MonoBehaviour
         isDashing = false;
         animator.SetBool("Dash", false);
     }
+
+
+    
+
 }
+
+    
+
+ 

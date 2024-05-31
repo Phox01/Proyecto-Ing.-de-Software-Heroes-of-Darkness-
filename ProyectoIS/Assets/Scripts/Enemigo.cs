@@ -16,12 +16,13 @@ public class Enemigo : MonoBehaviour
     [SerializeField] private float knockBackTime = .2f;
     private Rigidbody2D rb;
     private MusicManagement musicManagement;
-
+    private Flash flash;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         musicManagement = FindObjectOfType<MusicManagement>();
+        flash = GetComponent<Flash>();
     }
 
     void Start(){
@@ -32,7 +33,7 @@ public class Enemigo : MonoBehaviour
     }
     public void GetDamaged(int damage){
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
-        Debug.Log("uwu");
+        StartCoroutine(flash.FlashRoutine());
         
         
         
@@ -80,5 +81,8 @@ public class Enemigo : MonoBehaviour
         rb.velocity = Vector2.zero;
         gettingKnockedBack = false;
     }
+
+
+     
 
 }
