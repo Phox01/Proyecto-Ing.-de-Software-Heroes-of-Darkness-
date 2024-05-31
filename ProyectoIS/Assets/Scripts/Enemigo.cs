@@ -108,14 +108,16 @@ void Flip()
 
             if (animator.GetInteger("life")<=0)
             {
-                OnDieAnimationComplete();
+                StartCoroutine(OnDieAnimationComplete());
 
                 
             }
         }
     }
 
-    public void OnDieAnimationComplete(){
+    IEnumerator OnDieAnimationComplete(){
+        yield return new
+        WaitForSeconds(2);
         Destroy(gameObject);
         }
 
