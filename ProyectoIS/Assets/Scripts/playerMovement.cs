@@ -66,7 +66,7 @@ public class playerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(animator.GetFloat("Speed")==0){
+                if(animator.GetFloat("Speed")==0){
             musicManagement.AudioLoop(3, 0.3f);
         }
         if (animator.GetBool("CanMove"))
