@@ -31,14 +31,13 @@ public class ControladorDeAtaque : MonoBehaviour
         {
             
             Attack();
+            
         }
-
         ActualizarPuntoAtaque();
     }
 
     void Attack()
     {
-        playerMovement.Instance.SetAttacking(true);
         rb.velocity = Vector2.zero;
         animator.SetTrigger("Attack");
         musicManagement.SeleccionAudio(animator.GetInteger("NumbAtt")-1, 1f);
@@ -63,7 +62,6 @@ public class ControladorDeAtaque : MonoBehaviour
             count=1;
         }
         animator.SetInteger("NumbAtt", count);
-        playerMovement.Instance.SetAttacking(false);
 
 
     }
@@ -89,8 +87,4 @@ public class ControladorDeAtaque : MonoBehaviour
         }
     }
 
-    void AnimationEnd()
-    {
-        playerMovement.Instance.SetAttacking(false);
-    }
 }

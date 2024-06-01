@@ -18,6 +18,8 @@ public class Minotaurus : MonoBehaviour
     private bool hasLineOfSight = false;
     [SerializeField] private LayerMask layerMask;
     private bool isAttacking;
+    public int maxAttack;
+    int attack;
 
     void Start()
     {
@@ -26,6 +28,7 @@ public class Minotaurus : MonoBehaviour
         routePoints = GameObject.FindGameObjectsWithTag("Point");
         player = GameObject.FindGameObjectWithTag("Player");
         random = Random.Range(0, routePoints.Length);
+        attack = maxAttack;
         speed = 3;
     }
 
@@ -102,4 +105,19 @@ public class Minotaurus : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("hola");
+            ControladorDeAtaque jugador = other.GetComponent<ControladorDeAtaque>();
+            if (jugador != null)
+            {
+                jugador.GetDamaged(attack);
+                Debug.Log("damge doned");
+            }
+        }
+    }
+
 }
