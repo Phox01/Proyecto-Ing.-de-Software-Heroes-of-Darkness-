@@ -1,9 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TutorialController : MonoBehaviour
 {
     public EnemySpawner[] enemySpawners;
-    public Transform playerTransform; 
+    public Transform playerTransform;
+    public Dialogue dialogue;
+
     void Start()
     {
         InitializeTutorial();
@@ -11,12 +15,8 @@ public class TutorialController : MonoBehaviour
 
     void InitializeTutorial()
     {
-        StartDialogue();
         InitializeSpawners();
-    }
-
-    void StartDialogue()
-    {
+        dialogue.localizationController.OnLocalizationReady += OnLocalizationReady;
     }
 
     void InitializeSpawners()
@@ -25,6 +25,24 @@ public class TutorialController : MonoBehaviour
         {
             spawner.playerTransform = playerTransform; 
             spawner.Initialize();
+        }
+    }
+
+    void OnLocalizationReady()
+    {
+        dialogue.SetupDialogue();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            dialogue.StartDialogue(0, false); // Ejemplo para iniciar diálogo no repetible 
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            dialogue.StartDialogue(1, true); // Ejemplo para iniciar diálogo repetible 
         }
     }
 }
