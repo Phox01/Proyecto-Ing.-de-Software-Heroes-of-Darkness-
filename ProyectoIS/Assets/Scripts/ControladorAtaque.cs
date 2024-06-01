@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using System.Security.Cryptography.X509Certificates;
 
 public class ControladorDeAtaque : MonoBehaviour
@@ -13,6 +15,7 @@ public class ControladorDeAtaque : MonoBehaviour
     public Animator animator;
     private MusicManagement musicManagement;
     public Rigidbody2D rb;
+    public Slider sliderVidas;
 
 
     void Start()
@@ -21,6 +24,7 @@ public class ControladorDeAtaque : MonoBehaviour
         currentHealth = atributos.health;
         areaAtaque.isTrigger = true;
         musicManagement = FindObjectOfType<MusicManagement>();
+        sliderVidas.value = currentHealth;
     }
 
     void Update()
@@ -83,9 +87,11 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log(damage);
+        sliderVidas.value = currentHealth;
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(3);
         }
     }
 
