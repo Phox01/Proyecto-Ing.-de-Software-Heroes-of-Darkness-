@@ -116,8 +116,13 @@ void Flip()
                 
             }
             musicManagement.SeleccionAudio(4, 1f);
+            if (gameObject.CompareTag("Jefe0"))
+            {
+                Destroy(gameObject);
+                SceneManager.LoadScene(2);
+            }
             Destroy(gameObject);
-            // SceneManager.LoadScene(2);
+
         }
     }
 

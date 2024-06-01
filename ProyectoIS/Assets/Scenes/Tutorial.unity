@@ -154,7 +154,7 @@ Transform:
   m_LocalScale: {x: 0.795609, y: 62.983173, z: 1.0071}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1755568530}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &17519950
 SpriteRenderer:
@@ -75841,7 +75841,7 @@ Transform:
   m_LocalScale: {x: 0.85130167, y: 4.9999204, z: 1.0071}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1755568530}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &642226017
 SpriteRenderer:
@@ -76117,15 +76117,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.81960785}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ab1037114fbed5141883fe36c5c1055d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -76460,7 +76460,7 @@ Transform:
   m_LocalScale: {x: 1.038588, y: 7.8103757, z: 1.0071}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1755568530}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1246701854
 SpriteRenderer:
@@ -76839,10 +76839,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 977879132}
-    - targetCorrespondingSourceObject: {fileID: 387287654252624058, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 977879138}
   m_SourcePrefab: {fileID: 100100000, guid: 8e2d1c970ad69394fb44bc63ed4f3266, type: 3}
 --- !u!1 &1484041591
 GameObject:
@@ -76874,7 +76870,7 @@ Transform:
   m_LocalScale: {x: 0.795609, y: 99.74016, z: 1.0071}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1755568530}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &1484041593
 SpriteRenderer:
@@ -114036,7 +114032,7 @@ Transform:
   m_LocalScale: {x: 0.795609, y: 62.983173, z: 1.0071}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1755568530}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1997698416
 SpriteRenderer:
@@ -114675,3 +114671,8 @@ SceneRoots:
   - {fileID: 2032985436}
   - {fileID: 64657963}
   - {fileID: 431594160}
+  - {fileID: 17519949}
+  - {fileID: 642226016}
+  - {fileID: 1246701853}
+  - {fileID: 1484041592}
+  - {fileID: 1997698415}
