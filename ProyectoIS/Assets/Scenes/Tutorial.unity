@@ -76169,7 +76169,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 25165824
-  maxAttack: 0
 --- !u!82 &977879132
 AudioSource:
   m_ObjectHideFlags: 0
@@ -76278,16 +76277,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f66f7066f6a57346afa7b87394bf9ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMax: 100
-  maxAttack: 40
-  defensaMax: 5
+  vidaMax: 10
+  maxAttack: 1
+  defensaMax: 1
   knockBackTime: 0.2
-  speed: 0
+  speed: 1
   layerMask:
     serializedVersion: 2
     m_Bits: 25165824
   Character: {fileID: 460775209}
-  animator: {fileID: 0}
+  animator: {fileID: 977879139}
+--- !u!95 &977879139 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5613107965912540665, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
+    type: 3}
+  m_PrefabInstance: {fileID: 1368382092}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &977879144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977879113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ec2e976aa3c7f4eb45bc393636b025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteFlah: {fileID: 0}
+  restoreMatTime: 0.2
 --- !u!1 &1071790614
 GameObject:
   m_ObjectHideFlags: 0
@@ -76863,6 +76882,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 977879132}
+    - targetCorrespondingSourceObject: {fileID: 387287654252624058, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 977879138}
+    - targetCorrespondingSourceObject: {fileID: 387287654252624058, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 977879144}
   m_SourcePrefab: {fileID: 100100000, guid: 8e2d1c970ad69394fb44bc63ed4f3266, type: 3}
 --- !u!1 &1484041591
 GameObject:

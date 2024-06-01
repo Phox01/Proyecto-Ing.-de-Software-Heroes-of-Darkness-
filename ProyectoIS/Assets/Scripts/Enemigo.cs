@@ -134,19 +134,19 @@ public class Enemigo : MonoBehaviour
         Destroy(gameObject);
         }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("hola");
-            ControladorDeAtaque jugador = other.GetComponent<ControladorDeAtaque>();
-            if (jugador != null)
-            {
-                jugador.GetDamaged(attack);
-                Debug.Log("damge doned");
-            }
-        }
-    }
+    // void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.CompareTag("Player"))
+    //     {
+    //         Debug.Log("hola");
+    //         ControladorDeAtaque jugador = other.GetComponent<ControladorDeAtaque>();
+    //         if (jugador != null)
+    //         {
+    //             jugador.GetDamaged(attack);
+    //             Debug.Log("damge doned");
+    //         }
+    //     }
+    // }
 
 
     public void GetKnockedBackUwu(Transform damageSource, float knockBackThrust)
