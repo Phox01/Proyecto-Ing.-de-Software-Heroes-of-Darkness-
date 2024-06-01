@@ -150,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 17519948}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.85, y: 15.3, z: 0}
+  m_LocalPosition: {x: -43.6, y: -7.8, z: 0}
   m_LocalScale: {x: 0.795609, y: 62.983173, z: 1.0071}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76117,15 +76117,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.81960785}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ab1037114fbed5141883fe36c5c1055d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -76169,6 +76169,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 25165824
+  maxAttack: 0
 --- !u!82 &977879132
 AudioSource:
   m_ObjectHideFlags: 0
@@ -76822,6 +76823,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7686235938358510621, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686235938358510621, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
+        type: 3}
       propertyPath: m_Offset.x
       value: -0.2446746
       objectReference: {fileID: 0}
@@ -76857,10 +76863,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 977879132}
-    - targetCorrespondingSourceObject: {fileID: 387287654252624058, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 977879138}
   m_SourcePrefab: {fileID: 100100000, guid: 8e2d1c970ad69394fb44bc63ed4f3266, type: 3}
 --- !u!1 &1484041591
 GameObject:

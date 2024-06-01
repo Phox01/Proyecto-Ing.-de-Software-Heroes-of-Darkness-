@@ -44,29 +44,41 @@ public class Enemigo : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
     void Update()
-    {
-        //LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
-        if (player.transform.position.x < transform.position.x && isFacingRight)
-    {
-        Flip();
-    }
-    else if (player.transform.position.x > transform.position.x &&!isFacingRight)
-    {
-        Flip();
-    }
-        if (hasLineOfSight)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            //LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
+            if (player.transform.position.x < transform.position.x && isFacingRight)
+        {
+            Flip();
         }
-    }
+            else if (player.transform.position.x > transform.position.x &&!isFacingRight)
+        {
+            Flip();
+        }
+        if (hasLineOfSight && !animator.GetBool("Death"))
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+                Ataque();
+            }
+            else
+            {
+                animator.SetBool("Attack", false);
+            }
+        if(vida<=0){
 
-void Flip()
-{
-    isFacingRight =!isFacingRight;
-    Vector3 Scaler = transform.localScale;
-    Scaler.x *= -1;
-    transform.localScale = Scaler;
-}
+            animator.SetBool("Death", true);
+            StartCoroutine(OnDieAnimationComplete());
+            // musicManagement.SeleccionAudio(4, 1f);
+            // SceneManager.LoadScene(2);
+        }
+        }
+
+    void Flip()
+    {
+        isFacingRight =!isFacingRight;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
+    }
 
     private void FixedUpdate()
     {
@@ -76,17 +88,25 @@ void Flip()
             hasLineOfSight = ray.collider.CompareTag("Player");
             if (hasLineOfSight)
             {
-                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")==false){
-                    Ataque();
-
-                }
                 Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
             }
             else
             {
-                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
+                if (!animator.GetBool("Death"))
+                {
+                    Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
+                    // animator.SetBool("Attack", false);
+                    
+                }
             }
         }
+        // if(vida<=0){
+
+        //     animator.SetBool("Death", true);
+        //     StartCoroutine(OnDieAnimationComplete());
+        //     // musicManagement.SeleccionAudio(4, 1f);
+        //     // SceneManager.LoadScene(2);
+        // }
     }
 
     void Ataque(){
@@ -107,23 +127,10 @@ void Flip()
             animator.SetBool("Attack", false);
             Debug.Log(vida );
             }
-        if(vida<=0){
-
-            if (animator.GetInteger("life")<=0)
-            {
-                StartCoroutine(OnDieAnimationComplete());
-
-                
-            }
-            musicManagement.SeleccionAudio(4, 1f);
-            Destroy(gameObject);
-            // SceneManager.LoadScene(2);
-        }
     }
 
-    IEnumerator OnDieAnimationComplete(){
-        yield return new
-        WaitForSeconds(2);
+    private IEnumerator OnDieAnimationComplete(){
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
         }
 
