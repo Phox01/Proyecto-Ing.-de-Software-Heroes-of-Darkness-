@@ -30,6 +30,61 @@ MonoBehaviour:
     m_Localized: Salir
     m_Metadata:
       m_Items: []
+  - m_Id: 2391756577431552
+    m_Localized: Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2391892238000128
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2392119665745920
+    m_Localized: Controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2392222317142016
+    m_Localized: Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2393724070912000
+    m_Localized: 'nombre: enrique millan
+
+      cedula: 30114963
+
+      telefono:
+      +584129588300
+
+      correo: enrique.millan@correo.unimet.edu.ve
+
+      ubicacion:
+      CUMBRES DE CURUMO'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2394217891487744
+    m_Localized: "si encuentras errores en nuestro juego \ncontacta a nuestro ceo
+      de errores"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2407863682064384
+    m_Localized: Instrucciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2412193185259520
+    m_Localized: Felicidades por terminar el tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2419472795545600
+    m_Localized: volver al menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2419911494578176
+    m_Localized: Has sido derrotado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420374159863808
+    m_Localized: Volver a intentar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

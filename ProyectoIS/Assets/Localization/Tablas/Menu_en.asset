@@ -30,6 +30,59 @@ MonoBehaviour:
     m_Localized: Exit
     m_Metadata:
       m_Items: []
+  - m_Id: 2391756577431552
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2391892238000128
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2392119665745920
+    m_Localized: Controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2392222317142016
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2393724070912000
+    m_Localized: 'name: enrique millan
+
+      ID: 30114963
+
+      Phone: +584129588300
+
+      eMail:
+      enrique.millan@correo.unimet.edu.ve
+
+      Location: CUMBRES DE CURUMO'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2394217891487744
+    m_Localized: If you find an error in our game, please contact our bugs CEO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2407863682064384
+    m_Localized: Instructions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2412193185259520
+    m_Localized: Congrats for completing the tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2419472795545600
+    m_Localized: Return to menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2419911494578176
+    m_Localized: You have been defeated
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420374159863808
+    m_Localized: Try again
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

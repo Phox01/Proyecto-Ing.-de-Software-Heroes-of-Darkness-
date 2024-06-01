@@ -27,6 +27,50 @@ MonoBehaviour:
     m_Key: ExitButton
     m_Metadata:
       m_Items: []
+  - m_Id: 2391756577431552
+    m_Key: LanguageChange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2391892238000128
+    m_Key: ReturnButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2392119665745920
+    m_Key: ControlsButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2392222317142016
+    m_Key: OptionsTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2393724070912000
+    m_Key: HelpText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2394217891487744
+    m_Key: HelpTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2407863682064384
+    m_Key: InstructionsButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2412193185259520
+    m_Key: WinningTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2419472795545600
+    m_Key: EndReturn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2419911494578176
+    m_Key: DefeatedTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2420374159863808
+    m_Key: RetryButton
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
