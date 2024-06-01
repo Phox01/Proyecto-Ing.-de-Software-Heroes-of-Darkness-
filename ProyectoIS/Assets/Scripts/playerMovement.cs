@@ -21,6 +21,10 @@ public class playerMovement : MonoBehaviour
     private MusicManagement musicManagement;
 
     private Vector2 lastMovement;
+    private bool isKnockbackActive = false;
+    
+    private bool isAttacking = false;
+
 
 
     private void Awake()
@@ -65,10 +69,10 @@ public class playerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-                if(animator.GetFloat("Speed")==0){
+        if(animator.GetFloat("Speed")==0){
             musicManagement.AudioLoop(3, 0.3f);
         }
-        if (animator.GetBool("CanMove"))
+        if (animator.GetBool("CanMove") &&! isKnockbackActive &&!isAttacking )
         {
             lastMovement.x= (int)animator.GetFloat("lastMoveX");
             lastMovement.y= (int)animator.GetFloat("lastMoveY");
@@ -78,7 +82,7 @@ public class playerMovement : MonoBehaviour
             }
             else
             {
-                rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
+                rb.velocity = movement.normalized * moveSpeed;
                 if (movement.x != 0 || movement.y != 0)
                 {
 
@@ -106,4 +110,15 @@ public class playerMovement : MonoBehaviour
         isDashing = false;
         animator.SetBool("Dash", false);
     }
+
+    public void SetKnockbackActive(bool value)
+    {
+        isKnockbackActive = value;
+    }
+
+    public void SetAttacking(bool value)
+    {
+        isAttacking = value;
+    }
+
 }

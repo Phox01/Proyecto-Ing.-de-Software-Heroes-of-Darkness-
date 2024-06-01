@@ -12,6 +12,7 @@ public class ControladorDeAtaque : MonoBehaviour
     private Vector2 direccionMovimiento;
     public Animator animator;
     private MusicManagement musicManagement;
+    public Rigidbody2D rb;
 
 
     void Start()
@@ -37,7 +38,8 @@ public class ControladorDeAtaque : MonoBehaviour
 
     void Attack()
     {
-        
+        playerMovement.Instance.SetAttacking(true);
+        rb.velocity = Vector2.zero;
         animator.SetTrigger("Attack");
         musicManagement.SeleccionAudio(animator.GetInteger("NumbAtt")-1, 1f);
         ContactFilter2D filter = new ContactFilter2D();
@@ -61,6 +63,7 @@ public class ControladorDeAtaque : MonoBehaviour
             count=1;
         }
         animator.SetInteger("NumbAtt", count);
+        playerMovement.Instance.SetAttacking(false);
 
 
     }
@@ -84,5 +87,10 @@ public class ControladorDeAtaque : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void AnimationEnd()
+    {
+        playerMovement.Instance.SetAttacking(false);
     }
 }

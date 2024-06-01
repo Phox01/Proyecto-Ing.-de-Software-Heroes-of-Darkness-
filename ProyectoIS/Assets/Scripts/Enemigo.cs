@@ -24,6 +24,7 @@ public class Enemigo : MonoBehaviour
     private bool hasLineOfSight = false;
     private bool isFacingRight = true; // Assume the enemy is facing right initially
     public Animator animator;
+    private Flash flash;
 
 
 
@@ -32,6 +33,7 @@ public class Enemigo : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         musicManagement = FindObjectOfType<MusicManagement>();
+        flash = GetComponent<Flash>();
     }
 
     void Start(){
@@ -94,7 +96,7 @@ void Flip()
     
     public void GetDamaged(int damage){
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
-        Debug.Log("uwu");
+        StartCoroutine(flash.FlashRoutine());
         
         
 
@@ -115,7 +117,7 @@ void Flip()
             }
             musicManagement.SeleccionAudio(4, 1f);
             Destroy(gameObject);
-            SceneManager.LoadScene(2);
+            // SceneManager.LoadScene(2);
         }
     }
 
