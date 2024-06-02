@@ -19,6 +19,17 @@ public class ControladorDeAtaque : MonoBehaviour
     public Rigidbody2D rb;
     public Slider sliderVidas;
 
+    protected Flash flash;
+
+
+
+
+    private void Awake()
+    {
+       
+        flash = GetComponent<Flash>();
+    }
+
 
     void Start()
     {
@@ -94,8 +105,10 @@ public class ControladorDeAtaque : MonoBehaviour
      public void GetDamaged(int damage)
     {
         currentHealth -= damage;
+        StartCoroutine(flash.FlashRoutine());
         Debug.Log(damage);
         sliderVidas.value = currentHealth;
+
         if (currentHealth <= 0)
         {
             Destroy(gameObject);

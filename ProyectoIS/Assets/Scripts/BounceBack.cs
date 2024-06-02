@@ -15,15 +15,22 @@ public class BounceBack : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        playerMovement.Instance.SetKnockbackActive(true);
 
-        Debug.Log(collision.gameObject.tag);
 
-        Vector2 diference = (transform.position - collision.collider.transform.position).normalized * 15 * rb.mass;
-        Debug.Log(diference);
-        Debug.Log(rb.mass);
-        rb.AddForce(diference, ForceMode2D.Impulse);
-        StartCoroutine(KnockRoutinePlayer());
+        if (collision.gameObject.layer == 23)
+        {
+            playerMovement.Instance.SetKnockbackActive(true);
+
+
+
+            Vector2 diference = (transform.position - collision.collider.transform.position).normalized * 15 * rb.mass;
+
+            rb.AddForce(diference, ForceMode2D.Impulse);
+            StartCoroutine(KnockRoutinePlayer());
+
+        }
+
+        
 
 
     }
