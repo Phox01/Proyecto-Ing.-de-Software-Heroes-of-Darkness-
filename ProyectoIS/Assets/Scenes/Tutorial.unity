@@ -76160,15 +76160,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0af1ee38ae9544faaba9b150092f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Character: {fileID: 460775209}
-  routePoints: []
-  random: 0
-  speed: 0
-  time: 0
-  targetPosition: {x: 0, y: 0, z: 0}
+  vidaMax: 20
+  maxAttack: 0
+  defensaMax: 0
+  knockBackTime: 0.2
+  speed: 4
   layerMask:
     serializedVersion: 2
     m_Bits: 25165824
+  Character: {fileID: 460775209}
+  animator: {fileID: 977879139}
+  routePoints:
+  - {fileID: 701209363}
+  - {fileID: 654356257}
+  - {fileID: 385995616}
+  random: 0
+  patrolSpeed: 3
+  time: 0
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!82 &977879132
 AudioSource:
   m_ObjectHideFlags: 0
@@ -76265,28 +76274,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &977879138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 977879113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f66f7066f6a57346afa7b87394bf9ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vidaMax: 10
-  maxAttack: 1
-  defensaMax: 1
-  knockBackTime: 0.2
-  speed: 1
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 25165824
-  Character: {fileID: 460775209}
-  animator: {fileID: 977879139}
 --- !u!95 &977879139 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5613107965912540665, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
@@ -76892,10 +76879,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 977879132}
-    - targetCorrespondingSourceObject: {fileID: 387287654252624058, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 977879138}
     - targetCorrespondingSourceObject: {fileID: 387287654252624058, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
         type: 3}
       insertIndex: -1

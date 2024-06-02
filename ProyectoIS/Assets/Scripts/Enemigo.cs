@@ -7,24 +7,24 @@ using UnityEngine.SceneManagement;
 public class Enemigo : MonoBehaviour
 {
     public int vidaMax;
-    int vida;
+    protected int vida;
     public int maxAttack;
     int attack;
     public int defensaMax;
-    int defensa;
-    int netDamage;
+    protected int defensa;
+    protected int netDamage;
     public bool gettingKnockedBack { get; private set; }
     [SerializeField] private float knockBackTime = .2f;
     private Rigidbody2D rb;
     private MusicManagement musicManagement;
-    [SerializeField] private float speed;
-    [SerializeField] private LayerMask layerMask;
-    private GameObject player;
+    [SerializeField] protected float speed;
+    [SerializeField] protected LayerMask layerMask;
+    protected GameObject player;
     public GameObject Character;
-    private bool hasLineOfSight = false;
+    protected bool hasLineOfSight = false;
     private bool isFacingRight = true; // Assume the enemy is facing right initially
     public Animator animator;
-    private Flash flash;
+    protected Flash flash;
 
 
 
@@ -36,14 +36,14 @@ public class Enemigo : MonoBehaviour
         flash = GetComponent<Flash>();
     }
 
-    void Start(){
+    protected virtual void Start(){
         
         vida = vidaMax;
         attack = maxAttack;
         defensa = defensaMax;
         player = GameObject.FindGameObjectWithTag("Player");
     }
-    void Update()
+    protected virtual void Update()
         {
             //LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
             if (player.transform.position.x < transform.position.x && isFacingRight)
@@ -80,7 +80,7 @@ public class Enemigo : MonoBehaviour
         transform.localScale = Scaler;
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
         if (ray.collider != null)
@@ -114,7 +114,7 @@ public class Enemigo : MonoBehaviour
     }
 
     
-    public void GetDamaged(int damage){
+    public virtual void GetDamaged(int damage){
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
         StartCoroutine(flash.FlashRoutine());
         

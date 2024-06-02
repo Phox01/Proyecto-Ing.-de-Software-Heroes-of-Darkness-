@@ -1,37 +1,31 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
+using UnityEngine;
 
-public class Minotaurus : MonoBehaviour
+public class Minotaurus : Enemigo 
 {
-    public GameObject Character;
     public GameObject[] routePoints;
     public int random;
-    public float speed;
+    public float patrolSpeed;
     public float time;
-    private Animator animator;
     private bool isMoving;
     public Vector3 targetPosition;
     private Vector3 previousDirection;
-    private GameObject player;
-    private bool hasLineOfSight = false;
-    [SerializeField] private LayerMask layerMask;
-    private bool isAttacking;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start(); 
         animator = GetComponent<Animator>();
 
         routePoints = GameObject.FindGameObjectsWithTag("Point");
         player = GameObject.FindGameObjectWithTag("Player");
         random = Random.Range(0, routePoints.Length);
-        speed = 3;
+        patrolSpeed = 3;
     }
 
-    void Update()
+    protected override void Update()
     {
-        //LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
+        // LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
         Vector3 direction = Character.transform.position - transform.position;
         if ((direction.x >= 0.0f && previousDirection.x < 0.0f) || (direction.x < 0.0f && previousDirection.x >= 0.0f))
         {
@@ -39,17 +33,15 @@ public class Minotaurus : MonoBehaviour
         }
         previousDirection = direction;
 
-        //LÓGICA DE MOVIMIENTO (Patrullaje o Perseguir)
+        // LÓGICA DE MOVIMIENTO (Patrullaje o Perseguir)
         if (hasLineOfSight)
         {
-            Debug.Log(hasLineOfSight);
-            Debug.Log(speed);
-            if (!animator.GetBool("isAttacking")) { 
+            if (!animator.GetBool("isAttacking"))
+            { 
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-            
             }
 
-            //LÓGICA DE ATAQUE
+            // LÓGICA DE ATAQUE
             float distanceToPlayer = Vector3.Distance(transform.position, Character.transform.position);
             if (distanceToPlayer <= 2)
             {
@@ -62,8 +54,8 @@ public class Minotaurus : MonoBehaviour
         }
         else
         {
-            //LÓGICA DE HACER EL PATRULLAJE
-            transform.position = Vector2.MoveTowards(transform.position, routePoints[random].transform.position, speed * Time.deltaTime);
+            // LÓGICA DE HACER EL PATRULLAJE
+            transform.position = Vector2.MoveTowards(transform.position, routePoints[random].transform.position, patrolSpeed * Time.deltaTime);
             time += Time.deltaTime;
             if (time >= 3)
             {
@@ -71,7 +63,7 @@ public class Minotaurus : MonoBehaviour
                 time = 0;
             }
             targetPosition = routePoints[random].transform.position;
-            if (Vector3.Distance(transform.position, targetPosition) > 0.1f) //Hay que arreglar la condición para que el personaje reproduzca la animación de Idle
+            if (Vector3.Distance(transform.position, targetPosition) > 0.1f)
             {
                 isMoving = true;
                 animator.SetBool("isMoving", isMoving);
@@ -82,12 +74,26 @@ public class Minotaurus : MonoBehaviour
                 animator.SetBool("isMoving", isMoving);
             }
         }
+    }
+    public override void GetDamaged(int damage){
+        GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
+        StartCoroutine(flash.FlashRoutine());
+        
+        
 
+        netDamage = damage-defensa;
+        if(netDamage>0){
+            vida -= netDamage;
+            }
+        if(vida<=0){
+            Destroy(gameObject);
+        }
     }
 
-    //RayCast para perseguir al personaje principal
-    private void FixedUpdate()
+    protected override void  FixedUpdate()
     {
+
+        // RayCast para perseguir al personaje principal
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
         if (ray.collider != null)
         {
@@ -102,5 +108,4 @@ public class Minotaurus : MonoBehaviour
             }
         }
     }
-
 }
