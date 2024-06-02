@@ -76702,6 +76702,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7817561878576813476, guid: 45d990cf2685bb84fbd5241290a15364,
         type: 3}
+      propertyPath: critAttack
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817561878576813476, guid: 45d990cf2685bb84fbd5241290a15364,
+        type: 3}
+      propertyPath: critChance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817561878576813476, guid: 45d990cf2685bb84fbd5241290a15364,
+        type: 3}
       propertyPath: barraDeVida
       value: 
       objectReference: {fileID: 0}

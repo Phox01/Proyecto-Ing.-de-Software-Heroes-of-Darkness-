@@ -10,6 +10,8 @@ public class ControladorDeAtaque : MonoBehaviour
     public PolygonCollider2D areaAtaque;
     private int playerAttack;
     private int currentHealth;
+    private float critChance;
+    private float critAttack;
     public Atributos atributos;
     private Vector2 direccionMovimiento;
     public Animator animator;
@@ -55,10 +57,10 @@ public class ControladorDeAtaque : MonoBehaviour
             Enemigo enemigoComponent = enemigo.GetComponent<Enemigo>();
             if (enemigoComponent != null)
             {
-                int damage = playerAttack + Random.Range(-3, 4);
-                enemigoComponent.GetDamaged(damage);
+                int damage = CriticalDamage(playerAttack);
+                int trueDamage = damage + Random.Range(-3, 4);
+                enemigoComponent.GetDamaged(trueDamage);
                 musicManagement.SeleccionAudio(5, 1f);
-                Debug.Log("Enemigo recibió " + damage + " puntos de daño.");
             }
         }
         int count=animator.GetInteger("NumbAtt")+1;
@@ -67,7 +69,15 @@ public class ControladorDeAtaque : MonoBehaviour
         }
         animator.SetInteger("NumbAtt", count);
 
-
+    }
+    int CriticalDamage(int attack){
+        if(Random.value<critChance){
+            int criticalHit = Mathf.RoundToInt(attack*critAttack);
+            return criticalHit;
+        }
+        else{
+            return attack;
+        }
     }
     void ActualizarPuntoAtaque()
 {
