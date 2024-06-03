@@ -22,7 +22,9 @@ public class EnemySpawner : MonoBehaviour
 
     private int[] spawnedNumber;
     private bool isInitialized = false;
-    
+
+    public delegate void EnemySpawnedHandler(Enemigo enemy);
+    public event EnemySpawnedHandler OnEnemySpawned;
 
     void Start()
     {
@@ -63,7 +65,12 @@ public class EnemySpawner : MonoBehaviour
             spawnPosition = new Vector3(randomX, randomY, transform.position.z) + transform.position;
         } while (Vector3.Distance(spawnPosition, playerTransform.position) < minSpawnDistanceFromPlayer);
 
-        Instantiate(enemies[enemyIndex].enemyPrefab, spawnPosition, transform.rotation);
+        GameObject enemyObject = Instantiate(enemies[enemyIndex].enemyPrefab, spawnPosition, transform.rotation);
+        Enemigo enemy = enemyObject.GetComponent<Enemigo>();
+        if (OnEnemySpawned != null)
+        {
+            OnEnemySpawned(enemy);
+        }
     }
 
     void SpawnInitialEnemies()
@@ -77,7 +84,6 @@ public class EnemySpawner : MonoBehaviour
                 spawnedNumber[i]++;
             }
         }
-        
     }
 
     public void InitializeEnemies(EnemyConfig[] configs)

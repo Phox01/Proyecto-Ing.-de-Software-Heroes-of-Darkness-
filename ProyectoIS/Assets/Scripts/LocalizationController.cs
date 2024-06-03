@@ -59,7 +59,6 @@ public class LocalizationController : MonoBehaviour
                 localizeStringEvent.OnUpdateString.AddListener((localizedString) =>
                 {
                     lines[capturedIndex] = localizedString;
-                    Debug.Log($"Line {capturedIndex} updated: {localizedString}");
                     isUpdated = true;
                 });
 

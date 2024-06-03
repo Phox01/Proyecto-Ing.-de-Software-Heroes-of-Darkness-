@@ -87,6 +87,7 @@ public class Minotaurus : Enemigo
             }
         if(vida<=0){
             Destroy(gameObject);
+            Die();
         }
     }
 

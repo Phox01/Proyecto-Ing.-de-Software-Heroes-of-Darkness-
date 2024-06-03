@@ -19,15 +19,56 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 18273525760
-    m_Localized: Prueba de este maravilloso dialogo
+    m_Localized: "Heroes of Darkness te abre sus puertas, un lugar lleno de misterio,
+      belleza y peligro. Ad\xE9ntrate en sus frondosos senderos y descubre los secretos
+      que esconde este m\xE1gico lugar."
     m_Metadata:
       m_Items: []
   - m_Id: 11931866882048
-    m_Localized: Mal
+    m_Localized: Para moverte usa las teclas W (arriba), A (izquierda), S (abajo)
+      y D (derecha).
     m_Metadata:
       m_Items: []
   - m_Id: 257714570649600
-    m_Localized: Felicidades, has logrado atacar
+    m_Localized: Felicidades, has logrado moverte, ahora intenta moverte rapidamente
+      con el shift izquierdo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1720643150524416
+    m_Localized: "Recuerda que la clave para la victoria es la sincronizaci\xF3n.
+      Observa los movimientos de tu enemigo, esquiva sus ataques y ataca en el momento
+      oportuno. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1720683814301696
+    m_Localized: "Con pr\xE1ctica, podr\xE1s derrotar a enemigos m\xE1s poderosos
+      y avanzar en tu aventura.\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1719715320147968
+    m_Localized: Muy bien! Ahora intenta atacar con la tecla espacio.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1720906603147264
+    m_Localized: Excelente! Ahora vamos a practicar con algunos enemigos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1720995925045248
+    m_Localized: "Cuando el murci\xE9lago est\xE9 a punto de atacar, presiona la
+      tecla espacio para atacarlo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1721544678420480
+    m_Localized: Vamos a poner a prueba lo aprendido con un poderoso enemigo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1721884245078016
+    m_Localized: Adentrate en su guarida.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1722200898252800
+    m_Localized: Felicidades! Has completado el tutorial. Ahora es cuando la verdadera
+      aventura comienza.
     m_Metadata:
       m_Items: []
   references:

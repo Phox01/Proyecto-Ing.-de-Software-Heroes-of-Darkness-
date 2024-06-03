@@ -25,6 +25,8 @@ public class Enemigo : MonoBehaviour
     private bool isFacingRight = true; // Assume the enemy is facing right initially
     public Animator animator;
     protected Flash flash;
+    public delegate void EnemyKilledHandler(Enemigo enemy);
+    public event EnemyKilledHandler OnEnemyKilled;
 
 
 
@@ -132,7 +134,17 @@ public class Enemigo : MonoBehaviour
     private IEnumerator OnDieAnimationComplete(){
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
+         Die();
+    }
+
+    protected void Die()
+    {
+        if (OnEnemyKilled != null)
+        {
+            OnEnemyKilled(this);
         }
+        Destroy(gameObject);
+    }
 
     // void OnTriggerEnter2D(Collider2D other)
     // {
