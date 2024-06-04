@@ -69,7 +69,7 @@ public class Enemigo : MonoBehaviour
 
             animator.SetBool("Death", true);
             StartCoroutine(OnDieAnimationComplete());
-            // musicManagement.SeleccionAudio(4, 1f);
+            // 
             // SceneManager.LoadScene(2);
         }
         }
@@ -118,6 +118,7 @@ public class Enemigo : MonoBehaviour
     
     public virtual void GetDamaged(int damage){
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
+        musicManagement.SeleccionAudio(4, 1f);
         StartCoroutine(flash.FlashRoutine());
         
         
@@ -131,7 +132,7 @@ public class Enemigo : MonoBehaviour
             }
     }
 
-    private IEnumerator OnDieAnimationComplete(){
+    protected virtual  IEnumerator OnDieAnimationComplete(){
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
          Die();

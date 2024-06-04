@@ -12,6 +12,7 @@ public class Minotaurus : Enemigo
     private bool isMoving;
     public Vector3 targetPosition;
     private Vector3 previousDirection;
+    private MusicManagement musicManagement;
     public GameObject hitBox;
 
     public float attackCooldown = 3f; // Cooldown de 3 segundos
@@ -21,6 +22,7 @@ public class Minotaurus : Enemigo
     {
         base.Start();
         animator = GetComponent<Animator>();
+        musicManagement = FindObjectOfType<MusicManagement>();
 
         routePoints = GameObject.FindGameObjectsWithTag("Point");
         player = GameObject.FindGameObjectWithTag("Player");
@@ -84,6 +86,7 @@ public class Minotaurus : Enemigo
     private IEnumerator Attack()
     {
         animator.SetBool("isAttacking", true);
+        musicManagement.SeleccionAudio(7, 1f);
         yield return new WaitForSeconds(0.4f); // Tiempo para la animación de ataque
         ActivateHitBox();
         yield return new WaitForSeconds(1f); // Tiempo para la hitbox
@@ -93,6 +96,7 @@ public class Minotaurus : Enemigo
     public override void GetDamaged(int damage)
     {
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
+        musicManagement.SeleccionAudio(4, 1f);
         StartCoroutine(flash.FlashRoutine());
 
         netDamage = damage - defensa;
@@ -102,9 +106,16 @@ public class Minotaurus : Enemigo
         }
         if (vida <= 0)
         {
-            Destroy(gameObject);
-            Die();
+            animator.SetBool("Death", true);
+            StartCoroutine(OnDieAnimationComplete());
         }
+    }
+
+    protected override IEnumerator OnDieAnimationComplete(){
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
+        Die();
+
     }
 
     protected override void FixedUpdate()
