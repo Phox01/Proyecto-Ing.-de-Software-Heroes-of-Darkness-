@@ -13,7 +13,6 @@ public class Minotaurus : Enemigo
     public Vector3 targetPosition;
     private Vector3 previousDirection;
     public GameObject hitBox;
-    public GameObject hit;
 
     public float attackCooldown = 3f; // Cooldown de 3 segundos
     private float lastAttackTime; // Tiempo del último ataque
@@ -27,8 +26,8 @@ public class Minotaurus : Enemigo
         player = GameObject.FindGameObjectWithTag("Player");
         random = Random.Range(0, routePoints.Length);
         patrolSpeed = 3;
-        lastAttackTime = 0;
-
+        lastAttackTime = -attackCooldown; // Inicializa para que pueda atacar inmediatamente
+        hitBox.SetActive(false);
     }
 
     protected override void Update()
@@ -44,7 +43,7 @@ public class Minotaurus : Enemigo
         // LÓGICA DE MOVIMIENTO (Patrullaje o Perseguir)
         if (hasLineOfSight)
         {
-            //LÓGICA DE PERSEGUIR
+            // LÓGICA DE PERSEGUIR
             if (!animator.GetBool("isAttacking"))
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
@@ -52,19 +51,10 @@ public class Minotaurus : Enemigo
 
             // LÓGICA DE ATAQUE
             float distanceToPlayer = Vector3.Distance(transform.position, Character.transform.position);
-            
-            if (distanceToPlayer <= 2) //&& Time.time - lastAttackTime >= attackCooldown 
+            if (distanceToPlayer <= 2 && Time.time - lastAttackTime >= attackCooldown)
             {
-                Debug.Log(Time.time - lastAttackTime);
-                Debug.Log("Si se cumple");
-                animator.SetBool("isAttacking", true);
-                Debug.Log("Ahi papa");
-                StartCoroutine(AttackWithDelay(0.4f)); //Prueba                
+                StartCoroutine(Attack());
                 lastAttackTime = Time.time;
-            }
-            else
-            {
-                animator.SetBool("isAttacking", false);
             }
         }
         else
@@ -90,12 +80,20 @@ public class Minotaurus : Enemigo
             }
         }
     }
+
+    private IEnumerator Attack()
+    {
+        animator.SetBool("isAttacking", true);
+        yield return new WaitForSeconds(0.4f); // Tiempo para la animación de ataque
+        ActivateHitBox();
+        yield return new WaitForSeconds(1f); // Tiempo para la hitbox
+        animator.SetBool("isAttacking", false);
+    }
+
     public override void GetDamaged(int damage)
     {
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
         StartCoroutine(flash.FlashRoutine());
-
-
 
         netDamage = damage - defensa;
         if (netDamage > 0)
@@ -111,7 +109,6 @@ public class Minotaurus : Enemigo
 
     protected override void FixedUpdate()
     {
-
         // RayCast para perseguir al personaje principal
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
         if (ray.collider != null)
@@ -128,34 +125,20 @@ public class Minotaurus : Enemigo
         }
     }
 
-    protected new void OnCollisionEnter2D(Collision2D collision) //Probando, para que no herede esa función del padre
+    protected new void OnCollisionEnter2D(Collision2D collision) // Probando, para que no herede esa función del padre
     {
         Debug.Log("Bien");
     }
 
-    public void createHitBox() //Crea la hitBox para el ataque
+    private void ActivateHitBox()
     {
-        if (GameObject.Find("hit(Clone)"))
-        {
-            return;
-        }
-        else
-        {
-            Vector3 positionHit = new Vector3(hitBox.transform.position.x, hitBox.transform.position.y, 0);
-            GameObject tempHit = Instantiate(hit, positionHit, Quaternion.identity);
-            StartCoroutine(DestroyHitBoxAfterTime(tempHit, 1f)); //Prueba
-        }
+        hitBox.SetActive(true);
+        StartCoroutine(DeactivateHitBoxAfterTime(1f));
     }
 
-    private IEnumerator DestroyHitBoxAfterTime(GameObject hitBox, float delay)
+    private IEnumerator DeactivateHitBoxAfterTime(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Destroy(hitBox);
-    }
-
-    private IEnumerator AttackWithDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        createHitBox();
+        hitBox.SetActive(false);
     }
 }

@@ -61,9 +61,7 @@ public class TutorialController : MonoBehaviour
         minotaurus.gameObject.SetActive(true);
         minotaurus.OnEnemyKilled += HandleEnemyKilled;
         minotaurusOn = true;
-        Debug.Log("Minotaurus activated.");
         }
-        Debug.Log("Number of active enemies: " + activeEnemies.Count);
     }
 
     void CheckKeyPresses()
