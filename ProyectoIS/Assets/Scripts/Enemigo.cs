@@ -9,7 +9,7 @@ public class Enemigo : MonoBehaviour
     public int vidaMax;
     protected int vida;
     public int maxAttack;
-    int attack;
+    public int attack;
     public int defensaMax;
     protected int defensa;
     protected int netDamage;
@@ -167,7 +167,7 @@ public class Enemigo : MonoBehaviour
         gettingKnockedBack = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision) //Probando, para que Minotauro no herede onCollisionEnter2D()
     {
         ControladorDeAtaque jugador = collision.gameObject.GetComponent<ControladorDeAtaque>();
         if (jugador != null)

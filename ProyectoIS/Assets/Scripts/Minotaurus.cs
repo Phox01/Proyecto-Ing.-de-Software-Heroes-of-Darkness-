@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Minotaurus : Enemigo 
+public class Minotaurus : Enemigo
 {
     public GameObject[] routePoints;
     public int random;
@@ -11,16 +12,23 @@ public class Minotaurus : Enemigo
     private bool isMoving;
     public Vector3 targetPosition;
     private Vector3 previousDirection;
+    public GameObject hitBox;
+    public GameObject hit;
+
+    public float attackCooldown = 3f; // Cooldown de 3 segundos
+    private float lastAttackTime; // Tiempo del último ataque
 
     protected override void Start()
     {
-        base.Start(); 
+        base.Start();
         animator = GetComponent<Animator>();
 
         routePoints = GameObject.FindGameObjectsWithTag("Point");
         player = GameObject.FindGameObjectWithTag("Player");
         random = Random.Range(0, routePoints.Length);
         patrolSpeed = 3;
+        lastAttackTime = 0;
+
     }
 
     protected override void Update()
@@ -36,16 +44,23 @@ public class Minotaurus : Enemigo
         // LÓGICA DE MOVIMIENTO (Patrullaje o Perseguir)
         if (hasLineOfSight)
         {
+            //LÓGICA DE PERSEGUIR
             if (!animator.GetBool("isAttacking"))
-            { 
+            {
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
             }
 
             // LÓGICA DE ATAQUE
             float distanceToPlayer = Vector3.Distance(transform.position, Character.transform.position);
-            if (distanceToPlayer <= 2)
+            
+            if (distanceToPlayer <= 2) //&& Time.time - lastAttackTime >= attackCooldown 
             {
+                Debug.Log(Time.time - lastAttackTime);
+                Debug.Log("Si se cumple");
                 animator.SetBool("isAttacking", true);
+                Debug.Log("Ahi papa");
+                StartCoroutine(AttackWithDelay(0.4f)); //Prueba                
+                lastAttackTime = Time.time;
             }
             else
             {
@@ -75,22 +90,25 @@ public class Minotaurus : Enemigo
             }
         }
     }
-    public override void GetDamaged(int damage){
+    public override void GetDamaged(int damage)
+    {
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
         StartCoroutine(flash.FlashRoutine());
-        
-        
 
-        netDamage = damage-defensa;
-        if(netDamage>0){
+
+
+        netDamage = damage - defensa;
+        if (netDamage > 0)
+        {
             vida -= netDamage;
-            }
-        if(vida<=0){
+        }
+        if (vida <= 0)
+        {
             Destroy(gameObject);
         }
     }
 
-    protected override void  FixedUpdate()
+    protected override void FixedUpdate()
     {
 
         // RayCast para perseguir al personaje principal
@@ -107,5 +125,36 @@ public class Minotaurus : Enemigo
                 Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
             }
         }
+    }
+
+    protected new void OnCollisionEnter2D(Collision2D collision) //Probando, para que no herede esa función del padre
+    {
+        Debug.Log("Bien");
+    }
+
+    public void createHitBox() //Crea la hitBox para el ataque
+    {
+        if (GameObject.Find("hit(Clone)"))
+        {
+            return;
+        }
+        else
+        {
+            Vector3 positionHit = new Vector3(hitBox.transform.position.x, hitBox.transform.position.y, 0);
+            GameObject tempHit = Instantiate(hit, positionHit, Quaternion.identity);
+            StartCoroutine(DestroyHitBoxAfterTime(tempHit, 1f)); //Prueba
+        }
+    }
+
+    private IEnumerator DestroyHitBoxAfterTime(GameObject hitBox, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(hitBox);
+    }
+
+    private IEnumerator AttackWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        createHitBox();
     }
 }
