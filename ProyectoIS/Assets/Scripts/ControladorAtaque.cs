@@ -18,7 +18,7 @@ public class ControladorDeAtaque : MonoBehaviour
     private MusicManagement musicManagement;
     public Rigidbody2D rb;
     public Slider sliderVidas;
-
+    
     protected Flash flash;
 
 
@@ -26,7 +26,7 @@ public class ControladorDeAtaque : MonoBehaviour
 
     private void Awake()
     {
-       
+        
         flash = GetComponent<Flash>();
     }
 
@@ -106,7 +106,8 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         currentHealth -= damage;
         StartCoroutine(flash.FlashRoutine());
-        Debug.Log(damage);
+        
+        
         sliderVidas.value = currentHealth;
 
         if (currentHealth <= 0)

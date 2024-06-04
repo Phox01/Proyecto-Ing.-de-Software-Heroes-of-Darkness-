@@ -15,9 +15,11 @@ public class hitBoxAttack : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             ControladorDeAtaque jugador = collision.GetComponent<ControladorDeAtaque>();
+            BounceBack bounceBack = collision.GetComponent<BounceBack>();
             if (jugador != null)
             {
                 jugador.GetDamaged(damage);
+                bounceBack.EcharAtras(transform);
                 Debug.Log("Player hit by hitbox and took damage: " + damage);
             }
         }

@@ -19,7 +19,7 @@ public class playerMovement : MonoBehaviour
     private float lastDashTime;
     public static playerMovement Instance;
     private MusicManagement musicManagement;
-
+    
     private Vector2 lastMovement;
     private bool isKnockbackActive = false;
 
@@ -27,6 +27,7 @@ public class playerMovement : MonoBehaviour
 
     private void Awake()
     {
+        
         Instance = this;
         musicManagement = FindObjectOfType<MusicManagement>();
     }

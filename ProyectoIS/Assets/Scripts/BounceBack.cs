@@ -19,14 +19,7 @@ public class BounceBack : MonoBehaviour
 
         if (collision.gameObject.layer == 23)
         {
-            playerMovement.Instance.SetKnockbackActive(true);
-
-
-
-            Vector2 diference = (transform.position - collision.collider.transform.position).normalized * 15 * rb.mass;
-
-            rb.AddForce(diference, ForceMode2D.Impulse);
-            StartCoroutine(KnockRoutinePlayer());
+            EcharAtras(collision.collider.transform);
 
         }
 
@@ -35,6 +28,20 @@ public class BounceBack : MonoBehaviour
 
     }
 
+    //
+
+    public void EcharAtras(Transform vector)
+    {
+        playerMovement.Instance.SetKnockbackActive(true);
+
+
+
+        Vector2 diference = (transform.position - vector.position).normalized * 15 * rb.mass;
+
+        rb.AddForce(diference, ForceMode2D.Impulse);
+        StartCoroutine(KnockRoutinePlayer());
+
+    }
     private IEnumerator KnockRoutinePlayer()
     {
        
