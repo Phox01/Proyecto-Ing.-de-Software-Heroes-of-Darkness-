@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 16612581376
-    m_Localized: Start
+    m_Localized: Tutorial
     m_Metadata:
       m_Items: []
   - m_Id: 74858881024
@@ -81,6 +81,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 2420374159863808
     m_Localized: Try again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3543152887463936
+    m_Localized: New Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3543405799800832
+    m_Localized: Load Game
     m_Metadata:
       m_Items: []
   references:

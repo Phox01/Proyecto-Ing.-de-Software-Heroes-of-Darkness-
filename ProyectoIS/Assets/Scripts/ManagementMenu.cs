@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ManagementMenu : MonoBehaviour
 {
-    public void Jugar()
+    public void Tutorial()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
@@ -26,6 +26,17 @@ public class ManagementMenu : MonoBehaviour
     public void VolverJugar()
     {
         SceneManager.LoadScene(1);
+
+    }
+
+    public void NuevoJuego()
+    {
+        SceneManager.LoadScene(4);
+
+    }
+    public void PartidaGuardada()
+    {
+        SceneManager.LoadScene(4);
 
     }
 }

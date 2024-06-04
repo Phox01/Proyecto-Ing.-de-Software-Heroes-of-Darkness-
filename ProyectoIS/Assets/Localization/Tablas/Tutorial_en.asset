@@ -36,48 +36,52 @@ MonoBehaviour:
 
       S: Move backward
 
-      D: Move right'
+      D: Move right
+
+      Press "p" to
+      continue.'
     m_Metadata:
       m_Items: []
   - m_Id: 257714570649600
     m_Localized: Congratulations! You have managed to move your character. Now try
-      moving quickly with the left "shift" key.
+      moving quickly with the left "shift" key. Press "p" to continue.
     m_Metadata:
       m_Items: []
   - m_Id: 1719715320147968
-    m_Localized: Alright! Now try attacking with the "space" bar.
+    m_Localized: Alright! Now try attacking with the "space" bar. Press "p" to continue.
     m_Metadata:
       m_Items: []
   - m_Id: 1720643150524416
     m_Localized: Remember, timing is key to victory. Watch your enemy's movements,
-      dodge their attacks, and strike at the opportune moment.
+      dodge their attacks, and strike at the opportune moment. Press "p" to continue.
     m_Metadata:
       m_Items: []
   - m_Id: 1720683814301696
     m_Localized: With practice, you'll be able to defeat more powerful enemies and
-      progress in your adventure.
+      progress in your adventure. Press "p" to continue.
     m_Metadata:
       m_Items: []
   - m_Id: 1720906603147264
-    m_Localized: Great! Now let's practice with some enemies.
+    m_Localized: Great! Now let's practice with some enemies. Press "p" to continue.
     m_Metadata:
       m_Items: []
   - m_Id: 1720995925045248
     m_Localized: When the bat is about to attack, press the "space bar" to attack
-      it.
+      it. Press "p" to continue.
     m_Metadata:
       m_Items: []
   - m_Id: 1721544678420480
-    m_Localized: Let's put our skills to the test against a powerful enemy!
+    m_Localized: Let's put our skills to the test against a powerful enemy! Press
+      "p" to continue.
     m_Metadata:
       m_Items: []
   - m_Id: 1721884245078016
-    m_Localized: Enter the lair.
+    m_Localized: Enter the lair. Press "p" to continue.
     m_Metadata:
       m_Items: []
   - m_Id: 1722200898252800
     m_Localized: Congratulations! You have completed the tutorial. Now the real adventure
-      begins.
+      begins. Press "p" to continue.
     m_Metadata:
       m_Items: []
   references:

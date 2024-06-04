@@ -22,6 +22,11 @@ public class ControladorDeAtaque : MonoBehaviour
     protected Flash flash;
 
 
+    private Color fullHealthColor = Color.green;
+    private Color midHealthColor = Color.yellow;
+    private Color lowHealthColor = Color.red;
+
+
 
 
     private void Awake()
@@ -109,11 +114,28 @@ public class ControladorDeAtaque : MonoBehaviour
         
         
         sliderVidas.value = currentHealth;
+        UpdateHealthColor();
 
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
             SceneManager.LoadScene(3);
+        }
+    }
+
+    private void UpdateHealthColor()
+    {
+        if (currentHealth > atributos.health / 2)
+        {
+            sliderVidas.fillRect.GetComponent<Image>().color = fullHealthColor;
+        }
+        else if (currentHealth > atributos.health / 4)
+        {
+            sliderVidas.fillRect.GetComponent<Image>().color = midHealthColor;
+        }
+        else
+        {
+            sliderVidas.fillRect.GetComponent<Image>().color = lowHealthColor;
         }
     }
 
