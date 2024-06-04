@@ -9,6 +9,7 @@ TagManager:
   - Murcielago
   - EventoChoque
   - Jefe0
+  - AttackHitbox
   layers:
   - Default
   - TransparentFX
