@@ -187,8 +187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f66f7066f6a57346afa7b87394bf9ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMax: 30
-  maxAttack: 10
+  vidaMax: 35
+  maxAttack: 5
+  attack: 0
   defensaMax: 5
   knockBackTime: 0.2
   speed: 1

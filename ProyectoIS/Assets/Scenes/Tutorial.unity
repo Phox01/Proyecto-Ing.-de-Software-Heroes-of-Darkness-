@@ -76534,7 +76534,7 @@ PrefabInstance:
     - target: {fileID: 4590175799631657072, guid: 45d990cf2685bb84fbd5241290a15364,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: -3.1169062
+      value: -3.8759892
       objectReference: {fileID: 0}
     - target: {fileID: 4590175799631657072, guid: 45d990cf2685bb84fbd5241290a15364,
         type: 3}
@@ -76574,7 +76574,7 @@ PrefabInstance:
     - target: {fileID: 7817561878576813476, guid: 45d990cf2685bb84fbd5241290a15364,
         type: 3}
       propertyPath: attack
-      value: 300
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7817561878576813476, guid: 45d990cf2685bb84fbd5241290a15364,
         type: 3}
@@ -76733,12 +76733,22 @@ PrefabInstance:
       objectReference: {fileID: 888799251}
     - target: {fileID: 7174689814345760677, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
         type: 3}
+      propertyPath: vidaMax
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7174689814345760677, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
+        type: 3}
       propertyPath: Character
       value: 
       objectReference: {fileID: 460775209}
     - target: {fileID: 7174689814345760677, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
         type: 3}
       propertyPath: maxAttack
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7174689814345760677, guid: 8e2d1c970ad69394fb44bc63ed4f3266,
+        type: 3}
+      propertyPath: defensaMax
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7174689814345760677, guid: 8e2d1c970ad69394fb44bc63ed4f3266,

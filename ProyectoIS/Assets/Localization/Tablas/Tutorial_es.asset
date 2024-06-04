@@ -21,7 +21,8 @@ MonoBehaviour:
   - m_Id: 18273525760
     m_Localized: "\xA1Bienvenido a Heroes of Darkness, peque\xF1o h\xE9roe!  Este
       es un lugar lleno de misterio, belleza y peligro. Ad\xE9ntrate en sus frondosos
-      senderos y descubre los secretos y tesoros que esconde este mundo."
+      senderos y descubre los secretos y tesoros que esconde este mundo. Presiona
+      \"p\" para continuar."
     m_Metadata:
       m_Items: []
   - m_Id: 11931866882048

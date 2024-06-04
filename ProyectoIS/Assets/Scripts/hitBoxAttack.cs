@@ -5,7 +5,7 @@ using UnityEngine;
 public class hitBoxAttack : MonoBehaviour
 {   private int damage;
     public Minotaurus minotaurus;
-    void Start()
+    void Update()
     {
         damage = minotaurus.attack;
     }
