@@ -19,19 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 18273525760
-    m_Localized: "Heroes of Darkness te abre sus puertas, un lugar lleno de misterio,
-      belleza y peligro. Ad\xE9ntrate en sus frondosos senderos y descubre los secretos
-      que esconde este m\xE1gico lugar."
+    m_Localized: "\xA1Bienvenido a Heroes of Darkness, peque\xF1o h\xE9roe!  Este
+      es un lugar lleno de misterio, belleza y peligro. Ad\xE9ntrate en sus frondosos
+      senderos y descubre los secretos y tesoros que esconde este mundo."
     m_Metadata:
       m_Items: []
   - m_Id: 11931866882048
-    m_Localized: Para moverte usa las teclas W (arriba), A (izquierda), S (abajo)
-      y D (derecha).
+    m_Localized: "Para moverte usa las teclas:\nW: Mover hacia adelante\nA: Mover
+      hacia la izquierda\nS: Mover hacia atr\xE1s\nD: Mover hacia la derecha."
     m_Metadata:
       m_Items: []
   - m_Id: 257714570649600
-    m_Localized: Felicidades, has logrado moverte, ahora intenta moverte rapidamente
-      con el shift izquierdo.
+    m_Localized: "\xA1Felicidades! Has logrado mover tu personaje, ahora intenta
+      moverte r\xE1pidamente con la tecla \"shift\" izquierda."
     m_Metadata:
       m_Items: []
   - m_Id: 1720643150524416
@@ -46,7 +46,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1719715320147968
-    m_Localized: Muy bien! Ahora intenta atacar con la tecla espacio.
+    m_Localized: Muy bien! Ahora intenta atacar con la tecla "espacio".
     m_Metadata:
       m_Items: []
   - m_Id: 1720906603147264
@@ -54,12 +54,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1720995925045248
-    m_Localized: "Cuando el murci\xE9lago est\xE9 a punto de atacar, presiona la
-      tecla espacio para atacarlo."
+    m_Localized: "Cuando el murci\xE9lago est\xE1 apunto de atacar, presiona la tecla
+      \"espacio\" para atacarlo."
     m_Metadata:
       m_Items: []
   - m_Id: 1721544678420480
-    m_Localized: Vamos a poner a prueba lo aprendido con un poderoso enemigo.
+    m_Localized: "\xA1Vamos a poner a prueba lo aprendido con un poderoso enemigo!"
     m_Metadata:
       m_Items: []
   - m_Id: 1721884245078016
@@ -67,8 +67,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1722200898252800
-    m_Localized: Felicidades! Has completado el tutorial. Ahora es cuando la verdadera
-      aventura comienza.
+    m_Localized: "\xA1Felicidades! Has completado el tutorial. Ahora es cuando la
+      verdadera aventura comienza."
     m_Metadata:
       m_Items: []
   references:
