@@ -75,7 +75,7 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (lines != null && textComponent.text == lines[index])
             {

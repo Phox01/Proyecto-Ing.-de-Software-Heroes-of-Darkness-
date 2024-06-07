@@ -23,7 +23,7 @@ MonoBehaviour:
 
       This is a place
       full of mystery, beauty, and danger. Venture into its lush trails and discover
-      the secrets and treasures that this world hides. Enter "p" to continue.'
+      the secrets and treasures that this world hides.'
     m_Metadata:
       m_Items: []
   - m_Id: 11931866882048
@@ -36,52 +36,52 @@ MonoBehaviour:
 
       S: Move backward
 
-      D: Move right
-
-      Press "p" to
-      continue.'
+      D: Move right'
     m_Metadata:
       m_Items: []
   - m_Id: 257714570649600
     m_Localized: Congratulations! You have managed to move your character. Now try
-      moving quickly with the left "shift" key. Press "p" to continue.
+      moving quickly with the left "shift" key.
     m_Metadata:
       m_Items: []
   - m_Id: 1719715320147968
-    m_Localized: Alright! Now try attacking with the "space" bar. Press "p" to continue.
+    m_Localized: Alright! Now try attacking with the "space" bar.
     m_Metadata:
       m_Items: []
   - m_Id: 1720643150524416
-    m_Localized: Remember, timing is key to victory. Watch your enemy's movements,
-      dodge their attacks, and strike at the opportune moment. Press "p" to continue.
+    m_Localized: 'Remember, timing is key to victory. Watch your enemy''s movements,
+      dodge their attacks, and strike at the opportune moment. '
     m_Metadata:
       m_Items: []
   - m_Id: 1720683814301696
-    m_Localized: With practice, you'll be able to defeat more powerful enemies and
-      progress in your adventure. Press "p" to continue.
+    m_Localized: 'With practice, you''ll be able to defeat more powerful enemies
+      and progress in your adventure. '
     m_Metadata:
       m_Items: []
   - m_Id: 1720906603147264
-    m_Localized: Great! Now let's practice with some enemies. Press "p" to continue.
+    m_Localized: 'Great! Now let''s practice with some enemies. '
     m_Metadata:
       m_Items: []
   - m_Id: 1720995925045248
     m_Localized: When the bat is about to attack, press the "space bar" to attack
-      it. Press "p" to continue.
+      it.
     m_Metadata:
       m_Items: []
   - m_Id: 1721544678420480
-    m_Localized: Let's put our skills to the test against a powerful enemy! Press
-      "p" to continue.
+    m_Localized: 'Let''s put our skills to the test against a powerful enemy! '
     m_Metadata:
       m_Items: []
   - m_Id: 1721884245078016
-    m_Localized: Enter the lair. Press "p" to continue.
+    m_Localized: 'Enter the lair. '
     m_Metadata:
       m_Items: []
   - m_Id: 1722200898252800
     m_Localized: Congratulations! You have completed the tutorial. Now the real adventure
-      begins. Press "p" to continue.
+      begins.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3150376189550592
+    m_Localized: '"Enter" to continue.'
     m_Metadata:
       m_Items: []
   references:

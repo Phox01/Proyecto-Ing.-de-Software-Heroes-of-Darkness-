@@ -16,66 +16,71 @@ MonoBehaviour:
     m_Code: es
   m_SharedData: {fileID: 11400000, guid: d012cdc6491e7864397ad9c58a9120cb, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 4961770695283965954
   m_TableData:
   - m_Id: 18273525760
     m_Localized: "\xA1Bienvenido a Heroes of Darkness, peque\xF1o h\xE9roe!  Este
       es un lugar lleno de misterio, belleza y peligro. Ad\xE9ntrate en sus frondosos
-      senderos y descubre los secretos y tesoros que esconde este mundo. Presiona
-      \"p\" para continuar."
+      senderos y descubre los secretos y tesoros que esconde este mundo."
     m_Metadata:
       m_Items: []
   - m_Id: 11931866882048
     m_Localized: "Para moverte usa las teclas:\nW: Mover hacia adelante\nA: Mover
-      hacia la izquierda\nS: Mover hacia atr\xE1s\nD: Mover hacia la derecha. \nPresiona
-      \"p\" para continuar."
+      hacia la izquierda\nS: Mover hacia atr\xE1s\nD: Mover hacia la derecha. "
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4961770695283965954
   - m_Id: 257714570649600
     m_Localized: "\xA1Felicidades! Has logrado mover tu personaje, ahora intenta
-      moverte r\xE1pidamente con el \"shift\" izquierdo. Presiona \"p\" para continuar."
+      moverte r\xE1pidamente con el \"shift\" izquierdo."
     m_Metadata:
       m_Items: []
   - m_Id: 1720643150524416
     m_Localized: "Recuerda que la clave para la victoria es la sincronizaci\xF3n.
       Observa los movimientos de tu enemigo, esquiva sus ataques y ataca en el momento
-      oportuno. Presiona \"p\" para continuar."
+      oportuno."
     m_Metadata:
       m_Items: []
   - m_Id: 1720683814301696
     m_Localized: "Con pr\xE1ctica, podr\xE1s derrotar a enemigos m\xE1s poderosos
-      y avanzar en tu aventura.\r Presiona \"p\" para continuar."
+      y avanzar en tu aventura.\r "
     m_Metadata:
       m_Items: []
   - m_Id: 1719715320147968
-    m_Localized: Muy bien! Ahora intenta atacar con la tecla "espacio". Presiona
-      "p" para continuar.
+    m_Localized: Muy bien! Ahora intenta atacar con la tecla "espacio".
     m_Metadata:
       m_Items: []
   - m_Id: 1720906603147264
-    m_Localized: Excelente! Ahora vamos a practicar con algunos enemigos. Presiona
-      "p" para continuar.
+    m_Localized: Excelente! Ahora vamos a practicar con algunos enemigos.
     m_Metadata:
       m_Items: []
   - m_Id: 1720995925045248
     m_Localized: "Cuando el murci\xE9lago est\xE1 apunto de atacar, presiona la tecla
-      \"espacio\" para atacarlo. Presiona \"p\" para continuar."
+      \"espacio\" para atacarlo."
     m_Metadata:
       m_Items: []
   - m_Id: 1721544678420480
-    m_Localized: "\xA1Vamos a poner a prueba lo aprendido con un poderoso enemigo!
-      \nPresiona \"p\" para continuar."
+    m_Localized: "\xA1Vamos a poner a prueba lo aprendido con un poderoso enemigo! "
     m_Metadata:
       m_Items: []
   - m_Id: 1721884245078016
-    m_Localized: Adentrate en su guarida. Presiona "p" para continuar.
+    m_Localized: 'Adentrate en su guarida. '
     m_Metadata:
       m_Items: []
   - m_Id: 1722200898252800
     m_Localized: "\xA1Felicidades! Has completado el tutorial. Ahora es cuando la
-      verdadera aventura comienza. Presiona \"p\" para continuar."
+      verdadera aventura comienza. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3150376189550592
+    m_Localized: '"Enter" para continuar.'
     m_Metadata:
       m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4961770695283965954
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00e0af1ada0a0000
