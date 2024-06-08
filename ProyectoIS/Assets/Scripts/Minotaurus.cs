@@ -18,7 +18,7 @@ public class Minotaurus : Enemigo
     public float attackCooldown = 3f; // Cooldown de 3 segundos
     private float lastAttackTime; // Tiempo del último ataque
 
-    protected override void Start()
+    protected new void Start()
     {
         base.Start();
         animator = GetComponent<Animator>();
@@ -32,7 +32,7 @@ public class Minotaurus : Enemigo
         hitBox.SetActive(false);
     }
 
-    protected override void Update()
+    protected new void Update()
     {
         // LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
         Vector3 direction = Character.transform.position - transform.position;
@@ -93,7 +93,7 @@ public class Minotaurus : Enemigo
         animator.SetBool("isAttacking", false);
     }
 
-    public override void GetDamaged(int damage)
+    public new void GetDamaged(int damage)
     {
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
         musicManagement.SeleccionAudio(4, 1f);
@@ -118,7 +118,7 @@ public class Minotaurus : Enemigo
 
     }
 
-    protected override void FixedUpdate()
+    protected new void FixedUpdate()
     {
         // RayCast para perseguir al personaje principal
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
