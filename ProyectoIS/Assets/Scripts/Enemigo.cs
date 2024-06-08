@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemigo : MonoBehaviour
 {
@@ -18,12 +19,19 @@ public class Enemigo : MonoBehaviour
     [SerializeField] protected LayerMask layerMask;
     protected GameObject player;
     public GameObject Character;
+    public Slider sliderVidas;
     protected bool hasLineOfSight = false;
     private bool isFacingRight = true; // Assume the enemy is facing right initially
     public Animator animator;
     protected Flash flash;
     public delegate void EnemyKilledHandler(Enemigo enemy);
     public event EnemyKilledHandler OnEnemyKilled;
+
+    private Color fullHealthColor = Color.green;
+    private Color midHealthColor = Color.yellow;
+    private Color lowHealthColor = Color.red;
+    private float offsetX = 1.0f;
+    private float offsetY = 2.0f;
 
 
 
@@ -41,9 +49,13 @@ public class Enemigo : MonoBehaviour
         attack = maxAttack;
         defensa = defensaMax;
         player = GameObject.FindGameObjectWithTag("Player");
+        sliderVidas.value = vida;
     }
     protected virtual void Update()
         {
+            // Vector3 enemyPosition = transform.position;
+            // RectTransform sliderRectTransform = sliderVidas.GetComponent<RectTransform>();
+            // sliderRectTransform.anchoredPosition = new Vector2(enemyPosition.x + offsetX, enemyPosition.y + offsetY);
             //LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
             if (player.transform.position.x < transform.position.x && isFacingRight)
         {
@@ -56,6 +68,9 @@ public class Enemigo : MonoBehaviour
         if (hasLineOfSight && !animator.GetBool("Death"))
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+                // enemyPosition = transform.position;
+                // sliderRectTransform = sliderVidas.GetComponent<RectTransform>();
+                // sliderRectTransform.anchoredPosition = new Vector2(enemyPosition.x + offsetX, enemyPosition.y + offsetY);
                 Ataque();
             }
             else
@@ -77,6 +92,10 @@ public class Enemigo : MonoBehaviour
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
+        Vector3 ScalerLifeBar=sliderVidas.transform.localScale;
+        ScalerLifeBar.x*=-1;
+        sliderVidas.transform.localScale= ScalerLifeBar;
+        
     }
 
     protected virtual void FixedUpdate()
@@ -117,6 +136,8 @@ public class Enemigo : MonoBehaviour
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
         musicManagement.SeleccionAudio(4, 1f);
         StartCoroutine(flash.FlashRoutine());
+        sliderVidas.value = vida;
+        UpdateHealthColor();
         
         
 
@@ -157,6 +178,22 @@ public class Enemigo : MonoBehaviour
     //         }
     //     }
     // }
+
+    private void UpdateHealthColor()
+    {
+        if (vida > vidaMax / 2)
+        {
+            sliderVidas.fillRect.GetComponent<Image>().color = fullHealthColor;
+        }
+        else if (vida > vidaMax / 4)
+        {
+            sliderVidas.fillRect.GetComponent<Image>().color = midHealthColor;
+        }
+        else
+        {
+            sliderVidas.fillRect.GetComponent<Image>().color = lowHealthColor;
+        }
+    }
 
 
     public void GetKnockedBackUwu(Transform damageSource, float knockBackThrust)
