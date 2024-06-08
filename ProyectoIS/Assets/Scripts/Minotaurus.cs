@@ -1,5 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;using Unity.VisualScripting;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Minotaurus : Enemigo
@@ -11,20 +12,17 @@ public class Minotaurus : Enemigo
     private bool isMoving;
     public Vector3 targetPosition;
     private Vector3 previousDirection;
-    private MusicManagement musicManagement2;
     public GameObject hitBox;
 
     public float attackCooldown = 3f; // Cooldown de 3 segundos
     private float lastAttackTime; // Tiempo del último ataque
 
-     protected override void Start()
+    protected override void Start()
     {
         base.Start();
         animator = GetComponent<Animator>();
-        musicManagement2 = FindObjectOfType<MusicManagement>();
 
         routePoints = GameObject.FindGameObjectsWithTag("Point");
-        player = GameObject.FindGameObjectWithTag("Player");
         random = Random.Range(0, routePoints.Length);
         patrolSpeed = 3;
         lastAttackTime = -attackCooldown; // Inicializa para que pueda atacar inmediatamente
@@ -38,6 +36,9 @@ public class Minotaurus : Enemigo
         if ((direction.x >= 0.0f && previousDirection.x < 0.0f) || (direction.x < 0.0f && previousDirection.x >= 0.0f))
         {
             transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+            Vector3 ScalerLifeBar = sliderVidas.transform.localScale;
+            ScalerLifeBar.x *= -1;
+            sliderVidas.transform.localScale = ScalerLifeBar;
         }
         previousDirection = direction;
 
@@ -85,61 +86,25 @@ public class Minotaurus : Enemigo
     private IEnumerator Attack()
     {
         animator.SetBool("isAttacking", true);
-        musicManagement2.SeleccionAudio(7, 1f);
+        musicManagement.SeleccionAudio(7, 1f);
         yield return new WaitForSeconds(0.4f); // Tiempo para la animación de ataque
         ActivateHitBox();
         yield return new WaitForSeconds(1f); // Tiempo para la hitbox
         animator.SetBool("isAttacking", false);
     }
 
-    public override void GetDamaged(int damage)
+
+    protected override IEnumerator OnDieAnimationComplete()
     {
-        GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
-        musicManagement2.SeleccionAudio(4, 1f);
-        StartCoroutine(flash.FlashRoutine());
-
-        netDamage = damage - defensa;
-        if (netDamage > 0)
-        {
-            vida -= netDamage;
-            sliderVidas.value = vida;
-            UpdateHealthColor();
-        }
-        if (vida <= 0)
-        {
-            animator.SetBool("Death", true);
-            StartCoroutine(OnDieAnimationComplete());
-        }
-    }
-
-    protected override IEnumerator OnDieAnimationComplete(){
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
         Die();
 
     }
 
-    protected override void FixedUpdate()
-   {
-        // RayCast para perseguir al personaje principal
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
-        if (ray.collider != null)
-        {
-            hasLineOfSight = ray.collider.CompareTag("Player");
-            if (hasLineOfSight)
-            {
-                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
-            }
-        }
-    }
-
     protected override void OnCollisionEnter2D(Collision2D collision) // Probando, para que no herede esa función del padre
     {
-        Debug.Log("Bien");
+        
     }
 
     private void ActivateHitBox()
@@ -153,7 +118,7 @@ public class Minotaurus : Enemigo
         yield return new WaitForSeconds(delay);
         hitBox.SetActive(false);
 
-        }
+    }
 
 
 }

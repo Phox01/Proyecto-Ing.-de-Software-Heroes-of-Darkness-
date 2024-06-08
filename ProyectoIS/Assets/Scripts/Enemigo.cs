@@ -14,7 +14,7 @@ public class Enemigo : MonoBehaviour
     public bool gettingKnockedBack { get; private set; }
     [SerializeField] private float knockBackTime = .2f;
     private Rigidbody2D rb;
-    private MusicManagement musicManagement;
+    protected MusicManagement musicManagement;
     [SerializeField] protected float speed;
     [SerializeField] protected LayerMask layerMask;
     protected GameObject player;
@@ -66,11 +66,6 @@ public class Enemigo : MonoBehaviour
             {
                 animator.SetBool("Attack", false);
             }
-        if(vida<=0){
-
-            animator.SetBool("Death", true);
-            StartCoroutine(OnDieAnimationComplete());
-            }
         }
 
     void Flip()
@@ -111,22 +106,24 @@ public class Enemigo : MonoBehaviour
     }
 
     
-    public virtual void GetDamaged(int damage){
+    public void GetDamaged(int damage)
+    {
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
         musicManagement.SeleccionAudio(4, 1f);
         StartCoroutine(flash.FlashRoutine());
-        
-        
 
-        netDamage = damage-defensa;
-        if(netDamage>0){
+        netDamage = damage - defensa;
+        if (netDamage > 0)
+        {
             vida -= netDamage;
-            animator.SetInteger("life", vida);
-            Debug.Log(vida );
             sliderVidas.value = vida;
             UpdateHealthColor();
-            animator.SetBool("Attack", false);
-            }
+        }
+        if (vida <= 0)
+        {
+            animator.SetBool("Death", true);
+            StartCoroutine(OnDieAnimationComplete());
+        }
     }
 
     protected virtual  IEnumerator OnDieAnimationComplete(){
