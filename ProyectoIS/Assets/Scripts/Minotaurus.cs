@@ -1,6 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Collections.Generic;using Unity.VisualScripting;
 using UnityEngine;
 
 public class Minotaurus : Enemigo
@@ -12,17 +11,17 @@ public class Minotaurus : Enemigo
     private bool isMoving;
     public Vector3 targetPosition;
     private Vector3 previousDirection;
-    private MusicManagement musicManagement;
+    private MusicManagement musicManagement2;
     public GameObject hitBox;
 
     public float attackCooldown = 3f; // Cooldown de 3 segundos
     private float lastAttackTime; // Tiempo del último ataque
 
-    protected new void Start()
+     protected new void Start()
     {
         base.Start();
         animator = GetComponent<Animator>();
-        musicManagement = FindObjectOfType<MusicManagement>();
+        musicManagement2 = FindObjectOfType<MusicManagement>();
 
         routePoints = GameObject.FindGameObjectsWithTag("Point");
         player = GameObject.FindGameObjectWithTag("Player");
@@ -86,7 +85,7 @@ public class Minotaurus : Enemigo
     private IEnumerator Attack()
     {
         animator.SetBool("isAttacking", true);
-        musicManagement.SeleccionAudio(7, 1f);
+        musicManagement2.SeleccionAudio(7, 1f);
         yield return new WaitForSeconds(0.4f); // Tiempo para la animación de ataque
         ActivateHitBox();
         yield return new WaitForSeconds(1f); // Tiempo para la hitbox
@@ -96,7 +95,7 @@ public class Minotaurus : Enemigo
     public new void GetDamaged(int damage)
     {
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
-        musicManagement.SeleccionAudio(4, 1f);
+        musicManagement2.SeleccionAudio(4, 1f);
         StartCoroutine(flash.FlashRoutine());
 
         netDamage = damage - defensa;
@@ -119,7 +118,7 @@ public class Minotaurus : Enemigo
     }
 
     protected new void FixedUpdate()
-    {
+   {
         // RayCast para perseguir al personaje principal
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
         if (ray.collider != null)
@@ -151,5 +150,9 @@ public class Minotaurus : Enemigo
     {
         yield return new WaitForSeconds(delay);
         hitBox.SetActive(false);
-    }
+
+        }
+
+
 }
+

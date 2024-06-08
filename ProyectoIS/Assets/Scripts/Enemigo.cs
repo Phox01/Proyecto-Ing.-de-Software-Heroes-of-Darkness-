@@ -56,11 +56,10 @@ public class Enemigo : MonoBehaviour
         {
             Flip();
         }
-        if (hasLineOfSight && !animator.GetBool("Death"))
+        if (hasLineOfSight && !animator.GetBool("Death") )
             {
                 //Muévete
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-                Ataque();
+                Following();
             }
             else
             {
@@ -105,7 +104,8 @@ public class Enemigo : MonoBehaviour
         }
     }
 
-    void Ataque(){
+    void Following(){
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         animator.SetBool("Attack", true);
     }
 
@@ -129,9 +129,9 @@ public class Enemigo : MonoBehaviour
     }
 
     protected virtual  IEnumerator OnDieAnimationComplete(){
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
-         Die();
+        Die();
     }
 
     protected void Die()
@@ -159,7 +159,6 @@ public class Enemigo : MonoBehaviour
         }
     }
 
-
     public void GetKnockedBackUwu(Transform damageSource, float knockBackThrust)
    
     {
@@ -178,6 +177,7 @@ public class Enemigo : MonoBehaviour
         gettingKnockedBack = false;
     }
 
+    //A partir de acá, lo general se acaba. Estas son más específicas para enemigos de daño de colisión
     protected virtual void OnCollisionEnter2D(Collision2D collision) //Probando, para que Minotauro no herede onCollisionEnter2D()
     {
         ControladorDeAtaque jugador = collision.gameObject.GetComponent<ControladorDeAtaque>();
