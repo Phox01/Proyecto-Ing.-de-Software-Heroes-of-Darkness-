@@ -18,7 +18,6 @@ public class Enemigo : MonoBehaviour
     [SerializeField] protected float speed;
     [SerializeField] protected LayerMask layerMask;
     protected GameObject player;
-    public GameObject Character;
     public Slider sliderVidas;
     protected bool hasLineOfSight = false;
     private bool isFacingRight = true; // Assume the enemy is facing right initially
@@ -43,6 +42,8 @@ public class Enemigo : MonoBehaviour
         attack = maxAttack;
         defensa = defensaMax;
         player = GameObject.FindGameObjectWithTag("Player");
+        
+        sliderVidas.maxValue = vidaMax;
         sliderVidas.value = vida;
     }
     protected virtual void Update()
@@ -143,7 +144,7 @@ public class Enemigo : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void UpdateHealthColor()
+    protected void UpdateHealthColor()
     {
         if (vida > vidaMax*0.5 )
         {

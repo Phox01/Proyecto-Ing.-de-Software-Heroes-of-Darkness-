@@ -125,7 +125,7 @@ public class TutorialController : MonoBehaviour
     }
     IEnumerator ActivateFinalDialogue()
     {
-        yield return new WaitForSeconds(8); 
+        yield return new WaitForSeconds(5); 
             
             SceneManager.LoadScene(2);
     }

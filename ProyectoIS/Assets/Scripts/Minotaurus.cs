@@ -17,7 +17,7 @@ public class Minotaurus : Enemigo
     public float attackCooldown = 3f; // Cooldown de 3 segundos
     private float lastAttackTime; // Tiempo del último ataque
 
-     protected new void Start()
+     protected override void Start()
     {
         base.Start();
         animator = GetComponent<Animator>();
@@ -31,10 +31,10 @@ public class Minotaurus : Enemigo
         hitBox.SetActive(false);
     }
 
-    protected new void Update()
+    protected override void Update()
     {
         // LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
-        Vector3 direction = Character.transform.position - transform.position;
+        Vector3 direction = player.transform.position - transform.position;
         if ((direction.x >= 0.0f && previousDirection.x < 0.0f) || (direction.x < 0.0f && previousDirection.x >= 0.0f))
         {
             transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
@@ -51,7 +51,7 @@ public class Minotaurus : Enemigo
             }
 
             // LÓGICA DE ATAQUE
-            float distanceToPlayer = Vector3.Distance(transform.position, Character.transform.position);
+            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
             if (distanceToPlayer <= 2 && Time.time - lastAttackTime >= attackCooldown)
             {
                 StartCoroutine(Attack());
@@ -92,7 +92,7 @@ public class Minotaurus : Enemigo
         animator.SetBool("isAttacking", false);
     }
 
-    public new void GetDamaged(int damage)
+    public override void GetDamaged(int damage)
     {
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
         musicManagement2.SeleccionAudio(4, 1f);
@@ -102,6 +102,8 @@ public class Minotaurus : Enemigo
         if (netDamage > 0)
         {
             vida -= netDamage;
+            sliderVidas.value = vida;
+            UpdateHealthColor();
         }
         if (vida <= 0)
         {
@@ -117,7 +119,7 @@ public class Minotaurus : Enemigo
 
     }
 
-    protected new void FixedUpdate()
+    protected override void FixedUpdate()
    {
         // RayCast para perseguir al personaje principal
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
@@ -135,7 +137,7 @@ public class Minotaurus : Enemigo
         }
     }
 
-    protected new void OnCollisionEnter2D(Collision2D collision) // Probando, para que no herede esa función del padre
+    protected override void OnCollisionEnter2D(Collision2D collision) // Probando, para que no herede esa función del padre
     {
         Debug.Log("Bien");
     }
