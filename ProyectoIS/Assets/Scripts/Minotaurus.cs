@@ -12,7 +12,6 @@ public class Minotaurus : Enemigo
     private bool isMoving;
     public Vector3 targetPosition;
     private Vector3 previousDirection;
-    private MusicManagement musicManagement;
     public GameObject hitBox;
 
     public float attackCooldown = 3f; // Cooldown de 3 segundos
@@ -22,10 +21,8 @@ public class Minotaurus : Enemigo
     {
         base.Start();
         animator = GetComponent<Animator>();
-        musicManagement = FindObjectOfType<MusicManagement>();
 
         routePoints = GameObject.FindGameObjectsWithTag("Point");
-        player = GameObject.FindGameObjectWithTag("Player");
         random = Random.Range(0, routePoints.Length);
         patrolSpeed = 3;
         lastAttackTime = -attackCooldown; // Inicializa para que pueda atacar inmediatamente
@@ -35,10 +32,13 @@ public class Minotaurus : Enemigo
     protected override void Update()
     {
         // LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
-        Vector3 direction = Character.transform.position - transform.position;
+        Vector3 direction = player.transform.position - transform.position;
         if ((direction.x >= 0.0f && previousDirection.x < 0.0f) || (direction.x < 0.0f && previousDirection.x >= 0.0f))
         {
             transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+            Vector3 ScalerLifeBar = sliderVidas.transform.localScale;
+            ScalerLifeBar.x *= -1;
+            sliderVidas.transform.localScale = ScalerLifeBar;
         }
         previousDirection = direction;
 
@@ -52,7 +52,7 @@ public class Minotaurus : Enemigo
             }
 
             // LÓGICA DE ATAQUE
-            float distanceToPlayer = Vector3.Distance(transform.position, Character.transform.position);
+            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
             if (distanceToPlayer <= 2 && Time.time - lastAttackTime >= attackCooldown)
             {
                 StartCoroutine(Attack());
@@ -93,52 +93,18 @@ public class Minotaurus : Enemigo
         animator.SetBool("isAttacking", false);
     }
 
-    public override void GetDamaged(int damage)
+
+    protected override IEnumerator OnDieAnimationComplete()
     {
-        GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
-        musicManagement.SeleccionAudio(4, 1f);
-        StartCoroutine(flash.FlashRoutine());
-
-        netDamage = damage - defensa;
-        if (netDamage > 0)
-        {
-            vida -= netDamage;
-        }
-        if (vida <= 0)
-        {
-            animator.SetBool("Death", true);
-            StartCoroutine(OnDieAnimationComplete());
-        }
-    }
-
-    protected override IEnumerator OnDieAnimationComplete(){
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
         Die();
 
     }
 
-    protected override void FixedUpdate()
+    protected override void OnCollisionEnter2D(Collision2D collision) // Probando, para que no herede esa función del padre
     {
-        // RayCast para perseguir al personaje principal
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
-        if (ray.collider != null)
-        {
-            hasLineOfSight = ray.collider.CompareTag("Player");
-            if (hasLineOfSight)
-            {
-                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
-            }
-        }
-    }
-
-    protected new void OnCollisionEnter2D(Collision2D collision) // Probando, para que no herede esa función del padre
-    {
-        Debug.Log("Bien");
+        
     }
 
     private void ActivateHitBox()
@@ -151,5 +117,9 @@ public class Minotaurus : Enemigo
     {
         yield return new WaitForSeconds(delay);
         hitBox.SetActive(false);
+
     }
+
+
 }
+

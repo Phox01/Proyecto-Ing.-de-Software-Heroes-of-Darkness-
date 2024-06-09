@@ -20,7 +20,6 @@ public class hitBoxAttack : MonoBehaviour
             {
                 jugador.GetDamaged(damage);
                 bounceBack.EcharAtras(transform);
-                Debug.Log("Player hit by hitbox and took damage: " + damage);
             }
         }
     }

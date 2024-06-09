@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,11 +15,10 @@ public class Enemigo : MonoBehaviour
     public bool gettingKnockedBack { get; private set; }
     [SerializeField] private float knockBackTime = .2f;
     private Rigidbody2D rb;
-    private MusicManagement musicManagement;
+    protected MusicManagement musicManagement;
     [SerializeField] protected float speed;
     [SerializeField] protected LayerMask layerMask;
     protected GameObject player;
-    public GameObject Character;
     public Slider sliderVidas;
     protected bool hasLineOfSight = false;
     private bool isFacingRight = true; // Assume the enemy is facing right initially
@@ -30,12 +30,7 @@ public class Enemigo : MonoBehaviour
     private Color fullHealthColor = Color.green;
     private Color midHealthColor = Color.yellow;
     private Color lowHealthColor = Color.red;
-    private float offsetX = 1.0f;
-    private float offsetY = 2.0f;
-
-
-
-
+    public TextMeshProUGUI damageNumber;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -49,13 +44,13 @@ public class Enemigo : MonoBehaviour
         attack = maxAttack;
         defensa = defensaMax;
         player = GameObject.FindGameObjectWithTag("Player");
+        
+        sliderVidas.maxValue = vidaMax;
         sliderVidas.value = vida;
+        damageNumber.gameObject.SetActive(false);
     }
     protected virtual void Update()
         {
-            // Vector3 enemyPosition = transform.position;
-            // RectTransform sliderRectTransform = sliderVidas.GetComponent<RectTransform>();
-            // sliderRectTransform.anchoredPosition = new Vector2(enemyPosition.x + offsetX, enemyPosition.y + offsetY);
             //LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
             if (player.transform.position.x < transform.position.x && isFacingRight)
         {
@@ -65,25 +60,15 @@ public class Enemigo : MonoBehaviour
         {
             Flip();
         }
-        if (hasLineOfSight && !animator.GetBool("Death"))
+        if (hasLineOfSight && !animator.GetBool("Death") )
             {
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-                // enemyPosition = transform.position;
-                // sliderRectTransform = sliderVidas.GetComponent<RectTransform>();
-                // sliderRectTransform.anchoredPosition = new Vector2(enemyPosition.x + offsetX, enemyPosition.y + offsetY);
-                Ataque();
+                //Muévete
+                Following();
             }
             else
             {
                 animator.SetBool("Attack", false);
             }
-        if(vida<=0){
-
-            animator.SetBool("Death", true);
-            StartCoroutine(OnDieAnimationComplete());
-            // 
-            // SceneManager.LoadScene(2);
-        }
         }
 
     void Flip()
@@ -112,48 +97,43 @@ public class Enemigo : MonoBehaviour
             {
                 if (!animator.GetBool("Death"))
                 {
-                    Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
-                    // animator.SetBool("Attack", false);
-                    
+                    Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);    
                 }
             }
         }
-        // if(vida<=0){
-
-        //     animator.SetBool("Death", true);
-        //     StartCoroutine(OnDieAnimationComplete());
-        //     // musicManagement.SeleccionAudio(4, 1f);
-        //     // SceneManager.LoadScene(2);
-        // }
     }
 
-    void Ataque(){
+    void Following(){
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         animator.SetBool("Attack", true);
     }
 
     
-    public virtual void GetDamaged(int damage){
+    public void GetDamaged(int damage)
+    {
         GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
         musicManagement.SeleccionAudio(4, 1f);
         StartCoroutine(flash.FlashRoutine());
-        sliderVidas.value = vida;
-        UpdateHealthColor();
-        
-        
 
-        netDamage = damage-defensa;
-        if(netDamage>0){
+        netDamage = damage - defensa;
+        if (netDamage > 0)
+        {
             vida -= netDamage;
-            animator.SetInteger("life", vida);
-            animator.SetBool("Attack", false);
-            Debug.Log(vida );
-            }
+            sliderVidas.value = vida;
+            UpdateHealthColor();
+            ShowDamage(netDamage);
+        }
+        if (vida <= 0)
+        {
+            animator.SetBool("Death", true);
+            StartCoroutine(OnDieAnimationComplete());
+        }
     }
 
     protected virtual  IEnumerator OnDieAnimationComplete(){
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
-         Die();
+        Die();
     }
 
     protected void Die()
@@ -165,27 +145,13 @@ public class Enemigo : MonoBehaviour
         Destroy(gameObject);
     }
 
-    // void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         Debug.Log("hola");
-    //         ControladorDeAtaque jugador = other.GetComponent<ControladorDeAtaque>();
-    //         if (jugador != null)
-    //         {
-    //             jugador.GetDamaged(attack);
-    //             Debug.Log("damge doned");
-    //         }
-    //     }
-    // }
-
-    private void UpdateHealthColor()
+    protected void UpdateHealthColor()
     {
-        if (vida > vidaMax / 2)
+        if (vida > vidaMax*0.5 )
         {
             sliderVidas.fillRect.GetComponent<Image>().color = fullHealthColor;
         }
-        else if (vida > vidaMax / 4)
+        else if (vida > vidaMax*0.25)
         {
             sliderVidas.fillRect.GetComponent<Image>().color = midHealthColor;
         }
@@ -194,7 +160,6 @@ public class Enemigo : MonoBehaviour
             sliderVidas.fillRect.GetComponent<Image>().color = lowHealthColor;
         }
     }
-
 
     public void GetKnockedBackUwu(Transform damageSource, float knockBackThrust)
    
@@ -214,6 +179,7 @@ public class Enemigo : MonoBehaviour
         gettingKnockedBack = false;
     }
 
+    //A partir de acá, lo general se acaba. Estas son más específicas para enemigos de daño de colisión
     protected virtual void OnCollisionEnter2D(Collision2D collision) //Probando, para que Minotauro no herede onCollisionEnter2D()
     {
         ControladorDeAtaque jugador = collision.gameObject.GetComponent<ControladorDeAtaque>();
@@ -221,5 +187,28 @@ public class Enemigo : MonoBehaviour
         {
             jugador.GetDamaged(attack);
         }
+    }
+    private void ShowDamage(int damage)
+    {
+        damageNumber.text = damage.ToString();
+        damageNumber.gameObject.SetActive(true);
+        StartCoroutine(FadeDamageText());
+    }
+
+    private IEnumerator FadeDamageText()
+    {
+        float duration = 1f;
+        float elapsedTime = 0f;
+        Vector3 originalPosition = damageNumber.transform.position;
+
+        while (elapsedTime < duration)
+        {
+            damageNumber.transform.position = originalPosition + Vector3.up * (elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        damageNumber.gameObject.SetActive(false);
+        damageNumber.transform.position = originalPosition;
     }
 }
