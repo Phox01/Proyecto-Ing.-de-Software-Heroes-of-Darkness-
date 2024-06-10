@@ -22,7 +22,7 @@ public class playerMovement : MonoBehaviour
     
     private Vector2 lastMovement;
     private bool isKnockbackActive = false;
-
+    private ManagementMenu managementMenu;
 
 
     private void Awake()
@@ -30,6 +30,7 @@ public class playerMovement : MonoBehaviour
         
         Instance = this;
         musicManagement = FindObjectOfType<MusicManagement>();
+        managementMenu = FindObjectOfType<ManagementMenu>();
     }
     void Update()
     {
@@ -67,8 +68,12 @@ public class playerMovement : MonoBehaviour
         {
             EndDash();
         }
-
         
+        if (Input.GetKeyDown(KeyCode.Escape) && managementMenu != null)
+        {
+            managementMenu.PausarPartida();
+        }
+
     }
 
     void FixedUpdate()

@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ManagementMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject botonPausa;
+    [SerializeField] private GameObject menuPausa;
+    
     public void Tutorial()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -39,4 +42,36 @@ public class ManagementMenu : MonoBehaviour
         SceneManager.LoadScene(4);
 
     }
+
+    public void PausarPartida()
+    {
+        Time.timeScale = 0f;
+        botonPausa.SetActive(false);
+        menuPausa.SetActive(true);
+    }
+
+    public void ReanudarPartida()
+    {
+        Time.timeScale = 1f;
+        botonPausa.SetActive(true);
+        menuPausa.SetActive(false);
+    }
+
+    public void Reiniciar()
+    {
+        Time.timeScale = 1f;
+        PartidaGuardada();
+    }
+
+    public void Cerrar()
+    {
+        Time.timeScale = 1f;
+        TerminarPartida();
+    }
+
+    public void Guardar()
+    {
+        Debug.Log("Aqui va el proceso de guardado");
+    }
+ 
 }
