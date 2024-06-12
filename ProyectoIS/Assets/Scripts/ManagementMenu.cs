@@ -72,6 +72,7 @@ public class ManagementMenu : MonoBehaviour
     public void Guardar()
     {
         Debug.Log("Aqui va el proceso de guardado");
+        DataJuego.data.GuardarData();
     }
  
 }
