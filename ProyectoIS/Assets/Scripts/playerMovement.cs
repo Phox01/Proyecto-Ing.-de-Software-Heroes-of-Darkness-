@@ -31,6 +31,7 @@ public class playerMovement : MonoBehaviour
         Instance = this;
         musicManagement = FindObjectOfType<MusicManagement>();
         managementMenu = FindObjectOfType<ManagementMenu>();
+        DontDestroyOnLoad(gameObject);
     }
     void Update()
     {

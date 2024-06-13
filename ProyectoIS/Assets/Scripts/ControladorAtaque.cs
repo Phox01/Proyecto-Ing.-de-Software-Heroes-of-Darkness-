@@ -33,6 +33,9 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         
         flash = GetComponent<Flash>();
+        sliderVidas = FindObjectOfType<Slider>();
+        
+        musicManagement = FindObjectOfType<MusicManagement>();
     }
 
 
@@ -41,7 +44,6 @@ public class ControladorDeAtaque : MonoBehaviour
         playerAttack = atributos.attack;
         currentHealth = atributos.health;
         areaAtaque.isTrigger = true;
-        musicManagement = FindObjectOfType<MusicManagement>();
         sliderVidas.value = currentHealth;
     }
 

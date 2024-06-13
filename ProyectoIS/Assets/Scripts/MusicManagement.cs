@@ -9,7 +9,9 @@ public class MusicManagement : MonoBehaviour
 
     private void Awake()
     {
+        
         controlAudio = GetComponent<AudioSource>();
+        DontDestroyOnLoad(gameObject);
 
     }
 
