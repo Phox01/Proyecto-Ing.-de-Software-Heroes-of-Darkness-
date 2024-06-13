@@ -350,7 +350,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5191217158113889867}
         m_TargetAssemblyTypeName: ManagementMenu, Assembly-CSharp
         m_MethodName: Reiniciar
         m_Mode: 1
@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 617647773782654766}
   - component: {fileID: 8738516772138795317}
   - component: {fileID: 3100767920709180120}
+  - component: {fileID: 5191217158113889867}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -479,6 +480,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39074652218412c41adcbfd89836b165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5191217158113889867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3023904700795480545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27d6a5a998786184bba8b595e7628a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botonPausa: {fileID: 4562080638240911392}
+  menuPausa: {fileID: 8477248054640829116}
 --- !u!1 &3141106424869432216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,7 +1021,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5191217158113889867}
         m_TargetAssemblyTypeName: ManagementMenu, Assembly-CSharp
         m_MethodName: ReanudarPartida
         m_Mode: 1
@@ -1202,9 +1217,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5191217158113889867}
         m_TargetAssemblyTypeName: ManagementMenu, Assembly-CSharp
-        m_MethodName: Cerrar
+        m_MethodName: Salir
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1550,10 +1565,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8477248054640829116}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 5191217158113889867}
+        m_TargetAssemblyTypeName: ManagementMenu, Assembly-CSharp
+        m_MethodName: PausarPartida
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1683,7 +1698,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5191217158113889867}
         m_TargetAssemblyTypeName: ManagementMenu, Assembly-CSharp
         m_MethodName: Guardar
         m_Mode: 1
