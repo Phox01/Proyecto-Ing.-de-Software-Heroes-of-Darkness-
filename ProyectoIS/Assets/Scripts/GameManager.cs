@@ -79,5 +79,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(pausaCanvasInstance);
         }
+        Destroy(gameObject); 
     }
+    
 }
