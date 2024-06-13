@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject audioControllerPrefab; 
     public GameObject playerCanvas;
+    public GameObject pausaCanvas;
 
     void Awake()
     {
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
                 Instantiate(audioControllerPrefab);
             }
             Instantiate(playerCanvas);
+            Instantiate(pausaCanvas);
             if (FindObjectOfType<playerMovement>() == null)
             {
                 Instantiate(playerPrefab);

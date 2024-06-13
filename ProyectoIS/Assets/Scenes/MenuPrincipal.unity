@@ -523,7 +523,9 @@ MonoBehaviour:
     type: 3}
   audioControllerPrefab: {fileID: 1453440354602380017, guid: 92edf458d6470094287787600a36076c,
     type: 3}
-  playerCanvas: {fileID: 3023904700795480545, guid: 6add0f9e529891e478d06871064c189a,
+  playerCanvas: {fileID: 7351829424939953440, guid: 6add0f9e529891e478d06871064c189a,
+    type: 3}
+  pausaCanvas: {fileID: 1826304443148339744, guid: 28d0ded24167bb642a2678dd0165f48b,
     type: 3}
 --- !u!4 &154618265
 Transform:

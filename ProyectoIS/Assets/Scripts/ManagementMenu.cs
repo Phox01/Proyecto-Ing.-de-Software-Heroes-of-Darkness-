@@ -61,11 +61,15 @@ public class ManagementMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         PartidaGuardada();
+        botonPausa.SetActive(true);
+        menuPausa.SetActive(false);
     }
 
     public void Cerrar()
     {
         Time.timeScale = 1f;
+        botonPausa.SetActive(true);
+        menuPausa.SetActive(false);
         TerminarPartida();
     }
 
