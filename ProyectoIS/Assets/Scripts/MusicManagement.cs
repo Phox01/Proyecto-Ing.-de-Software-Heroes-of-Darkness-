@@ -6,12 +6,20 @@ public class MusicManagement : MonoBehaviour
 {
     [SerializeField] private AudioClip[] audios;
     private AudioSource controlAudio;
+    public static MusicManagement instance;
 
     private void Awake()
     {
-        
+          if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         controlAudio = GetComponent<AudioSource>();
-        DontDestroyOnLoad(gameObject);
 
     }
 

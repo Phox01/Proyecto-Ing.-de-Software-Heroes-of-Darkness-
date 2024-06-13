@@ -24,14 +24,21 @@ public class playerMovement : MonoBehaviour
     private bool isKnockbackActive = false;
     private ManagementMenu managementMenu;
 
+    public static playerMovement instance;
 
     private void Awake()
     {
-        
-        Instance = this;
+         if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         musicManagement = FindObjectOfType<MusicManagement>();
         managementMenu = FindObjectOfType<ManagementMenu>();
-        DontDestroyOnLoad(gameObject);
     }
     void Update()
     {

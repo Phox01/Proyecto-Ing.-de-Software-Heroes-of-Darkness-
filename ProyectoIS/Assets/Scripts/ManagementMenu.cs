@@ -7,13 +7,13 @@ public class ManagementMenu : MonoBehaviour
 {
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject menuPausa;
-    
+
     public void Tutorial()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
+        SceneManager.LoadScene(1);
     }
 
+    
     public void Salir()
     {
         Debug.Log("Saliendo del juego...");
@@ -23,24 +23,21 @@ public class ManagementMenu : MonoBehaviour
     public void TerminarPartida()
     {
         SceneManager.LoadScene(0);
-
     }
 
     public void VolverJugar()
     {
         SceneManager.LoadScene(1);
-
     }
 
     public void NuevoJuego()
     {
         SceneManager.LoadScene(4);
-
     }
+
     public void PartidaGuardada()
     {
         SceneManager.LoadScene(4);
-
     }
 
     public void PausarPartida()
@@ -75,8 +72,7 @@ public class ManagementMenu : MonoBehaviour
 
     public void Guardar()
     {
-        Debug.Log("Aqui va el proceso de guardado");
+        Debug.Log("Aquí va el proceso de guardado");
         DataJuego.data.GuardarData();
     }
- 
 }

@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public class DontDestroy: MonoBehaviour
+public class DontDestroyCanvas: MonoBehaviour
 {
+    public static DontDestroyCanvas instance;
     void Awake(){
+        
         DontDestroyOnLoad(gameObject);
     }
 }
