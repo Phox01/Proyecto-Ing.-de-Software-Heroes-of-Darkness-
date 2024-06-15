@@ -64,7 +64,7 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         animator.SetTrigger("Attack");
-        musicManagement.SeleccionAudio(animator.GetInteger("NumbAtt")-1, 1f);
+        //musicManagement.SeleccionAudio(animator.GetInteger("NumbAtt")-1, 1f);
         ContactFilter2D filter = new ContactFilter2D();
         filter.SetLayerMask(capaEnemigos);
 
