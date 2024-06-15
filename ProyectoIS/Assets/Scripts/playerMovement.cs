@@ -22,10 +22,18 @@ public class playerMovement : MonoBehaviour
     
     private Vector2 lastMovement;
     private bool isKnockbackActive = false;
-    private ManagementMenu managementMenu;
+    //private ManagementMenu managementMenu;
+    //private RaycastHit2D bodyBox;
+    //private BoxCollider2D hit;
+    //private Vector3 movePlry;
+    //public float speed;
 
     public static playerMovement instance;
 
+    //public void Start()
+    //{
+    //    bodyBox = GetComponenet<BoxCollider2D>();
+    //}
     private void Awake()
     {
          if (instance != null && instance != this)
@@ -86,6 +94,11 @@ public class playerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        //float hor = Input.GetAxisRaw("Horizontal");
+        //float ver = Input.GetAxisRaw("Vertical");
+        //movePlyr = new Vector3(hor * speed, ver * speed, 0);
+        //hit = Physics2D.BoxCast(transform.position, bodyBox.size,0,new Vector2(0,)
+
         if(animator.GetFloat("Speed")==0){
             musicManagement.AudioLoop(3, 0.3f);
         }
