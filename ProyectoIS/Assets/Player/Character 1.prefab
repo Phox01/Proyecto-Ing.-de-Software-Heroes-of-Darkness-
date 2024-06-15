@@ -542,6 +542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17c96c9f982c9e4e93e0207e8999f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryUI: {fileID: 8829759844161342306, guid: 0c3a69cad829d4247bc876a48ed53f26,
-    type: 3}
+  inventoryUI: {fileID: 0}
+  inventoryData: {fileID: 11400000, guid: 0289b708ea1caa04b9584116a9137c94, type: 2}
   numeroInv: 10

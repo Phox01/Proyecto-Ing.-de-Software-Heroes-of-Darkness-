@@ -40,7 +40,6 @@ public class InvetaryPage : MonoBehaviour
     }
     private void Awake()
     {
-        Hide();
        
         itemDescription.ResetDescription();
         mouseFollower.Toggle(false);

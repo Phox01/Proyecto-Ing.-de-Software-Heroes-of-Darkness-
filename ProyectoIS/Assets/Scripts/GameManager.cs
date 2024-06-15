@@ -8,9 +8,11 @@ public class GameManager : MonoBehaviour
     public GameObject audioControllerPrefab; 
     public GameObject playerCanvasPrefab;
     public GameObject pausaCanvasPrefab;
+    public GameObject inventoryCanvasPrefab;
 
     private GameObject playerCanvasInstance;
     private GameObject pausaCanvasInstance;
+    private GameObject inventoryCanvasInstance;
 
     private void Awake()
     {
@@ -33,6 +35,8 @@ public class GameManager : MonoBehaviour
 
             pausaCanvasInstance = Instantiate(pausaCanvasPrefab);
             DontDestroyOnLoad(pausaCanvasInstance);
+            inventoryCanvasInstance = Instantiate(inventoryCanvasPrefab);
+            DontDestroyOnLoad(inventoryCanvasInstance);
 
             if (FindObjectOfType<playerMovement>() == null)
             {
@@ -78,6 +82,10 @@ public class GameManager : MonoBehaviour
         if (pausaCanvasInstance != null)
         {
             Destroy(pausaCanvasInstance);
+        }
+        if (inventoryCanvasInstance != null)
+        {
+            Destroy(inventoryCanvasInstance);
         }
         Destroy(gameObject); 
     }

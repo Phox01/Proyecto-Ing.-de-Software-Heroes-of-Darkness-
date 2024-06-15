@@ -15,7 +15,11 @@ public class InventaryController : MonoBehaviour
     // Start is called before the first frame update
     public int numeroInv=10;
 
-
+    private void Awake()
+    {
+        inventoryUI = FindObjectOfType<InvetaryPage>();
+        inventoryUI.gameObject.SetActive(false);
+    }
 
     private void Start()
     {
@@ -149,7 +153,7 @@ public class InventaryController : MonoBehaviour
     //}
     public void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.I))
         {
             
             if (inventoryUI.isActiveAndEnabled==false)
