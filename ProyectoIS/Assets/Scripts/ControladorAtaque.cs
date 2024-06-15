@@ -55,7 +55,39 @@ public class ControladorDeAtaque : MonoBehaviour
             Attack();
             
         }
+
+        if (Input.GetKeyDown(KeyCode.Q) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1")==false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2")==false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3")==false)
+        {
+            
+            Magic();
+            
+        }
+
         ActualizarPuntoAtaque();
+    }
+
+    void Magic()
+    {
+        rb.velocity = Vector2.zero;
+        animator.SetTrigger("Magic");
+        musicManagement.SeleccionAudio(animator.GetInteger("NumbAtt")-1, 1f);
+        ContactFilter2D filter = new ContactFilter2D();
+        filter.SetLayerMask(capaEnemigos);
+
+        List<Collider2D> resultados = new List<Collider2D>();
+        areaAtaque.OverlapCollider(filter, resultados);
+        foreach (Collider2D enemigo in resultados)
+        {
+            Enemigo enemigoComponent = enemigo.GetComponent<Enemigo>();
+            if (enemigoComponent != null)
+            {
+                int damage = CriticalDamage(playerAttack);
+                int trueDamage = damage + Random.Range(-3, 4);
+                enemigoComponent.GetDamaged(trueDamage);
+                musicManagement.SeleccionAudio(5, 1f);
+            }
+        }
+
     }
 
     void Attack()
