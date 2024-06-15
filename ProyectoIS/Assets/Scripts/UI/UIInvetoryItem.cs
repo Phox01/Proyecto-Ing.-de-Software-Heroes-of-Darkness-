@@ -13,7 +13,7 @@ public class UIInvetoryItem : MonoBehaviour
      [SerializeField] TMP_Text quantityNumber;
      [SerializeField] Image borderImage;
 
-    public event Action<UIInvetoryItem> OnItemClicked,OnRightMouseBtnClick;
+    public event Action<UIInvetoryItem> OnItemClicked, OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag, OnRightMouseBtnClick;
 
     private bool empty = true;
 
@@ -41,7 +41,7 @@ public class UIInvetoryItem : MonoBehaviour
 
     }
 
-    public void setData(Sprite sprite, int quantity)
+    public void SetData(Sprite sprite, int quantity)
     {
         this.itemImage.gameObject.SetActive(true);
         this.itemImage.sprite = sprite;
@@ -61,7 +61,7 @@ public class UIInvetoryItem : MonoBehaviour
         
 
         PointerEventData pointerEventData = (PointerEventData)data;
-
+        
         if (pointerEventData.button == PointerEventData.InputButton.Right)
         {
 
@@ -74,7 +74,24 @@ public class UIInvetoryItem : MonoBehaviour
 
     }
 
-    
+    public void OnEndDrag()
+    {
+        OnItemEndDrag?.Invoke(this);
+    }
+
+    public void OnBeginDrag()
+    {
+        if (empty)
+            return;
+        OnItemBeginDrag?.Invoke(this);
+    }
+
+    public void OnDrop()
+    {
+        OnItemDroppedOn?.Invoke(this);
+    }
+
+
 
 
 }
