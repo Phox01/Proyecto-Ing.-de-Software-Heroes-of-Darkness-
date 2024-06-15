@@ -17,8 +17,7 @@ public class ManagementMenu : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-
-    
+  
     public void Salir()
     {
         Debug.Log("Saliendo del juego...");
@@ -47,13 +46,15 @@ public class ManagementMenu : MonoBehaviour
         {
             Debug.LogWarning("El archivo DataJuego.data no existe.");
             SceneManager.LoadScene(4);
-            gameManager.setActive(true);
+            gameManager.gameObject.SetActive(true);
         }
     }
 
     public void PartidaGuardada()
     {
+
         SceneManager.LoadScene(4);
+        gameManager.gameObject.SetActive(true);
     }
 
     public void PausarPartida()
@@ -97,7 +98,7 @@ public class ManagementMenu : MonoBehaviour
         File.Delete(filePath);
         Debug.Log("Archivo DataJuego.data eliminado correctamente.");
         SceneManager.LoadScene(4);
-        gameManager.setActive(true);
+        gameManager.gameObject.SetActive(true);
 
 
     }

@@ -22,7 +22,7 @@ public class playerMovement : MonoBehaviour
     
     private Vector2 lastMovement;
     private bool isKnockbackActive = false;
-    //private ManagementMenu managementMenu;
+    private ManagementMenu managementMenu;
     //private RaycastHit2D bodyBox;
     //private BoxCollider2D hit;
     //private Vector3 movePlry;

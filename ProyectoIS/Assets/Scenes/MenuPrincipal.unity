@@ -3384,6 +3384,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce33371faad1f354cbe5fa50aeb8531b, type: 3}
+--- !u!1 &799989230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7912688932783724201, guid: ce33371faad1f354cbe5fa50aeb8531b,
+    type: 3}
+  m_PrefabInstance: {fileID: 749816873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &861004897
 GameObject:
   m_ObjectHideFlags: 0
@@ -6994,6 +7000,7 @@ MonoBehaviour:
   botonPausa: {fileID: 0}
   menuPausa: {fileID: 0}
   panelConfirmacion: {fileID: 1773402821}
+  gameManager: {fileID: 799989230}
 --- !u!1 &1684720020
 GameObject:
   m_ObjectHideFlags: 0
