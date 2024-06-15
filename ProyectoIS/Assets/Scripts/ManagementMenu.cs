@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class ManagementMenu : MonoBehaviour
 {
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject menuPausa;
+    [SerializeField] private GameObject panelConfirmacion;
+    string filePath = Application.dataPath + "/data.mrmenu";
 
     public void Tutorial()
     {
@@ -32,7 +35,16 @@ public class ManagementMenu : MonoBehaviour
 
     public void NuevoJuego()
     {
-        SceneManager.LoadScene(4);
+        if (File.Exists(filePath))
+        {
+            panelConfirmacion.SetActive(true);
+
+        }
+        else
+        {
+            Debug.LogWarning("El archivo DataJuego.data no existe.");
+            SceneManager.LoadScene(4);
+        }
     }
 
     public void PartidaGuardada()
@@ -74,5 +86,19 @@ public class ManagementMenu : MonoBehaviour
     {
         Debug.Log("Aquí va el proceso de guardado");
         DataJuego.data.GuardarData();
+    }
+
+    public void ConfirmarPartida()
+    {
+        File.Delete(filePath);
+        Debug.Log("Archivo DataJuego.data eliminado correctamente.");
+        SceneManager.LoadScene(4);
+
+
+    }
+
+    public void DenegarPartida()
+    {
+        panelConfirmacion.SetActive(false);
     }
 }
