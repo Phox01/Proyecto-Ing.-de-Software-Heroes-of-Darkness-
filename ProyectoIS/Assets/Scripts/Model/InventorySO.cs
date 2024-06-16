@@ -27,7 +27,7 @@ public class InventorySO : ScriptableObject
         }
     }
 
-    public int AddItem(Item item, int quantity)
+    public int AddItem(ItemSO item, int quantity)
     //, List<ItemParameter> itemState = null
     {
 
@@ -49,7 +49,7 @@ public class InventorySO : ScriptableObject
         return quantity;
     }
 
-    private int AddStackableItem(Item item, int quantity)
+    private int AddStackableItem(ItemSO item, int quantity)
     {
         for (int i = 0; i < inventoryItems.Count; i++)
         {
@@ -83,7 +83,7 @@ public class InventorySO : ScriptableObject
             }
             return quantity;
     }
-     private int AddItemToFirstFreeSlot(Item item, int quantity)
+     private int AddItemToFirstFreeSlot(ItemSO item, int quantity)
         {
             InventoryItem newItem = new InventoryItem
             {
@@ -105,7 +105,7 @@ public class InventorySO : ScriptableObject
     private bool IsInventoryFull()
      => inventoryItems.Where(item => item.IsEmpty).Any() == false;
 
-    private int AddNonStackableItem(Item item, int quantity)
+    private int AddNonStackableItem(ItemSO item, int quantity)
     {
         InventoryItem newItem = new InventoryItem
         {
@@ -170,7 +170,7 @@ public class InventorySO : ScriptableObject
 public struct InventoryItem
 {
     public int quantity;
-    public Item item;
+    public ItemSO item;
     //public List<ItemParameter> itemState;
     public bool IsEmpty => item == null;
 

@@ -200,6 +200,8 @@ GameObject:
   - component: {fileID: 6905757270470026702}
   - component: {fileID: 4327676197873380689}
   - component: {fileID: 5004472773492530237}
+  - component: {fileID: 8276658661312236118}
+  - component: {fileID: 1817598438786586584}
   m_Layer: 0
   m_Name: Character 1
   m_TagString: Player
@@ -546,9 +548,59 @@ MonoBehaviour:
   inventoryData: {fileID: 11400000, guid: 0289b708ea1caa04b9584116a9137c94, type: 2}
   numeroInv: 10
   initialItems:
+  - quantity: 5
+    item: {fileID: 11400000, guid: 7879dd3259e28ef478166a4734fb2511, type: 2}
   - quantity: 3
     item: {fileID: 11400000, guid: 79d43709d167f2e42a0909c5be33df7f, type: 2}
-  - quantity: 4
+  - quantity: 5
     item: {fileID: 11400000, guid: 7879dd3259e28ef478166a4734fb2511, type: 2}
-  - quantity: 0
-    item: {fileID: 0}
+  - quantity: 1
+    item: {fileID: 11400000, guid: 79d43709d167f2e42a0909c5be33df7f, type: 2}
+--- !u!70 &8276658661312236118
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8964827477293548828}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 4.5, y: 6.25}
+  m_Direction: 0
+--- !u!114 &1817598438786586584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8964827477293548828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884305cfe59011c4fb4534dab1a39578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryData: {fileID: 11400000, guid: 0289b708ea1caa04b9584116a9137c94, type: 2}
