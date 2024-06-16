@@ -17,7 +17,6 @@ public class playerMovement : MonoBehaviour
     private bool isDashing = false;
     private float dashTime;
     private float lastDashTime;
-    public static playerMovement Instance;
     private MusicManagement musicManagement;
     
     private Vector2 lastMovement;
@@ -52,7 +51,7 @@ public class playerMovement : MonoBehaviour
     {
 
 
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") || animator.GetCurrentAnimatorStateInfo(0).IsName("Magic"))
         {
             animator.SetBool("CanMove", false);
             if (!isKnockbackActive)

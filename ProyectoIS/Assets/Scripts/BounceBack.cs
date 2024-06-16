@@ -32,7 +32,7 @@ public class BounceBack : MonoBehaviour
 
     public void EcharAtras(Transform vector)
     {
-        playerMovement.Instance.SetKnockbackActive(true);
+        playerMovement.instance.SetKnockbackActive(true);
 
 
 
@@ -47,7 +47,7 @@ public class BounceBack : MonoBehaviour
        
         yield return new WaitForSeconds(.2f);
         rb.velocity = Vector2.zero;
-        playerMovement.Instance.SetKnockbackActive(false);
+        playerMovement.instance.SetKnockbackActive(false);
 
     }
 }
