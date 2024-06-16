@@ -113879,7 +113879,7 @@ MonoBehaviour:
   - {fileID: 1498641447}
   playerTransform: {fileID: 2038801858}
   dialogue: {fileID: 1739172742}
-  minotaurus: {fileID: 343497404}
+  minotaurus: {fileID: 91076028}
   player: {fileID: 460775209}
 --- !u!4 &1739172739
 Transform:
