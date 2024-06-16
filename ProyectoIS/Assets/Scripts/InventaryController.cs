@@ -24,7 +24,7 @@ public class InventaryController : MonoBehaviour
     private void Start()
     {
         PrepareUI();
-        inventoryData.Initialize();
+        //inventoryData.Initialize();
         //PrepareInventoryData();
     }
 
