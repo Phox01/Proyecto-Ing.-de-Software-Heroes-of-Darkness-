@@ -17,7 +17,6 @@ public class playerMovement : MonoBehaviour
     private bool isDashing = false;
     private float dashTime;
     private float lastDashTime;
-    public static playerMovement Instance;
     private MusicManagement musicManagement;
     
     private Vector2 lastMovement;

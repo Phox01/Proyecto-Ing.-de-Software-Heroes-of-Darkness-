@@ -108,7 +108,7 @@ public class Enemigo : MonoBehaviour
     
     public void GetDamaged(int damage)
     {
-        GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
+        GetKnockedBackUwu(playerMovement.instance.transform, 15f);
         musicManagement.SeleccionAudio(4, 1f);
         StartCoroutine(flash.FlashRoutine());
 

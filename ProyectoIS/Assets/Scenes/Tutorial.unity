@@ -544,12 +544,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304394092}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.23, y: 14.51, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.74652916, z: -31.105412}
+  m_LocalScale: {x: 3.110541, y: 3.110541, z: 3.110541}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2038801858}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &304394096
 MonoBehaviour:
@@ -76768,6 +76768,11 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
       value: 3.1614258
       objectReference: {fileID: 0}
+    - target: {fileID: 4670636289795236953, guid: 45d990cf2685bb84fbd5241290a15364,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5192885326749568027, guid: 45d990cf2685bb84fbd5241290a15364,
         type: 3}
       propertyPath: m_Enabled
@@ -76782,6 +76787,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6957276174284374297, guid: 45d990cf2685bb84fbd5241290a15364,
+        type: 3}
+      propertyPath: m_Depth
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6957276174284374297, guid: 45d990cf2685bb84fbd5241290a15364,
+        type: 3}
+      propertyPath: orthographic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7817561878576813476, guid: 45d990cf2685bb84fbd5241290a15364,
         type: 3}
@@ -76825,8 +76840,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8502002122923693334, guid: 45d990cf2685bb84fbd5241290a15364, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8905074511243389922, guid: 45d990cf2685bb84fbd5241290a15364, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1053999619504944758, guid: 45d990cf2685bb84fbd5241290a15364,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 304394095}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6944310338585305875, guid: 45d990cf2685bb84fbd5241290a15364,
         type: 3}
@@ -113900,6 +113920,7 @@ MonoBehaviour:
   playerTransform: {fileID: 2038801858}
   dialogue: {fileID: 1739172742}
   minotaurus: {fileID: 343497404}
+  player: {fileID: 460775209}
 --- !u!4 &1739172739
 Transform:
   m_ObjectHideFlags: 0
@@ -114817,7 +114838,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 304394095}
   - {fileID: 2060478386}
   - {fileID: 1308961838}
   - {fileID: 1739172739}
