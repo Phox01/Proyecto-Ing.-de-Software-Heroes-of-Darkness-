@@ -15,7 +15,7 @@ public class InventorySO : ScriptableObject
     [field: SerializeField]
     public int Size { get; private set; } = 10;
 
-    //public event Action<Dictionary<int, InventoryItem>> OnInventoryUpdated;
+    public event Action<Dictionary<int, InventoryItem>> OnInventoryUpdated;
 
     public void Initialize()
     {
@@ -26,24 +26,49 @@ public class InventorySO : ScriptableObject
         }
     }
 
-    //public int AddItem(Item item, int quantity, List<ItemParameter> itemState = null)
-    //{
-    //    if (item.IsStackable == false)
-    //    {
-    //        for (int i = 0; i < inventoryItems.Count; i++)
-    //        {
-    //            while (quantity > 0 && IsInventoryFull() == false)
-    //            {
-    //                quantity -= AddItemToFirstFreeSlot(item, 1, itemState);
-    //            }
-    //            InformAboutChange();
-    //            return quantity;
-    //        }
-    //    }
-    //    quantity = AddStackableItem(item, quantity);
-    //    InformAboutChange();
-    //    return quantity;
-    //}
+    public void AddItem(Item item, int quantity)
+        //, List<ItemParameter> itemState = null
+    {
+
+        for (int i = 0;i < inventoryItems.Count;i++) {
+        
+        
+            if (inventoryItems[i].IsEmpty)
+            {
+                inventoryItems[i]=new InventoryItem()
+                {
+                    item = item,
+                    quantity=quantity
+
+                };
+                return;
+            }
+        }
+
+
+        //if (item.IsStackable == false)
+        //{
+        //    for (int i = 0; i < inventoryItems.Count; i++)
+        //    {
+        //        while (quantity > 0 && IsInventoryFull() == false)
+        //        {
+        //            quantity -= AddItemToFirstFreeSlot(item, 1, itemState);
+        //        }
+        //        InformAboutChange();
+        //        return quantity;
+        //    }
+        //}
+        //quantity = AddStackableItem(item, quantity);
+        //InformAboutChange();
+        //return quantity;
+    }
+
+
+    public void AddItem(InventoryItem item)
+    {
+        AddItem(item.item,item.quantity);
+    }
+    
 
     public InventoryItem GetItemAt(int itemIndex)
     {
@@ -64,7 +89,23 @@ public class InventorySO : ScriptableObject
         return returnValue;
     }
 
+
+    public void SwapItems(int itemIndex_1, int itemIndex_2)
+    {
+        InventoryItem item1 = inventoryItems[itemIndex_1];
+        inventoryItems[itemIndex_1] = inventoryItems[itemIndex_2];
+        inventoryItems[itemIndex_2] = item1;
+        InformAboutChange();
+    }
+
+    private void InformAboutChange()
+    {
+        OnInventoryUpdated?.Invoke(GetCurrentInventoryState());
+    }
+
 }
+
+
 
 [Serializable]
 public struct InventoryItem

@@ -133,6 +133,14 @@ public class InvetaryPage : MonoBehaviour
         //actionPanel.Toggle(false);
     }
 
+    internal void ResetAllItems()
+    {
+        foreach (var item in listOfItems)
+        {
+            item.ResetData();
+            item.Deselect();
+        }
+    }
     internal void UpdateDescription(int itemIndex, Sprite itemImage, string name, string description)
     {
         itemDescription.SetDescription(itemImage, name, description);
@@ -152,6 +160,11 @@ public class InvetaryPage : MonoBehaviour
         ResetDraggedItem();
     }
 
+    public void CreateDraggedItem(Sprite sprite, int quantity)
+    {
+        mouseFollower.Toggle(true);
+        mouseFollower.SetData(sprite, quantity);
+    }
     private void ResetDraggedItem()
     {
         mouseFollower.Toggle(false);

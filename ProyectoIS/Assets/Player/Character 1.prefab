@@ -545,3 +545,10 @@ MonoBehaviour:
   inventoryUI: {fileID: 0}
   inventoryData: {fileID: 11400000, guid: 0289b708ea1caa04b9584116a9137c94, type: 2}
   numeroInv: 10
+  initialItems:
+  - quantity: 3
+    item: {fileID: 11400000, guid: 79d43709d167f2e42a0909c5be33df7f, type: 2}
+  - quantity: 4
+    item: {fileID: 11400000, guid: 7879dd3259e28ef478166a4734fb2511, type: 2}
+  - quantity: 0
+    item: {fileID: 0}
