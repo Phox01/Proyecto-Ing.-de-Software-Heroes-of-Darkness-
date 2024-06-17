@@ -9,7 +9,7 @@ public class ControladorDeAtaque : MonoBehaviour
     public LayerMask capaEnemigos;
     public GameObject projectilePrefab;
     public Transform LaunchOffset;
-    
+
     public PolygonCollider2D areaAtaque;
     private int playerAttack;
     public int currentHealth;
@@ -80,10 +80,10 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         animator.SetTrigger("Magic");
-        musicManagement.SeleccionAudio(animator.GetInteger("NumbAtt")-1, 1f);
+        musicManagement.SeleccionAudio(animator.GetInteger("NumbAtt") - 1, 1f);
 
-        GameObject projectileObject= Instantiate(projectilePrefab, LaunchOffset.position, areaAtaque.transform.rotation);
-        
+        GameObject projectileObject = Instantiate(projectilePrefab, LaunchOffset.position, areaAtaque.transform.rotation);
+
         SpriteRenderer spriteRenderer = projectileObject.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = projectileSprite;
 
@@ -96,22 +96,12 @@ public class ControladorDeAtaque : MonoBehaviour
         // Make the projectile ignore the player collider
         Physics2D.IgnoreCollision(projectileCollider, playerCollider);
 
-        ContactFilter2D filter = new ContactFilter2D();
-        filter.SetLayerMask(capaEnemigos);
-
-        List<Collider2D> resultados = new List<Collider2D>();
-        projectileCollider.OverlapCollider(filter, resultados);
-        Debug.Log(resultados);
-        foreach (Collider2D enemigo in resultados)
+        Projectile projectileScript = projectileObject.GetComponent<Projectile>();
+        if (projectileScript != null)
         {
-            Enemigo enemigoComponent = enemigo.GetComponent<Enemigo>();
-            if (enemigoComponent != null)
-            {
-                int damage = CriticalDamage(playerAttack);
-                int trueDamage = damage + Random.Range(-3, 4);
-                enemigoComponent.GetDamaged(trueDamage);
-                musicManagement.SeleccionAudio(5, 1f);
-            }
+            int damage = CriticalDamage(playerAttack);
+            int trueDamage = damage + Random.Range(-3, 4);
+            projectileScript.damage = trueDamage;
         }
 
     }

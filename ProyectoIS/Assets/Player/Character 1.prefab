@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1992031091728966355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 268212989156466892}
+  m_Layer: 0
+  m_Name: LaunchOffset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &268212989156466892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992031091728966355}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.28, y: 4.67, z: 0.03036004}
+  m_LocalScale: {x: 3.110541, y: 3.110541, z: 3.110541}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1339501428471779449}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4421808883855809525
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +141,7 @@ Transform:
   m_GameObject: {fileID: 5003093091978650312}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.74652916, z: -31.105412}
+  m_LocalPosition: {x: 0, y: -0.7465292, z: -31.10541}
   m_LocalScale: {x: 3.110541, y: 3.110541, z: 3.110541}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -226,6 +257,7 @@ Transform:
   m_Children:
   - {fileID: 1780207269061309119}
   - {fileID: 223541923021874664}
+  - {fileID: 268212989156466892}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6063683289044118036
@@ -393,6 +425,7 @@ MonoBehaviour:
   dashCooldown: 1
   rb: {fileID: 7989326598424684392}
   animator: {fileID: 1899253404670520504}
+  lastMovement: {x: 0, y: 0, z: 0}
 --- !u!114 &607767498239099414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,8 +441,12 @@ MonoBehaviour:
   capaEnemigos:
     serializedVersion: 2
     m_Bits: 8388608
+  projectilePrefab: {fileID: 2922208694058279259, guid: 95437742a83ce0344baaa89a22373a10,
+    type: 3}
+  LaunchOffset: {fileID: 268212989156466892}
   areaAtaque: {fileID: 2559670714444471935}
   currentHealth: 0
+  projectileSprite: {fileID: 1882530303, guid: 038e5ad410e39584db350482e6cad7e8, type: 3}
   atributos: {fileID: 8091804671221019563}
   animator: {fileID: 1899253404670520504}
   rb: {fileID: 7989326598424684392}
@@ -553,6 +590,8 @@ MonoBehaviour:
   initialItems:
   - quantity: 6
     item: {fileID: 11400000, guid: babefacdd027598418b2ae821a6b527b, type: 2}
+  - quantity: 2
+    item: {fileID: 11400000, guid: d3ead0ac18e7b0640af31afe7ca10f74, type: 2}
 --- !u!70 &8276658661312236118
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -560,7 +599,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8964827477293548828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:

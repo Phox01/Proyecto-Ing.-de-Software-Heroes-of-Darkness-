@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 706458589990203453}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.16, y: 4.09, z: 0.030360036}
+  m_LocalPosition: {x: -1.16, y: 4.09, z: 0.03036004}
   m_LocalScale: {x: 3.110541, y: 3.110541, z: 3.110541}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -343,6 +343,7 @@ MonoBehaviour:
     type: 3}
   LaunchOffset: {fileID: 4871527701189102940}
   areaAtaque: {fileID: 4590175799631657072}
+  currentHealth: 0
   projectileSprite: {fileID: 1882530303, guid: 038e5ad410e39584db350482e6cad7e8, type: 3}
   atributos: {fileID: 7817561878576813476}
   animator: {fileID: 463257830025792183}

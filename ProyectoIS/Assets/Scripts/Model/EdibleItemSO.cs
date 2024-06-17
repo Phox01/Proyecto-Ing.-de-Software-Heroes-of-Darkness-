@@ -10,7 +10,7 @@ using UnityEngine;
         [SerializeField]
         private List<ModifierData> modifiersData = new List<ModifierData>();
 
-        public string ActionName => "Consume";
+        public string ActionName => "Use";
 
         // [field: SerializeField]
         // public AudioClip actionSFX {get; private set;}

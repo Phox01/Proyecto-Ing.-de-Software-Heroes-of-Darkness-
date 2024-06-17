@@ -1,8 +1,6 @@
-using System.Collections;
+
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class InventoryController : MonoBehaviour
 {
@@ -13,24 +11,24 @@ public class InventoryController : MonoBehaviour
     [SerializeField]
     private InventorySO inventoryData;
     // Start is called before the first frame update
-    public int numeroInv=10;
+    public int numeroInv = 10;
 
     public List<InventoryItem> initialItems = new List<InventoryItem>();
 
     private void Awake()
     {
         inventoryUI = FindObjectOfType<InventoryPage>();
-        
+
         PrepareUI();
-        
+
         PrepareInventoryData();
         inventoryUI.gameObject.SetActive(false);
-        
+
     }
 
     private void Start()
     {
-        
+
     }
 
     private void PrepareInventoryData()
@@ -66,51 +64,52 @@ public class InventoryController : MonoBehaviour
 
     private void HandleItemActionRequest(int itemIndex)
     {
-       InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
-       if (inventoryItem.IsEmpty)
-           return;
+        InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+        if (inventoryItem.IsEmpty)
+            return;
 
-       IItemAction itemAction = inventoryItem.item as IItemAction;
-       if (itemAction != null)
-       {
-            itemAction.PerformAction(gameObject);
-       }
-       IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
-       if (destroyableItem != null)
-       {
-           inventoryData.RemoveItem(itemIndex, 1);
-       }
+        IItemAction itemAction = inventoryItem.item as IItemAction;
+        if (itemAction != null)
+        {
+            inventoryUI.ShowItemAction(itemIndex);
+            inventoryUI.AddAction(itemAction.ActionName, () => PerformAction(itemIndex));
+        }
+        IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
+        if (destroyableItem != null)
+        {
+            inventoryUI.AddAction("Drop", () => DropItem(itemIndex, inventoryItem.quantity));
+        }
 
     }
 
-    //private void DropItem(int itemIndex, int quantity)
-    //{
-    //    inventoryData.RemoveItem(itemIndex, quantity);
-    //    inventoryUI.ResetSelection();
-    //    audioSource.PlayOneShot(dropClip);
-    //}
+    private void DropItem(int itemIndex, int quantity)
+    {
+       inventoryData.RemoveItem(itemIndex, quantity);
+       inventoryUI.ResetSelection();
+       //audioSource.PlayOneShot(dropClip);
+    }
 
-    //public void PerformAction(int itemIndex)
-    //{
-    //    InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
-    //    if (inventoryItem.IsEmpty)
-    //        return;
+    public void PerformAction(int itemIndex)
+    {
+        InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+        if (inventoryItem.IsEmpty)
+            return;
 
-    //    IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
-    //    if (destroyableItem != null)
-    //    {
-    //        inventoryData.RemoveItem(itemIndex, 1);
-    //    }
+        IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
+        if (destroyableItem != null)
+        {
+            inventoryData.RemoveItem(itemIndex, 1);
+        }
 
-    //    IItemAction itemAction = inventoryItem.item as IItemAction;
-    //    if (itemAction != null)
-    //    {
-    //        itemAction.PerformAction(gameObject, inventoryItem.itemState);
-    //        audioSource.PlayOneShot(itemAction.actionSFX);
-    //        if (inventoryData.GetItemAt(itemIndex).IsEmpty)
-    //            inventoryUI.ResetSelection();
-    //    }
-    //}
+        IItemAction itemAction = inventoryItem.item as IItemAction;
+        if (itemAction != null)
+        {
+            itemAction.PerformAction(gameObject);
+            //audioSource.PlayOneShot(itemAction.actionSFX);
+            if (inventoryData.GetItemAt(itemIndex).IsEmpty)
+                inventoryUI.ResetSelection();
+        }
+    }
 
     private void HandleDragging(int itemIndex)
     {
@@ -157,8 +156,8 @@ public class InventoryController : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.I))
         {
-            
-            if (inventoryUI.isActiveAndEnabled==false)
+
+            if (inventoryUI.isActiveAndEnabled == false)
             {
                 foreach (var item in inventoryData.GetCurrentInventoryState())
                 {
@@ -166,7 +165,7 @@ public class InventoryController : MonoBehaviour
                         item.Value.item.ItemImage,
                         item.Value.quantity);
                 }
-                
+
                 inventoryUI.Show();
             }
             else
@@ -174,6 +173,6 @@ public class InventoryController : MonoBehaviour
                 inventoryUI.Hide();
             }
         }
-       
+
     }
 }
