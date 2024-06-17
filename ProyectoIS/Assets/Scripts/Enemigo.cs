@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +30,7 @@ public class Enemigo : MonoBehaviour
     private Color fullHealthColor = Color.green;
     private Color midHealthColor = Color.yellow;
     private Color lowHealthColor = Color.red;
+    public TextMeshProUGUI damageNumber;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -45,6 +47,7 @@ public class Enemigo : MonoBehaviour
         
         sliderVidas.maxValue = vidaMax;
         sliderVidas.value = vida;
+        damageNumber.gameObject.SetActive(false);
     }
     protected virtual void Update()
         {
@@ -108,7 +111,7 @@ public class Enemigo : MonoBehaviour
     
     public void GetDamaged(int damage)
     {
-        GetKnockedBackUwu(playerMovement.Instance.transform, 15f);
+        GetKnockedBackUwu(playerMovement.instance.transform, 15f);
         musicManagement.SeleccionAudio(4, 1f);
         StartCoroutine(flash.FlashRoutine());
 
@@ -118,6 +121,7 @@ public class Enemigo : MonoBehaviour
             vida -= netDamage;
             sliderVidas.value = vida;
             UpdateHealthColor();
+            ShowDamage(netDamage);
         }
         if (vida <= 0)
         {
@@ -183,5 +187,28 @@ public class Enemigo : MonoBehaviour
         {
             jugador.GetDamaged(attack);
         }
+    }
+    private void ShowDamage(int damage)
+    {
+        damageNumber.text = damage.ToString();
+        damageNumber.gameObject.SetActive(true);
+        StartCoroutine(FadeDamageText());
+    }
+
+    private IEnumerator FadeDamageText()
+    {
+        float duration = 1f;
+        float elapsedTime = 0f;
+        Vector3 originalPosition = damageNumber.transform.position;
+
+        while (elapsedTime < duration)
+        {
+            damageNumber.transform.position = originalPosition + Vector3.up * (elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        damageNumber.gameObject.SetActive(false);
+        damageNumber.transform.position = originalPosition;
     }
 }

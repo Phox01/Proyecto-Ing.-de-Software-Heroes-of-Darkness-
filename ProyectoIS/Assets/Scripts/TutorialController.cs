@@ -9,6 +9,7 @@ public class TutorialController : MonoBehaviour
     public Transform playerTransform;
     public Dialogue dialogue;
     public Minotaurus minotaurus;
+    public GameObject player;
     private bool wPressed = false;
     private bool aPressed = false;
     private bool sPressed = false;
@@ -126,8 +127,8 @@ public class TutorialController : MonoBehaviour
     IEnumerator ActivateFinalDialogue()
     {
         yield return new WaitForSeconds(3); 
-            
-            SceneManager.LoadScene(4);
+            Destroy(player);
+            SceneManager.LoadScene(2);
     }
 
     public void HandleEnemySpawned(Enemigo enemy)

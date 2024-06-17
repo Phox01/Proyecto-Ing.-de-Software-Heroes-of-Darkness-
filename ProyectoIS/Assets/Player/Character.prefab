@@ -76,12 +76,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.07664096, y: -0.2262559}
-      - {x: -3.5135455, y: 2.7582197}
-      - {x: -2.8103745, y: -1.4604663}
+    - - {x: 0.59086734, y: 3.778793}
+      - {x: -3.4181876, y: 3.8071613}
+      - {x: -3.1918075, y: -3.0815592}
       - {x: 0.11264056, y: -3.1169062}
-      - {x: 3.0486348, y: -1.1872162}
-      - {x: 4.396599, y: 3.1614258}
+      - {x: 3.7161434, y: -2.9990244}
+      - {x: 3.7348948, y: -0.6326836}
+      - {x: 3.7782288, y: 3.6382174}
   m_UseDelaunayMesh: 0
 --- !u!1 &6944310338585305875
 GameObject:
@@ -101,7 +102,6 @@ GameObject:
   - component: {fileID: 7817561878576813476}
   - component: {fileID: 2918155039820010990}
   - component: {fileID: 8502002122923693334}
-  - component: {fileID: 2003428450894922691}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -432,21 +432,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2003428450894922691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6944310338585305875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a17c96c9f982c9e4e93e0207e8999f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryUI: {fileID: 8829759844161342306, guid: 0c3a69cad829d4247bc876a48ed53f26,
-    type: 3}
-  numeroInv: 10
 --- !u!1 &8905074511243389922
 GameObject:
   m_ObjectHideFlags: 0
