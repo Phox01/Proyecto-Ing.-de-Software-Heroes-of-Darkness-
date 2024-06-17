@@ -99,7 +99,7 @@ public class playerMovement : MonoBehaviour
         //hit = Physics2D.BoxCast(transform.position, bodyBox.size,0,new Vector2(0,)
 
         if(animator.GetFloat("Speed")==0){
-            musicManagement.AudioLoop(3, 0.3f);
+            //musicManagement.AudioLoop(3, 0.3f);
         }
         
         if (animator.GetBool("CanMove") &&! isKnockbackActive )
