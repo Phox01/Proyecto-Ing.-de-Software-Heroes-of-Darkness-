@@ -75,14 +75,13 @@ public class InventoryController : MonoBehaviour
        {
             itemAction.PerformAction(gameObject);
        }
-    }
-    //    IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
-    //    if (destroyableItem != null)
-    //    {
-    //        inventoryUI.AddAction("Drop", () => DropItem(itemIndex, inventoryItem.quantity));
-    //    }
+       IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
+       if (destroyableItem != null)
+       {
+           inventoryData.RemoveItem(itemIndex, 1);
+       }
 
-    //}
+    }
 
     //private void DropItem(int itemIndex, int quantity)
     //{

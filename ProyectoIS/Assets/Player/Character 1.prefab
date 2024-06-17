@@ -550,7 +550,9 @@ MonoBehaviour:
   inventoryUI: {fileID: 0}
   inventoryData: {fileID: 11400000, guid: 0289b708ea1caa04b9584116a9137c94, type: 2}
   numeroInv: 10
-  initialItems: []
+  initialItems:
+  - quantity: 6
+    item: {fileID: 11400000, guid: babefacdd027598418b2ae821a6b527b, type: 2}
 --- !u!70 &8276658661312236118
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
