@@ -10,7 +10,7 @@ public class Eventos : Colisiones
     {
         if(col.tag == "Player")
         {
-            if(Input.GetAxisRaw("X") == 1)
+            if(Input.GetAxisRaw("Space") == 1)
             {
                 switch (idEevent)
                 {
@@ -18,6 +18,9 @@ public class Eventos : Colisiones
                         chestInteraction();
                         break;
 
+                    case 2:
+                        checkpointIteraction();
+                        break;
                     default:
                         break;
                 }
@@ -26,6 +29,10 @@ public class Eventos : Colisiones
     }
 
     protected virtual void chestInteraction() {
+        Debug.Log("Funciona");
+    }
+    protected virtual void checkpointIteraction()
+    {
         Debug.Log("Funciona");
     }
 }

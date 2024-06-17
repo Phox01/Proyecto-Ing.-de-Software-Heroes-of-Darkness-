@@ -5,12 +5,9 @@ using UnityEngine;
 public class Cofre : Eventos
 {
     public int typeChest;
-    //private RaycastHit2D hit;
     public List<GameObject> objetos = new List<GameObject>();
 
-    //void FixedUpdate() { 
-    //    hit = Physics2D.BoxCast(transform.position,bod);
-    //}
+
     protected override void chestInteraction()
     {
         if (typeChest == 0) { //Cofre aleatorio
