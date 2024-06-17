@@ -36,7 +36,6 @@ public class ControladorDeAtaque : MonoBehaviour
         sliderVidas = FindObjectOfType<Slider>();
 
         musicManagement = FindObjectOfType<MusicManagement>();
-        Debug.Log(sliderVidas);
     }
 
 
@@ -49,13 +48,11 @@ public class ControladorDeAtaque : MonoBehaviour
         {
             sliderVidas.maxValue = atributos.health; // Asegúrate de que el maxValue del slider sea igual a la salud máxima.
             sliderVidas.value = currentHealth;
-            Debug.Log("Valor inicial de la barra de salud: " + sliderVidas.value);
         }
     }
 
     void Update()
     {
-         Debug.Log(sliderVidas.value);
         direccionMovimiento = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
 
         if (Input.GetKeyDown(KeyCode.Space) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false)
