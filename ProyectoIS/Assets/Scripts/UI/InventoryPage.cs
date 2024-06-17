@@ -30,6 +30,11 @@ public class InventoryPage : MonoBehaviour
     public void UpdateData(int itemIndex,
             Sprite itemImage, int itemQuantity)
     {
+        if (itemImage == null)
+    {
+        Debug.LogWarning("Item image is null at index " + itemIndex);
+        return;
+    }
         if (listOfItems.Count > itemIndex)
         {
             listOfItems[itemIndex].SetData(itemImage, itemQuantity);

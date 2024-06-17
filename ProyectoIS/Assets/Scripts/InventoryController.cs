@@ -11,12 +11,12 @@ public class InventoryController : MonoBehaviour
     [SerializeField]
     private InventorySO inventoryData;
     // Start is called before the first frame update
-    public int numeroInv = 10;
 
     public List<InventoryItem> initialItems = new List<InventoryItem>();
 
     private void Awake()
     {
+        
         inventoryUI = FindObjectOfType<InventoryPage>();
 
         PrepareUI();
