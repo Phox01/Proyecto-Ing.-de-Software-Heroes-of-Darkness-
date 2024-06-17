@@ -52,5 +52,5 @@ MonoBehaviour:
     type: 3}
   pausaCanvasPrefab: {fileID: 1826304443148339744, guid: 28d0ded24167bb642a2678dd0165f48b,
     type: 3}
-  inventoryCanvasPrefab: {fileID: 2519441147781749179, guid: 370b3ff7b1126a646adbc4a3e717723b,
+  inventoryCanvasPrefab: {fileID: 6803278399582848297, guid: b1bb383a126ab624abcfa0e1a8a6f8fa,
     type: 3}

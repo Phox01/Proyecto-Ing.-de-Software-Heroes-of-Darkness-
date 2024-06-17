@@ -7,7 +7,7 @@ public class ActualizaHUD : MonoBehaviour
 {
     public Text txtDinero;
     public float vidaTotal;
-    public Slider sliderVidas;
+    //public Slider sliderVidas;
 
     void Start()
     {
@@ -18,30 +18,30 @@ public class ActualizaHUD : MonoBehaviour
     void Update()
     {
         txtDinero.text = "" + DataJuego.data.dinero; //Convierte el int en string
-        calcularVida();
+        //calcularVida();
     }
 
 
-    private void calcularVida()
-    {
-        vidaTotal = (float)DataJuego.data.vida;
-        sliderVidas.value = vidaTotal;
-        UpdateHealthColor();
-    }
+    // private void calcularVida()
+    // {
+    //     vidaTotal = (float)DataJuego.data.vida;
+    //     sliderVidas.value = vidaTotal;
+    //     UpdateHealthColor();
+    // }
 
-    private void UpdateHealthColor()
-    {
-        if (vidaTotal > DataJuego.data.maxVida / 2)
-        {
-            sliderVidas.fillRect.GetComponent<Image>().color = Color.green;
-        }
-        else if (vidaTotal > DataJuego.data.maxVida / 4)
-        {
-            sliderVidas.fillRect.GetComponent<Image>().color = Color.yellow;
-        }
-        else
-        {
-            sliderVidas.fillRect.GetComponent<Image>().color = Color.red;
-        }
-    }
+    // private void UpdateHealthColor()
+    // {
+    //     if (vidaTotal > DataJuego.data.maxVida / 2)
+    //     {
+    //         sliderVidas.fillRect.GetComponent<Image>().color = Color.green;
+    //     }
+    //     else if (vidaTotal > DataJuego.data.maxVida / 4)
+    //     {
+    //         sliderVidas.fillRect.GetComponent<Image>().color = Color.yellow;
+    //     }
+    //     else
+    //     {
+    //         sliderVidas.fillRect.GetComponent<Image>().color = Color.red;
+    //     }
+    // }
 }

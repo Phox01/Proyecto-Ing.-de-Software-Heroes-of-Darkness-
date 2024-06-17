@@ -202,6 +202,8 @@ GameObject:
   - component: {fileID: 5004472773492530237}
   - component: {fileID: 8276658661312236118}
   - component: {fileID: 1817598438786586584}
+  - component: {fileID: -4521888047058435777}
+  - component: {fileID: 8334582414010735681}
   m_Layer: 0
   m_Name: Character 1
   m_TagString: Player
@@ -407,6 +409,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8388608
   areaAtaque: {fileID: 2559670714444471935}
+  currentHealth: 0
   atributos: {fileID: 8091804671221019563}
   animator: {fileID: 1899253404670520504}
   rb: {fileID: 7989326598424684392}
@@ -423,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22849f7914a055c49ac8905afaef186e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 150
   attack: 10
   currentHealth: 0
   critChance: 0
@@ -547,15 +550,7 @@ MonoBehaviour:
   inventoryUI: {fileID: 0}
   inventoryData: {fileID: 11400000, guid: 0289b708ea1caa04b9584116a9137c94, type: 2}
   numeroInv: 10
-  initialItems:
-  - quantity: 5
-    item: {fileID: 11400000, guid: 7879dd3259e28ef478166a4734fb2511, type: 2}
-  - quantity: 3
-    item: {fileID: 11400000, guid: 79d43709d167f2e42a0909c5be33df7f, type: 2}
-  - quantity: 5
-    item: {fileID: 11400000, guid: 7879dd3259e28ef478166a4734fb2511, type: 2}
-  - quantity: 1
-    item: {fileID: 11400000, guid: 79d43709d167f2e42a0909c5be33df7f, type: 2}
+  initialItems: []
 --- !u!70 &8276658661312236118
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -604,3 +599,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryData: {fileID: 11400000, guid: 0289b708ea1caa04b9584116a9137c94, type: 2}
+--- !u!114 &-4521888047058435777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8964827477293548828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ec2e976aa3c7f4eb45bc393636b025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteFlah: {fileID: 2100000, guid: da455a81febabfe4796638670e768074, type: 2}
+  restoreMatTime: 0.2
+--- !u!114 &8334582414010735681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8964827477293548828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c51e78392c0af1458c46e6ffa51f963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 7989326598424684392}

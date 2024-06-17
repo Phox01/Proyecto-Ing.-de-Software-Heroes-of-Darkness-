@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8db81f17f34490849861a06eb4d0b3a4, type: 3}
-  m_Name: Corazon
+  m_Script: {fileID: 11500000, guid: 6251ee13c888d7e4f8bf0b3b03cf2f63, type: 3}
+  m_Name: Heart
   m_EditorClassIdentifier: 
-  <IsStackable>k__BackingField: 0
-  <MaxStackSize>k__BackingField: 1
-  <Name>k__BackingField: Corazon
-  <Description>k__BackingField: Aumenta la vida
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 5
+  <Name>k__BackingField: Heart
+  <Description>k__BackingField: Restore Health
   <ItemImage>k__BackingField: {fileID: 21300000, guid: 15cc575b0d9a36846838578bfb080819,
     type: 3}
+  modifiersData:
+  - statModifier: {fileID: 11400000, guid: 489998e3ca2da3a45836436b0d47c13c, type: 2}
+    value: 10

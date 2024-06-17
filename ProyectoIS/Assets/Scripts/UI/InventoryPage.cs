@@ -66,7 +66,10 @@ public class InventoryPage : MonoBehaviour
 
     private void HandleShowItemActions(UIInventoryItem InventoryItemUI)
     {
-        throw new NotImplementedException();
+        int index = listOfItems.IndexOf(InventoryItemUI);
+        if (index == -1)
+            return;
+        OnItemActionRequested?.Invoke(index);
     }
 
     private void HandleEndDrag(UIInventoryItem InventoryItemUI)

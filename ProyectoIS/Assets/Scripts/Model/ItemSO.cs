@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu]
-public class ItemSO : ScriptableObject
+public abstract class ItemSO : ScriptableObject
 {
     // Start is called before the first frame update
     //public abstract class ItemSOSO : ScriptableObject

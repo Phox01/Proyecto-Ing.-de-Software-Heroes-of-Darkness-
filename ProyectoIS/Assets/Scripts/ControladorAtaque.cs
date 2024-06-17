@@ -9,7 +9,7 @@ public class ControladorDeAtaque : MonoBehaviour
     public LayerMask capaEnemigos;
     public PolygonCollider2D areaAtaque;
     private int playerAttack;
-    private int currentHealth;
+    public int currentHealth;
     private float critChance;
     private float critAttack;
     public Atributos atributos;
@@ -18,7 +18,7 @@ public class ControladorDeAtaque : MonoBehaviour
     private MusicManagement musicManagement;
     public Rigidbody2D rb;
     public Slider sliderVidas;
-    
+
     protected Flash flash;
 
 
@@ -31,11 +31,12 @@ public class ControladorDeAtaque : MonoBehaviour
 
     private void Awake()
     {
-        
+
         flash = GetComponent<Flash>();
         sliderVidas = FindObjectOfType<Slider>();
-        
+
         musicManagement = FindObjectOfType<MusicManagement>();
+        Debug.Log(sliderVidas);
     }
 
 
@@ -44,25 +45,31 @@ public class ControladorDeAtaque : MonoBehaviour
         playerAttack = atributos.attack;
         currentHealth = atributos.health;
         areaAtaque.isTrigger = true;
-        sliderVidas.value = currentHealth;
+        if (sliderVidas != null)
+        {
+            sliderVidas.maxValue = atributos.health; // Asegúrate de que el maxValue del slider sea igual a la salud máxima.
+            sliderVidas.value = currentHealth;
+            Debug.Log("Valor inicial de la barra de salud: " + sliderVidas.value);
+        }
     }
 
     void Update()
     {
+         Debug.Log(sliderVidas.value);
         direccionMovimiento = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
 
-        if (Input.GetKeyDown(KeyCode.Space) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1")==false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2")==false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3")==false)
+        if (Input.GetKeyDown(KeyCode.Space) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false)
         {
-            
+
             Attack();
-            
+
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1")==false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2")==false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3")==false)
+        if (Input.GetKeyDown(KeyCode.Q) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false)
         {
-            
+
             Magic();
-            
+
         }
 
         ActualizarPuntoAtaque();
@@ -72,7 +79,7 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         animator.SetTrigger("Magic");
-        musicManagement.SeleccionAudio(animator.GetInteger("NumbAtt")-1, 1f);
+        musicManagement.SeleccionAudio(animator.GetInteger("NumbAtt") - 1, 1f);
         ContactFilter2D filter = new ContactFilter2D();
         filter.SetLayerMask(capaEnemigos);
 
@@ -113,40 +120,44 @@ public class ControladorDeAtaque : MonoBehaviour
                 musicManagement.SeleccionAudio(5, 1f);
             }
         }
-        int count=animator.GetInteger("NumbAtt")+1;
-        if (count==4){
-            count=1;
+        int count = animator.GetInteger("NumbAtt") + 1;
+        if (count == 4)
+        {
+            count = 1;
         }
         animator.SetInteger("NumbAtt", count);
 
     }
-    int CriticalDamage(int attack){
-        if(Random.value<critChance){
-            int criticalHit = Mathf.RoundToInt(attack*critAttack);
+    int CriticalDamage(int attack)
+    {
+        if (Random.value < critChance)
+        {
+            int criticalHit = Mathf.RoundToInt(attack * critAttack);
             return criticalHit;
         }
-        else{
+        else
+        {
             return attack;
         }
     }
     void ActualizarPuntoAtaque()
-{
-    if (direccionMovimiento != Vector2.zero)
     {
-        Vector3 nuevaPosicion = transform.position + (Vector3)direccionMovimiento * 0.5f;
-        areaAtaque.transform.position = nuevaPosicion;
+        if (direccionMovimiento != Vector2.zero)
+        {
+            Vector3 nuevaPosicion = transform.position + (Vector3)direccionMovimiento * 0.5f;
+            areaAtaque.transform.position = nuevaPosicion;
 
-        float angle = Mathf.Atan2(direccionMovimiento.y, direccionMovimiento.x) * Mathf.Rad2Deg;
-        areaAtaque.transform.rotation = Quaternion.Euler(0, 0, angle + 90); 
+            float angle = Mathf.Atan2(direccionMovimiento.y, direccionMovimiento.x) * Mathf.Rad2Deg;
+            areaAtaque.transform.rotation = Quaternion.Euler(0, 0, angle + 90);
+        }
     }
-}
 
-     public void GetDamaged(int damage)
+    public void GetDamaged(int damage)
     {
         currentHealth -= damage;
         StartCoroutine(flash.FlashRoutine());
-        
-        
+
+
         sliderVidas.value = currentHealth;
         UpdateHealthColor();
 
@@ -172,5 +183,13 @@ public class ControladorDeAtaque : MonoBehaviour
             sliderVidas.fillRect.GetComponent<Image>().color = lowHealthColor;
         }
     }
+    public void AddHealth(int amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, atributos.health);
+        sliderVidas.value = currentHealth;
+        UpdateHealthColor();
+    }
+
 
 }
