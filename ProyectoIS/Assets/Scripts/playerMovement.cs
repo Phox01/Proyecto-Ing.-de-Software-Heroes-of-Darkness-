@@ -19,7 +19,7 @@ public class playerMovement : MonoBehaviour
     private float lastDashTime;
     private MusicManagement musicManagement;
     
-    private Vector2 lastMovement;
+    public Vector3 lastMovement;
     private bool isKnockbackActive = false;
     private ManagementMenu managementMenu;
     //private RaycastHit2D bodyBox;
@@ -93,11 +93,6 @@ public class playerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        //float hor = Input.GetAxisRaw("Horizontal");
-        //float ver = Input.GetAxisRaw("Vertical");
-        //movePlyr = new Vector3(hor * speed, ver * speed, 0);
-        //hit = Physics2D.BoxCast(transform.position, bodyBox.size,0,new Vector2(0,)
-
         if(animator.GetFloat("Speed")==0){
             //musicManagement.AudioLoop(3, 0.3f);
         }

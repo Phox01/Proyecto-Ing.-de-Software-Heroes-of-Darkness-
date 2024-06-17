@@ -7,11 +7,15 @@ using System.Security.Cryptography.X509Certificates;
 public class ControladorDeAtaque : MonoBehaviour
 {
     public LayerMask capaEnemigos;
+    public GameObject projectilePrefab;
+    public Transform LaunchOffset;
+    
     public PolygonCollider2D areaAtaque;
     private int playerAttack;
     public int currentHealth;
     private float critChance;
     private float critAttack;
+    public Sprite projectileSprite;
     public Atributos atributos;
     private Vector2 direccionMovimiento;
     public Animator animator;
@@ -76,12 +80,28 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         animator.SetTrigger("Magic");
-        musicManagement.SeleccionAudio(animator.GetInteger("NumbAtt") - 1, 1f);
+        musicManagement.SeleccionAudio(animator.GetInteger("NumbAtt")-1, 1f);
+
+        GameObject projectileObject= Instantiate(projectilePrefab, LaunchOffset.position, areaAtaque.transform.rotation);
+        
+        SpriteRenderer spriteRenderer = projectileObject.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = projectileSprite;
+
+        // Get the Collider2D component of the projectile
+        CircleCollider2D projectileCollider = projectileObject.GetComponent<CircleCollider2D>();
+
+        // Get the Collider2D component of the player
+        BoxCollider2D playerCollider = GetComponent<BoxCollider2D>();
+
+        // Make the projectile ignore the player collider
+        Physics2D.IgnoreCollision(projectileCollider, playerCollider);
+
         ContactFilter2D filter = new ContactFilter2D();
         filter.SetLayerMask(capaEnemigos);
 
         List<Collider2D> resultados = new List<Collider2D>();
-        areaAtaque.OverlapCollider(filter, resultados);
+        projectileCollider.OverlapCollider(filter, resultados);
+        Debug.Log(resultados);
         foreach (Collider2D enemigo in resultados)
         {
             Enemigo enemigoComponent = enemigo.GetComponent<Enemigo>();
