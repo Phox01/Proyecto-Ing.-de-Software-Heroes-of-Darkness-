@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2246307013429363687}
   - component: {fileID: 4590175799631657072}
-  m_Layer: 24
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 7817561878576813476}
   - component: {fileID: 2918155039820010990}
   - component: {fileID: 8502002122923693334}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ MonoBehaviour:
   dashCooldown: 1
   rb: {fileID: -943055159064034969}
   animator: {fileID: 463257830025792183}
-  lastMovement: {x: 0, y: 0, z: 0}
+  speed: 0
 --- !u!114 &1466321024153592857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,7 +344,6 @@ MonoBehaviour:
   LaunchOffset: {fileID: 4871527701189102940}
   areaAtaque: {fileID: 4590175799631657072}
   currentHealth: 0
-  projectileSprite: {fileID: 1882530303, guid: 038e5ad410e39584db350482e6cad7e8, type: 3}
   atributos: {fileID: 7817561878576813476}
   animator: {fileID: 463257830025792183}
   rb: {fileID: -943055159064034969}
@@ -481,7 +480,7 @@ GameObject:
   - component: {fileID: 6797145061579184158}
   - component: {fileID: 6957276174284374297}
   - component: {fileID: 4670636289795236953}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main_Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
