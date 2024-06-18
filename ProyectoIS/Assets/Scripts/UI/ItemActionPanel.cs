@@ -1,33 +1,48 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization;
+using TMPro;
 
-    public class ItemActionPanel : MonoBehaviour
+public class ItemActionPanel : MonoBehaviour
+{
+    [SerializeField]
+    private GameObject buttonPrefab;
+
+    // LocalizedString instead of LocalizedStringTable
+    public LocalizedStringTable localizedStringTable;
+
+    public void AddButon(string key, Action onClickAction)
     {
-        [SerializeField]
-        private GameObject buttonPrefab;
+        GameObject button = Instantiate(buttonPrefab, transform);
+        button.GetComponent<Button>().onClick.AddListener(() => onClickAction());
 
-        public void AddButon(string name, Action onClickAction)
+        // Create a LocalizedString and set the TableReference and EntryReference
+        LocalizedString localizedString = new LocalizedString
         {
-            GameObject button = Instantiate(buttonPrefab, transform);
-            button.GetComponent<Button>().onClick.AddListener(() => onClickAction());
-            button.GetComponentInChildren<TMPro.TMP_Text>().text = name;
-        }
+            TableReference = localizedStringTable.TableReference,
+            TableEntryReference = key
+        };
 
-        public void Toggle(bool val)
+        // Asynchronously get the localized string and set the button text
+        localizedString.StringChanged += (localizedText) =>
         {
-            if (val == true)
-                RemoveOldButtons();
-            gameObject.SetActive(val);
-        }
+            button.GetComponentInChildren<TMP_Text>().text = localizedText;
+        };
+    }
 
-        public void RemoveOldButtons()
+    public void Toggle(bool val)
+    {
+        if (val == true)
+            RemoveOldButtons();
+        gameObject.SetActive(val);
+    }
+
+    public void RemoveOldButtons()
+    {
+        foreach (Transform transformChildObjects in transform)
         {
-            foreach (Transform transformChildObjects in transform)
-            {
-                Destroy(transformChildObjects.gameObject);
-            }
+            Destroy(transformChildObjects.gameObject);
         }
     }
+}
