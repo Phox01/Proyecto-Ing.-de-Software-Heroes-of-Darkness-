@@ -5,9 +5,16 @@ using UnityEngine;
 public class CheckPoint : Eventos
 {
     public int typeCheckPoint;
+    //[SerializeField] private GameObject panelConfirmacion;
 
     protected override void checkpointIteraction()
     {
-        DataJuego.data.GuardarData();
+        if (typeCheckPoint == 2)
+        {
+            //panelConfirmacion.SetActive(true);
+            //DANIEL PASA EL PREFAB DEL MENU DE PAUSA PARA PONERLO COMO CONFIRMACIÓN EN EL PUNTO DE GUARDADO
+            DataJuego.data.GuardarData();
+            Debug.Log("Guardado El progreso!");
+        }
     }
 }
