@@ -48,7 +48,9 @@ MonoBehaviour:
     type: 3}
   audioControllerPrefab: {fileID: 1453440354602380017, guid: 92edf458d6470094287787600a36076c,
     type: 3}
-  playerCanvas: {fileID: 875639707007341482, guid: 6add0f9e529891e478d06871064c189a,
+  playerCanvasPrefab: {fileID: 875639707007341482, guid: 6add0f9e529891e478d06871064c189a,
     type: 3}
-  pausaCanvas: {fileID: 1826304443148339744, guid: 28d0ded24167bb642a2678dd0165f48b,
+  pausaCanvasPrefab: {fileID: 1826304443148339744, guid: 28d0ded24167bb642a2678dd0165f48b,
+    type: 3}
+  inventoryCanvasPrefab: {fileID: 6803278399582848297, guid: b1bb383a126ab624abcfa0e1a8a6f8fa,
     type: 3}

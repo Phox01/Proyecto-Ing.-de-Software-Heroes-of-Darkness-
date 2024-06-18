@@ -34,7 +34,6 @@ public class Enemigo : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        musicManagement = FindObjectOfType<MusicManagement>();
         flash = GetComponent<Flash>();
     }
 
@@ -45,6 +44,7 @@ public class Enemigo : MonoBehaviour
         defensa = defensaMax;
         player = GameObject.FindGameObjectWithTag("Player");
         
+        musicManagement = FindObjectOfType<MusicManagement>();
         sliderVidas.maxValue = vidaMax;
         sliderVidas.value = vida;
         damageNumber.gameObject.SetActive(false);

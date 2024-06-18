@@ -11,13 +11,14 @@ public class MouseFollower : MonoBehaviour
 
   
     [SerializeField]
-    private UIInvetoryItem item;
+    private UIInventoryItem item;
 
     public void Awake()
     {
         canvas = transform.root.GetComponent<Canvas>();
        
-        item = GetComponentInChildren<UIInvetoryItem>();
+        item = GetComponentInChildren<UIInventoryItem>();
+        
     }
 
     public void SetData(Sprite sprite, int quantity)
@@ -38,7 +39,6 @@ public class MouseFollower : MonoBehaviour
 
     public void Toggle(bool val)
     {
-        Debug.Log($"Item toggled {val}");
         gameObject.SetActive(val);
     }
 }

@@ -18,21 +18,22 @@ public class playerMovement : MonoBehaviour
     private float dashTime;
     private float lastDashTime;
     private MusicManagement musicManagement;
-    
+
     private Vector2 lastMovement;
     private bool isKnockbackActive = false;
     private ManagementMenu managementMenu;
-    //private RaycastHit2D bodyBox;
-    //private BoxCollider2D hit;
-    //private Vector3 movePlry;
+    //private RaycastHit2D hit;
+    //private BoxCollider2D bodyBox;
+    //private Vector3 movePlyr;
     //public float speed;
 
     public static playerMovement instance;
 
-    //public void Start()
+    //private void Start()
     //{
-    //    bodyBox = GetComponenet<BoxCollider2D>();
+    //    bodyBox = GetComponent<BoxCollider2D>();
     //}
+
     private void Awake()
     {
          if (instance != null && instance != this)
@@ -96,10 +97,19 @@ public class playerMovement : MonoBehaviour
         //float hor = Input.GetAxisRaw("Horizontal");
         //float ver = Input.GetAxisRaw("Vertical");
         //movePlyr = new Vector3(hor * speed, ver * speed, 0);
-        //hit = Physics2D.BoxCast(transform.position, bodyBox.size,0,new Vector2(0,)
+        //hit = Physics2D.BoxCast(transform.position, bodyBox.size, 0, new Vector2(0, movePlyr.y), Mathf.Abs(movePlyr.y * Time.deltaTime), LayerMask.GetMask("Player", "Blocking"));
+        //if (hit.collider == null)
+        //{
+        //    transform.Translate(0, movePlyr.y * Time.deltaTime, 0);
+        //}
+        //hit = Physics2D.BoxCast(transform.position, bodyBox.size, 0, new Vector2(movePlyr.x, 0), Mathf.Abs(movePlyr.x * Time.deltaTime), LayerMask.GetMask("Player", "Blocking"));
+        //if (hit.collider == null)
+        //{
+        //    transform.Translate(movePlyr.x * Time.deltaTime, 0, 0);
+        //}
 
-        if(animator.GetFloat("Speed")==0){
-            musicManagement.AudioLoop(3, 0.3f);
+        if (animator.GetFloat("Speed")==0){
+            //musicManagement.AudioLoop(3, 0.3f);
         }
         
         if (animator.GetBool("CanMove") &&! isKnockbackActive )
