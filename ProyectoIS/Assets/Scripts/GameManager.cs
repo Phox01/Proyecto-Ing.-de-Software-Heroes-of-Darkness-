@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.buildIndex == 0|| scene.buildIndex == 2 || scene.buildIndex == 3) 
+        if (scene.buildIndex == 0|| scene.buildIndex == 2 || scene.buildIndex == 3 || scene.buildIndex == 5) 
         {
             DestroyInstances();
         }

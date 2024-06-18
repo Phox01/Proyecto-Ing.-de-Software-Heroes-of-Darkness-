@@ -45,7 +45,7 @@ public class ManagementMenu : MonoBehaviour
         else
         {
             Debug.LogWarning("El archivo DataJuego.data no existe.");
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(5);
             gameManager.gameObject.SetActive(true);
         }
     }
