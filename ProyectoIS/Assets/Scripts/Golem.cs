@@ -18,7 +18,7 @@ public class Golem : Enemigo
     {
         base.Start();
         animator = GetComponent<Animator>();
-        routePoints = GameObject.FindGameObjectsWithTag("Point");
+        //routePoints = GameObject.FindGameObjectsWithTag("Point"); Para que el patrullaje solo sea en puntos específicos
         random = Random.Range(0, routePoints.Length);
         patrolSpeed = 3;
     }
@@ -40,7 +40,7 @@ public class Golem : Enemigo
         // LÓGICA DE HACER EL PATRULLAJE
         transform.position = Vector2.MoveTowards(transform.position, routePoints[random].transform.position, patrolSpeed * Time.deltaTime);
         time += Time.deltaTime;
-        if (time >= 3)
+        if (time >= 2)
         {
             random = Random.Range(0, routePoints.Length);
             time = 0;

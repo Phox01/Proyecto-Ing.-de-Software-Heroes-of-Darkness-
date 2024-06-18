@@ -19,11 +19,38 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 115599011840
-    m_Localized: aaaa
+    m_Localized: '   In a remote corner of the world, there exists a small and modest
+      village, a haven of peace for its inhabitants.'
     m_Metadata:
       m_Items: []
   - m_Id: 765082791936
-    m_Localized: aa
+    m_Localized: '   But this peace is tinged with fear.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867620941824
+    m_Localized: '   Beyond its borders, hostile lands stretch out. Dense jungles
+      and dark forests, guarded by fearsome monsters. For generations, the villagers
+      have lived confined, afraid to venture out.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1165378777088
+    m_Localized: '   Among these dangers, the snow-capped mountains are the most
+      challenging. Here, the ice monsters watch carefully.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1533869355008
+    m_Localized: '   No one has ever entered these lands and returned to tell the
+      tale.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1832507994112
+    m_Localized: '   Our protagonist was born and raised in this village. Years ago,
+      his older brother tried to free the village from the monsters of the forest
+      and never returned.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2105456521216
+    m_Localized: '   Now, he is determined to save his brother and free his village.'
     m_Metadata:
       m_Items: []
   references:
