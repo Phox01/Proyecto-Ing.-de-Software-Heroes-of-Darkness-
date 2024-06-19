@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5784956858455009353}
   - component: {fileID: 8031859864450247343}
   - component: {fileID: 7548185605325786721}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 6354746736134357913}
   - component: {fileID: 4346899206208334994}
   - component: {fileID: 5212394412204013505}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Bordes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 7414617591019538160}
   - component: {fileID: 7625152673140058209}
   - component: {fileID: 1047541340434938091}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 1092186141232489299}
   - component: {fileID: 171301226089717019}
   - component: {fileID: 3093400494787594672}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Golem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,6 +495,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f727723d087a94995f9df4c03897bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+=======
+  vidaMax: 40
+  maxAttack: 20
+  attack: 20
+  defensaMax: 5
+  knockBackTime: 0.2
+  speed: 2
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  sliderVidas: {fileID: 5018698352291014803}
+  animator: {fileID: 445849893413130014}
+  damageNumber: {fileID: 7548185605325786721}
+  routePoints: []
+  random: 0
+  patrolSpeed: 0
+  time: 0
+  targetPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes
 --- !u!50 &171301226089717019
 Rigidbody2D:
   serializedVersion: 4
@@ -547,7 +567,7 @@ GameObject:
   - component: {fileID: 9141802920768671223}
   - component: {fileID: 91597817451400849}
   - component: {fileID: 4908789499235192651}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Relleno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,7 +641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7045945475213797542}
   - component: {fileID: 5018698352291014803}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Barra de vida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
