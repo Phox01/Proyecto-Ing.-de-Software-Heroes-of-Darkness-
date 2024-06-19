@@ -18,7 +18,7 @@ public class Golem : Enemigo
     {
         base.Start();
         animator = GetComponent<Animator>();
-        //routePoints = GameObject.FindGameObjectsWithTag("Point"); Para que el patrullaje solo sea en puntos específicos
+        //routePoints = GameObject.FindGameObjectsWithTag("Point"); Para que el patrullaje solo sea en puntos especï¿½ficos
         random = Random.Range(0, routePoints.Length);
         patrolSpeed = 3;
     }
@@ -26,7 +26,7 @@ public class Golem : Enemigo
     // Update is called once per frame
     protected override void Update()
     {
-        // LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
+        // LÃ“GICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
         Vector3 direction = player.transform.position - transform.position;
         if ((direction.x >= 0.0f && previousDirection.x < 0.0f) || (direction.x < 0.0f && previousDirection.x >= 0.0f))
         {
@@ -37,7 +37,7 @@ public class Golem : Enemigo
         }
         previousDirection = direction;
 
-        // LÓGICA DE HACER EL PATRULLAJE
+        // Lï¿½GICA DE HACER EL PATRULLAJE
         transform.position = Vector2.MoveTowards(transform.position, routePoints[random].transform.position, patrolSpeed * Time.deltaTime);
         time += Time.deltaTime;
         if (time >= 2)
