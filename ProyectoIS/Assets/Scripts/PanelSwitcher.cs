@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void OnLocalizationReady()
     {
+        dialogue.SetupDialogue();
         if (dialogue != null)
         {
             dialogue.OnDialogueFinished += HandleDialogueFinished;
@@ -54,6 +56,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             Debug.Log("Se han mostrado todos los paneles.");
             currentPanelIndex = panels.Length - 1;
+            SceneManager.LoadScene(4);
             return;
         }
 

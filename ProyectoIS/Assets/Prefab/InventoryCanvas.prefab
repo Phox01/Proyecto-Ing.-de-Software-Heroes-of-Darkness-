@@ -414,6 +414,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 6861262052604325246, guid: 300d14c8aa0710b45be768442c91a4db,
     type: 3}
+  localizedStringTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:ea8dd66e02797614a8889d5de0161dde
 --- !u!1 &1376770430345797371
 GameObject:
   m_ObjectHideFlags: 0

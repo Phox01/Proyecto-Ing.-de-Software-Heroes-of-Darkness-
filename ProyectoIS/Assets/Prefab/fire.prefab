@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7102900073458492822}
   - component: {fileID: 5663684595187158199}
   - component: {fileID: 4622893611804614720}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 2922208694058279259}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.11, z: 0}
-  m_LocalScale: {x: 3.413, y: 3.413, z: 3.413}
+  m_LocalPosition: {x: 0.2198, y: -7.3848, z: 0}
+  m_LocalScale: {x: 2.533645, y: 2.533645, z: 2.533645}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  damage: 0
 --- !u!212 &5663684595187158199
 SpriteRenderer:
   m_ObjectHideFlags: 0
