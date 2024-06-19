@@ -91,6 +91,52 @@ MonoBehaviour:
     m_Localized: Load Game
     m_Metadata:
       m_Items: []
+  - m_Id: 8966757595086848
+    m_Localized: 'INTERACT: SPACE
+
+      PAUSE MENU: ESC
+
+      INVENTORY: I KEY'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8972736432832512
+    m_Localized: Welcome to HEROES OF DARKNESS, an open-world pixel art RPG where
+      you will forge your own path in a medieval realm full of dangers and treasures.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8974399461785600
+    m_Localized: 'ATTACK: SPACE
+
+      MOVE: WASD/ARROWS
+
+      DASH: SHIFT + MOVE'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8974439286702080
+    m_Localized: 'ITEM INFORMATION IN INVENTORY: LEFT CLICK'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8974747874230272
+    m_Localized: 'USE/DISCARD ITEM IN INVENTORY: RIGHT CLICK'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8976589127548928
+    m_Localized: WARNING
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8976979541753856
+    m_Localized: Starting a new game will erase all your saved progress and you will
+      not be able to recover it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8977183733055488
+    m_Localized: CONFIRM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8977211591622656
+    m_Localized: DENY
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
