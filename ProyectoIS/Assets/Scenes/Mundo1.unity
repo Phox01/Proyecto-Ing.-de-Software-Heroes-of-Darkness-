@@ -554,7 +554,6 @@ MonoBehaviour:
   - {fileID: 3939233387393363074, guid: 40be79d2a346d284690caa022c2d0d03, type: 3}
   - {fileID: 6465921718462063879, guid: cb09ebbb1d5ecb742b365322b67cfe99, type: 3}
   - {fileID: 443822040891140072, guid: 6c4fefec0404c2a4ca0df4410a576703, type: 3}
-  - {fileID: 3235124393100909568, guid: 5741a1fdaede34c4b856462b05dc9f1d, type: 3}
   anim: {fileID: 378490171}
 --- !u!61 &378490169
 BoxCollider2D:

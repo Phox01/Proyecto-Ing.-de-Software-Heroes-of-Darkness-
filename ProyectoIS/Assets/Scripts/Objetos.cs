@@ -8,6 +8,8 @@ public class Objetos : Colisiones //Herencia
     public int delay;
     private int stopBug;
 
+
+
     protected override void OnCollide(Collider2D col)
     {
         if (stopBug == 0)
@@ -15,6 +17,7 @@ public class Objetos : Colisiones //Herencia
 
             if (col.tag == "Player")
             {
+                ControladorDeAtaque player = col.gameObject.GetComponent<ControladorDeAtaque>();
                 Debug.Log("MrMenu");
                 stopBug = 1;
                 switch (idObjeto) //Pongan el ID en el script juego EN UNITY
@@ -23,17 +26,17 @@ public class Objetos : Colisiones //Herencia
                         int x = Random.Range(0, 2);
                         if (x == 1)
                         {
-                            DataJuego.data.vida += 25;
+                           player.AddHealth(50);
                         }
                         else
                         {
-                            DataJuego.data.vida -= 25;
+                            player.GetDamaged(50);
                         }
 
                         break;
 
                     case 2: //Que pasa si choca con una fruta de vida
-                        DataJuego.data.vida += 50;
+                        player.AddHealth(50);
                         break;
 
                     case 3: //Que pasa si choca con dinero
@@ -46,8 +49,8 @@ public class Objetos : Colisiones //Herencia
                         //DataJuego.data.GuardarData();
                         break;
 
-                    case 5: //Que pasa si choca con un objeto de magia
-                        DataJuego.data.vida -= 20;
+                    case 5: //Que pasa si choca con un objeto de veneno
+                        player.GetDamaged(50);
                         break;
 
 
