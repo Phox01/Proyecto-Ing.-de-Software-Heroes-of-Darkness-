@@ -6,18 +6,26 @@ public class EnemigoGrande : Enemigo
 {
     // Start is called before the first frame update
     private float timer = 0f;
-    
+    private float timer2 = 0f;
     public GameObject rocaHieloPrefab;
     private LayerMask capaEnemigos;
     public PolygonCollider2D hitbox;
     public Rigidbody2D rb;
+    private bool movimiento = true;
     private Vector2 direccionMovimiento;
+    private bool ataque = true;
     protected override void Update()
     {
-        direccionMovimiento = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-        Invoke("EmpiezaGenerar", 1f);
-        EjecutarAtaque();
-        ActualizarPuntoAtaque();
+        if ((movimiento))
+        {
+            base.Update();
+            
+
+            direccionMovimiento = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+            GenerarRoca();
+            EjecutarAtaque();
+            ActualizarPuntoAtaque();
+        }
     }
 
 
@@ -25,21 +33,24 @@ public class EnemigoGrande : Enemigo
 
     private void EmpiezaGenerar()
     {
-        Invoke("GenerarRoca", 1f);
         
+        GameObject rocaHielo = Instantiate(rocaHieloPrefab, player.transform.position, player.transform.rotation);
+
+        movimiento = true;
     }
 
     private void GenerarRoca()
     {
+        
         timer += Time.deltaTime;
         
 
-        if (timer >= 9f)
+        if (timer >= 7f && ataque!=false)
         {
-            
-            GameObject rocaHielo = Instantiate(rocaHieloPrefab, player.transform.position, player.transform.rotation);
-            
-            
+            movimiento=false;
+            Invoke("EmpiezaGenerar", 1f);
+
+
             timer = 0f;
         }
     }
@@ -48,47 +59,58 @@ public class EnemigoGrande : Enemigo
  
 
     private void EjecutarAtaque()
-    {
-        ContactFilter2D filter = new ContactFilter2D();
-        filter.SetLayerMask(layerMask);
+{
 
-        List<Collider2D> resultados = new List<Collider2D>();
-        hitbox.OverlapCollider(filter, resultados);
-        foreach (Collider2D player in resultados)
+        if (ataque)
         {
+            List<Collider2D> resultados = new List<Collider2D>();
+            hitbox.OverlapCollider(new ContactFilter2D(), resultados);
+            bool playerDetected = false;
 
-            if (player != null)
+            foreach (Collider2D player in resultados)
             {
+                if (player != null && player.CompareTag("Player"))
+                {
+                    playerDetected = true;
+                    break;
+                }
+            }
+
+            if (playerDetected)
+            {
+                //aqui empieza animacion
+                ataque = false;
+                movimiento = false;
+                Invoke("Attack", 2);
+            }
+        }
+    
+}
+
+void Attack()
+{
+    rb.velocity = Vector2.zero;
+
+    List<Collider2D> resultados = new List<Collider2D>();
+    hitbox.OverlapCollider(new ContactFilter2D(), resultados);
+
+    foreach (Collider2D player in resultados)
+    {
+        if (player != null && player.CompareTag("Player"))
+        {
+            Debug.Log("ejecutar");
+            int damage = 50;
+            int trueDamage = damage + Random.Range(-3, 4);
+            ControladorDeAtaque prueba = player.GetComponent<ControladorDeAtaque>();
+            if (prueba != null)
+            {
+                prueba.GetDamaged(trueDamage);
                 
-                Invoke("Attack",4);
             }
         }
     }
-
-    
-    void Attack()
-    {
-        rb.velocity = Vector2.zero;
-        
-        ContactFilter2D filter = new ContactFilter2D();
-        filter.SetLayerMask(layerMask);
-
-        List<Collider2D> resultados = new List<Collider2D>();
-        hitbox.OverlapCollider(filter, resultados);
-        foreach (Collider2D player in resultados)
-        {
-            
-            if (player != null)
-            {
-                Debug.Log("ejecutar");
-                int damage = 50;
-                int trueDamage = damage + Random.Range(-3, 4);
-                ControladorDeAtaque prueba=player.GetComponent<ControladorDeAtaque>();
-                prueba.GetDamaged(trueDamage);
-            }
-        }
-        
-
+        ataque = true;
+        movimiento = true;
     }
 
     void ActualizarPuntoAtaque()

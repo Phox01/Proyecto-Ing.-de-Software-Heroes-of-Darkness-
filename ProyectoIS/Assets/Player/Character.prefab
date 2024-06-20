@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2528976929542374700}
   - component: {fileID: 6329992195066020989}
-  m_Layer: 8
+  m_Layer: 24
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -1217006866, guid: 9b462e4ce73e99747b9f0e707373d681, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -375,7 +375,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.2999136, y: -1.4710044}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -386,7 +386,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.5, y: 6.25}
+  m_Size: {x: 3.9001727, y: 3.3079913}
   m_EdgeRadius: 0
 --- !u!114 &9032429245289091484
 MonoBehaviour:
@@ -408,7 +408,6 @@ MonoBehaviour:
   dashCooldown: 1
   rb: {fileID: -943055159064034969}
   animator: {fileID: 463257830025792183}
-  speed: 0
 --- !u!114 &1466321024153592857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,11 +428,13 @@ MonoBehaviour:
   LaunchOffset: {fileID: 4871527701189102940}
   areaAtaque: {fileID: 6329992195066020989}
   currentHealth: 0
+  "currentMan\xE1": 0
   projectileSprite: {fileID: 0}
   atributos: {fileID: 7817561878576813476}
   animator: {fileID: 463257830025792183}
   rb: {fileID: -943055159064034969}
   sliderVidas: {fileID: 0}
+  "sliderMan\xE1": {fileID: 0}
 --- !u!114 &7817561878576813476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,8 +450,10 @@ MonoBehaviour:
   health: 100
   attack: 10
   currentHealth: 0
+  "currentMan\xE1": 0
   critChance: 0
   critAttack: 0
+  "man\xE1": 0
 --- !u!81 &2918155039820010990
 AudioListener:
   m_ObjectHideFlags: 0

@@ -54,7 +54,6 @@ public class ManagementMenu : MonoBehaviour
     {
 
         SceneManager.LoadScene(4);
-        gameManager.gameObject.SetActive(true);
     }
 
     public void PausarPartida()
@@ -97,7 +96,7 @@ public class ManagementMenu : MonoBehaviour
     {
         File.Delete(filePath);
         Debug.Log("Archivo DataJuego.data eliminado correctamente.");
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
         gameManager.gameObject.SetActive(true);
 
 
