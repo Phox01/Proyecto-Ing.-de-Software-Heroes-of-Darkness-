@@ -31,7 +31,7 @@ public class ManagementMenu : MonoBehaviour
 
     public void VolverJugar()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(4);
     }
 
     public void NuevoJuego()

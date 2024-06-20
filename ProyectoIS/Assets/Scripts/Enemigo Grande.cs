@@ -16,7 +16,7 @@ public class EnemigoGrande : Enemigo
     private bool ataque = true;
     protected override void Update()
     {
-        if ((movimiento))
+        if(player!=null){if ((movimiento))
         {
             base.Update();
             
@@ -29,7 +29,7 @@ public class EnemigoGrande : Enemigo
             }
             EjecutarAtaque();
             ActualizarPuntoAtaque();
-        }
+        }}
     }
 
 
