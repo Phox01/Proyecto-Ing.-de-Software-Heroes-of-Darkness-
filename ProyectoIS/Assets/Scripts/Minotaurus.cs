@@ -32,7 +32,7 @@ public class Minotaurus : Enemigo
     protected override void Update()
     {
         // LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
-        Vector3 direction = player.transform.position - transform.position;
+        if (player!=null){Vector3 direction = player.transform.position - transform.position;
         if ((direction.x >= 0.0f && previousDirection.x < 0.0f) || (direction.x < 0.0f && previousDirection.x >= 0.0f))
         {
             transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
@@ -80,7 +80,7 @@ public class Minotaurus : Enemigo
                 isMoving = false;
                 animator.SetBool("isMoving", isMoving);
             }
-        }
+        }}
     }
 
     private IEnumerator Attack()

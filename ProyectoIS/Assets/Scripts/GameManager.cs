@@ -70,12 +70,6 @@ public class GameManager : MonoBehaviour
 
     private void DestroyInstances()
     {
-        //var player = FindObjectOfType<playerMovement>();
-        if (playerInstance != null)
-        {
-            //Destroy(player.gameObject);
-            playerInstance.gameObject.SetActive(false);
-        }
 
         //var musicManager = FindObjectOfType<MusicManagement>();
         if (audioControllerInstance != null)
@@ -102,12 +96,21 @@ public class GameManager : MonoBehaviour
         }
         //Destroy(gameObject); 
         //gameObject.SetActive(false);
+        
+        //var player = FindObjectOfType<playerMovement>();
+        if (playerInstance != null)
+        {
+            //Destroy(player.gameObject);
+            playerInstance.gameObject.SetActive(false);
+        }
     }
     private void activate()
     {
         
         //gameObject.SetActive(true);
         //var player = FindObjectOfType<playerMovement>();
+        
+        
         if (playerInstance != null)
         {
             //Destroy(player.gameObject);
@@ -136,6 +139,18 @@ public class GameManager : MonoBehaviour
         {
             //Destroy(inventoryCanvasInstance);
             inventoryCanvasInstance.gameObject.SetActive(true);
+        }
+        // if (inventoryCanvasInstance == null)
+        // {
+        //     inventoryCanvasInstance = Instantiate(inventoryCanvasPrefab);
+        //     DontDestroyOnLoad(playerInstance);
+        // }
+        if (playerInstance == null)
+        {   
+            inventoryCanvasInstance = Instantiate(inventoryCanvasPrefab);
+            DontDestroyOnLoad(inventoryCanvasInstance);
+            playerInstance = Instantiate(playerPrefab);
+            DontDestroyOnLoad(playerInstance);
         }
         //Destroy(gameObject); 
     }

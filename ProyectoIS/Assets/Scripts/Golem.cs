@@ -26,7 +26,7 @@ public class Golem : Enemigo
     // Update is called once per frame
     protected override void Update()
     {
-        // LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
+        if (player!=null){// LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
         Vector3 direction = player.transform.position - transform.position;
         if ((direction.x >= 0.0f && previousDirection.x < 0.0f) || (direction.x < 0.0f && previousDirection.x >= 0.0f))
         {
@@ -56,7 +56,7 @@ public class Golem : Enemigo
             isMoving = false;
             animator.SetBool("isMoving", isMoving);
         }
-    }
+    }}
 
 
 }
