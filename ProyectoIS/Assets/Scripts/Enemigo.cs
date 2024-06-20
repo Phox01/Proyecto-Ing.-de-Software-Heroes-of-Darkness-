@@ -31,10 +31,13 @@ public class Enemigo : MonoBehaviour
     private Color midHealthColor = Color.yellow;
     private Color lowHealthColor = Color.red;
     public TextMeshProUGUI damageNumber;
+    protected LootDropper lootDropper;
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         flash = GetComponent<Flash>();
+        lootDropper = GetComponent<LootDropper>();
     }
 
     protected virtual void Start(){
@@ -142,6 +145,12 @@ public class Enemigo : MonoBehaviour
         {
             OnEnemyKilled(this);
         }
+        if (lootDropper != null)
+        {
+            lootDropper.DropLoot(transform.position);
+        }
+        ControladorDeAtaque playercomp = player.GetComponent<ControladorDeAtaque>();
+        playercomp.AddManá(10);
         Destroy(gameObject);
     }
 

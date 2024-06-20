@@ -12,7 +12,7 @@ public class ItemActionPanel : MonoBehaviour
     // LocalizedString instead of LocalizedStringTable
     public LocalizedStringTable localizedStringTable;
 
-    public void AddButon(string key, Action onClickAction)
+    public void AddButton(string key, Action onClickAction)
     {
         GameObject button = Instantiate(buttonPrefab, transform);
         button.GetComponent<Button>().onClick.AddListener(() => onClickAction());

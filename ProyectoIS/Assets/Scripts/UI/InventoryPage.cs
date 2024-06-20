@@ -74,7 +74,7 @@ public class InventoryPage : MonoBehaviour
     }
      public void AddAction(string actionName, Action performAction)
         {
-            actionPanel.AddButon(actionName, performAction);
+            actionPanel.AddButton(actionName, performAction);
         }
     public void ShowItemAction(int itemIndex)
     {

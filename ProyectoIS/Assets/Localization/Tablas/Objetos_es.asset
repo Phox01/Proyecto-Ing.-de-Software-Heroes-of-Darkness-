@@ -26,6 +26,22 @@ MonoBehaviour:
     m_Localized: Usar
     m_Metadata:
       m_Items: []
+  - m_Id: 721494630981632
+    m_Localized: Restaura 10 de vida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 721664164749312
+    m_Localized: Corazon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 722791044210688
+    m_Localized: Lechuga
+    m_Metadata:
+      m_Items: []
+  - m_Id: 722824665751552
+    m_Localized: Parece una manzana, pero es una lechuga. Restaura 50 de vida
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

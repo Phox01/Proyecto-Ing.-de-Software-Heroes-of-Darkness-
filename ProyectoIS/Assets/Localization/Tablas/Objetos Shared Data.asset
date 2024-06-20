@@ -23,6 +23,22 @@ MonoBehaviour:
     m_Key: Use
     m_Metadata:
       m_Items: []
+  - m_Id: 721494630981632
+    m_Key: HeartD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 721664164749312
+    m_Key: Heart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 722791044210688
+    m_Key: Lechuga
+    m_Metadata:
+      m_Items: []
+  - m_Id: 722824665751552
+    m_Key: LechugaD
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
