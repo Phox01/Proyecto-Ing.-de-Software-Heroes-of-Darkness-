@@ -92,11 +92,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8966757595086848
-    m_Localized: 'INTERACT: SPACE
-
-      PAUSE MENU: ESC
-
-      INVENTORY: I KEY'
+    m_Localized: "INTERACT: SPACE\nPAUSE MENU: ESC\nINVENTORY: I \t \tMAGIC: Q"
     m_Metadata:
       m_Items: []
   - m_Id: 8972736432832512
@@ -135,6 +131,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8977211591622656
     m_Localized: DENY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9047686409748480
+    m_Localized: Pause Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9048961889206272
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9049132920340480
+    m_Localized: Save
     m_Metadata:
       m_Items: []
   references:

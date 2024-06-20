@@ -115,6 +115,18 @@ MonoBehaviour:
     m_Key: Denegar
     m_Metadata:
       m_Items: []
+  - m_Id: 9047686409748480
+    m_Key: MenuPausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9048961889206272
+    m_Key: Reiniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9049132920340480
+    m_Key: Guardar
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
