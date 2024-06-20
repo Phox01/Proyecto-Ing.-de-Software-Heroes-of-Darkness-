@@ -6,24 +6,19 @@ using UnityEngine.SceneManagement;
 public class CambioMundo : Colisiones
 {
     public GameObject player;
+    public int TargetScene;
+    public GameObject punto;
+    private void Awake(){
+        
+    }
     protected override void OnCollide(Collider2D col){
         if(col.tag == "Player")
         {
+            playerMovement playercomp = col.gameObject.GetComponent<playerMovement>();
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            playercomp.ChangeScene(currentSceneIndex);
+            SceneManager.LoadScene(TargetScene);
             
-            if(currentSceneIndex == 4){
-            //Cordenadas (-7, 16)
-            SceneManager.LoadScene(6);
-            player.transform.position = new Vector2(-7, 16);
-            }
-
-            if(currentSceneIndex == 6){
-            //Cordenadas (-2.6, -30.8)
-            SceneManager.LoadScene(4);
-            player.transform.position = new Vector2(-2.6f, -30.8f); 
-            }
-
-
         }
     }
 }
