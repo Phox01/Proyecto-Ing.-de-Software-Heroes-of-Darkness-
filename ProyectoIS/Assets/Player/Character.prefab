@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2528976929542374700}
   - component: {fileID: 6329992195066020989}
-  m_Layer: 8
+  m_Layer: 24
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,6 @@ MonoBehaviour:
   dashCooldown: 1
   rb: {fileID: -943055159064034969}
   animator: {fileID: 463257830025792183}
-  speed: 0
 --- !u!114 &1466321024153592857
 MonoBehaviour:
   m_ObjectHideFlags: 0
