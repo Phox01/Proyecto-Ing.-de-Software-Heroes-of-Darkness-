@@ -987,6 +987,9 @@ MonoBehaviour:
   itemImage: {fileID: 1383360002542368723}
   title: {fileID: 5293885779026203001}
   description: {fileID: 5699500354552443037}
+  localizedStringTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:ea8dd66e02797614a8889d5de0161dde
 --- !u!1 &5046464962904111279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,7 +1503,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!114 &2836810591650802520
 MonoBehaviour:

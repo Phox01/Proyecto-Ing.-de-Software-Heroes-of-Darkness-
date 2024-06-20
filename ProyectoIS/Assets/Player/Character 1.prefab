@@ -251,7 +251,7 @@ Transform:
   m_GameObject: {fileID: 8964827477293548828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.3762, y: 14.5469, z: 0}
+  m_LocalPosition: {x: -6.95, y: 19.87, z: 0}
   m_LocalScale: {x: 0.3214875, y: 0.3214875, z: 0.3214875}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -425,6 +425,7 @@ MonoBehaviour:
   dashCooldown: 1
   rb: {fileID: 7989326598424684392}
   animator: {fileID: 1899253404670520504}
+  ActualScene: 0
 --- !u!114 &607767498239099414
 MonoBehaviour:
   m_ObjectHideFlags: 0

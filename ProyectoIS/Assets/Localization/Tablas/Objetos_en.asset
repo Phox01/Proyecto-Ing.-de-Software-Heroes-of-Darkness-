@@ -26,6 +26,22 @@ MonoBehaviour:
     m_Localized: Use
     m_Metadata:
       m_Items: []
+  - m_Id: 721494630981632
+    m_Localized: Restore 10 hp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 721664164749312
+    m_Localized: Heart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 722791044210688
+    m_Localized: Lettuce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 722824665751552
+    m_Localized: Seems like an apple but it is a lettuce. Restores 50 hp
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -10,6 +10,7 @@ TagManager:
   - EventoChoque
   - Jefe0
   - AttackHitbox
+  - Teleport
   layers:
   - Default
   - TransparentFX

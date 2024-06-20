@@ -8,7 +8,7 @@ public class RocaHielo : MonoBehaviour
 
     private BoxCollider2D boxCollider;
     private float timer = 0f;
-    public float destroyTime = 1f; // Tiempo de destrucción (en segundos)
+    public float destroyTime = 1f; // Tiempo de destrucciï¿½n (en segundos)
 
    
     void Start()
@@ -18,10 +18,6 @@ public class RocaHielo : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     
     private void PilarHielo()

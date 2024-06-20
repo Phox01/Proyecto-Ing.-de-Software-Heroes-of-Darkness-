@@ -7,11 +7,11 @@ public class Objetos : Colisiones //Herencia
     public int idObjeto; //Que cada objeto tenga una id distinta
     public int delay;
     private int stopBug;
-
-
+    protected MusicManagement musicManagement;
 
     protected override void OnCollide(Collider2D col)
     {
+        musicManagement = FindObjectOfType<MusicManagement>();
         if (stopBug == 0)
         {
 
@@ -26,30 +26,42 @@ public class Objetos : Colisiones //Herencia
                         int x = Random.Range(0, 2);
                         if (x == 1)
                         {
+                           //9
+                           musicManagement.SeleccionAudio(9, 1f);
                            player.AddHealth(50);
                         }
                         else
                         {
+                            //11
+                            musicManagement.SeleccionAudio(11, 1f);
                             player.GetDamaged(50);
                         }
 
                         break;
 
                     case 2: //Que pasa si choca con una fruta de vida
+                        //8
+                        musicManagement.SeleccionAudio(8, 1f);
                         player.AddHealth(50);
                         break;
 
                     case 3: //Que pasa si choca con dinero
+                        //10
+                        musicManagement.SeleccionAudio(10, 1f);
                         DataJuego.data.dinero += 1;
                         //DataJuego.data.GuardarData();
                         break;
 
                     case 4: //Que pasa si choca con diamante
+                        //10
+                        musicManagement.SeleccionAudio(10, 1f);
                         DataJuego.data.dinero += 10;
                         //DataJuego.data.GuardarData();
                         break;
 
                     case 5: //Que pasa si choca con un objeto de veneno
+                        //11
+                        musicManagement.SeleccionAudio(11, 1f);
                         player.GetDamaged(50);
                         break;
 

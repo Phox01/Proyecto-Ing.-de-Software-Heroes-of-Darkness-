@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -29,9 +30,9 @@ public class ControladorDeAtaque : MonoBehaviour
 
 
     private Color fullHealthColor = Color.green;
-    private Color manáColor = Color.blue;
     private Color midHealthColor = Color.yellow;
     private Color lowHealthColor = Color.red;
+    private int maxMana;
 
 
 
@@ -51,6 +52,7 @@ public class ControladorDeAtaque : MonoBehaviour
         playerAttack = atributos.attack;
         currentHealth = atributos.health;
         currentManá = atributos.maná;
+        maxMana = atributos.maná;
         areaAtaque.isTrigger = true;
         if (sliderVidas != null)
         {
@@ -62,6 +64,7 @@ public class ControladorDeAtaque : MonoBehaviour
             sliderManá.maxValue = atributos.maná; // Asegúrate de que el maxValue del slider sea igual al maná máximo.
             sliderManá.value = currentManá;
         }
+        StartCoroutine(RegenerateMana());
     }
 
     void Update()
@@ -75,7 +78,7 @@ public class ControladorDeAtaque : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false && currentManá>0)
+        if (Input.GetKeyDown(KeyCode.Q) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false && currentManá>=10)
         {
 
             Magic();
@@ -215,5 +218,16 @@ public class ControladorDeAtaque : MonoBehaviour
         currentManá = Mathf.Clamp(currentManá, 0, atributos.maná);
         sliderManá.value = currentManá;
     }
-
+    IEnumerator RegenerateMana()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f); 
+            if (currentManá < maxMana)
+            {
+                currentManá = Mathf.Min(currentManá + 1, maxMana); 
+                sliderManá.value = currentManá;
+            }
+        }
+    }
 }

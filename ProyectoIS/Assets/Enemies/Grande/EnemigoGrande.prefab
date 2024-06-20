@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6057522327921398048}
   - component: {fileID: 8578396624736692178}
   - component: {fileID: 8517736582545326653}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Bordes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3794986689935728598}
   - component: {fileID: 1615652489076751841}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Barra de vida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1474138703489728442}
   - component: {fileID: 9185268220428664785}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,11 +241,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.50002265, y: 4.0955544}
-      - {x: -3.1611152, y: 1.3091059}
-      - {x: -4.532583, y: -0.4802152}
-      - {x: -2.732513, y: -2.7060142}
-      - {x: 0.09206283, y: -3.623495}
+    - - {x: 2.6815007, y: 0.5107393}
+      - {x: 2.7090182, y: -0.5281124}
+      - {x: 2.7266731, y: -1.3764201}
+      - {x: 0.76268244, y: -1.4065185}
+      - {x: 0.271304, y: -1.2933655}
       - {x: 0.22807169, y: 0.43829077}
   m_UseDelaunayMesh: 0
 --- !u!1 &7728214224554185452
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 3477551095376093597}
   - component: {fileID: 2358424750950680926}
   - component: {fileID: 6985865117568771973}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 3415210658781240068}
   - component: {fileID: 6109321367373956377}
   - component: {fileID: 4969876659001442141}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Relleno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 1082000265023548648}
   - component: {fileID: 983204798120696294}
   - component: {fileID: 5915152462541626709}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,8 @@ GameObject:
   - component: {fileID: 5854453152696066741}
   - component: {fileID: 336850701645327301}
   - component: {fileID: 2960175084303560984}
-  m_Layer: 0
+  - component: {fileID: 3461402391004638981}
+  m_Layer: 23
   m_Name: EnemigoGrande
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,9 +640,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 32afe9b0d04f0a749b4e2327378377e9, type: 3}
+  m_Sprite: {fileID: 1175471866, guid: 6eaf9201cfe55684c9fd70932aeba2a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.52, y: 3.16}
@@ -709,18 +710,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.71790123}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.52, y: 3.16}
+    oldSize: {x: 2.53125, y: 2.9710693}
     newSize: {x: 2.52, y: 3.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.52, y: 3.16}
+  m_Size: {x: 2.52, y: 1.7241974}
   m_EdgeRadius: 0
 --- !u!114 &5854453152696066741
 MonoBehaviour:
@@ -734,22 +735,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771fdc1c123425247898cf8b53897e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMax: 1000
-  maxAttack: 100
-  attack: 50
+  vidaMax: 100
+  maxAttack: 15
+  attack: 15
   defensaMax: 5
   knockBackTime: 0.2
-  speed: 4
+  speed: 2
   layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 25165824
   sliderVidas: {fileID: 1615652489076751841}
   animator: {fileID: 336850701645327301}
   damageNumber: {fileID: 5915152462541626709}
   rocaHieloPrefab: {fileID: 6249056434350663878, guid: ea84508e06c56cf46bfcf3f52118d4b4,
     type: 3}
   hitbox: {fileID: 9185268220428664785}
-  rb: {fileID: 8932182958359190388}
 --- !u!95 &336850701645327301
 Animator:
   serializedVersion: 5
@@ -760,7 +760,7 @@ Animator:
   m_GameObject: {fileID: 9183467304579121891}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ace67c2ef2a9204c80f6efe1011d91d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -785,3 +785,99 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whiteFlah: {fileID: 0}
   restoreMatTime: 0.2
+--- !u!82 &3461402391004638981
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9183467304579121891}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0608c9fb1481c9544b3f36fd3cdd6c18, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.896
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.006187439
+      value: 0.7964592
+      inSlope: -0.23660347
+      outSlope: -0.23660347
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.1746393
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1.467998
+      outSlope: -1.467998
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.18460035
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

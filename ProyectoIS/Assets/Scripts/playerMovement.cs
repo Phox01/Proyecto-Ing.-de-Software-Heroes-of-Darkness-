@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour
 {
@@ -22,17 +23,10 @@ public class playerMovement : MonoBehaviour
     private Vector2 lastMovement;
     private bool isKnockbackActive = false;
     private ManagementMenu managementMenu;
-    //private RaycastHit2D hit;
-    //private BoxCollider2D bodyBox;
-    //private Vector3 movePlyr;
-    //public float speed;
 
     public static playerMovement instance;
-
-    //private void Start()
-    //{
-    //    bodyBox = GetComponent<BoxCollider2D>();
-    //}
+    public int ActualScene;
+    public GameObject punto;
 
     private void Awake()
     {
@@ -47,6 +41,30 @@ public class playerMovement : MonoBehaviour
         }
         musicManagement = FindObjectOfType<MusicManagement>();
         managementMenu = FindObjectOfType<ManagementMenu>();
+    }
+    void Start(){
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(gameObject.activeSelf){
+        StartCoroutine(InitializePlayerPosition());
+        }
+    }
+
+     private IEnumerator InitializePlayerPosition()
+    {
+        yield return null; // Esperar un frame para asegurar que todos los objetos se hayan inicializado
+
+        punto = GameObject.FindGameObjectWithTag("Teleport");
+        if (punto != null)
+        {
+            transform.position = punto.transform.position;
+        }
+        else
+        {
+            Debug.LogWarning("Teleport object not found in the scene.");
+        }
     }
     void Update()
     {
@@ -94,19 +112,6 @@ public class playerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        //float hor = Input.GetAxisRaw("Horizontal");
-        //float ver = Input.GetAxisRaw("Vertical");
-        //movePlyr = new Vector3(hor * speed, ver * speed, 0);
-        //hit = Physics2D.BoxCast(transform.position, bodyBox.size, 0, new Vector2(0, movePlyr.y), Mathf.Abs(movePlyr.y * Time.deltaTime), LayerMask.GetMask("Player", "Blocking"));
-        //if (hit.collider == null)
-        //{
-        //    transform.Translate(0, movePlyr.y * Time.deltaTime, 0);
-        //}
-        //hit = Physics2D.BoxCast(transform.position, bodyBox.size, 0, new Vector2(movePlyr.x, 0), Mathf.Abs(movePlyr.x * Time.deltaTime), LayerMask.GetMask("Player", "Blocking"));
-        //if (hit.collider == null)
-        //{
-        //    transform.Translate(movePlyr.x * Time.deltaTime, 0, 0);
-        //}
 
         if (animator.GetFloat("Speed")==0){
             //musicManagement.AudioLoop(3, 0.3f);
@@ -156,5 +161,8 @@ public class playerMovement : MonoBehaviour
         isKnockbackActive = value;
     }
 
+    public void ChangeScene(int NewActual){
+        ActualScene = NewActual;
+    }
 
 }
