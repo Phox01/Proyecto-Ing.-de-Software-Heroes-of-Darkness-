@@ -445,6 +445,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 2922208694058279259, guid: 95437742a83ce0344baaa89a22373a10,
     type: 3}
   LaunchOffset: {fileID: 5611166715004552059}
+  magicCooldown: 0.1
   areaAtaque: {fileID: 2559670714444471935}
   currentHealth: 0
   "currentMan\xE1": 0
@@ -466,12 +467,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22849f7914a055c49ac8905afaef186e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 150
   attack: 10
   currentHealth: 0
   "currentMan\xE1": 0
-  critChance: 0
-  critAttack: 0
+  critChance: 0.2
+  critAttack: 1.5
   "man\xE1": 30
 --- !u!81 &6905757270470026702
 AudioListener:
