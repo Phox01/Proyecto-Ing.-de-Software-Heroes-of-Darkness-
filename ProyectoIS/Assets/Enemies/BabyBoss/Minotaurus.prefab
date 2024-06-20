@@ -106,8 +106,6 @@ GameObject:
   - component: {fileID: 1069351311464541918}
   - component: {fileID: 8925063610706483753}
   - component: {fileID: 7174689814345760677}
-  - component: {fileID: 2458362234943821125}
-  - component: {fileID: 1190040593640429119}
   m_Layer: 23
   m_Name: Minotaurus
   m_TagString: Jefe0
@@ -385,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ec2e976aa3c7f4eb45bc393636b025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whiteFlah: {fileID: 0}
+  whiteFlah: {fileID: 2100000, guid: da455a81febabfe4796638670e768074, type: 2}
   restoreMatTime: 0.2
 --- !u!114 &7174689814345760677
 MonoBehaviour:
@@ -421,116 +419,6 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   hitBox: {fileID: 5693220105444428647}
   attackCooldown: 3
---- !u!82 &2458362234943821125
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3273557790794881634}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b500f60aaa5382b4aa7a96c6405a8241, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 20
-  Pan2D: 0
-  rolloffMode: 2
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.9606056
-      inSlope: -0.23660347
-      outSlope: -0.23660347
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.1746393
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -1.467998
-      outSlope: -1.467998
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.18460035
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &1190040593640429119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3273557790794881634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3ec2e976aa3c7f4eb45bc393636b025, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whiteFlah: {fileID: 0}
-  restoreMatTime: 0.2
 --- !u!1 &4500070523077436535
 GameObject:
   m_ObjectHideFlags: 0

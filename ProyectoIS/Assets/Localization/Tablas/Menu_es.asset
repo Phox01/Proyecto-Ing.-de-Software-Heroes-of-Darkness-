@@ -93,6 +93,62 @@ MonoBehaviour:
     m_Localized: Cargar Juego
     m_Metadata:
       m_Items: []
+  - m_Id: 8966757595086848
+    m_Localized: "INTERACTUAR: SPACE\nMENU DE PAUSA: ESC\nINVENTARIO:  I \t\tMAGIA:
+      Q"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8972736432832512
+    m_Localized: Bienvenido a HEROES OF DARKNESS, un RPG de mundo abierto de pixelart
+      donde forjaras tu propio camino en un reino medieval lleno de peligros y tesoros.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8974399461785600
+    m_Localized: 'ATAQUE: SPACE
+
+      CAMINAR: WASD/FLECHAS
+
+      DASH: SHIFT +
+      CAMINAR'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8974439286702080
+    m_Localized: 'INFORMACION DE OBJETO EN EL INVENTARIO: CLICK IZQUIERDO'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8974747874230272
+    m_Localized: 'UTILIZAR/ELIMINAR OBJETO DEL INVENTARIO: CLICK DERECHO'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8976589127548928
+    m_Localized: ADVERTENCIA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8976979541753856
+    m_Localized: "Iniciar un nuevo juego borrar\xE1 todo su progreso guardado y no
+      podr\xE1 recuperarlo.\n\xBFDesea continuar y crear una nueva partida?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8977183733055488
+    m_Localized: CONFIRMAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8977211591622656
+    m_Localized: DENEGAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9047686409748480
+    m_Localized: Menu de Pausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9048961889206272
+    m_Localized: Reiniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9049132920340480
+    m_Localized: Guardar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
