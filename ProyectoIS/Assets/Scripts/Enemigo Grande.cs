@@ -10,7 +10,7 @@ public class EnemigoGrande : Enemigo
     public GameObject rocaHieloPrefab;
     private LayerMask capaEnemigos;
     public PolygonCollider2D hitbox;
-    public Rigidbody2D rb;
+
     private bool movimiento = true;
     private Vector2 direccionMovimiento;
     private bool ataque = true;
@@ -22,7 +22,11 @@ public class EnemigoGrande : Enemigo
             
 
             direccionMovimiento = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-            GenerarRoca();
+            if ((player.transform.position-this.transform.position).magnitude<=30f)
+            {
+                GenerarRoca();
+                
+            }
             EjecutarAtaque();
             ActualizarPuntoAtaque();
         }
@@ -41,12 +45,12 @@ public class EnemigoGrande : Enemigo
 
     private void GenerarRoca()
     {
-        
         timer += Time.deltaTime;
         
 
         if (timer >= 7f && ataque!=false)
         {
+            animator.SetTrigger("isThrowing");
             movimiento=false;
             Invoke("EmpiezaGenerar", 1f);
 
@@ -71,6 +75,7 @@ public class EnemigoGrande : Enemigo
             {
                 if (player != null && player.CompareTag("Player"))
                 {
+                    animator.SetTrigger("isPreparing");
                     playerDetected = true;
                     break;
                 }
@@ -89,6 +94,7 @@ public class EnemigoGrande : Enemigo
 
 void Attack()
 {
+    animator.SetTrigger("isAttacking");
     rb.velocity = Vector2.zero;
 
     List<Collider2D> resultados = new List<Collider2D>();
