@@ -29,6 +29,7 @@ public class Cofre : Eventos
                 Instantiate(objetos[typeChest], transform.position, transform.rotation); //Cofre especifico
 
             }
+            
         }
 
     }
