@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72619a0442f793d47a7f0634f4e4a41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minotaurus: {fileID: 0}
+  minotaurus: {fileID: 4819244143606554445}
 --- !u!58 &5533918305531628587
 CircleCollider2D:
   m_ObjectHideFlags: 0

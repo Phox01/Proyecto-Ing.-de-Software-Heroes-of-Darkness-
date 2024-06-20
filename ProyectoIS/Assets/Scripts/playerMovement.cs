@@ -42,14 +42,21 @@ public class playerMovement : MonoBehaviour
         musicManagement = FindObjectOfType<MusicManagement>();
         managementMenu = FindObjectOfType<ManagementMenu>();
     }
-    void Start(){
+    void OnEnable(){
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    void OnDisable(){
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    void OnDestroy(){
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
      private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(gameObject.activeSelf){
+        if(gameObject!=null){
+            if(gameObject.activeSelf){
         StartCoroutine(InitializePlayerPosition());
-        }
+        }}
     }
 
      private IEnumerator InitializePlayerPosition()

@@ -53,7 +53,7 @@ public class Enemigo : MonoBehaviour
         damageNumber.gameObject.SetActive(false);
     }
     protected virtual void Update()
-        {
+       {if (player!=null) {
             //LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
             if (player.transform.position.x < transform.position.x && isFacingRight)
         {
@@ -72,7 +72,7 @@ public class Enemigo : MonoBehaviour
             {
                 animator.SetBool("Attack", false);
             }
-        }
+        }}
 
     void Flip()
     {
@@ -88,7 +88,7 @@ public class Enemigo : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
+        if (player!=null){RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
         if (ray.collider != null)
         {
             hasLineOfSight = ray.collider.CompareTag("Player");
@@ -103,7 +103,7 @@ public class Enemigo : MonoBehaviour
                     Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);    
                 }
             }
-        }
+        }}
     }
 
     void Following(){

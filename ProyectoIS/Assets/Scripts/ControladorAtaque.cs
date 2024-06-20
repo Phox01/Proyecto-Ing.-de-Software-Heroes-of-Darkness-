@@ -60,6 +60,7 @@ public class ControladorDeAtaque : MonoBehaviour
         {
             sliderVidas.maxValue = atributos.health; // Asegúrate de que el maxValue del slider sea igual a la salud máxima.
             sliderVidas.value = currentHealth;
+            UpdateHealthColor();
         }
         if (sliderManá != null)
         {

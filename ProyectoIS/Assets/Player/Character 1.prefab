@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22849f7914a055c49ac8905afaef186e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 150
+  health: 10
   attack: 10
   currentHealth: 0
   "currentMan\xE1": 0

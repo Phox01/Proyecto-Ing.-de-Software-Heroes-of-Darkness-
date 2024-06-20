@@ -25,6 +25,9 @@ public class InventoryController : MonoBehaviour
         inventoryUI.gameObject.SetActive(false);
 
     }
+    // void OnDestroy(){
+    //     Destroy(inventoryUI.gameObject);
+    // }
 
     private void Start()
     {
