@@ -182,7 +182,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.0550704
+  orthographic size: 4.8256245
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -426,6 +426,7 @@ MonoBehaviour:
   rb: {fileID: 7989326598424684392}
   animator: {fileID: 1899253404670520504}
   ActualScene: 0
+  punto: {fileID: 0}
 --- !u!114 &607767498239099414
 MonoBehaviour:
   m_ObjectHideFlags: 0

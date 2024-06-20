@@ -11,6 +11,7 @@ TagManager:
   - Jefe0
   - AttackHitbox
   - Teleport
+  - fire
   layers:
   - Default
   - TransparentFX

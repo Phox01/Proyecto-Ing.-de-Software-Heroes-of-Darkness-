@@ -10,6 +10,8 @@ public class ControladorDeAtaque : MonoBehaviour
     public LayerMask capaEnemigos;
     public GameObject projectilePrefab;
     public Transform LaunchOffset;
+    public float magicCooldown = 0.5f; 
+    private float lastMagicTime;
 
     public PolygonCollider2D areaAtaque;
     private int playerAttack;
@@ -78,7 +80,7 @@ public class ControladorDeAtaque : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false && currentManá>=10)
+        if (Input.GetKeyDown(KeyCode.Q) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false && currentManá>=10 && Time.time > lastMagicTime + magicCooldown)
         {
 
             Magic();
@@ -91,6 +93,7 @@ public class ControladorDeAtaque : MonoBehaviour
 
     void Magic()
     {
+        lastMagicTime = Time.time;
         rb.velocity = Vector2.zero;
         animator.SetTrigger("Magic");
         musicManagement.SeleccionAudio(animator.GetInteger("NumbAtt") - 1, 1f);
@@ -108,6 +111,7 @@ public class ControladorDeAtaque : MonoBehaviour
 
         // Make the projectile ignore the player collider
         Physics2D.IgnoreCollision(projectileCollider, playerCollider);
+        
 
         Projectile projectileScript = projectileObject.GetComponent<Projectile>();
         if (projectileScript != null)
