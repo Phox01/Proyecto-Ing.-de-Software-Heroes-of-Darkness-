@@ -425,7 +425,6 @@ MonoBehaviour:
   dashCooldown: 1
   rb: {fileID: 7989326598424684392}
   animator: {fileID: 1899253404670520504}
-  speed: 0
 --- !u!114 &607767498239099414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,11 +445,13 @@ MonoBehaviour:
   LaunchOffset: {fileID: 5611166715004552059}
   areaAtaque: {fileID: 2559670714444471935}
   currentHealth: 0
+  "currentMan\xE1": 0
   projectileSprite: {fileID: 0}
   atributos: {fileID: 8091804671221019563}
   animator: {fileID: 1899253404670520504}
   rb: {fileID: 7989326598424684392}
   sliderVidas: {fileID: 0}
+  "sliderMan\xE1": {fileID: 0}
 --- !u!114 &8091804671221019563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,8 +467,10 @@ MonoBehaviour:
   health: 150
   attack: 10
   currentHealth: 0
+  "currentMan\xE1": 0
   critChance: 0
   critAttack: 0
+  "man\xE1": 30
 --- !u!81 &6905757270470026702
 AudioListener:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class ControladorDeAtaque : MonoBehaviour
     public PolygonCollider2D areaAtaque;
     private int playerAttack;
     public int currentHealth;
+    public int currentManá;
     private float critChance;
     private float critAttack;
     public Sprite projectileSprite;
@@ -22,11 +23,13 @@ public class ControladorDeAtaque : MonoBehaviour
     private MusicManagement musicManagement;
     public Rigidbody2D rb;
     public Slider sliderVidas;
+    public Slider sliderManá;
 
     protected Flash flash;
 
 
     private Color fullHealthColor = Color.green;
+    private Color manáColor = Color.blue;
     private Color midHealthColor = Color.yellow;
     private Color lowHealthColor = Color.red;
 
@@ -37,8 +40,8 @@ public class ControladorDeAtaque : MonoBehaviour
     {
 
         flash = GetComponent<Flash>();
-        sliderVidas = FindObjectOfType<Slider>();
-
+        sliderVidas = (Slider)GameObject.FindObjectsOfType (typeof(Slider)) [1];
+        sliderManá = (Slider)GameObject.FindObjectsOfType (typeof(Slider)) [0];
         musicManagement = FindObjectOfType<MusicManagement>();
     }
 
@@ -47,11 +50,17 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         playerAttack = atributos.attack;
         currentHealth = atributos.health;
+        currentManá = atributos.maná;
         areaAtaque.isTrigger = true;
         if (sliderVidas != null)
         {
             sliderVidas.maxValue = atributos.health; // Asegúrate de que el maxValue del slider sea igual a la salud máxima.
             sliderVidas.value = currentHealth;
+        }
+        if (sliderManá != null)
+        {
+            sliderManá.maxValue = atributos.maná; // Asegúrate de que el maxValue del slider sea igual al maná máximo.
+            sliderManá.value = currentManá;
         }
     }
 
@@ -66,10 +75,11 @@ public class ControladorDeAtaque : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false)
+        if (Input.GetKeyDown(KeyCode.Q) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false && currentManá>0)
         {
 
             Magic();
+            
 
         }
 
@@ -103,6 +113,8 @@ public class ControladorDeAtaque : MonoBehaviour
             int trueDamage = damage + Random.Range(-3, 4);
             projectileScript.damage = trueDamage;
         }
+            currentManá=currentManá-10;
+            sliderManá.value = currentManá;
 
     }
 
@@ -197,6 +209,11 @@ public class ControladorDeAtaque : MonoBehaviour
         sliderVidas.value = currentHealth;
         UpdateHealthColor();
     }
-
+    public void AddManá(int amount)
+    {
+        currentManá += amount;
+        currentManá = Mathf.Clamp(currentManá, 0, atributos.maná);
+        sliderManá.value = currentManá;
+    }
 
 }
