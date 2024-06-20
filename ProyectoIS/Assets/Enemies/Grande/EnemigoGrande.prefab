@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6057522327921398048}
   - component: {fileID: 8578396624736692178}
   - component: {fileID: 8517736582545326653}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Bordes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3794986689935728598}
   - component: {fileID: 1615652489076751841}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Barra de vida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1474138703489728442}
   - component: {fileID: 9185268220428664785}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 3477551095376093597}
   - component: {fileID: 2358424750950680926}
   - component: {fileID: 6985865117568771973}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 3415210658781240068}
   - component: {fileID: 6109321367373956377}
   - component: {fileID: 4969876659001442141}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Relleno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 1082000265023548648}
   - component: {fileID: 983204798120696294}
   - component: {fileID: 5915152462541626709}
-  m_Layer: 5
+  m_Layer: 23
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 5854453152696066741}
   - component: {fileID: 336850701645327301}
   - component: {fileID: 2960175084303560984}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: EnemigoGrande
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,10 +739,10 @@ MonoBehaviour:
   attack: 15
   defensaMax: 5
   knockBackTime: 0.2
-  speed: 4
+  speed: 2
   layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 25165824
   sliderVidas: {fileID: 1615652489076751841}
   animator: {fileID: 336850701645327301}
   damageNumber: {fileID: 5915152462541626709}
