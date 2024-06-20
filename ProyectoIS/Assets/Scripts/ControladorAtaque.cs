@@ -10,7 +10,7 @@ public class ControladorDeAtaque : MonoBehaviour
     public LayerMask capaEnemigos;
     public GameObject projectilePrefab;
     public Transform LaunchOffset;
-    public float magicCooldown = 0.5f; 
+    public float magicCooldown = 0.1f; 
     private float lastMagicTime;
 
     public PolygonCollider2D areaAtaque;
