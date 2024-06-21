@@ -183,7 +183,7 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         currentHealth -= damage;
         StartCoroutine(flash.FlashRoutine());
-
+    CineMachineMovCmera.Instance.MoverCamara(5, 5, 0.5f);
 
         sliderVidas.value = currentHealth;
         UpdateHealthColor();
