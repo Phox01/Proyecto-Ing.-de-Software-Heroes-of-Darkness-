@@ -9,12 +9,13 @@ public class GameManager : MonoBehaviour
     public GameObject playerCanvasPrefab;
     public GameObject pausaCanvasPrefab;
     public GameObject inventoryCanvasPrefab;
-    public GameObject playerInstance;
-    public GameObject audioControllerInstance; 
+    private GameObject playerInstance;
+    private GameObject audioControllerInstance; 
 
     private GameObject playerCanvasInstance;
     private GameObject pausaCanvasInstance;
     private GameObject inventoryCanvasInstance;
+    private bool init = false;
 
     private void Awake()
     {
@@ -26,11 +27,12 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+    }
 
-            // if (FindObjectOfType<MusicManagement>() == null)
-            // {
-            //     Instantiate(audioControllerPrefab);
-            // }
+    public void Init(){
+        
             audioControllerInstance = Instantiate(audioControllerPrefab);
             DontDestroyOnLoad(audioControllerInstance);
             playerCanvasInstance = Instantiate(playerCanvasPrefab);
@@ -40,18 +42,9 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(pausaCanvasInstance);
             inventoryCanvasInstance = Instantiate(inventoryCanvasPrefab);
             DontDestroyOnLoad(inventoryCanvasInstance);
-
-            // if (FindObjectOfType<playerMovement>() == null)
-            // {
-            //     Instantiate(playerPrefab);
-            // }
             playerInstance = Instantiate(playerPrefab);
             DontDestroyOnLoad(playerInstance);
-
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
     }
-
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
@@ -106,45 +99,34 @@ public class GameManager : MonoBehaviour
     }
     private void activate()
     {
-        
-        //gameObject.SetActive(true);
-        //var player = FindObjectOfType<playerMovement>();
-        
+        if (!init){
+            Init();
+            init = true;
+        }
         
         if (playerInstance != null)
         {
-            //Destroy(player.gameObject);
             playerInstance.gameObject.SetActive(true);
         }
 
-        //var musicManager = FindObjectOfType<MusicManagement>();
         if (audioControllerInstance != null)
         {
-            //Destroy(musicManager.gameObject);
             audioControllerInstance.gameObject.SetActive(true);
         }
 
         if (playerCanvasInstance != null)
         {
-            //Destroy(playerCanvasInstance);
             playerCanvasInstance.gameObject.SetActive(true);
         }
 
         if (pausaCanvasInstance != null)
         {
-            //Destroy(pausaCanvasInstance);
             pausaCanvasInstance.gameObject.SetActive(true);
         }
         if (inventoryCanvasInstance != null)
         {
-            //Destroy(inventoryCanvasInstance);
             inventoryCanvasInstance.gameObject.SetActive(true);
         }
-        // if (inventoryCanvasInstance == null)
-        // {
-        //     inventoryCanvasInstance = Instantiate(inventoryCanvasPrefab);
-        //     DontDestroyOnLoad(playerInstance);
-        // }
         if (playerInstance == null)
         {   
             inventoryCanvasInstance = Instantiate(inventoryCanvasPrefab);
@@ -152,7 +134,6 @@ public class GameManager : MonoBehaviour
             playerInstance = Instantiate(playerPrefab);
             DontDestroyOnLoad(playerInstance);
         }
-        //Destroy(gameObject); 
     }
     
 }

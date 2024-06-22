@@ -168,11 +168,12 @@ public class InventoryController : MonoBehaviour
                         item.Value.item.ItemImage,
                         item.Value.quantity);
                 }
-
+                Time.timeScale = 0f;
                 inventoryUI.Show();
             }
             else
             {
+                Time.timeScale = 1f;
                 inventoryUI.Hide();
             }
         }

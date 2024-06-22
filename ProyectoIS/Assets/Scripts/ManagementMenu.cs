@@ -12,7 +12,6 @@ public class ManagementMenu : MonoBehaviour
     public GameObject gameManager;
     string filePath = Application.dataPath + "/data.mrmenu";
 
-
     public void Tutorial()
     {
         SceneManager.LoadScene(1);
@@ -46,7 +45,6 @@ public class ManagementMenu : MonoBehaviour
         {
             Debug.LogWarning("El archivo DataJuego.data no existe.");
             SceneManager.LoadScene(5);
-            gameManager.gameObject.SetActive(true);
         }
     }
 

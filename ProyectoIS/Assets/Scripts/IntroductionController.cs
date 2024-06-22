@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class IntroductionController : MonoBehaviour
 {
 
+    public GameManager gameManager;
     public Dialogue dialogue;
     // Start is called before the first frame update
     void Start()
     {
-        dialogue.localizationController.OnLocalizationReady += OnLocalizationReady;
+        dialogue.localizationController.OnLocalizationReady += OnLocalizationReady;    
+        GameManager gameManager = FindObjectOfType<GameManager>();
     }
 
     void OnLocalizationReady()
@@ -20,11 +23,7 @@ public class IntroductionController : MonoBehaviour
         dialogue.StartDialogue(1, false);
         dialogue.StartDialogue(2, false);
         dialogue.StartDialogue(3, false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene(4);
+        gameManager.Init();
     }
 }

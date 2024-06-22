@@ -225,6 +225,7 @@ public class ControladorDeAtaque : MonoBehaviour
     }
     IEnumerator RegenerateMana()
     {
+        Debug.Log("aaaa");
         while (true)
         {
             yield return new WaitForSeconds(1f); 

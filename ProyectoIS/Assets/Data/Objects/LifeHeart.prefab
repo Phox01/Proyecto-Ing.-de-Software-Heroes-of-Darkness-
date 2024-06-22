@@ -64,7 +64,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.045}
@@ -85,6 +85,7 @@ MonoBehaviour:
   <InventoryItem>k__BackingField: {fileID: 11400000, guid: babefacdd027598418b2ae821a6b527b,
     type: 2}
   <Quantity>k__BackingField: 1
+  audioSource: {fileID: 304800016934017560}
   duration: 0.3
 --- !u!82 &304800016934017560
 AudioSource:
@@ -93,10 +94,10 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4095370115005189664}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b59c2b6140f389945b6415b0821f9723, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
