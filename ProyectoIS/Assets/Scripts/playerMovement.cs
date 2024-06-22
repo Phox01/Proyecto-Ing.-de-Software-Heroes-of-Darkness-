@@ -28,6 +28,10 @@ public class playerMovement : MonoBehaviour
     public int ActualScene;
     public GameObject punto;
 
+    private bool comprobar = false;
+
+ 
+
     private void Awake()
     {
          if (instance != null && instance != this)
@@ -103,6 +107,11 @@ public class playerMovement : MonoBehaviour
             {
                 StartDash();
             }
+
+            if (Input.GetKeyDown(KeyCode.RightShift) && Time.time > lastDashTime + dashCooldown)
+            {
+                StartDash();
+            }
         }
 
         if (isDashing && Time.time >= dashTime)
@@ -110,10 +119,8 @@ public class playerMovement : MonoBehaviour
             EndDash();
         }
         
-        if (Input.GetKeyDown(KeyCode.Escape) && managementMenu != null)
-        {
-            managementMenu.PausarPartida();
-        }
+        HandleEscapeKey();
+
 
     }
 
@@ -172,4 +179,23 @@ public class playerMovement : MonoBehaviour
         ActualScene = NewActual;
     }
 
+    private void HandleEscapeKey()
+    {
+    if (Input.GetKeyDown(KeyCode.Escape))
+    {
+        if (managementMenu != null)
+        {
+            if (comprobar)
+            {
+                comprobar = false;
+                managementMenu.ReanudarPartida();
+                }
+            else
+            {
+                comprobar = true;
+                managementMenu.PausarPartida();
+                }
+            }
+        }
+    }
 }
