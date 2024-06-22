@@ -21,7 +21,7 @@ public class Enemigo : MonoBehaviour
     protected GameObject player;
     public Slider sliderVidas;
     protected bool hasLineOfSight = false;
-    private bool isFacingRight = true; // Assume the enemy is facing right initially
+    private bool isFacingRight = true;
     public Animator animator;
     protected Flash flash;
     public delegate void EnemyKilledHandler(Enemigo enemy);
@@ -30,7 +30,7 @@ public class Enemigo : MonoBehaviour
     private Color fullHealthColor = Color.green;
     private Color midHealthColor = Color.yellow;
     private Color lowHealthColor = Color.red;
-    public TextMeshProUGUI damageNumber;
+    public GameObject damageTextPrefab; // Prefab del texto de daño
     protected LootDropper lootDropper;
     
     private void Awake()
@@ -40,79 +40,82 @@ public class Enemigo : MonoBehaviour
         lootDropper = GetComponent<LootDropper>();
     }
 
-    protected virtual void Start(){
-        
+    protected virtual void Start()
+    {
         vida = vidaMax;
         attack = maxAttack;
         defensa = defensaMax;
         player = GameObject.FindGameObjectWithTag("Player");
-        
         musicManagement = FindObjectOfType<MusicManagement>();
         sliderVidas.maxValue = vidaMax;
         sliderVidas.value = vida;
-        damageNumber.gameObject.SetActive(false);
     }
+
     protected virtual void Update()
-       {if (player!=null) {
-            //LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
+    {
+        if (player != null)
+        {
             if (player.transform.position.x < transform.position.x && isFacingRight)
-        {
-            Flip();
-        }
-            else if (player.transform.position.x > transform.position.x &&!isFacingRight)
-        {
-            Flip();
-        }
-        if (hasLineOfSight && !animator.GetBool("Death") )
             {
-                //Muévete
+                Flip();
+            }
+            else if (player.transform.position.x > transform.position.x && !isFacingRight)
+            {
+                Flip();
+            }
+
+            if (hasLineOfSight && !animator.GetBool("Death"))
+            {
                 Following();
             }
             else
             {
                 animator.SetBool("Attack", false);
             }
-        }}
+        }
+    }
 
     void Flip()
     {
-        isFacingRight =!isFacingRight;
+        isFacingRight = !isFacingRight;
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
-        Vector3 ScalerLifeBar=sliderVidas.transform.localScale;
-        ScalerLifeBar.x*=-1;
-        sliderVidas.transform.localScale= ScalerLifeBar;
-        
+        Vector3 ScalerLifeBar = sliderVidas.transform.localScale;
+        ScalerLifeBar.x *= -1;
+        sliderVidas.transform.localScale = ScalerLifeBar;
     }
 
     protected virtual void FixedUpdate()
     {
-        if (player!=null){RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
-        if (ray.collider != null)
+        if (player != null)
         {
-            hasLineOfSight = ray.collider.CompareTag("Player");
-            if (hasLineOfSight)
+            RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
+            if (ray.collider != null)
             {
-                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
-            }
-            else
-            {
-                if (!animator.GetBool("Death"))
+                hasLineOfSight = ray.collider.CompareTag("Player");
+                if (hasLineOfSight)
                 {
-                    Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);    
+                    Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
+                }
+                else
+                {
+                    if (!animator.GetBool("Death"))
+                    {
+                        Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
+                    }
                 }
             }
-        }}
+        }
     }
 
-    void Following(){
+    void Following()
+    {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         animator.SetBool("Attack", true);
     }
 
-    
-    public void GetDamaged(int damage)
+    public void GetDamaged(int damage, bool isCritical)
     {
         GetKnockedBackUwu(playerMovement.instance.transform, 15f);
         musicManagement.SeleccionAudio(4, 1f);
@@ -124,7 +127,7 @@ public class Enemigo : MonoBehaviour
             vida -= netDamage;
             sliderVidas.value = vida;
             UpdateHealthColor();
-            ShowDamage(netDamage);
+            ShowDamage(netDamage, isCritical);
         }
         if (vida <= 0)
         {
@@ -133,7 +136,8 @@ public class Enemigo : MonoBehaviour
         }
     }
 
-    protected virtual  IEnumerator OnDieAnimationComplete(){
+    protected virtual IEnumerator OnDieAnimationComplete()
+    {
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
         Die();
@@ -156,11 +160,11 @@ public class Enemigo : MonoBehaviour
 
     protected void UpdateHealthColor()
     {
-        if (vida > vidaMax*0.5 )
+        if (vida > vidaMax * 0.5f)
         {
             sliderVidas.fillRect.GetComponent<Image>().color = fullHealthColor;
         }
-        else if (vida > vidaMax*0.25)
+        else if (vida > vidaMax * 0.25f)
         {
             sliderVidas.fillRect.GetComponent<Image>().color = midHealthColor;
         }
@@ -171,11 +175,8 @@ public class Enemigo : MonoBehaviour
     }
 
     public void GetKnockedBackUwu(Transform damageSource, float knockBackThrust)
-   
     {
-        
         gettingKnockedBack = true;
-        
         Vector2 diference = (transform.position - damageSource.position).normalized * knockBackThrust * rb.mass;
         rb.AddForce(diference, ForceMode2D.Impulse);
         StartCoroutine(KnockRoutine());
@@ -188,8 +189,7 @@ public class Enemigo : MonoBehaviour
         gettingKnockedBack = false;
     }
 
-    //A partir de acá, lo general se acaba. Estas son más específicas para enemigos de daño de colisión
-    protected virtual void OnCollisionEnter2D(Collision2D collision) //Probando, para que Minotauro no herede onCollisionEnter2D()
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         ControladorDeAtaque jugador = collision.gameObject.GetComponent<ControladorDeAtaque>();
         if (jugador != null)
@@ -197,27 +197,39 @@ public class Enemigo : MonoBehaviour
             jugador.GetDamaged(attack);
         }
     }
-    private void ShowDamage(int damage)
+
+    private void ShowDamage(int damage, bool isCritical)
     {
-        damageNumber.text = damage.ToString();
-        damageNumber.gameObject.SetActive(true);
-        StartCoroutine(FadeDamageText());
+        Debug.Log("Instanciando texto de daño");
+        GameObject damageTextInstance = Instantiate(damageTextPrefab, transform.position + Vector3.up * 1.5f, Quaternion.identity);
+        TextMeshProUGUI damageText = damageTextInstance.GetComponentInChildren<TextMeshProUGUI>();
+        if (damageText == null)
+        {
+            Debug.LogError("El prefab de texto de daño no tiene un componente TextMeshProUGUI.");
+            return;
+        }
+        damageText.text = damage.ToString();
+        damageText.color = isCritical ? Color.red : Color.yellow;
+        damageText.fontSize = isCritical ? 72 : 60;
+
+        StartCoroutine(FadeDamageText(damageTextInstance));
     }
 
-    private IEnumerator FadeDamageText()
+    private IEnumerator FadeDamageText(GameObject damageTextInstance)
     {
+        TextMeshProUGUI damageText = damageTextInstance.GetComponentInChildren<TextMeshProUGUI>();
         float duration = 1f;
         float elapsedTime = 0f;
-        Vector3 originalPosition = damageNumber.transform.position;
+        Vector3 originalPosition = damageText.transform.localPosition;
 
         while (elapsedTime < duration)
         {
-            damageNumber.transform.position = originalPosition + Vector3.up * (elapsedTime / duration);
+            damageText.transform.localPosition = originalPosition + Vector3.up * (elapsedTime / duration);
+            damageText.alpha = 1 - (elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        damageNumber.gameObject.SetActive(false);
-        damageNumber.transform.position = originalPosition;
+        Destroy(damageTextInstance);
     }
 }

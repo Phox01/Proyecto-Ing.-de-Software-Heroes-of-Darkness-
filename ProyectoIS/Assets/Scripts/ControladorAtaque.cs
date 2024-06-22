@@ -35,6 +35,7 @@ public class ControladorDeAtaque : MonoBehaviour
     private Color midHealthColor = Color.yellow;
     private Color lowHealthColor = Color.red;
     private int maxMana;
+    private bool critical;
 
 
 
@@ -55,6 +56,8 @@ public class ControladorDeAtaque : MonoBehaviour
         currentHealth = atributos.health;
         currentManá = atributos.maná;
         maxMana = atributos.maná;
+        critAttack = atributos.critAttack;
+        critChance = atributos.critChance;
         areaAtaque.isTrigger = true;
         if (sliderVidas != null)
         {
@@ -143,7 +146,7 @@ public class ControladorDeAtaque : MonoBehaviour
             {
                 int damage = CriticalDamage(playerAttack);
                 int trueDamage = damage + Random.Range(-3, 4);
-                enemigoComponent.GetDamaged(trueDamage);
+                enemigoComponent.GetDamaged(trueDamage, critical);
                 musicManagement.SeleccionAudio(5, 1f);
             }
         }
@@ -160,10 +163,12 @@ public class ControladorDeAtaque : MonoBehaviour
         if (Random.value < critChance)
         {
             int criticalHit = Mathf.RoundToInt(attack * critAttack);
+            critical = true;
             return criticalHit;
         }
         else
         {
+            critical = false;
             return attack;
         }
     }
@@ -225,7 +230,6 @@ public class ControladorDeAtaque : MonoBehaviour
     }
     IEnumerator RegenerateMana()
     {
-        Debug.Log("aaaa");
         while (true)
         {
             yield return new WaitForSeconds(1f); 

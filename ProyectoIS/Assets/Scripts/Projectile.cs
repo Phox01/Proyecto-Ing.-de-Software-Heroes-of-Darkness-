@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
         Enemigo enemigoComponent = collision.gameObject.GetComponent<Enemigo>();
         if (enemigoComponent != null)
         {
-            enemigoComponent.GetDamaged(damage);
+            enemigoComponent.GetDamaged(damage, false);
             musicManagement.SeleccionAudio(5, 1f);
         }
         
