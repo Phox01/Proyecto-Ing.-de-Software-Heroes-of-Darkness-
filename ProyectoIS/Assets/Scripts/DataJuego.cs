@@ -10,7 +10,7 @@ public class DataJuego : MonoBehaviour
     public static DataJuego data;
     private string rutaArchivo;
 
-    public int dinero;
+    public int dinero=100;
     public float estado, vida, magia;
 
     public float maxEstado = 100f, maxVida = 100f; //Maximo de vida y estado (estado revisar)

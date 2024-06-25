@@ -9,7 +9,7 @@ public class InventoryController : MonoBehaviour
     private InventoryPage inventoryUI;
 
     [SerializeField]
-    private InventorySO inventoryData;
+    public InventorySO inventoryData;
     // Start is called before the first frame update
 
     public List<InventoryItem> initialItems = new List<InventoryItem>();
@@ -178,5 +178,11 @@ public class InventoryController : MonoBehaviour
             }
         }
 
+    }
+
+
+    public void Agregar1()
+    {
+        
     }
 }
