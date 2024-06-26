@@ -65,6 +65,17 @@ public class Objetos : Colisiones //Herencia
                         player.GetDamaged(50);
                         break;
 
+                    case 6: //Platino
+                        musicManagement.SeleccionAudio(10, 1f);
+                        DataJuego.data.dinero += 100;
+                        break;
+
+                    case 7: //Fruta suprema
+                        musicManagement.SeleccionAudio(8, 1f);
+                        player.AddHealth(100);
+                        break;
+
+
 
                     default:
                         break;
