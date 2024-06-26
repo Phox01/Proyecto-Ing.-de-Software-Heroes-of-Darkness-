@@ -10,6 +10,7 @@ public class Puerta : MonoBehaviour
 {
 
     public int TargetScene;
+    public Animator anim;
 
     public TMP_Text texto;
     [SerializeField]
@@ -25,12 +26,14 @@ public class Puerta : MonoBehaviour
     void Update()
     {
         IrAmundo();
+        anim.SetBool("Opening", Chocando);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision != null)
         {
+            
             texto.gameObject.SetActive(true);
 
             Chocando = true;
@@ -42,10 +45,8 @@ public class Puerta : MonoBehaviour
 
 
     private void OnCollisionExit2D(Collision2D collision)
-    {
-        
-            
-            texto.gameObject.SetActive(false);
+    {   
+        texto.gameObject.SetActive(false);
         Chocando = false;
     }
 
