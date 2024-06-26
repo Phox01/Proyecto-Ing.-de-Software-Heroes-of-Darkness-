@@ -1,0 +1,391 @@
+fileFormatVersion: 2
+guid: ea6cbcc24d015c846a9ee8f9e47ef8b0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CEO Errors_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 12
+        width: 121
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce03d3e514f87024792531ba4763b160
+      internalID: 1084941122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CEO Errors_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 12
+        width: 120
+        height: 163
+      alignment: 9
+      pivot: {x: 0.48124543, y: 0.5234833}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16fcbb6498ad03341a76b61c1e19c35b
+      internalID: -1557158704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CEO Errors_2
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 0
+        width: 145
+        height: 151
+      alignment: 9
+      pivot: {x: 0.6845097, y: 0.6107365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac2da6c89d4a2e9498c518ccb292611b
+      internalID: -1922162699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CEO Errors_3
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 133
+        height: 164
+      alignment: 9
+      pivot: {x: 0.7388746, y: 0.5509792}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0d8a142ed59ea64699ceecb93d41b32
+      internalID: -683499338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CEO Errors_4
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 0
+        width: 133
+        height: 164
+      alignment: 9
+      pivot: {x: 0.638296, y: 0.5407833}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629948d23bcdea146887caebc85fcc0a
+      internalID: -1484063041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CEO Errors_5
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 0
+        width: 133
+        height: 157
+      alignment: 9
+      pivot: {x: 0.6257241, y: 0.6278054}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de6f4566deb14c542bfc1b58fa9c9d46
+      internalID: 1459361473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CEO Errors_6
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 12
+        width: 115
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63cb9f03f7f8a4c4b919fa7873c1d2b8
+      internalID: 1607332329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CEO Errors_7
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 12
+        width: 113
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5147997, y: 0.5330023}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1e478b9c35dff409ca96276fb8dd7b
+      internalID: -282470316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CEO Errors_8
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 19
+        width: 140
+        height: 169
+      alignment: 9
+      pivot: {x: 0.4044512, y: 0.5791537}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08621131db1046046825ba9668e9669f
+      internalID: -1679755371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CEO Errors_9
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 19
+        width: 139
+        height: 162
+      alignment: 9
+      pivot: {x: 0.5240601, y: 0.5825739}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c33a7358ceb0a2042b46daee59d5ee1b
+      internalID: 1125091903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CEO Errors_10
+      rect:
+        serializedVersion: 2
+        x: 2030
+        y: 30
+        width: 120
+        height: 151
+      alignment: 9
+      pivot: {x: 0.500002, y: 0.5332214}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f2a90941c9fceb43a20773407f1ee0f
+      internalID: -264288482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CEO Errors_11
+      rect:
+        serializedVersion: 2
+        x: 2230
+        y: 30
+        width: 121
+        height: 145
+      alignment: 9
+      pivot: {x: 0.5, y: 0.61531913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50ce47fa6c42aad4697edd112cd9ee4c
+      internalID: -1973162837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CEO Errors_0: 1084941122
+      CEO Errors_1: -1557158704
+      CEO Errors_10: -264288482
+      CEO Errors_11: -1973162837
+      CEO Errors_2: -1922162699
+      CEO Errors_3: -683499338
+      CEO Errors_4: -1484063041
+      CEO Errors_5: 1459361473
+      CEO Errors_6: 1607332329
+      CEO Errors_7: -282470316
+      CEO Errors_8: -1679755371
+      CEO Errors_9: 1125091903
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
