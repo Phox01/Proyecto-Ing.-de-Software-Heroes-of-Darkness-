@@ -37,7 +37,7 @@ public class BolaFuegoAzul : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
-        if (player != null)
+        if (collision.collider.CompareTag("Player"))
         {
             player.GetDamaged( 5);
             //musicManagement.SeleccionAudio(5, 1f);
