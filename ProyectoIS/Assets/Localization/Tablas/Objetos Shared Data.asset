@@ -39,6 +39,10 @@ MonoBehaviour:
     m_Key: LechugaD
     m_Metadata:
       m_Items: []
+  - m_Id: 3215777942462464
+    m_Key: BuyText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -18,6 +18,7 @@ MonoBehaviour:
   <Description>k__BackingField: LechugaD
   <ItemImage>k__BackingField: {fileID: 1847463989, guid: a03c2610221b14940b818fb271b448fa,
     type: 3}
+  <Price>k__BackingField: 25
   modifiersData:
   - statModifier: {fileID: 11400000, guid: 489998e3ca2da3a45836436b0d47c13c, type: 2}
     value: 50

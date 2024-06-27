@@ -42,6 +42,10 @@ MonoBehaviour:
     m_Localized: Parece una manzana, pero es una lechuga. Restaura 50 de vida
     m_Metadata:
       m_Items: []
+  - m_Id: 3215777942462464
+    m_Localized: Presiona C para comprar "{0}" por "{1}" monedas
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -42,6 +42,10 @@ MonoBehaviour:
     m_Localized: Seems like an apple but it is a lettuce. Restores 50 hp
     m_Metadata:
       m_Items: []
+  - m_Id: 3215777942462464
+    m_Localized: Press C to buy "{0}" for "{1}" coins
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

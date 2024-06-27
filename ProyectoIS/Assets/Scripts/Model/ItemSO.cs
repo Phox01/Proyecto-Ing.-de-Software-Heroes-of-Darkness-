@@ -26,6 +26,8 @@ public abstract class ItemSO : ScriptableObject
 
         [field: SerializeField]
         public Sprite ItemImage { get; set; }
+        [field: SerializeField]
+        public int Price { get; set; }
 
         //[field: SerializeField]
         //public List<ItemSOParameter> DefaultParametersList { get; set; }
