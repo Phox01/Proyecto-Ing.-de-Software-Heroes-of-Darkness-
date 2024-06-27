@@ -13,6 +13,7 @@ public class LanzarBolasFuego : Enemigo
     public BolaFuegoAzul projectilePrefab;
     public Spowner spowner;
     private bool poniendoMuro;
+    public Animator animator;
     // Start is called before the first frame update
     
 
@@ -65,7 +66,7 @@ public class LanzarBolasFuego : Enemigo
 
         if (timerMuro >= 8f)
         {
-
+            animator.SetBool("HacerMuro", true);
             poniendoMuro = true;
             Vector2 posicionMuroFuego = (player.transform.position - transform.position).normalized;
             Debug.Log(transform.position);
@@ -75,10 +76,23 @@ public class LanzarBolasFuego : Enemigo
 
 
             timerMuro = 0f;
+
+
+            
+
         }
+        cambiarAnimacion();
 
     }
-
+    
+    private void cambiarAnimacion()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("HacerMuro"))
+        {
+            
+            animator.SetBool("HacerMuro", false);
+        }
+    }
     
 
 }
