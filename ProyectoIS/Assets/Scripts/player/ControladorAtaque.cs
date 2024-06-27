@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 using System.Security.Cryptography.X509Certificates;
 
 public class ControladorDeAtaque : MonoBehaviour
 {
+    PS4 controls;
     public LayerMask capaEnemigos;
     public GameObject projectilePrefab;
     public Transform LaunchOffset;
@@ -42,7 +44,7 @@ public class ControladorDeAtaque : MonoBehaviour
 
     private void Awake()
     {
-
+        controls= new PS4();
         flash = GetComponent<Flash>();
         sliderVidas = (Slider)GameObject.FindObjectsOfType (typeof(Slider)) [1];
         sliderManá = (Slider)GameObject.FindObjectsOfType (typeof(Slider)) [0];
@@ -52,6 +54,9 @@ public class ControladorDeAtaque : MonoBehaviour
 
     void Start()
     {
+        controls.Gameplay.Attack.Enable();
+        controls.Gameplay.Magic.Enable();
+        controls.Gameplay.Dash.Enable();
         playerAttack = atributos.attack;
         currentHealth = atributos.health;
         currentManá = atributos.maná;
@@ -77,14 +82,14 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         direccionMovimiento = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
 
-        if (Input.GetKeyDown(KeyCode.Space) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false)
+        if ((Input.GetKeyDown(KeyCode.Space) || controls.Gameplay.Attack.triggered) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false)
         {
 
             Attack();
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false && currentManá>=10 && Time.time > lastMagicTime + magicCooldown)
+        if ((Input.GetKeyDown(KeyCode.Q)||controls.Gameplay.Magic.triggered) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false && currentManá>=10 && Time.time > lastMagicTime + magicCooldown)
         {
 
             Magic();
