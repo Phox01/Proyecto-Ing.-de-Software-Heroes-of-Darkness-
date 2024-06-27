@@ -228,14 +228,20 @@ public class ControladorDeAtaque : MonoBehaviour
         Debug.Log("fuerza");
         playerAttack = playerAttack * 2;
         Debug.Log(playerAttack);
-        Invoke("VolverNormal", 30f);
+        StartCoroutine(VolverNormal());
+        
     }
 
-    public void VolverNormal() 
+    
+
+    public IEnumerator VolverNormal() 
     
     {
+        Debug.Log("entro");
+        yield return new WaitForSeconds(10f);
         playerAttack = playerAttack / 2;
-        Debug.Log(playerAttack);
+        Debug.Log("salio");
+
     }
     public void AddManá(int amount)
     {

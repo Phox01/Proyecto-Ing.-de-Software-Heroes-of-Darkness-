@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [CreateAssetMenu]
 public class Strength : CharacterStatModifierSO
 {
@@ -11,5 +12,6 @@ public class Strength : CharacterStatModifierSO
         ControladorDeAtaque player = character.GetComponent<ControladorDeAtaque>();
         if (player != null)
             player.addDamage();
+            
     }
 }
