@@ -198,4 +198,26 @@ public class playerMovement : MonoBehaviour
             }
         }
     }
+
+
+    public void Velocity(float value)
+    {
+        
+        moveSpeed +=value;
+       
+        StartCoroutine(VolverNormalVelocidad(value));
+
+    }
+
+
+
+    public IEnumerator VolverNormalVelocidad(float value)
+
+    {
+        
+        yield return new WaitForSeconds(10f);
+        moveSpeed -=value;
+        
+
+    }
 }

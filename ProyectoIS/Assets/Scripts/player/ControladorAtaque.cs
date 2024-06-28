@@ -222,6 +222,41 @@ public class ControladorDeAtaque : MonoBehaviour
         sliderVidas.value = currentHealth;
         UpdateHealthColor();
     }
+
+    public void addDamage()
+    {
+        Debug.Log("fuerza");
+        playerAttack = playerAttack * 2;
+        Debug.Log(playerAttack);
+        StartCoroutine(VolverNormal());
+        
+    }
+
+    
+
+    public IEnumerator VolverNormal() 
+    
+    {
+        Debug.Log("entro");
+        yield return new WaitForSeconds(10f);
+        playerAttack = playerAttack / 2;
+        Debug.Log("salio");
+
+    }
+
+
+    public void addManaPocion(float value)
+    {
+        
+        currentManá += (int)value;
+        sliderManá.value = currentManá;
+
+
+    }
+
+
+
+   
     public void AddManá(int amount)
     {
         currentManá += amount;

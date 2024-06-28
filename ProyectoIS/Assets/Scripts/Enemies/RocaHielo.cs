@@ -7,7 +7,7 @@ public class RocaHielo : MonoBehaviour
     // Start is called before the first frame update
 
     private BoxCollider2D boxCollider;
-    private float timer = 0f;
+    
     public float destroyTime = 1f; // Tiempo de destrucci�n (en segundos)
 
    
