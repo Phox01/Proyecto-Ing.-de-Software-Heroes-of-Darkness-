@@ -7,6 +7,7 @@ public class playerMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
     public int moveDuo = 1;
+    PS4 controls;
     public float dashSpeed = 3f; 
     public float attackImpulse= 2f; 
     public float dashDuration = 0.2f; 
@@ -32,9 +33,9 @@ public class playerMovement : MonoBehaviour
 
  
 
-    private void Awake()
-    {
-         if (instance != null && instance != this)
+    private void Awake(){
+        controls= new PS4();
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
         }
@@ -45,6 +46,7 @@ public class playerMovement : MonoBehaviour
         }
         musicManagement = FindObjectOfType<MusicManagement>();
         managementMenu = FindObjectOfType<ManagementMenu>();
+        controls.Gameplay.Dash.Enable();
     }
     void OnEnable(){
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -103,12 +105,7 @@ public class playerMovement : MonoBehaviour
             animator.SetFloat("Vertical", movement.y);
             animator.SetFloat("Speed", movement.sqrMagnitude);
             
-            if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > lastDashTime + dashCooldown)
-            {
-                StartDash();
-            }
-
-            if (Input.GetKeyDown(KeyCode.RightShift) && Time.time > lastDashTime + dashCooldown)
+            if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift) || controls.Gameplay.Dash.triggered) && Time.time > lastDashTime + dashCooldown)
             {
                 StartDash();
             }
