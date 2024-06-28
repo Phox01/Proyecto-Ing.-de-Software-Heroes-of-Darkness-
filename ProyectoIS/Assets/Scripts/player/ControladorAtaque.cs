@@ -243,6 +243,20 @@ public class ControladorDeAtaque : MonoBehaviour
         Debug.Log("salio");
 
     }
+
+
+    public void addManaPocion(float value)
+    {
+        
+        currentManá += (int)value;
+        sliderManá.value = currentManá;
+
+
+    }
+
+
+
+   
     public void AddManá(int amount)
     {
         currentManá += amount;
