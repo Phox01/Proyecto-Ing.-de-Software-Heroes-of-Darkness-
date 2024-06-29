@@ -5,12 +5,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject playerPrefab;
-    public GameObject audioControllerPrefab; 
+    public GameObject audioControllerPrefab;
     public GameObject playerCanvasPrefab;
     public GameObject pausaCanvasPrefab;
     public GameObject inventoryCanvasPrefab;
     private GameObject playerInstance;
-    private GameObject audioControllerInstance; 
+    private GameObject audioControllerInstance;
 
     private GameObject playerCanvasInstance;
     private GameObject pausaCanvasInstance;
@@ -31,19 +31,36 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Init(){
-        
+    public void Init()
+    {
+
+        if (audioControllerInstance == null)
+        {
             audioControllerInstance = Instantiate(audioControllerPrefab);
             DontDestroyOnLoad(audioControllerInstance);
+        }
+        if (playerCanvasInstance == null)
+        {
             playerCanvasInstance = Instantiate(playerCanvasPrefab);
             DontDestroyOnLoad(playerCanvasInstance);
-
+        }
+        if (pausaCanvasInstance == null)
+        {
             pausaCanvasInstance = Instantiate(pausaCanvasPrefab);
             DontDestroyOnLoad(pausaCanvasInstance);
+        }
+        if (inventoryCanvasInstance == null)
+        {
             inventoryCanvasInstance = Instantiate(inventoryCanvasPrefab);
             DontDestroyOnLoad(inventoryCanvasInstance);
+        }
+        if (playerInstance == null)
+        {
             playerInstance = Instantiate(playerPrefab);
             DontDestroyOnLoad(playerInstance);
+        }
+
+        DataJuego.data.CargarData();
     }
     private void OnDestroy()
     {
@@ -52,61 +69,59 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.buildIndex == 0|| scene.buildIndex == 1|| scene.buildIndex == 2 || scene.buildIndex == 3 || scene.buildIndex == 5) 
+        if (scene.buildIndex == 0 || scene.buildIndex == 1 || scene.buildIndex == 2 || scene.buildIndex == 3 || scene.buildIndex == 5)
         {
             DestroyInstances();
         }
-        else{
-            activate();
+        else
+        {
+            Init();
         }
     }
 
+
     private void DestroyInstances()
     {
-
-        //var musicManager = FindObjectOfType<MusicManagement>();
         if (audioControllerInstance != null)
         {
-            //Destroy(musicManager.gameObject);
-            audioControllerInstance.gameObject.SetActive(false);
+            Destroy(audioControllerInstance);
+            //audioControllerInstance.gameObject.SetActive(false);
         }
 
         if (playerCanvasInstance != null)
         {
-            //Destroy(playerCanvasInstance);
-            playerCanvasInstance.gameObject.SetActive(false);
+            Destroy(playerCanvasInstance);
+            //playerCanvasInstance.gameObject.SetActive(false);
         }
 
         if (pausaCanvasInstance != null)
         {
-            //Destroy(pausaCanvasInstance);
-            pausaCanvasInstance.gameObject.SetActive(false);
+            Destroy(pausaCanvasInstance);
+            //pausaCanvasInstance.gameObject.SetActive(false);
         }
         if (inventoryCanvasInstance != null)
         {
-            //Destroy(inventoryCanvasInstance);
-            inventoryCanvasInstance.gameObject.SetActive(false);
+            Destroy(inventoryCanvasInstance);
+            //inventoryCanvasInstance.gameObject.SetActive(false);
         }
-        //Destroy(gameObject); 
-        //gameObject.SetActive(false);
-        
-        //var player = FindObjectOfType<playerMovement>();
         if (playerInstance != null)
         {
-            //Destroy(player.gameObject);
-            playerInstance.gameObject.SetActive(false);
+            Destroy(playerInstance);
+            //playerInstance.gameObject.SetActive(false);
         }
     }
     private void activate()
     {
-        if (!init){
+        if (!init)
+        {
             Init();
             init = true;
         }
-        
+
         if (playerInstance != null)
         {
             playerInstance.gameObject.SetActive(true);
+            DataJuego.data.CargarData();
         }
 
         if (audioControllerInstance != null)
@@ -128,12 +143,12 @@ public class GameManager : MonoBehaviour
             inventoryCanvasInstance.gameObject.SetActive(true);
         }
         if (playerInstance == null)
-        {   
+        {
             inventoryCanvasInstance = Instantiate(inventoryCanvasPrefab);
             DontDestroyOnLoad(inventoryCanvasInstance);
             playerInstance = Instantiate(playerPrefab);
             DontDestroyOnLoad(playerInstance);
         }
     }
-    
+
 }

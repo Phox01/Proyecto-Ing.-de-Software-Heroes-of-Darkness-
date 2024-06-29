@@ -453,7 +453,6 @@ GameObject:
   - component: {fileID: 8958109423188886570}
   - component: {fileID: 7021095227167553427}
   - component: {fileID: 607767498239099414}
-  - component: {fileID: 8091804671221019563}
   - component: {fileID: 6905757270470026702}
   - component: {fileID: 4327676197873380689}
   - component: {fileID: 5004472773492530237}
@@ -666,6 +665,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d17276b7c0874449a9c5ed6cf48648e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  attack: 0
+  currentHealth: 0
+  "currentMan\xE1": 0
+  critChance: 0
+  critAttack: 0
+  "man\xE1": 0
   capaEnemigos:
     serializedVersion: 2
     m_Bits: 8388608
@@ -674,33 +680,11 @@ MonoBehaviour:
   LaunchOffset: {fileID: 5611166715004552059}
   magicCooldown: 0.1
   areaAtaque: {fileID: 2559670714444471935}
-  currentHealth: 0
-  "currentMan\xE1": 0
   projectileSprite: {fileID: 0}
-  atributos: {fileID: 8091804671221019563}
   animator: {fileID: 1899253404670520504}
   rb: {fileID: 7989326598424684392}
   sliderVidas: {fileID: 0}
   "sliderMan\xE1": {fileID: 0}
---- !u!114 &8091804671221019563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8964827477293548828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22849f7914a055c49ac8905afaef186e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 150
-  attack: 10
-  currentHealth: 0
-  "currentMan\xE1": 0
-  critChance: 0.2
-  critAttack: 1.5
-  "man\xE1": 30
 --- !u!81 &6905757270470026702
 AudioListener:
   m_ObjectHideFlags: 0

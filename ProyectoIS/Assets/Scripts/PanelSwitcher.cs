@@ -47,14 +47,12 @@ public class NewBehaviourScript : MonoBehaviour
         if (currentPanelIndex < panels.Length)
         {
             panels[currentPanelIndex].SetActive(false);
-            Debug.Log("Desactivando panel: " + currentPanelIndex);
         }
 
         currentPanelIndex++;
 
         if (currentPanelIndex >= panels.Length)
         {
-            Debug.Log("Se han mostrado todos los paneles.");
             currentPanelIndex = panels.Length - 1;
             SceneManager.LoadScene(4);
             return;
@@ -63,7 +61,6 @@ public class NewBehaviourScript : MonoBehaviour
         if (currentPanelIndex < panels.Length)
         {
             panels[currentPanelIndex].SetActive(true);
-            Debug.Log("Activando panel: " + currentPanelIndex);
             StartDialogue(currentPanelIndex);
         }
     }

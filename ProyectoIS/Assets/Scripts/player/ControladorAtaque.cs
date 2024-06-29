@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Security.Cryptography.X509Certificates;
 
-public class ControladorDeAtaque : MonoBehaviour
+public class ControladorDeAtaque : Atributos
 {
     PS4 controls;
     public LayerMask capaEnemigos;
@@ -16,13 +16,7 @@ public class ControladorDeAtaque : MonoBehaviour
     private float lastMagicTime;
 
     public PolygonCollider2D areaAtaque;
-    private int playerAttack;
-    public int currentHealth;
-    public int currentManá;
-    private float critChance;
-    private float critAttack;
     public Sprite projectileSprite;
-    public Atributos atributos;
     private Vector2 direccionMovimiento;
     public Animator animator;
     private MusicManagement musicManagement;
@@ -46,6 +40,9 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         controls= new PS4();
         flash = GetComponent<Flash>();
+        
+        currentHealth = health;
+        currentManá=maná;
         sliderVidas = (Slider)GameObject.FindObjectsOfType (typeof(Slider)) [1];
         sliderManá = (Slider)GameObject.FindObjectsOfType (typeof(Slider)) [0];
         musicManagement = FindObjectOfType<MusicManagement>();
@@ -57,22 +54,18 @@ public class ControladorDeAtaque : MonoBehaviour
         controls.Gameplay.Attack.Enable();
         controls.Gameplay.Magic.Enable();
         controls.Gameplay.Dash.Enable();
-        playerAttack = atributos.attack;
-        currentHealth = atributos.health;
-        currentManá = atributos.maná;
-        maxMana = atributos.maná;
-        critAttack = atributos.critAttack;
-        critChance = atributos.critChance;
         areaAtaque.isTrigger = true;
         if (sliderVidas != null)
         {
-            sliderVidas.maxValue = atributos.health; // Asegúrate de que el maxValue del slider sea igual a la salud máxima.
+            sliderVidas.maxValue = health; // Asegúrate de que el maxValue del slider sea igual a la salud máxima.
+            Debug.Log(health);
+            Debug.Log(sliderVidas.maxValue);
             sliderVidas.value = currentHealth;
             UpdateHealthColor();
         }
         if (sliderManá != null)
         {
-            sliderManá.maxValue = atributos.maná; // Asegúrate de que el maxValue del slider sea igual al maná máximo.
+            sliderManá.maxValue = maná; // Asegúrate de que el maxValue del slider sea igual al maná máximo.
             sliderManá.value = currentManá;
         }
         StartCoroutine(RegenerateMana());
@@ -125,7 +118,7 @@ public class ControladorDeAtaque : MonoBehaviour
         Projectile projectileScript = projectileObject.GetComponent<Projectile>();
         if (projectileScript != null)
         {
-            int damage = CriticalDamage(playerAttack);
+            int damage = CriticalDamage(attack);
             int trueDamage = damage + Random.Range(-3, 4);
             projectileScript.damage = trueDamage;
         }
@@ -149,7 +142,7 @@ public class ControladorDeAtaque : MonoBehaviour
             Enemigo enemigoComponent = enemigo.GetComponent<Enemigo>();
             if (enemigoComponent != null)
             {
-                int damage = CriticalDamage(playerAttack);
+                int damage = CriticalDamage(attack);
                 int trueDamage = damage + Random.Range(-3, 4);
                 enemigoComponent.GetDamaged(trueDamage, critical);
                 musicManagement.SeleccionAudio(5, 1f);
@@ -207,11 +200,11 @@ public class ControladorDeAtaque : MonoBehaviour
 
     private void UpdateHealthColor()
     {
-        if (currentHealth > atributos.health / 2)
+        if (currentHealth > health / 2)
         {
             sliderVidas.fillRect.GetComponent<Image>().color = fullHealthColor;
         }
-        else if (currentHealth > atributos.health / 4)
+        else if (currentHealth > health / 4)
         {
             sliderVidas.fillRect.GetComponent<Image>().color = midHealthColor;
         }
@@ -223,7 +216,7 @@ public class ControladorDeAtaque : MonoBehaviour
     public void AddHealth(int amount)
     {
         currentHealth += amount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, atributos.health);
+        currentHealth = Mathf.Clamp(currentHealth, 0, health);
         sliderVidas.value = currentHealth;
         UpdateHealthColor();
     }
@@ -231,8 +224,8 @@ public class ControladorDeAtaque : MonoBehaviour
     public void addDamage()
     {
         Debug.Log("fuerza");
-        playerAttack = playerAttack * 2;
-        Debug.Log(playerAttack);
+        attack = attack * 2;
+        Debug.Log(attack);
         StartCoroutine(VolverNormal());
         
     }
@@ -244,7 +237,7 @@ public class ControladorDeAtaque : MonoBehaviour
     {
         Debug.Log("entro");
         yield return new WaitForSeconds(10f);
-        playerAttack = playerAttack / 2;
+        attack = attack / 2;
         Debug.Log("salio");
 
     }
@@ -265,7 +258,7 @@ public class ControladorDeAtaque : MonoBehaviour
     public void AddManá(int amount)
     {
         currentManá += amount;
-        currentManá = Mathf.Clamp(currentManá, 0, atributos.maná);
+        currentManá = Mathf.Clamp(currentManá, 0, maná);
         sliderManá.value = currentManá;
     }
     IEnumerator RegenerateMana()

@@ -10,19 +10,18 @@ public class DataJuego : MonoBehaviour
     public static DataJuego data;
     private string rutaArchivo;
 
-    public int dinero=100;
-    public float estado, vida, magia;
+    public int dinero = 100;
 
-    public float maxEstado = 100f, maxVida = 100f; //Maximo de vida y estado (estado revisar)
-
+    // Referencia al script Atributos
+    public Atributos atributos;
 
     [Serializable]
-    class DatosGuardar // Guarda todos los elementos de una 
+    class DatosGuardar // Guarda todos los elementos
     {
         public int DTdinero; //Data de las variables 
-        public float DTestado, DTvida, DTmagia; //Data de las variables 
+        public int DThealth, DTattack, DTcurrentHealth, DTcurrentMana, DTmana; //Data de las variables 
+        public float DTcritChance, DTcritAttack; //Data de las variables 
     }
-
 
     private void Awake()
     {
@@ -38,15 +37,10 @@ public class DataJuego : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        CargarData();
-    }
 
-    // Update is called once per frame
     public void CargarData()
     {
+        atributos = FindObjectOfType<Atributos>();
         if (File.Exists(rutaArchivo)) //Si existe un archivo en esta ruta procedemos
         {
             Debug.Log("Se ha cargado la data del jugador!");
@@ -56,14 +50,22 @@ public class DataJuego : MonoBehaviour
 
             DatosGuardar dat = (DatosGuardar)bf.Deserialize(file); //Traducir formato binario y le pasamos todo lo que hay en el archivo
 
-            estado = dat.DTestado;
-            vida = dat.DTvida;
             dinero = dat.DTdinero;
-            magia = dat.DTmagia;
+            atributos.health = dat.DThealth;
+            atributos.attack = dat.DTattack;
+            atributos.currentHealth = dat.DTcurrentHealth;
+            atributos.currentManá = dat.DTcurrentMana;
+            atributos.maná = dat.DTmana;
+            atributos.critChance = dat.DTcritChance;
+            atributos.critAttack = dat.DTcritAttack;
 
             file.Close();
         }
-
+         else // Si el archivo no existe, establecer valores por defecto
+        {
+            Debug.Log("No se encontró archivo de datos, estableciendo valores por defecto.");
+            EstablecerValoresPorDefecto();
+        }
     }
 
     public void GuardarData()
@@ -73,13 +75,29 @@ public class DataJuego : MonoBehaviour
         FileStream file = File.Create(rutaArchivo); //Crea un archivo en la ruta
         DatosGuardar dat = new DatosGuardar(); //Limpia y crea otros datos para optimizar
 
-        dat.DTestado = estado;
-        dat.DTvida = vida;
         dat.DTdinero = dinero;
-        dat.DTmagia = magia;
+        dat.DThealth = atributos.health;
+        dat.DTattack = atributos.attack;
+        dat.DTcurrentHealth = atributos.currentHealth;
+        dat.DTcurrentMana = atributos.currentManá;
+        dat.DTmana = atributos.maná;
+        dat.DTcritChance = atributos.critChance;
+        dat.DTcritAttack = atributos.critAttack;
 
         bf.Serialize(file, dat); //Serializamos a binario 
 
         file.Close(); //Se cierra por se crea arriba
+    }
+     private void EstablecerValoresPorDefecto()
+    {
+        Debug.Log("A");
+        atributos.health = 150;
+         Debug.Log(atributos.health);
+        atributos.attack = 20;
+        atributos.currentHealth = 150;
+        atributos.currentManá = 30;
+        atributos.maná = 30;
+        atributos.critChance = 0.5f;
+        atributos.critAttack = 1.5f;
     }
 }

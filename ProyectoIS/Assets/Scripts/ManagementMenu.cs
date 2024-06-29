@@ -9,7 +9,6 @@ public class ManagementMenu : MonoBehaviour
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject menuPausa;
     [SerializeField] private GameObject panelConfirmacion;
-    public GameObject gameManager;
     string filePath = Application.dataPath + "/data.mrmenu";
 
     public void Tutorial()
@@ -43,7 +42,6 @@ public class ManagementMenu : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("El archivo DataJuego.data no existe.");
             SceneManager.LoadScene(5);
         }
     }
@@ -95,8 +93,6 @@ public class ManagementMenu : MonoBehaviour
         File.Delete(filePath);
         Debug.Log("Archivo DataJuego.data eliminado correctamente.");
         SceneManager.LoadScene(5);
-        gameManager.gameObject.SetActive(true);
-
 
     }
 

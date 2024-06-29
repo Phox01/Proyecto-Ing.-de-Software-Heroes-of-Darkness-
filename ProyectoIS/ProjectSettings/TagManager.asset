@@ -12,6 +12,7 @@ TagManager:
   - AttackHitbox
   - Teleport
   - fire
+  - DamageContainer
   layers:
   - Default
   - TransparentFX

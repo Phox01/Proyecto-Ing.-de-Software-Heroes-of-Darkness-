@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 419019456444745205}
   - component: {fileID: 3124186113931741305}
+  - component: {fileID: 178070060039881668}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -54,3 +55,17 @@ MonoBehaviour:
     type: 3}
   inventoryCanvasPrefab: {fileID: 6803278399582848297, guid: b1bb383a126ab624abcfa0e1a8a6f8fa,
     type: 3}
+--- !u!114 &178070060039881668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163759769482887775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f736cc2d9d28d6c408ebfb510f75b491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dinero: 100
+  atributos: {fileID: 0}
