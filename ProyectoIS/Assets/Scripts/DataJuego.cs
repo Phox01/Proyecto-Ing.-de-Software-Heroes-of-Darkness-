@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.SceneManagement;
 
 public class DataJuego : MonoBehaviour
 {
@@ -40,8 +41,13 @@ public class DataJuego : MonoBehaviour
 
     public void CargarData()
     {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         atributos = FindObjectOfType<Atributos>();
-        if (File.Exists(rutaArchivo)) //Si existe un archivo en esta ruta procedemos
+        
+        if (currentSceneIndex==1){
+            EstablecerValoresPorDefecto();
+        }
+        else if (File.Exists(rutaArchivo)) //Si existe un archivo en esta ruta procedemos
         {
             Debug.Log("Se ha cargado la data del jugador!");
 
