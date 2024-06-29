@@ -60,8 +60,9 @@ public class InventoryPage : MonoBehaviour
             uiItem.OnItemBeginDrag += HandleBeginDrag;
             uiItem.OnItemDroppedOn += HandleSwap;
             uiItem.OnItemEndDrag += HandleEndDrag;
-             uiItem.OnRightMouseBtnClick += HandleItemSelection;
+            uiItem.OnRightMouseBtnClick += HandleItemSelection;
             uiItem.OnRightMouseBtnClick += HandleShowItemActions;
+            uiItem.OnItemClicked += HandleShowItemActions;
         }
     }
 
