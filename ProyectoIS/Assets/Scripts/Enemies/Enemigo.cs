@@ -75,7 +75,7 @@ public class Enemigo : MonoBehaviour
         }
     }
 
-    void Flip()
+    public void Flip()
     {
         isFacingRight = !isFacingRight;
         Vector3 Scaler = transform.localScale;
@@ -109,7 +109,7 @@ public class Enemigo : MonoBehaviour
         }
     }
 
-    void Following()
+    public void Following()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         animator.SetBool("Attack", true);

@@ -1,0 +1,404 @@
+fileFormatVersion: 2
+guid: 52b58642eaad510408bd09fa69b5f350
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Mr Jos\xE9_0"
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 0
+        width: 130
+        height: 177
+      alignment: 9
+      pivot: {x: 0.507732, y: 0.4535159}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca2e4063dca10342987ed145b1d5079
+      internalID: -1121399059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mr Jos\xE9_1"
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 0
+        width: 128
+        height: 170
+      alignment: 9
+      pivot: {x: 0.4914439, y: 0.4657207}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36700c08bc4210b458a7b0fc42e860a0
+      internalID: 1815769889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mr Jos\xE9_2"
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 0
+        width: 116
+        height: 170
+      alignment: 9
+      pivot: {x: 0.4606042, y: 0.4462364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fa8dc87a52e9b4490e9b1a4686ff88
+      internalID: -944998390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mr Jos\xE9_3"
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 0
+        width: 115
+        height: 164
+      alignment: 9
+      pivot: {x: 0.5556333, y: 0.4826177}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a13dc66ec9420ac4abfd5f94599cbe12
+      internalID: -685727543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mr Jos\xE9_4"
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 0
+        width: 116
+        height: 200
+      alignment: 9
+      pivot: {x: 0.4606044, y: 0.3720421}
+      border: {x: 0, y: 0, z: 0, w: 27}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5693912b42cc7504b96040319da46fe3
+      internalID: 2070447563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mr Jos\xE9_5"
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 0
+        width: 115
+        height: 200
+      alignment: 9
+      pivot: {x: 0.571529, y: 0.3491925}
+      border: {x: 0, y: 0, z: 0, w: 36}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb9e2236bc004944a1284162a738909
+      internalID: -2135630453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mr Jos\xE9_6"
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 0
+        width: 115
+        height: 200
+      alignment: 9
+      pivot: {x: 0.4682097, y: 0.3994619}
+      border: {x: 0, y: 0, z: 0, w: 31}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 783ce33771343ec44901ef5792c2704c
+      internalID: -673681535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mr Jos\xE9_7"
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 0
+        width: 116
+        height: 200
+      alignment: 9
+      pivot: {x: 0.4527251, y: 0.35376272}
+      border: {x: 0, y: 0, z: 0, w: 36}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077e2cc77583ba94d833c4f0b2e48f92
+      internalID: 870372629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mr Jos\xE9_8"
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 0
+        width: 103
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5709892, y: 0.34462264}
+      border: {x: 0, y: 0, z: 0, w: 34}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ef2dd6de429be4cb10b9856e838d0a
+      internalID: 149981805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mr Jos\xE9_9"
+      rect:
+        serializedVersion: 2
+        x: 1849
+        y: 0
+        width: 109
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5838522, y: 0.3446226}
+      border: {x: 0, y: 0, z: 0, w: 30}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30d63acb2e116d4e9f7c001d7044252
+      internalID: 235580598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mr Jos\xE9_10"
+      rect:
+        serializedVersion: 2
+        x: 2049
+        y: 0
+        width: 108
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5930922, y: 0.3491929}
+      border: {x: 0, y: 0, z: 0, w: 27}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e716df4f14cb6149bda5fe7c3368dff
+      internalID: -548581884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mr Jos\xE9_11"
+      rect:
+        serializedVersion: 2
+        x: 2248
+        y: 0
+        width: 109
+        height: 200
+      alignment: 9
+      pivot: {x: 0.59223586, y: 0.3172036}
+      border: {x: 0, y: 0, z: 0, w: 35}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20049863e709af41a3d707d860539de
+      internalID: 2036488645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "Mr Jos\xE9_0": -1121399059
+      "Mr Jos\xE9_1": 1815769889
+      "Mr Jos\xE9_10": -548581884
+      "Mr Jos\xE9_11": 2036488645
+      "Mr Jos\xE9_2": -944998390
+      "Mr Jos\xE9_3": -685727543
+      "Mr Jos\xE9_4": 2070447563
+      "Mr Jos\xE9_5": -2135630453
+      "Mr Jos\xE9_6": -673681535
+      "Mr Jos\xE9_7": 870372629
+      "Mr Jos\xE9_8": 149981805
+      "Mr Jos\xE9_9": 235580598
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

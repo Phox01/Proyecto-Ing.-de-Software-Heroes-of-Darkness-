@@ -277,10 +277,10 @@ GameObject:
   - component: {fileID: 7365935221239455392}
   - component: {fileID: 435244465463587928}
   - component: {fileID: 2631873925792608330}
-  - component: {fileID: 8989571646982143932}
   - component: {fileID: 3098650381795197520}
   - component: {fileID: 3224922334105392445}
   - component: {fileID: 7977990243067077023}
+  - component: {fileID: 4849192223640976118}
   m_Layer: 23
   m_Name: BombEnemy
   m_TagString: Untagged
@@ -377,30 +377,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8989571646982143932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6574748967766163415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f66f7066f6a57346afa7b87394bf9ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vidaMax: 10
-  maxAttack: 50
-  attack: 50
-  defensaMax: 0
-  knockBackTime: 0.2
-  speed: 2
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 25165824
-  sliderVidas: {fileID: 4395351248224540354}
-  animator: {fileID: 2631873925792608330}
-  damageTextPrefab: {fileID: 0}
 --- !u!61 &3098650381795197520
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -487,6 +463,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whiteFlah: {fileID: 2100000, guid: da455a81febabfe4796638670e768074, type: 2}
   restoreMatTime: 0.2
+--- !u!114 &4849192223640976118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574748967766163415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cac20327c503840807ef27fe1d6da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMax: 10
+  maxAttack: 30
+  attack: 30
+  defensaMax: 0
+  knockBackTime: 0.2
+  speed: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  sliderVidas: {fileID: 0}
+  animator: {fileID: 0}
+  damageTextPrefab: {fileID: 0}
+  hitBox: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!1 &8386146203074142862
 GameObject:
   m_ObjectHideFlags: 0
