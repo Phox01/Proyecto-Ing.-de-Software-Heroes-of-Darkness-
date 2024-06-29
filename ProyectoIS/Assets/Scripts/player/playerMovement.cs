@@ -81,13 +81,6 @@ public class playerMovement : MonoBehaviour
     }
     void Update()
     {
-
-        if (animator.GetFloat("Speed")>0){
-            musicManagement.AudioLoop(3, 0.3f);
-        }
-        
-        
-
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") || animator.GetCurrentAnimatorStateInfo(0).IsName("Magic"))
         {
             animator.SetBool("CanMove", false);
@@ -104,7 +97,6 @@ public class playerMovement : MonoBehaviour
 
         if (animator.GetBool("CanMove"))
         {
-
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
             animator.SetFloat("Horizontal", movement.x);
@@ -130,14 +122,17 @@ public class playerMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-
+        if (animator.GetFloat("Speed")==0){
+            //musicManagement.AudioLoop(3, 0.3f);
+        }
+        
         if (animator.GetBool("CanMove") &&! isKnockbackActive )
         {
             lastMovement.x= (int)animator.GetFloat("lastMoveX");
             lastMovement.y= (int)animator.GetFloat("lastMoveY");
             if (isDashing)
             {
-                rb.velocity = (lastMovement.normalized/lastMovement.normalized.magnitude) * dashSpeed; 
+                rb.velocity = lastMovement.normalized * dashSpeed; 
             }
             else
             {

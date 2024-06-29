@@ -10,6 +10,7 @@ public class InventoryController : MonoBehaviour
 
     [SerializeField]
     public InventorySO inventoryData;
+    PS4 controls;
     // Start is called before the first frame update
 
     public List<InventoryItem> initialItems = new List<InventoryItem>();
@@ -23,6 +24,8 @@ public class InventoryController : MonoBehaviour
 
         PrepareInventoryData();
         inventoryUI.gameObject.SetActive(false);
+        controls= new PS4();
+        controls.Gameplay.Inventory.Enable();
 
     }
     // void OnDestroy(){
@@ -157,7 +160,7 @@ public class InventoryController : MonoBehaviour
     //}
     public void Update()
     {
-        if (Input.GetKeyUp(KeyCode.I))
+        if (Input.GetKeyUp(KeyCode.I) || controls.Gameplay.Inventory.triggered)
         {
 
             if (inventoryUI.isActiveAndEnabled == false)

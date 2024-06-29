@@ -17,10 +17,6 @@ public class Puerta : MonoBehaviour
     private bool Chocando=false;
     public playerMovement player;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -55,7 +51,7 @@ public class Puerta : MonoBehaviour
     {
         if (Chocando==true)
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 texto.gameObject.SetActive(false);
                 int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
