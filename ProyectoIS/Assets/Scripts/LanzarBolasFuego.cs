@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class LanzarBolasFuego : MonoBehaviour
+public class LanzarBolasFuego : Enemigo
 {
     private float timer = 0f;
     private float timerMuro = 0f;
@@ -13,12 +13,12 @@ public class LanzarBolasFuego : MonoBehaviour
     public BolaFuegoAzul projectilePrefab;
     public Spowner spowner;
     private bool poniendoMuro;
-    public Animator animator;
-    private GameObject player;
-    public Rigidbody2D rb;
-    protected bool hasLineOfSight = false;
-    [SerializeField] public float speed;
-    [SerializeField] public LayerMask layerMask;
+    //public Animator animator;
+    //private GameObject player;
+    //public Rigidbody2D rb;
+    //protected bool hasLineOfSight = false;
+    //[SerializeField] public float speed;
+    //[SerializeField] public LayerMask layerMask;
     // Start is called before the first frame update
 
     protected virtual void Start()
@@ -31,7 +31,11 @@ public class LanzarBolasFuego : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Following();
+        if (hasLineOfSight)
+        {
+            Following();
+        }
+        
         LanzarFuego();
         HacerMuro();
     }
@@ -81,7 +85,7 @@ public class LanzarBolasFuego : MonoBehaviour
             animator.SetBool("HacerMuro", true);
             poniendoMuro = true;
             Vector2 posicionMuroFuego = (player.transform.position - transform.position).normalized;
-            Debug.Log(transform.position);
+            
 
             Spowner donde = Instantiate(spowner, transform.position, Quaternion.identity);
             
@@ -112,12 +116,11 @@ public class LanzarBolasFuego : MonoBehaviour
         if (player != null)
         {
             
-            RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, layerMask);
+            RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
             
             if (ray.collider != null)
             {
-                Debug.Log("el player esta");
-                Debug.Log(ray.collider.transform);
+                
                 hasLineOfSight = ray.collider.CompareTag("Player");
                 if (hasLineOfSight)
                 {
@@ -139,7 +142,7 @@ public class LanzarBolasFuego : MonoBehaviour
         Vector2 distan = player.transform.position - transform.position;
         float distance = distan.magnitude;
 
-        if(distance < 10)
+        if(distance < 10f)
         {
             Vector2 directionToPlayer = player.transform.position - transform.position;
 
@@ -149,7 +152,7 @@ public class LanzarBolasFuego : MonoBehaviour
             // Mueve el enemigo en la dirección contraria
             transform.Translate(oppositeDirection * speed * Time.deltaTime);
         }
-        else
+        else if(distance >11f)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
 

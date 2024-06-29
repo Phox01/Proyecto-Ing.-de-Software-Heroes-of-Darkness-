@@ -118,7 +118,7 @@ public class Enemigo : MonoBehaviour
     public void GetDamaged(int damage, bool isCritical)
     {
         GetKnockedBackUwu(playerMovement.instance.transform, 15f);
-        musicManagement.SeleccionAudio(4, 1f);
+        //musicManagement.SeleccionAudio(4, 1f);
         StartCoroutine(flash.FlashRoutine());
 
         netDamage = damage - defensa;
