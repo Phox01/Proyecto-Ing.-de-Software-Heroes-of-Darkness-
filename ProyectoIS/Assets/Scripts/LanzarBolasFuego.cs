@@ -13,18 +13,54 @@ public class LanzarBolasFuego : Enemigo
     public BolaFuegoAzul projectilePrefab;
     public Spowner spowner;
     private bool poniendoMuro;
-    public Animator animator;
-    // Start is called before the first frame update
+    private bool isFacingRight = true;
     
+    //public Animator animator;
+    //private GameObject player;
+    //public Rigidbody2D rb;
+    //protected bool hasLineOfSight = false;
+    //[SerializeField] public float speed;
+    //[SerializeField] public LayerMask layerMask;
+    // Start is called before the first frame update
+
+    protected virtual void Start()
+    {
+        
+        player = GameObject.FindGameObjectWithTag("Player");
+        
+    }
 
     // Update is called once per frame
-    protected override void Update()
+    private void Update()
     {
+        if (player.transform.position.x < transform.position.x && isFacingRight)
+        {
+            Flip();
+        }
+        else if (player.transform.position.x > transform.position.x && !isFacingRight)
+        {
+            Flip();
+        }
+
+        if (hasLineOfSight)
+        {
+            Following();
+        }
+        
         LanzarFuego();
         HacerMuro();
     }
 
-
+    void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
+        Vector3 ScalerLifeBar = sliderVidas.transform.localScale;
+        ScalerLifeBar.x *= -1;
+        sliderVidas.transform.localScale = ScalerLifeBar;
+    }
     void LanzarFuego()
     {
         lastMagicTime = Time.time;
@@ -38,6 +74,10 @@ public class LanzarBolasFuego : Enemigo
 
         if (timer >= 5f )
         {
+            BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+
+            // Desactivar el BoxCollider2D
+            boxCollider.enabled = false;
 
 
             BolaFuegoAzul bolaFuegoAzul = Instantiate(projectilePrefab, transform.position, transform.rotation);
@@ -45,6 +85,7 @@ public class LanzarBolasFuego : Enemigo
 
 
             timer = 0f;
+            boxCollider.enabled = true;
         }
         
         
@@ -69,7 +110,7 @@ public class LanzarBolasFuego : Enemigo
             animator.SetBool("HacerMuro", true);
             poniendoMuro = true;
             Vector2 posicionMuroFuego = (player.transform.position - transform.position).normalized;
-            Debug.Log(transform.position);
+            
 
             Spowner donde = Instantiate(spowner, transform.position, Quaternion.identity);
             
@@ -89,10 +130,71 @@ public class LanzarBolasFuego : Enemigo
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("HacerMuro"))
         {
-            
+            Debug.Log("termino de hacer muro");
             animator.SetBool("HacerMuro", false);
+            poniendoMuro = false;
         }
     }
-    
+
+
+    protected virtual void FixedUpdate()
+    {
+        if (player != null)
+        {
+            
+            RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, Mathf.Infinity, ~layerMask);
+            
+            if (ray.collider != null)
+            {
+                
+                hasLineOfSight = ray.collider.CompareTag("Player");
+                if (hasLineOfSight)
+                {
+                    Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
+                }
+                else
+                {
+
+                    //Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
+
+                }
+            }
+        }
+    }
+
+    void Following()
+    {
+        
+            Vector2 distan = player.transform.position - transform.position;
+            float distance = distan.magnitude;
+
+            if (distance < 10f)
+            {
+                animator.SetBool("MovingFront", false);
+                animator.SetBool("MovingBack", true);
+                Vector2 directionToPlayer = player.transform.position - transform.position;
+
+                // Invierte la dirección para moverse en sentido contrario
+                Vector2 oppositeDirection = -directionToPlayer.normalized;
+
+                // Mueve el enemigo en la dirección contraria
+                transform.Translate(oppositeDirection * speed * Time.deltaTime);
+            }
+            else if (distance > 11f)
+            {
+                animator.SetBool("MovingFront", true);
+                animator.SetBool("MovingBack", false);
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+
+            }
+
+
+
+            //animator.SetBool("Attack", true);
+        
+
+
+
+    }
 
 }

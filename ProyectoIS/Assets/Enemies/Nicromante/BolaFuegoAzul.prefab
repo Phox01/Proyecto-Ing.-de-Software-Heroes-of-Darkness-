@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5670883944216831744}
   - component: {fileID: 522033114096337324}
   - component: {fileID: 1349344495204109766}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BolaFuegoAzul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8388608
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
