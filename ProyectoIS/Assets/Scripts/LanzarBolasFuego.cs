@@ -170,9 +170,10 @@ public class LanzarBolasFuego : Enemigo
 
             if (distance < 10f)
             {
-                animator.SetBool("MovingFront", false);
-                animator.SetBool("MovingBack", true);
-                Vector2 directionToPlayer = player.transform.position - transform.position;
+            animator.SetBool("HacerMuro", false);
+
+            animator.SetBool("MovingFront", false);
+            Vector2 directionToPlayer = player.transform.position - transform.position;
 
                 // Invierte la dirección para moverse en sentido contrario
                 Vector2 oppositeDirection = -directionToPlayer.normalized;
@@ -183,7 +184,8 @@ public class LanzarBolasFuego : Enemigo
             else if (distance > 11f)
             {
                 animator.SetBool("MovingFront", true);
-                animator.SetBool("MovingBack", false);
+
+                //animator.SetBool("MovingBack", false);
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
 
             }

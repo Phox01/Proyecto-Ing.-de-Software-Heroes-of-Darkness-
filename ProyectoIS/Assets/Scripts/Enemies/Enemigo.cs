@@ -131,6 +131,7 @@ public class Enemigo : MonoBehaviour
         }
         if (vida <= 0)
         {
+            Debug.Log("Muerte");
             animator.SetBool("Death", true);
             StartCoroutine(OnDieAnimationComplete());
         }
