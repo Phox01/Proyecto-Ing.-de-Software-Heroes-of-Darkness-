@@ -25,7 +25,7 @@ public class HitBox1 : MonoBehaviour
             Debug.Log("lelgo aqui");
             BounceBack bounce = collision.gameObject.GetComponent<BounceBack>();
             ControladorDeAtaque player = collision.gameObject.GetComponent<ControladorDeAtaque>();
-            bounce.force = 30;
+            //bounce.force = 30;
 
 
             
