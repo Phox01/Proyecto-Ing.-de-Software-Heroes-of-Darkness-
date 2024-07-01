@@ -7,11 +7,7 @@ public class BombEnemy : Enemigo
     public GameObject hitBox;
     public GameObject hit;
     private Vector3 previousDirection;
-    // Start is called before the first frame update
-    //void Start()
-    //{
-
-    //}
+    public BoxCollider2D boxCollider;
 
     // Update is called once per frame
     protected override void Update()
@@ -40,6 +36,11 @@ public class BombEnemy : Enemigo
                 createHitBox();
             }
         }
+        //if (vida <= 0)
+        //{
+        //    animator.SetBool("Death", true);
+        //    StartCoroutine(OnDieAnimationComplete());
+        //}
     }
 
     //Crea la hitbox cuando el personaje va a atacar.
@@ -53,6 +54,7 @@ public class BombEnemy : Enemigo
         {
             Vector3 position = new Vector3(hitBox.transform.position.x, hitBox.transform.position.y, 0);
             GameObject tempHit = Instantiate(hit, position, Quaternion.identity);
+            //hitBoxScript.bombEnemy = this;
             Destroy(tempHit, 2);
         }
     }
@@ -80,4 +82,22 @@ public class BombEnemy : Enemigo
             }
         }
     }
+
+    public void Explode()
+    {
+        Debug.Log("Entra a la función Explode()");
+        //ExpandCollider();
+        vida = 0;
+        Debug.Log("La vida es: "+vida);
+        animator.SetBool("Death", true);
+        StartCoroutine(OnDieAnimationComplete());
+        //Debug.Log("Llega aquí");
+    }
+
+    //private void ExpandCollider()
+    //{
+    //    // Aumenta el tamaño del BoxCollider
+    //    boxCollider.size = new Vector2(boxCollider.size.x * 6, boxCollider.size.y * 6); // Ajusta el factor de escala según sea necesario
+    //    boxCollider.offset = new Vector2(boxCollider.offset.x * 6, boxCollider.offset.y * 6);
+    //}
 }

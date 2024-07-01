@@ -37,7 +37,7 @@ public class Golem : Enemigo
         }
         previousDirection = direction;
 
-        // L�GICA DE HACER EL PATRULLAJE
+        // LÓGICA DE HACER EL PATRULLAJE
         transform.position = Vector2.MoveTowards(transform.position, routePoints[random].transform.position, patrolSpeed * Time.deltaTime);
         time += Time.deltaTime;
         if (time >= 2)

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Enemigo : MonoBehaviour
 {
     public int vidaMax;
-    protected int vida;
+    public int vida;
     public int maxAttack;
     public int attack;
     public int defensaMax;
