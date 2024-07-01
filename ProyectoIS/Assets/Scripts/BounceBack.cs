@@ -7,6 +7,7 @@ public class BounceBack : MonoBehaviour
     // Start is called before the first frame update
 
     public Rigidbody2D rb;
+    public int force = 15;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class BounceBack : MonoBehaviour
 
         if (collision.gameObject.layer == 23)
         {
+            Debug.Log(force);
             Debug.Log("echado");
             EcharAtras(collision.collider.transform);
 
@@ -37,7 +39,7 @@ public class BounceBack : MonoBehaviour
 
 
 
-        Vector2 diference = (transform.position - vector.position).normalized * 15 * rb.mass;
+        Vector2 diference = (transform.position - vector.position).normalized * force * rb.mass;
 
         rb.AddForce(diference, ForceMode2D.Impulse);
         StartCoroutine(KnockRoutinePlayer());

@@ -42,7 +42,7 @@ public class LanzarBolasFuego : Enemigo
             Flip();
         }
 
-        if (hasLineOfSight)
+        if (hasLineOfSight && !animator.GetBool("Muerte"))
         {
             Following();
         }
@@ -170,7 +170,7 @@ public class LanzarBolasFuego : Enemigo
 
             if (distance < 10f)
             {
-            animator.SetBool("HacerMuro", false);
+           
 
             animator.SetBool("MovingFront", false);
             Vector2 directionToPlayer = player.transform.position - transform.position;
