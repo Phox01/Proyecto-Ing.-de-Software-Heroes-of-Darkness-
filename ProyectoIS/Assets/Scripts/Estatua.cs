@@ -1,31 +1,23 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Estatua : MonoBehaviour
+public class Estatua : Enemigo
 {
-    public int vidaMax;
-    private int vida;
-    public Sprite[] destructionSprites; // Array de sprites para la destrucción
+    [SerializeField] private Sprite[] destructionSprites; // Array de sprites para la destrucción
     private SpriteRenderer spriteRenderer;
 
-    void Start()
+    protected override void Start()
     {
-        vida = vidaMax;
+        base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
         UpdateEstatuaSprite();
     }
 
-    public void ApplyDamage(int damage)
+    private void Update()
     {
-        vida -= damage;
-        if (vida <= 0)
-        {
-            Die();
-        }
-        else
-        {
-            UpdateEstatuaSprite();
-        }
+        base.Update();
+        UpdateEstatuaSprite();
     }
 
     private void UpdateEstatuaSprite()
@@ -46,9 +38,17 @@ public class Estatua : MonoBehaviour
         }
     }
 
-    private void Die()
+    protected override IEnumerator OnDieAnimationComplete()
     {
-        // Añadir lógica específica para la destrucción de la estatua si es necesario
-        Destroy(gameObject);
+        yield return base.OnDieAnimationComplete();
+    }
+
+    protected override void OnCollisionEnter2D(Collision2D collision)
+    {
+        ControladorDeAtaque jugador = collision.gameObject.GetComponent<ControladorDeAtaque>();
+        if (jugador != null)
+        {
+            jugador.GetDamaged(attack);
+        }
     }
 }
