@@ -58,9 +58,10 @@ public class GameManager : MonoBehaviour
         {
             playerInstance = Instantiate(playerPrefab);
             DontDestroyOnLoad(playerInstance);
+            
+        DataJuego.data.CargarData();
         }
 
-        DataJuego.data.CargarData();
     }
     private void OnDestroy()
     {

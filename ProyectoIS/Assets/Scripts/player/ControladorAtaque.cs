@@ -12,7 +12,7 @@ public class ControladorDeAtaque : Atributos
     public LayerMask capaEnemigos;
     public GameObject projectilePrefab;
     public Transform LaunchOffset;
-    public float magicCooldown = 0.1f; 
+    public float magicCooldown = 0.1f;
     private float lastMagicTime;
 
     public PolygonCollider2D areaAtaque;
@@ -38,13 +38,13 @@ public class ControladorDeAtaque : Atributos
 
     private void Awake()
     {
-        controls= new PS4();
+        controls = new PS4();
         flash = GetComponent<Flash>();
-        
+
         currentHealth = health;
-        currentManá=maná;
-        sliderVidas = (Slider)GameObject.FindObjectsOfType (typeof(Slider)) [1];
-        sliderManá = (Slider)GameObject.FindObjectsOfType (typeof(Slider)) [0];
+        currentManá = maná;
+        sliderVidas = (Slider)GameObject.FindObjectsOfType(typeof(Slider))[1];
+        sliderManá = (Slider)GameObject.FindObjectsOfType(typeof(Slider))[0];
         musicManagement = FindObjectOfType<MusicManagement>();
     }
 
@@ -67,8 +67,8 @@ public class ControladorDeAtaque : Atributos
         {
             sliderManá.maxValue = maná; // Asegúrate de que el maxValue del slider sea igual al maná máximo.
             sliderManá.value = currentManá;
+            StartCoroutine(RegenerateMana());
         }
-        StartCoroutine(RegenerateMana());
     }
 
     void Update()
@@ -82,11 +82,11 @@ public class ControladorDeAtaque : Atributos
 
         }
 
-        if ((Input.GetKeyDown(KeyCode.Q)||controls.Gameplay.Magic.triggered) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false && currentManá>=10 && Time.time > lastMagicTime + magicCooldown)
+        if ((Input.GetKeyDown(KeyCode.Q) || controls.Gameplay.Magic.triggered) && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 2") == false && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false && currentManá >= 10 && Time.time > lastMagicTime + magicCooldown)
         {
 
             Magic();
-            
+
 
         }
 
@@ -113,7 +113,7 @@ public class ControladorDeAtaque : Atributos
 
         // Make the projectile ignore the player collider
         Physics2D.IgnoreCollision(projectileCollider, playerCollider);
-        
+
 
         Projectile projectileScript = projectileObject.GetComponent<Projectile>();
         if (projectileScript != null)
@@ -122,8 +122,8 @@ public class ControladorDeAtaque : Atributos
             int trueDamage = damage + Random.Range(-3, 4);
             projectileScript.damage = trueDamage;
         }
-            currentManá=currentManá-10;
-            sliderManá.value = currentManá;
+        currentManá = currentManá - 10;
+        sliderManá.value = currentManá;
 
     }
 
@@ -186,7 +186,7 @@ public class ControladorDeAtaque : Atributos
     {
         currentHealth -= damage;
         StartCoroutine(flash.FlashRoutine());
-    CineMachineMovCmera.Instance.MoverCamara(5, 5, 0.5f);
+        CineMachineMovCmera.Instance.MoverCamara(5, 5, 0.5f);
 
         sliderVidas.value = currentHealth;
         UpdateHealthColor();
@@ -227,13 +227,13 @@ public class ControladorDeAtaque : Atributos
         attack = attack * 2;
         Debug.Log(attack);
         StartCoroutine(VolverNormal());
-        
+
     }
 
-    
 
-    public IEnumerator VolverNormal() 
-    
+
+    public IEnumerator VolverNormal()
+
     {
         Debug.Log("entro");
         yield return new WaitForSeconds(10f);
@@ -245,7 +245,7 @@ public class ControladorDeAtaque : Atributos
 
     public void addManaPocion(float value)
     {
-        
+
         currentManá += (int)value;
         sliderManá.value = currentManá;
 
@@ -254,23 +254,29 @@ public class ControladorDeAtaque : Atributos
 
 
 
-   
+
     public void AddManá(int amount)
     {
+        Debug.Log("a");
         currentManá += amount;
         currentManá = Mathf.Clamp(currentManá, 0, maná);
         sliderManá.value = currentManá;
     }
-    IEnumerator RegenerateMana()
+    private IEnumerator RegenerateMana()
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f); 
-            if (currentManá < maxMana)
+            if (currentManá < maná)
             {
-                currentManá = Mathf.Min(currentManá + 1, maxMana); 
+                currentManá += 1; // Ajusta la cantidad de regeneración según sea necesario
                 sliderManá.value = currentManá;
+                yield return new WaitForSeconds(1f); 
+            }
+            else
+            {
+                yield return null; // Espera al siguiente frame si el maná está lleno
             }
         }
     }
+
 }

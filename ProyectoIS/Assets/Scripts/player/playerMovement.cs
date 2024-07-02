@@ -27,7 +27,7 @@ public class playerMovement : MonoBehaviour
 
     public static playerMovement instance;
     public int ActualScene;
-    public GameObject punto;
+    public int PreviousScene;
 
     private bool comprobar = false;
 
@@ -59,25 +59,24 @@ public class playerMovement : MonoBehaviour
     }
      private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(gameObject!=null){
-            if(gameObject.activeSelf){
-        StartCoroutine(InitializePlayerPosition());
-        }}
+        TeleportPosition();
     }
 
-     private IEnumerator InitializePlayerPosition()
-    {
-        yield return null; // Esperar un frame para asegurar que todos los objetos se hayan inicializado
+     private void TeleportPosition()
+    { 
+        GameObject[] puntos = GameObject.FindGameObjectsWithTag("Teleport");
+        foreach (GameObject punto in puntos)
+        {
+            Teleportation teleportPoint = punto.GetComponent<Teleportation>();
+            if (teleportPoint != null && teleportPoint.ActualScene == ActualScene && teleportPoint.PreviousScene == PreviousScene)
+            {
+                transform.position = punto.transform.position;
+                Debug.Log("Teleported to matching teleport point: " + punto.name);
+                return;
+            }
+        }
 
-        punto = GameObject.FindGameObjectWithTag("Teleport");
-        if (punto != null)
-        {
-            transform.position = punto.transform.position;
-        }
-        else
-        {
-            Debug.LogWarning("Teleport object not found in the scene.");
-        }
+        Debug.LogWarning("No matching teleport point found for ActualScene: " + ActualScene + " and PreviousScene: " + PreviousScene);
     }
     void Update()
     {
@@ -170,8 +169,9 @@ public class playerMovement : MonoBehaviour
         isKnockbackActive = value;
     }
 
-    public void ChangeScene(int NewActual){
+    public void ChangeScene(int NewActual, int OldActual){
         ActualScene = NewActual;
+        PreviousScene = OldActual;
     }
 
     private void HandleEscapeKey()

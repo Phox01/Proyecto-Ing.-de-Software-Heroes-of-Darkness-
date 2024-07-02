@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CambioMundo : Colisiones
 {
-    public GameObject player;
     public int TargetScene;
-    public GameObject punto;
     private void Awake(){
         
     }
@@ -16,7 +14,7 @@ public class CambioMundo : Colisiones
         {
             playerMovement playercomp = col.gameObject.GetComponent<playerMovement>();
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            playercomp.ChangeScene(currentSceneIndex);
+            playercomp.ChangeScene(TargetScene, currentSceneIndex);
             SceneManager.LoadScene(TargetScene);
             
         }
