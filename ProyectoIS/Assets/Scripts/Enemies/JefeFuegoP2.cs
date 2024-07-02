@@ -7,20 +7,31 @@ public class JefeFuegoP2 : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject circleCollider1;
+    private float timer = 0f;
     void Start()
     {
-        Invoke("Activar",5f);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Activar();
     }
 
     private void Activar()
     {
-        StartCoroutine(ActivateDeactivateCoroutine());
+        timer += Time.deltaTime;
+        
+        if (timer >= 10f)
+        {
+
+
+            StartCoroutine(ActivateDeactivateCoroutine());
+
+            timer = 0f;
+           
+        }
     }
 
     IEnumerator ActivateDeactivateCoroutine()
