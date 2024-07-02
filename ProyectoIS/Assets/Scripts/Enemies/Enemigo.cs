@@ -203,6 +203,7 @@ public class Enemigo : MonoBehaviour
     {
         Debug.Log("Instanciando texto de daño");
         GameObject damageTextInstance = Instantiate(damageTextPrefab, transform.position + Vector3.up * 1.5f, Quaternion.identity);
+        damageTextInstance.transform.SetParent(transform);
         TextMeshProUGUI damageText = damageTextInstance.GetComponentInChildren<TextMeshProUGUI>();
         if (damageText == null)
         {
