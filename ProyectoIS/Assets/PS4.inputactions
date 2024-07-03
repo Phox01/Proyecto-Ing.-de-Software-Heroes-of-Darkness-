@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Pause",
+                    "name": "Pausa",
                     "type": "Button",
                     "id": "f3f7f506-4d13-47b0-9d22-16b9ab7577d4",
                     "expectedControlType": "Button",
@@ -145,7 +145,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pause",
+                    "action": "Pausa",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -73,7 +73,7 @@ public partial class @PS4: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pause"",
+                    ""name"": ""Pausa"",
                     ""type"": ""Button"",
                     ""id"": ""f3f7f506-4d13-47b0-9d22-16b9ab7577d4"",
                     ""expectedControlType"": ""Button"",
@@ -167,7 +167,7 @@ public partial class @PS4: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Pause"",
+                    ""action"": ""Pausa"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -183,7 +183,7 @@ public partial class @PS4: IInputActionCollection2, IDisposable
         m_Gameplay_Magic = m_Gameplay.FindAction("Magic", throwIfNotFound: true);
         m_Gameplay_Dash = m_Gameplay.FindAction("Dash", throwIfNotFound: true);
         m_Gameplay_Inventory = m_Gameplay.FindAction("Inventory", throwIfNotFound: true);
-        m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
+        m_Gameplay_Pausa = m_Gameplay.FindAction("Pausa", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -250,7 +250,7 @@ public partial class @PS4: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Magic;
     private readonly InputAction m_Gameplay_Dash;
     private readonly InputAction m_Gameplay_Inventory;
-    private readonly InputAction m_Gameplay_Pause;
+    private readonly InputAction m_Gameplay_Pausa;
     public struct GameplayActions
     {
         private @PS4 m_Wrapper;
@@ -260,7 +260,7 @@ public partial class @PS4: IInputActionCollection2, IDisposable
         public InputAction @Magic => m_Wrapper.m_Gameplay_Magic;
         public InputAction @Dash => m_Wrapper.m_Gameplay_Dash;
         public InputAction @Inventory => m_Wrapper.m_Gameplay_Inventory;
-        public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
+        public InputAction @Pausa => m_Wrapper.m_Gameplay_Pausa;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -285,9 +285,9 @@ public partial class @PS4: IInputActionCollection2, IDisposable
             @Inventory.started += instance.OnInventory;
             @Inventory.performed += instance.OnInventory;
             @Inventory.canceled += instance.OnInventory;
-            @Pause.started += instance.OnPause;
-            @Pause.performed += instance.OnPause;
-            @Pause.canceled += instance.OnPause;
+            @Pausa.started += instance.OnPausa;
+            @Pausa.performed += instance.OnPausa;
+            @Pausa.canceled += instance.OnPausa;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -307,9 +307,9 @@ public partial class @PS4: IInputActionCollection2, IDisposable
             @Inventory.started -= instance.OnInventory;
             @Inventory.performed -= instance.OnInventory;
             @Inventory.canceled -= instance.OnInventory;
-            @Pause.started -= instance.OnPause;
-            @Pause.performed -= instance.OnPause;
-            @Pause.canceled -= instance.OnPause;
+            @Pausa.started -= instance.OnPausa;
+            @Pausa.performed -= instance.OnPausa;
+            @Pausa.canceled -= instance.OnPausa;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -334,6 +334,6 @@ public partial class @PS4: IInputActionCollection2, IDisposable
         void OnMagic(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
-        void OnPause(InputAction.CallbackContext context);
+        void OnPausa(InputAction.CallbackContext context);
     }
 }
