@@ -6,9 +6,7 @@ public class EnemigoGrande : Enemigo
 {
     // Start is called before the first frame update
     private float timer = 0f;
-    private float timer2 = 0f;
     public GameObject rocaHieloPrefab;
-    private LayerMask capaEnemigos;
     public PolygonCollider2D hitbox;
 
     private bool movimiento = true;
@@ -17,7 +15,7 @@ public class EnemigoGrande : Enemigo
     protected override void Update()
     {
         if(player!=null){
-            if ((movimiento))
+            if (movimiento)
         {
             base.Update();
             
@@ -60,7 +58,6 @@ public class EnemigoGrande : Enemigo
         }
     }
 
-    // Eliminar Start() y Update()
  
 
     private void EjecutarAtaque()

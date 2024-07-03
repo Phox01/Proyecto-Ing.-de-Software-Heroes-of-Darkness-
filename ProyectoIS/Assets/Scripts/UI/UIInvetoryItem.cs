@@ -15,7 +15,6 @@ public class UIInvetoryItem : MonoBehaviour
 
     public event Action<UIInvetoryItem> OnItemClicked,OnRightMouseBtnClick;
 
-    private bool empty = true;
 
 
     public void Start()
@@ -27,7 +26,6 @@ public class UIInvetoryItem : MonoBehaviour
     public void ResetData()
     {
         this.itemImage.gameObject.SetActive(false);
-        empty = true;
 
     }
 
@@ -46,7 +44,6 @@ public class UIInvetoryItem : MonoBehaviour
         this.itemImage.gameObject.SetActive(true);
         this.itemImage.sprite = sprite;
         this.quantityNumber.text = quantity + "";
-        empty = false;
 
     }
 

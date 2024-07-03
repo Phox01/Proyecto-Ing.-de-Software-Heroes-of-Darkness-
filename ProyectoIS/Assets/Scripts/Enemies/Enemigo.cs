@@ -109,7 +109,7 @@ public class Enemigo : MonoBehaviour
         }
     }
 
-    public void Following()
+    protected virtual void Following()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         animator.SetBool("Attack", true);
@@ -128,11 +128,9 @@ public class Enemigo : MonoBehaviour
             sliderVidas.value = vida;
             UpdateHealthColor();
             ShowDamage(netDamage, isCritical);
-            Debug.Log("Hola hice dano");
         }
         if (vida <= 0)
         {
-            Debug.Log("Muerte");
             animator.SetBool("Death", true);
             StartCoroutine(OnDieAnimationComplete());
         }
@@ -202,7 +200,6 @@ public class Enemigo : MonoBehaviour
 
     private void ShowDamage(int damage, bool isCritical)
     {
-        Debug.Log("Instanciando texto de daño");
         GameObject damageTextInstance = Instantiate(damageTextPrefab, transform.position + Vector3.up * 1.5f, Quaternion.identity);
         damageTextInstance.transform.SetParent(transform);
         TextMeshProUGUI damageText = damageTextInstance.GetComponentInChildren<TextMeshProUGUI>();

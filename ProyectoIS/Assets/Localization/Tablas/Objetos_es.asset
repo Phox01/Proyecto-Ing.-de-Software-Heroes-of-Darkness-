@@ -46,6 +46,10 @@ MonoBehaviour:
     m_Localized: Presiona C para comprar "{0}" por "{1}" monedas
     m_Metadata:
       m_Items: []
+  - m_Id: 5653196948103168
+    m_Localized: Presiona "Espacio" o "X" para ir a la tienda
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -12,6 +12,6 @@ public class Magic : CharacterStatModifierSO
     {
         ControladorDeAtaque player = character.GetComponent<ControladorDeAtaque>();
         if (player != null)
-            player.addManaPocion((int)val);
+            player.AddManá((int)val);
     }
 }

@@ -30,6 +30,7 @@ public class playerMovement : MonoBehaviour
     public int PreviousScene;
 
     private bool comprobar = false;
+    private bool speedMod = false;
 
  
 
@@ -199,9 +200,11 @@ public class playerMovement : MonoBehaviour
     public void Velocity(float value)
     {
         
-        moveSpeed +=value;
+        if(!speedMod){moveSpeed +=value;
        
         StartCoroutine(VolverNormalVelocidad(value));
+        speedMod=true;
+        }
 
     }
 
@@ -213,6 +216,7 @@ public class playerMovement : MonoBehaviour
         
         yield return new WaitForSeconds(10f);
         moveSpeed -=value;
+        speedMod= false;
         
 
     }

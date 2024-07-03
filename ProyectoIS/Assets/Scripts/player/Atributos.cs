@@ -4,6 +4,7 @@ public class Atributos : MonoBehaviour
 {
     public int health;
     public int attack;
+    public int currentAttack;
     public int currentHealth;
     public int currentManá;
     public float critChance;

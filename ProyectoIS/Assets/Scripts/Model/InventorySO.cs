@@ -26,26 +26,21 @@ public class InventorySO : ScriptableObject
     }
 
     public int AddItem(ItemSO item, int quantity)
-    //, List<ItemParameter> itemState = null
+{
+    if (item.IsStackable == false)
     {
-
-
-        if (item.IsStackable == false)
+        for (int i = 0; i < inventoryItems.Count && quantity > 0 && !IsInventoryFull(); i++)
         {
-            for (int i = 0; i < inventoryItems.Count; i++)
-            {
-                while (quantity > 0 && IsInventoryFull() == false)
-                {
-                    quantity -= AddNonStackableItem(item, 1);
-                }
-                InformAboutChange();
-                return quantity;
-            }
+            quantity -= AddNonStackableItem(item, 1);
         }
-        quantity = AddStackableItem(item, quantity);
         InformAboutChange();
         return quantity;
     }
+    quantity = AddStackableItem(item, quantity);
+    InformAboutChange();
+    return quantity;
+}
+
 
     private int AddStackableItem(ItemSO item, int quantity)
     {

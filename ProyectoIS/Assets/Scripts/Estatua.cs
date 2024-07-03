@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Estatua : Enemigo
 {
@@ -14,12 +13,12 @@ public class Estatua : Enemigo
         UpdateEstatuaSprite();
     }
 
-    private void Update()
+    protected override void Update()
     {
         UpdateEstatuaSprite();
     }
 
-    private void FixedUpdate(){
+    protected override void FixedUpdate(){
         
     }
     private void UpdateEstatuaSprite()

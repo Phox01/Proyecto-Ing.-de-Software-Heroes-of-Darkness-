@@ -46,6 +46,10 @@ MonoBehaviour:
     m_Localized: Press C to buy "{0}" for "{1}" coins
     m_Metadata:
       m_Items: []
+  - m_Id: 5653196948103168
+    m_Localized: Press "Space" or "X" to enter the shop
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

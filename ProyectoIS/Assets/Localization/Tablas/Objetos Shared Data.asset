@@ -43,6 +43,10 @@ MonoBehaviour:
     m_Key: BuyText
     m_Metadata:
       m_Items: []
+  - m_Id: 5653196948103168
+    m_Key: EnterShop
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
