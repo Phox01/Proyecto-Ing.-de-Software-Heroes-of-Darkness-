@@ -26,6 +26,7 @@ public class InventoryController : MonoBehaviour
         inventoryUI.gameObject.SetActive(false);
         controls= new PS4();
         controls.Gameplay.Inventory.Enable();
+        controls.Gameplay.Pausa.Enable();
 
     }
     // void OnDestroy(){

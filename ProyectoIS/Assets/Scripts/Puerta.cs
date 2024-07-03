@@ -11,7 +11,7 @@ public class Puerta : MonoBehaviour
 
     public int TargetScene;
     public Animator anim;
-
+    PS4 controls;
     public TMP_Text texto;
     [SerializeField]
     private bool Chocando=false;
@@ -19,6 +19,16 @@ public class Puerta : MonoBehaviour
     // Start is called before the first frame update
 
     // Update is called once per frame
+
+    private void Awake()
+    {
+        controls= new PS4();
+    }
+
+    void Start(){
+        controls.Gameplay.Attack.Enable();
+    }
+
     void Update()
     {
         IrAmundo();
@@ -53,7 +63,7 @@ public class Puerta : MonoBehaviour
     {
         if (Chocando==true)
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.Space) || controls.Gameplay.Attack.triggered)
             {
                 texto.gameObject.SetActive(false);
                 int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;

@@ -47,6 +47,7 @@ public class playerMovement : MonoBehaviour
         musicManagement = FindObjectOfType<MusicManagement>();
         managementMenu = FindObjectOfType<ManagementMenu>();
         controls.Gameplay.Dash.Enable();
+        controls.Gameplay.Pausa.Enable();
     }
     void OnEnable(){
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -176,7 +177,7 @@ public class playerMovement : MonoBehaviour
 
     private void HandleEscapeKey()
     {
-    if (Input.GetKeyDown(KeyCode.Escape))
+    if (Input.GetKeyDown(KeyCode.Escape) || controls.Gameplay.Pausa.triggered)
     {
         if (managementMenu != null)
         {
