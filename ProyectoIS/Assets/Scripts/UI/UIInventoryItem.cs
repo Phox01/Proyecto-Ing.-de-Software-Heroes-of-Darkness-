@@ -48,7 +48,7 @@ public class UIInventoryItem : MonoBehaviour, IPointerClickHandler, IBeginDragHa
     {
         if (this == null || sprite == null)
     {
-        Debug.LogWarning("UIInventoryItem or sprite is null");
+        //Debug.LogWarning("UIInventoryItem or sprite is null");
         return;
     }
         this.itemImage.gameObject.SetActive(true);

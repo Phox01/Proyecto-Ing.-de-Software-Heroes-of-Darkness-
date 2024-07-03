@@ -78,7 +78,7 @@ public class playerMovement : MonoBehaviour
             }
         }
 
-        Debug.LogWarning("No matching teleport point found for ActualScene: " + ActualScene + " and PreviousScene: " + PreviousScene);
+        //Debug.LogWarning("No matching teleport point found for ActualScene: " + ActualScene + " and PreviousScene: " + PreviousScene);
     }
     void Update()
     {

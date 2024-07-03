@@ -19,6 +19,7 @@ MonoBehaviour:
     10 puntos por 60 segundos
   <ItemImage>k__BackingField: {fileID: 21300000, guid: 4d75ae96a199ce740a84f78b9bd3edb9,
     type: 3}
+  <Price>k__BackingField: 15
   modifiersData:
   - statModifier: {fileID: 11400000, guid: 0a3f5e8da2516dc469a2aa80b3221852, type: 2}
     value: 10
