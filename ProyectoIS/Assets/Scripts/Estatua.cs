@@ -16,10 +16,12 @@ public class Estatua : Enemigo
 
     private void Update()
     {
-        base.Update();
         UpdateEstatuaSprite();
     }
 
+    private void FixedUpdate(){
+        
+    }
     private void UpdateEstatuaSprite()
     {
         float healthPercentage = (float)vida / vidaMax;
