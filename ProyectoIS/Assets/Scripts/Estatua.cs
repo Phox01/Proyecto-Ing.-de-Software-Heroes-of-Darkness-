@@ -43,12 +43,5 @@ public class Estatua : Enemigo
         yield return base.OnDieAnimationComplete();
     }
 
-    // protected override void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     ControladorDeAtaque jugador = collision.gameObject.GetComponent<ControladorDeAtaque>();
-    //     if (jugador != null)
-    //     {
-    //         jugador.GetDamaged(attack);
-    //     }
-    // }
+
 }
