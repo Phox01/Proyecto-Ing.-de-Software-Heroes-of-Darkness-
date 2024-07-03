@@ -19,7 +19,19 @@ EditorBuildSettings:
     guid: ebe0e1d9e2e00734f8b0e4abe1981acf
   - enabled: 1
     path: Assets/Scenes/Mundo1.unity
-    guid: ef1bb6633abb816499ba72ced6f2be56
+    guid: 959caf6ec51a5214c995460f22f8beca
+  - enabled: 1
+    path: Assets/Scenes/Introduction.unity
+    guid: 3bd2594e03321284cad2e8ee28232a33
+  - enabled: 1
+    path: Assets/Scenes/Mundo2.unity
+    guid: bcc801e615a8f794f993ad28b7eb084c
+  - enabled: 1
+    path: Assets/Scenes/Tienda.unity
+    guid: b4b0d4fde5246534da8514afb0e13074
+  - enabled: 1
+    path: Assets/Scenes/Mundo3.unity
+    guid: dcdfcd058b4fa594c9e72fa4af643734
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: c90367214791f8743a1dd615503210ce,
       type: 2}

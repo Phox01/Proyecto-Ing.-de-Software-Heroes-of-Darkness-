@@ -79,6 +79,54 @@ MonoBehaviour:
     m_Key: LoadButton
     m_Metadata:
       m_Items: []
+  - m_Id: 8966757595086848
+    m_Key: ControlInfo2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8972736432832512
+    m_Key: Instrucciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8974399461785600
+    m_Key: ControlInfo1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8974439286702080
+    m_Key: ControlInfo3I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8974747874230272
+    m_Key: ControlInfo3D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8976589127548928
+    m_Key: Advertencia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8976979541753856
+    m_Key: AdvertenciaText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8977183733055488
+    m_Key: Confirmar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8977211591622656
+    m_Key: Denegar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9047686409748480
+    m_Key: MenuPausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9048961889206272
+    m_Key: Reiniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9049132920340480
+    m_Key: Guardar
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

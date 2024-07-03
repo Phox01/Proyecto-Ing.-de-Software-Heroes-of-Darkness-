@@ -14,6 +14,8 @@ public class Dialogue : MonoBehaviour
     private int index;
     private Dictionary<int, bool> dialogueStarted;
 
+    public event System.Action OnDialogueFinished;
+
     void Start()
     {
         if (textComponent == null)
@@ -60,8 +62,8 @@ public class Dialogue : MonoBehaviour
         {
             if (IsDialogueIndexValid(dialogueIndex))
             {
-                StopAllCoroutines();  
-                textComponent.text = string.Empty; 
+                StopAllCoroutines();
+                textComponent.text = string.Empty;
                 lines = dialogues[dialogueIndex];
                 dialogueStarted[dialogueIndex] = !isRepeatable;
                 StartDialogue();
@@ -108,7 +110,7 @@ public class Dialogue : MonoBehaviour
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
-            yield return new WaitForSecondsRealtime(textSpeed); 
+            yield return new WaitForSecondsRealtime(textSpeed);
         }
     }
 
@@ -122,9 +124,12 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            textComponent.text = string.Empty;  
+            textComponent.text = string.Empty;
             dialoguePanel.SetActive(false);
             Time.timeScale = 1f;
+
+            // Disparar el evento
+            OnDialogueFinished?.Invoke();
         }
     }
 }

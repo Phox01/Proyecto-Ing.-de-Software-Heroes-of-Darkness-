@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6251ee13c888d7e4f8bf0b3b03cf2f63, type: 3}
+  m_Name: Lechuga
+  m_EditorClassIdentifier: 
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 10
+  <Name>k__BackingField: Lechuga
+  <Description>k__BackingField: LechugaD
+  <ItemImage>k__BackingField: {fileID: 1847463989, guid: a03c2610221b14940b818fb271b448fa,
+    type: 3}
+  <Price>k__BackingField: 25
+  modifiersData:
+  - statModifier: {fileID: 11400000, guid: 489998e3ca2da3a45836436b0d47c13c, type: 2}
+    value: 50

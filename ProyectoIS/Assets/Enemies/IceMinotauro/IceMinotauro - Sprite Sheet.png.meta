@@ -1,0 +1,3000 @@
+fileFormatVersion: 2
+guid: bd3d5ad66fc33574a9a6429918e1643f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 7419
+        width: 217
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d42ec742d85ac0f4a9a4c90ddc5b660f
+      internalID: -518189701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 7419
+        width: 219
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e55cbb93e2999f14396f3b3a2d4558e6
+      internalID: -166536755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 7419
+        width: 217
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4055e4fe14dec96409eef68a6db99eff
+      internalID: -1482749381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 7419
+        width: 214
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed8a0dae3cfef646977140977e745a7
+      internalID: 1373201343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 7419
+        width: 214
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ee730b311016840ae54b6d9247fea9
+      internalID: 1835930818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 7044
+        width: 218
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5418adb3406444d41bca60408c9e2e17
+      internalID: -951430280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 7052
+        width: 214
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03d5c58cbe6f4b9478a91dfbed34fbf7
+      internalID: -1246310874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 7044
+        width: 218
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b483c0d8cd019184f9b3e408f0926421
+      internalID: 780987463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 7037
+        width: 217
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf9f140185550c40974f6e2a7b47107
+      internalID: 1266101256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 7044
+        width: 214
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c11e1b040113a47a4d0ddcf5b8a703
+      internalID: -608751448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 7052
+        width: 218
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a4ee20df665ff4f9a96428918a6f1d
+      internalID: -54758171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 7044
+        width: 217
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f555c6fd8ab14641989a36642d4ed63
+      internalID: -2079169161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2793
+        y: 7037
+        width: 213
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f555e86320055f8498df5ec51721f0e5
+      internalID: 995973493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 6651
+        width: 217
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 724604d5e62dc124da9fcdcd8d10518b
+      internalID: -1596635692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 6651
+        width: 219
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1014ed7ffc5434ea6e11d6f24710bd
+      internalID: 2116064533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 6651
+        width: 217
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f92365d3352134b811bce3cd9d1317
+      internalID: 500813207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 6662
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a7b4e8a140578e49ae21f523fd8de75
+      internalID: -1461918330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 6651
+        width: 221
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ade2d9d94aebc4aa26e9c1e888dd11
+      internalID: -529751638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 6662
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c889ea26e6b80489d58bd67e18ece7
+      internalID: -16651125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1637
+        y: 6651
+        width: 222
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31822dbd8bf6fea47bab0aed78a22123
+      internalID: 349230755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 6268
+        width: 232
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f35e03ea7f32e4688263ab632b78a7
+      internalID: -362952752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 6246
+        width: 307
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598e81126facb624ab64aa1faeb7269b
+      internalID: -1285361945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 6437
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb39d3f853554b45befe7d23fcb195e
+      internalID: 706858456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 6246
+        width: 281
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e07972c9ddb502428a87e7dfa1943c8
+      internalID: 526361006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 6246
+        width: 233
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6fd42dde7a9b854c985e1b7c4079ff6
+      internalID: 1877950082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 6249
+        width: 229
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e7a45bf2b4b6046b4ddcc9d9a53430
+      internalID: -743244523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 2027
+        y: 6249
+        width: 207
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c4bb095b4cf6cc49a8def65a34f0fee
+      internalID: -1004653269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 6249
+        width: 206
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34323238273b22a4aa808f0eac140b04
+      internalID: 1093707829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 2796
+        y: 6268
+        width: 199
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1197cff79ac758498596ec028f5558e
+      internalID: 1475085244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 3179
+        y: 6268
+        width: 217
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa55388f4b33e30449bf217ba030ed5d
+      internalID: -120881799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 2245
+        y: 6370
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 047af3e8e1d264843b4b0e8a1d5182a7
+      internalID: -981371744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 2245
+        y: 6347
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a9027a2a7415d4daea48191c42c2b4
+      internalID: 710004039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 6321
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42160257146cd2043a39fb281ada421b
+      internalID: 2096985003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 5886
+        width: 217
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b88d310692025a941afbb74e20ef246a
+      internalID: 1937432065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 5886
+        width: 244
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e56a76898008e441b5c1c3b955810e4
+      internalID: 1122699266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 5886
+        width: 244
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 847a7e255eb81ca49a680b234b020646
+      internalID: 1063224180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 5886
+        width: 247
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef09c49f7c61977439368d437cb14979
+      internalID: 490925153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 5886
+        width: 236
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b04195941a72304a8a15d6673cd85bc
+      internalID: -1227173764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 5499
+        width: 161
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30283aa7cd515c940a12fdbf2a8e1f46
+      internalID: -2007743311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 5499
+        width: 161
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ff34a1e4ccdeb489cc6bec573e9498
+      internalID: 1381729961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 5499
+        width: 158
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4588c5d7aa26efb4288d887e5600d51e
+      internalID: 1261531873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 5499
+        width: 161
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec5c8904d129c244ba6892a455c71bb0
+      internalID: -260775391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 1622
+        y: 5499
+        width: 162
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0214ae077570e6a4bb2b4383a77fa1f3
+      internalID: -2092115574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 5499
+        width: 161
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d99fcbd6e337f4b8efb14761fdd9e9
+      internalID: -879465918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 5117
+        width: 217
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1729321b18d3504181e419440fad1e2
+      internalID: -31512459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 5117
+        width: 225
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbfdcaa959392cc4e9d504b09e90c9f6
+      internalID: -532371163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 5117
+        width: 225
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06bc13d19bc132946b3b372b8452d5ee
+      internalID: -805916961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 5117
+        width: 281
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235a6926255aa9344a58ec76a40cbb6b
+      internalID: -606550298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 5117
+        width: 199
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4e7dac68c3ea2469e474faad7b6b3b
+      internalID: -935722632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 1986
+        y: 5091
+        width: 304
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e4f6cb447beb741aafc54953504fe9
+      internalID: 1894455819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 2425
+        y: 5094
+        width: 229
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffab62b6810dbb84ba583277529a428c
+      internalID: 260403537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 2808
+        y: 5094
+        width: 191
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2dcdc47240dffc4991f9d304238e73d
+      internalID: 1626401012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 3190
+        y: 5094
+        width: 195
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc21ec66f67403746bcc5cd22763fa26
+      internalID: -339392020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 4731
+        width: 217
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2541882175f372438c516e800556930
+      internalID: -1219801441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 4731
+        width: 219
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55534c71c82acab4f821907a226cc890
+      internalID: -2000592868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 4731
+        width: 217
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c279485fd6237f4385f001352719ddb
+      internalID: -183839627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 4348
+        width: 217
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789b3c2d782e90146a84c4f49804a71f
+      internalID: 1690088331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 4348
+        width: 219
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81cf4430f7b44241aa63964bd0c0017
+      internalID: -1481009947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 4348
+        width: 217
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4826bba7917f1a64087ffcc2831fdd67
+      internalID: 1839393933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 3966
+        width: 217
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69ae2029e3ebc54f8f9faaad2f77a11
+      internalID: 2140370784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 3966
+        width: 218
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a2f058ff2770f419dc817c4a28ccaf
+      internalID: -90186499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 3966
+        width: 225
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656b0a700679f0f41b49b1815929fa4d
+      internalID: -847460162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 3958
+        width: 225
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7afb6717ccc96da458cb10e9b7c30c19
+      internalID: -387505907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 1667
+        y: 3958
+        width: 225
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ce3a5564779fb9429bc01137b199eaa
+      internalID: 388265878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 3958
+        width: 225
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80801f006f326b345b132ecae51fcc18
+      internalID: 1311884233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 3579
+        width: 214
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2fe63a8aa24eee49b00c877b54752df
+      internalID: 66264874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 3579
+        width: 213
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04b6ca3e59aa8b4aaad0c2753e53378
+      internalID: 981729922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 3579
+        width: 218
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a63e89451227f4b9b66650da201b45
+      internalID: -873309140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 3579
+        width: 217
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba48386efe5ffb4489d242e940440111
+      internalID: -101314436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 3579
+        width: 218
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19583c136e9a6b0468035f9a1f10e9f5
+      internalID: -1145055020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 3204
+        width: 214
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 903c798495a197e49a91f79bce060f1d
+      internalID: -1439472259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 3212
+        width: 217
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf4ab9b8831ac1244bfdfb1f2e888a1d
+      internalID: 722505153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 3204
+        width: 217
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc6d831de1fe0045bf5010636a5dcb7
+      internalID: 17363256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 3197
+        width: 214
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dffce8d95d806a14ab2c91c6790acb5c
+      internalID: -1618969607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 3204
+        width: 218
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0358965ba8a060c42ae54b9cbffdfa81
+      internalID: -194358997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 3212
+        width: 217
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f5e7259e15ed054295c88ce40903b7e
+      internalID: -1520089138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 2365
+        y: 3204
+        width: 214
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b871aacf1fa79b4495dc9b92756480d
+      internalID: -1572227356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 2751
+        y: 3197
+        width: 218
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb0b539602032040a7acaecf10ac66e
+      internalID: -1233974341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 2811
+        width: 214
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c76c400b0941104a81ce086ca199ad0
+      internalID: 798633368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 2811
+        width: 213
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37c1613936bb354cabcee8e7d72f660
+      internalID: -1679826175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 2811
+        width: 218
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc38b807e6953844ad7dae524b48edd
+      internalID: -1273188676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 2811
+        width: 221
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dca5891d2c7c5645a4eecb0cf3d2628
+      internalID: 1015370921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 2822
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662176d815b5c834983018503bdce6cc
+      internalID: -741173119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 2811
+        width: 225
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3db14ce822a6fa46ad45170b3d1211c
+      internalID: -1522331310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 2822
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7345163c5939c344291c05415f05ddd8
+      internalID: 1980462897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 2428
+        width: 232
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99632fc0741bb054e886106f2acd5192
+      internalID: -954031578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_86
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 2406
+        width: 311
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e1b21d1d6ea969469acb6900fd6b7dc
+      internalID: 1525835736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_87
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 2406
+        width: 282
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f8cc1a7926a25149be627004b29404a
+      internalID: 1539195769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 2597
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ad9afb05266f74ab1cd3fbfddd3c13
+      internalID: 839080592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_89
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 2406
+        width: 236
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbc913c1d1187c43a1779a27f010eae
+      internalID: -1777881097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_90
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 2409
+        width: 229
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7db02a819594674daffa3b54c4ffcad
+      internalID: 1629070506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_91
+      rect:
+        serializedVersion: 2
+        x: 1990
+        y: 2409
+        width: 206
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16aec45f34e2364ea82b62def18daf3
+      internalID: 261808699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_92
+      rect:
+        serializedVersion: 2
+        x: 2376
+        y: 2409
+        width: 203
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4987409ccd2fd4e92b173e0358dd0d
+      internalID: 1804991331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_93
+      rect:
+        serializedVersion: 2
+        x: 2763
+        y: 2428
+        width: 202
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b250e618123e4418ac2d52583a597e
+      internalID: -278115903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_94
+      rect:
+        serializedVersion: 2
+        x: 3130
+        y: 2428
+        width: 218
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 909338a743df0354bb13c3539eea7952
+      internalID: 436469399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_95
+      rect:
+        serializedVersion: 2
+        x: 1967
+        y: 2530
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91713f393b7c96b499c80ecdd8930e4f
+      internalID: 1649290806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_96
+      rect:
+        serializedVersion: 2
+        x: 1967
+        y: 2507
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee18c8d8264f78a4f96d50e2de63504b
+      internalID: -722570414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_97
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 2481
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5650a2de66030042b0aff8d0f1b4602
+      internalID: -1315320062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_98
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 2046
+        width: 214
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7991d5026fbe0a743a030a846b611e08
+      internalID: -1335571228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_99
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 2046
+        width: 243
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9403486084bc14a44b5128a03bb29a56
+      internalID: 1834290362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_100
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 2046
+        width: 243
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a4d8975f02454643a5bceab72c1934a
+      internalID: -85729689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_101
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 2046
+        width: 244
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db8fb0f3792390a47b3e96fbe505816c
+      internalID: -275037101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_102
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 2046
+        width: 240
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2bbfaf2879c5a5428e215aae06b813e
+      internalID: -1223546243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_103
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 1659
+        width: 159
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e7282293194da4ba301443139eaaf1
+      internalID: 1536598272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_104
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1659
+        width: 161
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e6c98d96da2b240a4c2427543f7555
+      internalID: -1627191158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_105
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 1659
+        width: 161
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d11317d6f4de0a24abf62a6fe989d13b
+      internalID: 2092343594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_106
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 1659
+        width: 162
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2083940b76de844f8a8eeb884b29ad1
+      internalID: -1415266557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_107
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 1659
+        width: 161
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a1551c69468dc43bf7c2e37d5d5daa
+      internalID: 1625148107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_108
+      rect:
+        serializedVersion: 2
+        x: 2054
+        y: 1659
+        width: 161
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d0f15f97c5692499e15699ee8ea80d
+      internalID: 1668812078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_109
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1277
+        width: 218
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e294907a2c86a4ab3ba9e483f92377
+      internalID: 2081700577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_110
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 1277
+        width: 221
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f6afa62bb1b8544b022cb637ca830e
+      internalID: 1576811410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_111
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 1277
+        width: 225
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389bcae5551f8a3468dd6a7181678ec5
+      internalID: 1688396740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_112
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 1277
+        width: 277
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423f405fe52690145ab621256508b664
+      internalID: -1476073555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_113
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 1277
+        width: 202
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257006b4186f32c40ba1688089261a1a
+      internalID: 631941899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_114
+      rect:
+        serializedVersion: 2
+        x: 1937
+        y: 1251
+        width: 300
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db057c16d17e5ff428c10653c4a86311
+      internalID: 2077711474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_115
+      rect:
+        serializedVersion: 2
+        x: 2339
+        y: 1254
+        width: 228
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a339fb53fda4b5a4e866786d533d2eb1
+      internalID: 125827118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_116
+      rect:
+        serializedVersion: 2
+        x: 2759
+        y: 1254
+        width: 195
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c569ac2ff23c16846aa77a46b3f3aebe
+      internalID: -312216778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_117
+      rect:
+        serializedVersion: 2
+        x: 3145
+        y: 1254
+        width: 191
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8da098c09a2d3c4a99ac92562c91a76
+      internalID: 596411221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_118
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 891
+        width: 214
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa65e78b89f6fd04aa98e2b0ca5d3585
+      internalID: -172726316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_119
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 891
+        width: 213
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3661106bc270349bd7194f6ec5d73d
+      internalID: -1664030674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_120
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 891
+        width: 218
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e5c5b2fbfc1694381248d538986b15
+      internalID: -957360081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_121
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 508
+        width: 214
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1192c8e57a0786f4ba01e37fc0facf4a
+      internalID: -2051793975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_122
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 508
+        width: 213
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2741141a34d9714398dba401298d6bf
+      internalID: -1059261253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_123
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 508
+        width: 218
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76df6b4b31bced54183dfb2b46f1f1b8
+      internalID: -56743279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_124
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 126
+        width: 214
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c6d373f9742764d801b9bb0d72856f
+      internalID: -1920285062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_125
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 126
+        width: 218
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be49ef69d9bd5b4da982d445a39dc9a
+      internalID: -662943113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_126
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 126
+        width: 221
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6726c4f3fa479c94ab199eb13810f8d9
+      internalID: 1878302200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_127
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 118
+        width: 225
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3315939176be2ce49b39a219e1943245
+      internalID: 957720043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_128
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 118
+        width: 225
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac2b5efdbf1b344bbb214447bd40842
+      internalID: -245874251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceMinotauro - Sprite Sheet_129
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 118
+        width: 225
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 841b337c4c5a38c4ebb2bb67c8a5c81d
+      internalID: -1501270698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      IceMinotauro - Sprite Sheet_0: -518189701
+      IceMinotauro - Sprite Sheet_1: -166536755
+      IceMinotauro - Sprite Sheet_10: -54758171
+      IceMinotauro - Sprite Sheet_100: -85729689
+      IceMinotauro - Sprite Sheet_101: -275037101
+      IceMinotauro - Sprite Sheet_102: -1223546243
+      IceMinotauro - Sprite Sheet_103: 1536598272
+      IceMinotauro - Sprite Sheet_104: -1627191158
+      IceMinotauro - Sprite Sheet_105: 2092343594
+      IceMinotauro - Sprite Sheet_106: -1415266557
+      IceMinotauro - Sprite Sheet_107: 1625148107
+      IceMinotauro - Sprite Sheet_108: 1668812078
+      IceMinotauro - Sprite Sheet_109: 2081700577
+      IceMinotauro - Sprite Sheet_11: -2079169161
+      IceMinotauro - Sprite Sheet_110: 1576811410
+      IceMinotauro - Sprite Sheet_111: 1688396740
+      IceMinotauro - Sprite Sheet_112: -1476073555
+      IceMinotauro - Sprite Sheet_113: 631941899
+      IceMinotauro - Sprite Sheet_114: 2077711474
+      IceMinotauro - Sprite Sheet_115: 125827118
+      IceMinotauro - Sprite Sheet_116: -312216778
+      IceMinotauro - Sprite Sheet_117: 596411221
+      IceMinotauro - Sprite Sheet_118: -172726316
+      IceMinotauro - Sprite Sheet_119: -1664030674
+      IceMinotauro - Sprite Sheet_12: 995973493
+      IceMinotauro - Sprite Sheet_120: -957360081
+      IceMinotauro - Sprite Sheet_121: -2051793975
+      IceMinotauro - Sprite Sheet_122: -1059261253
+      IceMinotauro - Sprite Sheet_123: -56743279
+      IceMinotauro - Sprite Sheet_124: -1920285062
+      IceMinotauro - Sprite Sheet_125: -662943113
+      IceMinotauro - Sprite Sheet_126: 1878302200
+      IceMinotauro - Sprite Sheet_127: 957720043
+      IceMinotauro - Sprite Sheet_128: -245874251
+      IceMinotauro - Sprite Sheet_129: -1501270698
+      IceMinotauro - Sprite Sheet_13: -1596635692
+      IceMinotauro - Sprite Sheet_14: 2116064533
+      IceMinotauro - Sprite Sheet_15: 500813207
+      IceMinotauro - Sprite Sheet_16: -1461918330
+      IceMinotauro - Sprite Sheet_17: -529751638
+      IceMinotauro - Sprite Sheet_18: -16651125
+      IceMinotauro - Sprite Sheet_19: 349230755
+      IceMinotauro - Sprite Sheet_2: -1482749381
+      IceMinotauro - Sprite Sheet_20: -362952752
+      IceMinotauro - Sprite Sheet_21: -1285361945
+      IceMinotauro - Sprite Sheet_22: 706858456
+      IceMinotauro - Sprite Sheet_23: 526361006
+      IceMinotauro - Sprite Sheet_24: 1877950082
+      IceMinotauro - Sprite Sheet_25: -743244523
+      IceMinotauro - Sprite Sheet_26: -1004653269
+      IceMinotauro - Sprite Sheet_27: 1093707829
+      IceMinotauro - Sprite Sheet_28: 1475085244
+      IceMinotauro - Sprite Sheet_29: -120881799
+      IceMinotauro - Sprite Sheet_3: 1373201343
+      IceMinotauro - Sprite Sheet_30: -981371744
+      IceMinotauro - Sprite Sheet_31: 710004039
+      IceMinotauro - Sprite Sheet_32: 2096985003
+      IceMinotauro - Sprite Sheet_33: 1937432065
+      IceMinotauro - Sprite Sheet_34: 1122699266
+      IceMinotauro - Sprite Sheet_35: 1063224180
+      IceMinotauro - Sprite Sheet_36: 490925153
+      IceMinotauro - Sprite Sheet_37: -1227173764
+      IceMinotauro - Sprite Sheet_38: -2007743311
+      IceMinotauro - Sprite Sheet_39: 1381729961
+      IceMinotauro - Sprite Sheet_4: 1835930818
+      IceMinotauro - Sprite Sheet_40: 1261531873
+      IceMinotauro - Sprite Sheet_41: -260775391
+      IceMinotauro - Sprite Sheet_42: -2092115574
+      IceMinotauro - Sprite Sheet_43: -879465918
+      IceMinotauro - Sprite Sheet_44: -31512459
+      IceMinotauro - Sprite Sheet_45: -532371163
+      IceMinotauro - Sprite Sheet_46: -805916961
+      IceMinotauro - Sprite Sheet_47: -606550298
+      IceMinotauro - Sprite Sheet_48: -935722632
+      IceMinotauro - Sprite Sheet_49: 1894455819
+      IceMinotauro - Sprite Sheet_5: -951430280
+      IceMinotauro - Sprite Sheet_50: 260403537
+      IceMinotauro - Sprite Sheet_51: 1626401012
+      IceMinotauro - Sprite Sheet_52: -339392020
+      IceMinotauro - Sprite Sheet_53: -1219801441
+      IceMinotauro - Sprite Sheet_54: -2000592868
+      IceMinotauro - Sprite Sheet_55: -183839627
+      IceMinotauro - Sprite Sheet_56: 1690088331
+      IceMinotauro - Sprite Sheet_57: -1481009947
+      IceMinotauro - Sprite Sheet_58: 1839393933
+      IceMinotauro - Sprite Sheet_59: 2140370784
+      IceMinotauro - Sprite Sheet_6: -1246310874
+      IceMinotauro - Sprite Sheet_60: -90186499
+      IceMinotauro - Sprite Sheet_61: -847460162
+      IceMinotauro - Sprite Sheet_62: -387505907
+      IceMinotauro - Sprite Sheet_63: 388265878
+      IceMinotauro - Sprite Sheet_64: 1311884233
+      IceMinotauro - Sprite Sheet_65: 66264874
+      IceMinotauro - Sprite Sheet_66: 981729922
+      IceMinotauro - Sprite Sheet_67: -873309140
+      IceMinotauro - Sprite Sheet_68: -101314436
+      IceMinotauro - Sprite Sheet_69: -1145055020
+      IceMinotauro - Sprite Sheet_7: 780987463
+      IceMinotauro - Sprite Sheet_70: -1439472259
+      IceMinotauro - Sprite Sheet_71: 722505153
+      IceMinotauro - Sprite Sheet_72: 17363256
+      IceMinotauro - Sprite Sheet_73: -1618969607
+      IceMinotauro - Sprite Sheet_74: -194358997
+      IceMinotauro - Sprite Sheet_75: -1520089138
+      IceMinotauro - Sprite Sheet_76: -1572227356
+      IceMinotauro - Sprite Sheet_77: -1233974341
+      IceMinotauro - Sprite Sheet_78: 798633368
+      IceMinotauro - Sprite Sheet_79: -1679826175
+      IceMinotauro - Sprite Sheet_8: 1266101256
+      IceMinotauro - Sprite Sheet_80: -1273188676
+      IceMinotauro - Sprite Sheet_81: 1015370921
+      IceMinotauro - Sprite Sheet_82: -741173119
+      IceMinotauro - Sprite Sheet_83: -1522331310
+      IceMinotauro - Sprite Sheet_84: 1980462897
+      IceMinotauro - Sprite Sheet_85: -954031578
+      IceMinotauro - Sprite Sheet_86: 1525835736
+      IceMinotauro - Sprite Sheet_87: 1539195769
+      IceMinotauro - Sprite Sheet_88: 839080592
+      IceMinotauro - Sprite Sheet_89: -1777881097
+      IceMinotauro - Sprite Sheet_9: -608751448
+      IceMinotauro - Sprite Sheet_90: 1629070506
+      IceMinotauro - Sprite Sheet_91: 261808699
+      IceMinotauro - Sprite Sheet_92: 1804991331
+      IceMinotauro - Sprite Sheet_93: -278115903
+      IceMinotauro - Sprite Sheet_94: 436469399
+      IceMinotauro - Sprite Sheet_95: 1649290806
+      IceMinotauro - Sprite Sheet_96: -722570414
+      IceMinotauro - Sprite Sheet_97: -1315320062
+      IceMinotauro - Sprite Sheet_98: -1335571228
+      IceMinotauro - Sprite Sheet_99: 1834290362
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

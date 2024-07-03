@@ -10,6 +10,9 @@ TagManager:
   - EventoChoque
   - Jefe0
   - AttackHitbox
+  - Teleport
+  - fire
+  - DamageContainer
   layers:
   - Default
   - TransparentFX
@@ -17,9 +20,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Personaje
+  - Blocking
+  - Player
   - 
   - 
   - 

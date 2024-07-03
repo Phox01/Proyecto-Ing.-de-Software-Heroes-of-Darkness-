@@ -161,7 +161,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.ProyectoIS
+    Standalone: com.HeroesOfDarkness.ProyectoIS
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -720,7 +720,7 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 7b07a100-d2d3-4577-b160-5c165ca90cb2
   framebufferDepthMemorylessMode: 0
