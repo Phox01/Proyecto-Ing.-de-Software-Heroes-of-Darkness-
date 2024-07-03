@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class JefeFuego : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<GameObject> objetos = new List<GameObject>();
+    
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
 }

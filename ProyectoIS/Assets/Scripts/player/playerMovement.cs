@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 5f;
+    public float moveSpeed = 5f;
     public int moveDuo = 1;
     PS4 controls;
     public float dashSpeed = 3f; 

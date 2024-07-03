@@ -2,47 +2,64 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using System.Collections;
-using UnityEngine;
-
-public class ZonaDeDaño : Enemigo
+public class Magma : MonoBehaviour
 {
-    private float damageInterval = 1.0f; // Intervalo de daño en segundos
-    private int damageAmount = 10; // Cantidad de daño por intervalo
-    private Coroutine damageCoroutine;
-
-    protected override void Start()
+    private Coroutine holaCoroutine;
+    public int damage = 0;
+    // Start is called before the first frame update
+    void Start()
     {
-        base.Start();
+
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    // Update is called once per frame
+    void Update()
     {
-        if (other.CompareTag("Player"))
+
+    }
+
+
+
+ // Declare holaCoroutine variable
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
         {
-            damageCoroutine = StartCoroutine(DamagePlayerOverTime(other));
+            holaCoroutine = StartCoroutine(PrintHolaWhileInContact(other));
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.tag == "Player")
         {
-            if (damageCoroutine != null)
+            if (holaCoroutine != null)
             {
-                StopCoroutine(damageCoroutine);
+                StopCoroutine(holaCoroutine);
+                holaCoroutine = null;
+
+                playerMovement slow = other.gameObject.GetComponent<playerMovement>();
+                //player.GetDamaged(damage);
+                slow.moveSpeed = 6f;
             }
         }
     }
 
-    private IEnumerator DamagePlayerOverTime(Collider2D player)
+    IEnumerator PrintHolaWhileInContact(Collider2D other)
     {
-        ControladorDeAtaque playerComponent = player.GetComponent<ControladorDeAtaque>();
-        while (playerComponent != null)
+        while (true)
         {
-            playerComponent.GetDamaged(damageAmount);
-            yield return new WaitForSeconds(damageInterval);
+
+            ControladorDeAtaque player= other.gameObject.GetComponent<ControladorDeAtaque>();
+            playerMovement slow = other.gameObject.GetComponent<playerMovement>();
+            player.GetDamaged(damage);
+            slow.moveSpeed = 3f;
+            Debug.Log("hola");
+            yield return new WaitForSeconds(1f);
         }
     }
 }
+
+
 
