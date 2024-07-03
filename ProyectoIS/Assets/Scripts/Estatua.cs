@@ -16,10 +16,12 @@ public class Estatua : Enemigo
 
     private void Update()
     {
-        base.Update();
         UpdateEstatuaSprite();
     }
 
+    private void FixedUpdate(){
+        
+    }
     private void UpdateEstatuaSprite()
     {
         float healthPercentage = (float)vida / vidaMax;
@@ -43,12 +45,5 @@ public class Estatua : Enemigo
         yield return base.OnDieAnimationComplete();
     }
 
-    protected override void OnCollisionEnter2D(Collision2D collision)
-    {
-        ControladorDeAtaque jugador = collision.gameObject.GetComponent<ControladorDeAtaque>();
-        if (jugador != null)
-        {
-            jugador.GetDamaged(attack);
-        }
-    }
+
 }

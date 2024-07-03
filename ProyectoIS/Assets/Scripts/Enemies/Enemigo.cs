@@ -128,6 +128,7 @@ public class Enemigo : MonoBehaviour
             sliderVidas.value = vida;
             UpdateHealthColor();
             ShowDamage(netDamage, isCritical);
+            Debug.Log("Hola hice dano");
         }
         if (vida <= 0)
         {
