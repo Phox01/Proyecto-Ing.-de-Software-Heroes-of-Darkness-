@@ -15,7 +15,7 @@ public class Puerta : MonoBehaviour
     public TMP_Text texto;
     [SerializeField]
     private bool Chocando=false;
-    public playerMovement player;
+    private playerMovement player;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -43,6 +43,8 @@ public class Puerta : MonoBehaviour
             texto.gameObject.SetActive(true);
 
             Chocando = true;
+            playerMovement playercomp = collision.gameObject.GetComponent<playerMovement>();
+            player = playercomp;
             
             
         }
@@ -71,8 +73,7 @@ public class Puerta : MonoBehaviour
                 Debug.Log(DataJuego.data.dinero);
 
             }
-        }
-        
+        }  
     }
     
    
