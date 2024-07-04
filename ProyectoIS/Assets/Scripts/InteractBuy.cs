@@ -14,6 +14,7 @@ public class InteractBuy : MonoBehaviour
     private bool Chocando = false;
     private SpriteRenderer spriteRenderer;
     private string localizedItemName;
+    private bool success = false;
 
     private void Start()
     {
@@ -29,13 +30,24 @@ public class InteractBuy : MonoBehaviour
         LocalizedString localizedItemNameString = new LocalizedString
         {
             TableReference = "Objetos",
-            TableEntryReference = Item.Name 
+            TableEntryReference = Item.Name
         };
 
         localizedItemNameString.StringChanged += (localizedText) =>
         {
             localizedItemName = localizedText;
         };
+        Inventario.inventoryData.OnItemAdded += HandleItemAdded;
+    }
+    private void OnDestroy()
+    {
+        Inventario.inventoryData.OnItemAdded -= HandleItemAdded;
+        localizedBuyText.StringChanged -= UpdateTextComponent;
+    }
+    private void HandleItemAdded(InventoryItem item)
+    {
+        Debug.Log("Item added to inventory: " + item.item.Name);
+        success = true;
     }
 
     private void Update()
@@ -66,13 +78,21 @@ public class InteractBuy : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
-                if(DataJuego.data.dinero>=Item.Price){texto.gameObject.SetActive(false);
-              
-               
-                DataJuego.data.dinero -=Item.Price;
-                Inventario.inventoryData.AddItem(Item,1);
-                Debug.Log(DataJuego.data.dinero);}
-                else{
+                if (DataJuego.data.dinero >= Item.Price)
+                {
+                    texto.gameObject.SetActive(false);
+
+
+
+                    Inventario.inventoryData.AddItem(Item, 1);
+                    if (success) { 
+                        DataJuego.data.dinero -= Item.Price; 
+                        success = false;
+                    }
+                    Debug.Log(DataJuego.data.dinero);
+                }
+                else
+                {
                     Debug.Log("Pobre");
                 }
 
@@ -103,8 +123,4 @@ public class InteractBuy : MonoBehaviour
         texto.text = localizedText;
     }
 
-    private void OnDestroy()
-    {
-        localizedBuyText.StringChanged -= UpdateTextComponent;
-    }
 }

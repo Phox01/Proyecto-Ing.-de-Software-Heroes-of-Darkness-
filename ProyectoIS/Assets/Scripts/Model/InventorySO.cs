@@ -13,6 +13,7 @@ public class InventorySO : ScriptableObject
 
     [field: SerializeField]
     public int Size { get; private set; } = 10;
+    public event Action<InventoryItem> OnItemAdded;
 
     public event Action<Dictionary<int, InventoryItem>> OnInventoryUpdated;
 
@@ -63,6 +64,7 @@ public class InventorySO : ScriptableObject
                 {
                     inventoryItems[i] = inventoryItems[i]
                         .ChangeQuantity(inventoryItems[i].quantity + quantity);
+                    OnItemAdded?.Invoke(new InventoryItem { item = item, quantity = quantity });
                     InformAboutChange();
                     return 0;
                 }
@@ -89,13 +91,14 @@ public class InventorySO : ScriptableObject
                 if (inventoryItems[i].IsEmpty)
                 {
                     inventoryItems[i] = newItem;
+                    OnItemAdded?.Invoke(newItem);
                     return quantity;
                 }
             }
             return 0;
         }
 
-    private bool IsInventoryFull()
+    public bool IsInventoryFull()
      => inventoryItems.Where(item => item.IsEmpty).Any() == false;
 
     private int AddNonStackableItem(ItemSO item, int quantity)
@@ -110,6 +113,7 @@ public class InventorySO : ScriptableObject
             if (inventoryItems[i].IsEmpty)
             {
                 inventoryItems[i] = newItem;
+                OnItemAdded?.Invoke(newItem);
                 return quantity;
             }
         }
