@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 1092186141232489299}
   - component: {fileID: 171301226089717019}
   - component: {fileID: 3093400494787594672}
+  - component: {fileID: 1388725871472888594}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Untagged
@@ -337,6 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaMax: 30
+  vida: 0
   maxAttack: 10
   attack: 10
   defensaMax: 2
@@ -395,6 +397,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whiteFlah: {fileID: 2100000, guid: da455a81febabfe4796638670e768074, type: 2}
   restoreMatTime: 0.2
+--- !u!114 &1388725871472888594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439400382998733755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5868332d3eb22eb4a87125c462a1a3d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootItems:
+  - itemPrefab: {fileID: 4418113279416532977, guid: bdd51dfd5a865294e92b5e5bc4d2ed74,
+      type: 3}
+    dropProbability: 0.2
+  - itemPrefab: {fileID: 3939233387393363074, guid: 17bef3bafb3f668479e5fc3280193471,
+      type: 3}
+    dropProbability: 0.45
+  dropRadius: 1
 --- !u!1 &6781748346141390429
 GameObject:
   m_ObjectHideFlags: 0

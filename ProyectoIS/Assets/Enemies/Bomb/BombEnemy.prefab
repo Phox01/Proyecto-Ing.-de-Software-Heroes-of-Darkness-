@@ -231,7 +231,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.77
+  m_Radius: 0.5
 --- !u!114 &2349363408573616476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,7 +570,8 @@ MonoBehaviour:
     m_Bits: 25165824
   sliderVidas: {fileID: 4395351248224540354}
   animator: {fileID: 2631873925792608330}
-  damageTextPrefab: {fileID: 0}
+  damageTextPrefab: {fileID: 6456827237543253423, guid: 9e621419e5bb1604c90439089c2de82a,
+    type: 3}
   hitBox: {fileID: 5080757715268512957}
   hit: {fileID: 515536894254239530, guid: c0edfecf2ee8a284c9ca0e5d2f50212c, type: 3}
   boxCollider: {fileID: 3098650381795197520}
