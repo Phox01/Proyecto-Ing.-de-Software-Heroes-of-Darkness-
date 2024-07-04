@@ -47,6 +47,30 @@ MonoBehaviour:
     m_Key: EnterShop
     m_Metadata:
       m_Items: []
+  - m_Id: 5747718449258496
+    m_Key: AttackPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5748020711776256
+    m_Key: AttackPotionD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5750118174154752
+    m_Key: ManaPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5750158858903552
+    m_Key: ManaPotionD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5750334960951296
+    m_Key: SpeedPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5752072782733312
+    m_Key: SpeedPotionD
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

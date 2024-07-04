@@ -50,6 +50,30 @@ MonoBehaviour:
     m_Localized: Press "Space" or "X" to enter the shop
     m_Metadata:
       m_Items: []
+  - m_Id: 5747718449258496
+    m_Localized: Attack potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5748020711776256
+    m_Localized: Duplicates the attack for a few seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5750118174154752
+    m_Localized: Mana Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5750158858903552
+    m_Localized: Restores 10 mp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5750334960951296
+    m_Localized: Speed Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5752072782733312
+    m_Localized: Increases the speed for a few seconds
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

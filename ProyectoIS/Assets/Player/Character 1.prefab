@@ -667,6 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   attack: 0
+  currentAttack: 0
   currentHealth: 0
   "currentMan\xE1": 0
   critChance: 0
@@ -812,6 +813,8 @@ MonoBehaviour:
     item: {fileID: 11400000, guid: 28cec234aa9346540ab7759f11b869d8, type: 2}
   - quantity: 5
     item: {fileID: 11400000, guid: dd99ed0e5c559664d957f1285d032a8c, type: 2}
+  - quantity: 5
+    item: {fileID: 11400000, guid: d8f3109a559c204429991227e4e230ec, type: 2}
 --- !u!70 &8276658661312236118
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
