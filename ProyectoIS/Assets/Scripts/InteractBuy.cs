@@ -15,7 +15,12 @@ public class InteractBuy : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private string localizedItemName;
     private bool success = false;
+    PS4 controls;
 
+    private void Awake(){
+        controls= new PS4();
+        controls.Gameplay.Attack.Enable();
+    }
     private void Start()
     {
         Inventario = FindObjectOfType<InventoryController>();
@@ -76,7 +81,7 @@ public class InteractBuy : MonoBehaviour
     {
         if (Chocando == true)
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.C) || controls.Gameplay.Attack.triggered)
             {
                 if (DataJuego.data.dinero >= Item.Price)
                 {
