@@ -17,7 +17,7 @@ public class JefeFuegoP2 : Enemigo
     // Update is called once per frame
     protected override void Update()
     {
-        Activar();
+        Pisoton();
         // LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
         if (player != null)
         {
@@ -38,31 +38,29 @@ public class JefeFuegoP2 : Enemigo
         }
     }
 
-    private void Activar()
+    private void Pisoton()
     {
         timer += Time.deltaTime;
         
-        if (timer >= 10f)
+        if (timer >= 15f)
         {
-
-
             StartCoroutine(ActivateDeactivateCoroutine());
-
             timer = 0f;
-           
         }
     }
 
     IEnumerator ActivateDeactivateCoroutine()
     {
         // Activate the object after 5 seconds
-        
+        animator.SetBool("isMoving", true);
+
         circleCollider1.SetActive(true);
 
         // Wait for another 5 seconds before deactivating
         yield return new WaitForSeconds(1f);
-        
         circleCollider1.SetActive(false);
+        animator.SetBool("isMoving", false);
+
     }
 
     //RayCast para el seguimiento
