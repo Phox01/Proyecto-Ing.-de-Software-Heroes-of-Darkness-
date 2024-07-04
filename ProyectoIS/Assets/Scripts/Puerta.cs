@@ -65,7 +65,7 @@ public class Puerta : MonoBehaviour
             {
                 texto.gameObject.SetActive(false);
                 int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-                player.ChangeScene(currentSceneIndex);
+                player.ChangeScene(TargetScene, currentSceneIndex);
                 SceneManager.LoadScene(TargetScene);
                 DataJuego.data.dinero += 100;
                 Debug.Log(DataJuego.data.dinero);
