@@ -344,7 +344,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 7
   m_Sprite: {fileID: -234202219, guid: 2e8550e08b5091941a693b01bb352b3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -416,9 +416,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6d026c5f8e0e24184b512dec1ba9a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMax: 0
-  maxAttack: 0
-  attack: 0
+  vidaMax: 30
+  vida: 30
+  maxAttack: 10
+  attack: 10
   defensaMax: 0
   knockBackTime: 0.2
   speed: 1

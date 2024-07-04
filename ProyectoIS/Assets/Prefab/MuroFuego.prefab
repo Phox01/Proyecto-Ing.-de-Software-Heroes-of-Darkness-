@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 7
   m_Sprite: {fileID: -1912433488, guid: 038e5ad410e39584db350482e6cad7e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -148,7 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9871dd0232ca84aab9595bfb821e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 607767498239099414, guid: 5a0ea4a0db9005e4698ac3b64e0b12dc, type: 3}
   tiempo: 4
   damage: 15
 --- !u!61 &798378722321766495

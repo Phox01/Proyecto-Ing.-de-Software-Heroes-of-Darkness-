@@ -7,22 +7,31 @@ public class LanzarBolasFuego : Enemigo
 {
     private float timer = 0f;
     private float timerMuro = 0f;
+    private float lastMagicTime;
     public int cantidadMurosFuego;
     public GameObject FuegoPrefab;
     public BolaFuegoAzul projectilePrefab;
     public Spowner spowner;
+    private bool poniendoMuro;
     private bool isFacingRight = true;
 
+    //public Animator animator;
+    //private GameObject player;
+    //public Rigidbody2D rb;
+    //protected bool hasLineOfSight = false;
+    //[SerializeField] public float speed;
+    //[SerializeField] public LayerMask layerMask;
+    // Start is called before the first frame update
 
-    protected override void Start()
+    protected virtual void Start()
     {
-        base.Start();
+
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
 
     // Update is called once per frame
-    protected override void Update()
+    private void Update()
     {
         if (player.transform.position.x < transform.position.x && isFacingRight)
         {
@@ -42,8 +51,19 @@ public class LanzarBolasFuego : Enemigo
         HacerMuro();
     }
 
+    void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
+        Vector3 ScalerLifeBar = sliderVidas.transform.localScale;
+        ScalerLifeBar.x *= -1;
+        sliderVidas.transform.localScale = ScalerLifeBar;
+    }
     void LanzarFuego()
     {
+        lastMagicTime = Time.time;
         rb.velocity = Vector2.zero;
         //animator.SetTrigger("Magic");
         //musicManagement.SeleccionAudio(animator.GetInteger("NumbAtt") - 1, 1f)
@@ -76,8 +96,8 @@ public class LanzarBolasFuego : Enemigo
 
         Vector2 posicionPersonaje = player.transform.position;
 
-        // Calcular la direcci�n de la hilera
-        Vector2 direccion = posicionPersonaje.normalized; // Normalizar la direcci�n para obtener la direcci�n unitaria
+        // Calcular la dirección de la hilera
+        Vector2 direccion = posicionPersonaje.normalized; // Normalizar la dirección para obtener la dirección unitaria
 
         // Crear la hilera de MuroFuego
 
@@ -88,6 +108,7 @@ public class LanzarBolasFuego : Enemigo
         if (timerMuro >= 8f)
         {
             animator.SetBool("HacerMuro", true);
+            poniendoMuro = true;
             Vector2 posicionMuroFuego = (player.transform.position - transform.position).normalized;
 
 
@@ -111,11 +132,12 @@ public class LanzarBolasFuego : Enemigo
         {
             Debug.Log("termino de hacer muro");
             animator.SetBool("HacerMuro", false);
+            poniendoMuro = false;
         }
     }
 
 
-    protected override void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (player != null)
         {
@@ -140,26 +162,26 @@ public class LanzarBolasFuego : Enemigo
         }
     }
 
-    protected override void Following()
+    void Following()
     {
 
         Vector2 distan = player.transform.position - transform.position;
         float distance = distan.magnitude;
 
-        if (distance < 10f)
+        if (distance < 9f)
         {
 
 
             animator.SetBool("MovingFront", false);
             Vector2 directionToPlayer = player.transform.position - transform.position;
 
-            // Invierte la direcci�n para moverse en sentido contrario
+            // Invierte la dirección para moverse en sentido contrario
             Vector2 oppositeDirection = -directionToPlayer.normalized;
 
-            // Mueve el enemigo en la direcci�n contraria
+            // Mueve el enemigo en la dirección contraria
             transform.Translate(oppositeDirection * speed * Time.deltaTime);
         }
-        else if (distance > 11f)
+        else if (distance > 10f)
         {
             animator.SetBool("MovingFront", true);
 
