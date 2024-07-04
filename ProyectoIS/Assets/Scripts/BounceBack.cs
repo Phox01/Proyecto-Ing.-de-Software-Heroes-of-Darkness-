@@ -20,8 +20,6 @@ public class BounceBack : MonoBehaviour
 
         if (collision.gameObject.layer == 23)
         {
-            Debug.Log(force);
-            Debug.Log("echado");
             EcharAtras(collision.collider.transform);
 
         }

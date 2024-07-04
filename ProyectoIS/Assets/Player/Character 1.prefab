@@ -652,7 +652,7 @@ MonoBehaviour:
   rb: {fileID: 7989326598424684392}
   animator: {fileID: 1899253404670520504}
   ActualScene: 0
-  punto: {fileID: 0}
+  PreviousScene: 0
 --- !u!114 &607767498239099414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,6 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   attack: 0
+  currentAttack: 0
   currentHealth: 0
   "currentMan\xE1": 0
   critChance: 0
@@ -808,6 +809,12 @@ MonoBehaviour:
     item: {fileID: 11400000, guid: babefacdd027598418b2ae821a6b527b, type: 2}
   - quantity: 6
     item: {fileID: 11400000, guid: d3ead0ac18e7b0640af31afe7ca10f74, type: 2}
+  - quantity: 5
+    item: {fileID: 11400000, guid: 28cec234aa9346540ab7759f11b869d8, type: 2}
+  - quantity: 5
+    item: {fileID: 11400000, guid: dd99ed0e5c559664d957f1285d032a8c, type: 2}
+  - quantity: 5
+    item: {fileID: 11400000, guid: d8f3109a559c204429991227e4e230ec, type: 2}
 --- !u!70 &8276658661312236118
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -883,3 +890,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7989326598424684392}
+  force: 15

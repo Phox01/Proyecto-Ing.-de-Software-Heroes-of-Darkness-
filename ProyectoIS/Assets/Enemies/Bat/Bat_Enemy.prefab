@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 1224071206075437620}
   - component: {fileID: 2026221182730330021}
   - component: {fileID: 6898215237749744452}
+  - component: {fileID: 279846256952518189}
   m_Layer: 23
   m_Name: Bat_Enemy
   m_TagString: Murcielago
@@ -441,6 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaMax: 35
+  vida: 0
   maxAttack: 5
   attack: 0
   defensaMax: 5
@@ -474,6 +476,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &279846256952518189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5053068258751461530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5868332d3eb22eb4a87125c462a1a3d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootItems:
+  - itemPrefab: {fileID: 3939233387393363074, guid: 17bef3bafb3f668479e5fc3280193471,
+      type: 3}
+    dropProbability: 0.8
+  dropRadius: 1
 --- !u!1 &8533559323562890900
 GameObject:
   m_ObjectHideFlags: 0

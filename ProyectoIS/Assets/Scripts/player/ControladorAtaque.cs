@@ -30,8 +30,8 @@ public class ControladorDeAtaque : Atributos
     private Color fullHealthColor = Color.green;
     private Color midHealthColor = Color.yellow;
     private Color lowHealthColor = Color.red;
-    private int maxMana;
     private bool critical;
+    private bool attackMod= false;
 
 
 
@@ -57,18 +57,18 @@ public class ControladorDeAtaque : Atributos
         areaAtaque.isTrigger = true;
         if (sliderVidas != null)
         {
-            sliderVidas.maxValue = health; // Asegúrate de que el maxValue del slider sea igual a la salud máxima.
-            Debug.Log(health);
-            Debug.Log(sliderVidas.maxValue);
+            sliderVidas.maxValue = health; 
             sliderVidas.value = currentHealth;
             UpdateHealthColor();
         }
         if (sliderManá != null)
         {
-            sliderManá.maxValue = maná; // Asegúrate de que el maxValue del slider sea igual al maná máximo.
+            sliderManá.maxValue = maná; 
             sliderManá.value = currentManá;
             StartCoroutine(RegenerateMana());
         }
+        
+        currentAttack = attack;
     }
 
     void Update()
@@ -118,7 +118,7 @@ public class ControladorDeAtaque : Atributos
         Projectile projectileScript = projectileObject.GetComponent<Projectile>();
         if (projectileScript != null)
         {
-            int damage = CriticalDamage(attack);
+            int damage = CriticalDamage(currentAttack);
             int trueDamage = damage + Random.Range(-3, 4);
             projectileScript.damage = trueDamage;
         }
@@ -142,7 +142,7 @@ public class ControladorDeAtaque : Atributos
             Enemigo enemigoComponent = enemigo.GetComponent<Enemigo>();
             if (enemigoComponent != null)
             {
-                int damage = CriticalDamage(attack);
+                int damage = CriticalDamage(currentAttack);
                 int trueDamage = damage + Random.Range(-3, 4);
                 enemigoComponent.GetDamaged(trueDamage, critical);
                 musicManagement.SeleccionAudio(5, 1f);
@@ -223,10 +223,11 @@ public class ControladorDeAtaque : Atributos
 
     public void addDamage()
     {
-        Debug.Log("fuerza");
-        attack = attack * 2;
-        Debug.Log(attack);
-        StartCoroutine(VolverNormal());
+        if(!attackMod){Debug.Log("fuerza");
+        currentAttack = currentAttack * 2;
+        attackMod= true;
+        Debug.Log(currentAttack);
+        StartCoroutine(VolverNormal());}
 
     }
 
@@ -237,27 +238,16 @@ public class ControladorDeAtaque : Atributos
     {
         Debug.Log("entro");
         yield return new WaitForSeconds(10f);
-        attack = attack / 2;
+        currentAttack = currentAttack / 2;
         Debug.Log("salio");
+        attackMod= true;
 
     }
-
-
-    public void addManaPocion(float value)
-    {
-
-        currentManá += (int)value;
-        sliderManá.value = currentManá;
-
-
-    }
-
 
 
 
     public void AddManá(int amount)
     {
-        Debug.Log("a");
         currentManá += amount;
         currentManá = Mathf.Clamp(currentManá, 0, maná);
         sliderManá.value = currentManá;
