@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Conclusion_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: c2c08a3c3436e3e47b2db75ccabb9268, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 39027798016
+    m_Localized: After a long journey, the protagonist returns to the village. The
+      people come out of their homes, amazed to see that the darkness has disappeared.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13394035666944
+    m_Localized: The forest, once dark and dangerous, now blooms like a paradise.
+      Nature is reborn, and with it, the hope of a new beginning.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13625401864192
+    m_Localized: The volcanic lands, freed from their demons, become fertile again.
+      The echoes of battles fade away, giving way to peace.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13854406668288
+    m_Localized: Together, the protagonist and his brother return to the village,
+      ready to rebuild what was once lost.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13985889710080
+    m_Localized: But it is no longer the same, for now they are the Heroes of the
+      Darkness.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

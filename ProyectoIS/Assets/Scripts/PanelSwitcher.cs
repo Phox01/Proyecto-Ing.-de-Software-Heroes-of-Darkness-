@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour
+public class PanelSwitcher : MonoBehaviour
 {
     public GameObject[] panels;
     private int currentPanelIndex = 0;
@@ -15,7 +15,6 @@ public class NewBehaviourScript : MonoBehaviour
         {
             panels[i].SetActive(i == 0);
         }
-
         if (dialogue != null)
         {
             dialogue.localizationController.OnLocalizationReady += OnLocalizationReady;
@@ -38,7 +37,6 @@ public class NewBehaviourScript : MonoBehaviour
         {
             dialogue.OnDialogueFinished += HandleDialogueFinished;
         }
-
         StartDialogue(currentPanelIndex);
     }
 
@@ -48,7 +46,6 @@ public class NewBehaviourScript : MonoBehaviour
         {
             panels[currentPanelIndex].SetActive(false);
         }
-
         currentPanelIndex++;
 
         if (currentPanelIndex >= panels.Length)
