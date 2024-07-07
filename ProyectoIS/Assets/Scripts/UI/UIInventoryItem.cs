@@ -12,15 +12,19 @@ public class UIInventoryItem : MonoBehaviour, IPointerClickHandler, IBeginDragHa
     [SerializeField] private Image itemImage;
     [SerializeField] TMP_Text quantityNumber;
     [SerializeField] Image borderImage;
+    PS4 controls;
 
     public event Action<UIInventoryItem> OnItemClicked, OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag, OnRightMouseBtnClick;
 
     private bool empty = true;
 
-
+    public void Awake(){
+        controls = new PS4();
+    }
     public void Start()
     {
         Deselect();
+        controls.Gameplay.Attack.Enable();
     }
 
     public void ResetData()
@@ -67,7 +71,7 @@ public class UIInventoryItem : MonoBehaviour, IPointerClickHandler, IBeginDragHa
 
     public void OnPointerClick(PointerEventData pointerData)
     {
-        if (pointerData.button == PointerEventData.InputButton.Right)
+        if (pointerData.button == PointerEventData.InputButton.Right || controls.Gameplay.Attack.triggered)
         {
 
             OnRightMouseBtnClick?.Invoke(this);

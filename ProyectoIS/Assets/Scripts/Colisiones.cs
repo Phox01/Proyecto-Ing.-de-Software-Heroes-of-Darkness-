@@ -8,11 +8,11 @@ public class Colisiones : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Collider2D[] hits = new Collider2D[10]; //Numero de colisiones a la vez
 
-
     // Start is called before the first frame update
     protected virtual void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>(); //Agarra el boxColider
+
 
     }
 

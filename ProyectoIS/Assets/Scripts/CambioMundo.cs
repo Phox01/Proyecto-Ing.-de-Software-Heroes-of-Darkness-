@@ -6,9 +6,7 @@ using UnityEngine.SceneManagement;
 public class CambioMundo : Colisiones
 {
     public int TargetScene;
-    private void Awake(){
-        
-    }
+
     protected override void OnCollide(Collider2D col){
         if(col.tag == "Player")
         {

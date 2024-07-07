@@ -5,12 +5,22 @@ using UnityEngine;
 public class Eventos : Colisiones
 {
     public int idEevent = 0;
-    
+    PS4 controls;
+
+    protected void Awake()
+    {
+        controls=new PS4();
+    }
+    protected override void Start()
+    {
+        base.Start();
+        controls.Gameplay.Attack.Enable();
+    }
     protected override void OnCollide(Collider2D col)
     {
         if(col.tag == "Player")
         {
-            if(Input.GetAxisRaw("Space") == 1)
+            if(Input.GetAxisRaw("Space") == 1 || controls.Gameplay.Attack.triggered)
             {
                 switch (idEevent)
                 {
