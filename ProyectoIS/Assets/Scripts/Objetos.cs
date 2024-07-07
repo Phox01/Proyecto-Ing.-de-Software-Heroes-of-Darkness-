@@ -9,6 +9,9 @@ public class Objetos : Colisiones //Herencia
     private int stopBug;
     protected MusicManagement musicManagement;
 
+    //private playerMovement slowPerson; NO FUNCIONA CAMBIAR LA VELOCIDAD
+
+
     protected override void OnCollide(Collider2D col)
     {
         musicManagement = FindObjectOfType<MusicManagement>();
@@ -73,6 +76,32 @@ public class Objetos : Colisiones //Herencia
                     case 7: //Fruta suprema
                         musicManagement.SeleccionAudio(8, 1f);
                         player.AddHealth(100);
+                        break;
+
+                    case 8: //BBC MASTER
+                        musicManagement.SeleccionAudio(8, 5f);
+                        int y = Random.Range(0, 2);
+                         if (y == 1)
+                        {
+                            player.AddHealth(100);
+                            // slowPerson.moveSpeed = 20f;
+                            SpriteRenderer playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
+                            if (playerSpriteRenderer != null)
+                            {
+                                playerSpriteRenderer.color = Color.red;
+                                }
+                           
+                        }
+                        else
+                        {
+                            player.AddHealth(-50);
+                            // slowPerson.moveSpeed = 5f;
+                            SpriteRenderer playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
+                            if (playerSpriteRenderer != null)
+                            {
+                                playerSpriteRenderer.color = Color.blue;
+                                }
+                         }
                         break;
 
 
