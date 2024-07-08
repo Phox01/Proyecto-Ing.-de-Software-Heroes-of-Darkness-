@@ -16,6 +16,7 @@ public class Puerta : MonoBehaviour
     [SerializeField]
     private bool Chocando=false;
     private playerMovement player;
+
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -37,7 +38,8 @@ public class Puerta : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision != null)
+        
+        if(collision.gameObject.CompareTag("Player"))
         {
             
             texto.gameObject.SetActive(true);

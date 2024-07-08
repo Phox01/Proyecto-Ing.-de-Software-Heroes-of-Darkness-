@@ -11,36 +11,44 @@ public class NPC : MonoBehaviour
     private float time;
     private bool isMoving;
     public Vector3 targetPosition;
-    Animator animator;
+    public Animator animator;
+    private Vector2 lastMoveDirection = Vector2.zero;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
         random = Random.Range(0, routePoints.Length);
         patrolSpeed = 3;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        // LÓGICA DE HACER EL PATRULLAJE
-        transform.position = Vector2.MoveTowards(transform.position, routePoints[random].transform.position, patrolSpeed * Time.deltaTime);
+    void Update(){
+        Vector2 currentMoveDirection = (routePoints[random].transform.position - (Vector3)transform.position).normalized;
+
+        // Check if there's a significant change in movement direction
+        if (currentMoveDirection != Vector2.zero)
+        {
+            lastMoveDirection = currentMoveDirection;
+        }
+
+        // Update time and change route point after 4 seconds
         time += Time.deltaTime;
         if (time >= 4)
         {
             random = Random.Range(0, routePoints.Length);
             time = 0;
         }
-        //targetPosition = routePoints[random].transform.position;
-        //if (Vector3.Distance(transform.position, targetPosition) > 0.1f)
-        //{
-        //    isMoving = true;
-        //    animator.SetBool("isMoving", isMoving);
-        //}
-        //else
-        //{
-        //    isMoving = false;
-        //    animator.SetBool("isMoving", isMoving);
-        //}
+
+        // Use lastMoveDirection to set animator parameters or assign sprites
+        UpdateAnimator(lastMoveDirection);
+    }
+
+    void UpdateAnimator(Vector2 moveDirection)
+    {
+        // Assuming you have parameters in your Animator controller to control NPC animations based on direction
+        animator.SetFloat("Horizontal", moveDirection.x);
+        animator.SetFloat("Vertical", moveDirection.y);
+
+        // You can also set bools or triggers based on conditions
+        // animator.SetBool("IsMoving", moveDirection != Vector2.zero);
     }
 }

@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   routePoints: []
   targetPosition: {x: 0, y: 0, z: 0}
+  animator: {fileID: 6944826056640696457}
 --- !u!61 &4120920428241307880
 BoxCollider2D:
   m_ObjectHideFlags: 0
