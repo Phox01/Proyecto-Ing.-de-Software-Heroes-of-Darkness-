@@ -10,9 +10,11 @@ public class NPC : MonoBehaviour
     private float patrolSpeed;
     private float time;
     private bool isMoving;
+    private bool isFacingRight = true;
     public Vector3 targetPosition;
     public Animator animator;
-    private Vector2 lastMoveDirection = Vector2.zero;
+    private Vector2 lastMoveDirection;
+    private Vector2 currentMoveDirection;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,14 +24,21 @@ public class NPC : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
-        Vector2 currentMoveDirection = (routePoints[random].transform.position - (Vector3)transform.position).normalized;
+        transform.position = Vector2.MoveTowards(transform.position, routePoints[random].transform.position, patrolSpeed * Time.deltaTime);
+        currentMoveDirection = (routePoints[random].transform.position - (Vector3)transform.position).normalized;
+        if (currentMoveDirection.x<0 && isFacingRight)
+        {
+            Flip();
+        } else if (currentMoveDirection.x>0 && !isFacingRight)
+        {
+                Flip();
+        }
 
         // Check if there's a significant change in movement direction
         if (currentMoveDirection != Vector2.zero)
         {
             lastMoveDirection = currentMoveDirection;
-        }
-
+        } 
         // Update time and change route point after 4 seconds
         time += Time.deltaTime;
         if (time >= 4)
@@ -37,9 +46,14 @@ public class NPC : MonoBehaviour
             random = Random.Range(0, routePoints.Length);
             time = 0;
         }
-
-        // Use lastMoveDirection to set animator parameters or assign sprites
         UpdateAnimator(lastMoveDirection);
+    }
+
+    public void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
     }
 
     void UpdateAnimator(Vector2 moveDirection)
