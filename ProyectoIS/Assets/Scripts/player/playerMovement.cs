@@ -8,10 +8,10 @@ public class playerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public int moveDuo = 1;
     PS4 controls;
-    public float dashSpeed = 3f; 
-    public float attackImpulse= 2f; 
-    public float dashDuration = 0.2f; 
-    public float dashCooldown = 1f; 
+    public float dashSpeed = 3f;
+    public float attackImpulse = 2f;
+    public float dashDuration = 0.2f;
+    public float dashCooldown = 1f;
     public Rigidbody2D rb;
     public Animator animator;
 
@@ -31,11 +31,13 @@ public class playerMovement : MonoBehaviour
 
     private bool comprobar = false;
     private bool speedMod = false;
+    public bool boss1;
+    public bool boss2;
 
- 
 
-    private void Awake(){
-        controls= new PS4();
+    private void Awake()
+    {
+        controls = new PS4();
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -50,22 +52,25 @@ public class playerMovement : MonoBehaviour
         controls.Gameplay.Dash.Enable();
         controls.Gameplay.Pausa.Enable();
     }
-    void OnEnable(){
+    void OnEnable()
+    {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    void OnDisable(){
+    void OnDisable()
+    {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-    void OnDestroy(){
+    void OnDestroy()
+    {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         TeleportPosition();
     }
 
-     private void TeleportPosition()
-    { 
+    private void TeleportPosition()
+    {
         GameObject[] puntos = GameObject.FindGameObjectsWithTag("Teleport");
         foreach (GameObject punto in puntos)
         {
@@ -87,13 +92,13 @@ public class playerMovement : MonoBehaviour
             animator.SetBool("CanMove", false);
             if (!isKnockbackActive)
             {
-                rb.velocity=Vector2.zero;
-                
+                rb.velocity = Vector2.zero;
+
             }
         }
         else
         {
-            animator.SetBool("CanMove", true); 
+            animator.SetBool("CanMove", true);
         }
 
         if (animator.GetBool("CanMove"))
@@ -103,7 +108,7 @@ public class playerMovement : MonoBehaviour
             animator.SetFloat("Horizontal", movement.x);
             animator.SetFloat("Vertical", movement.y);
             animator.SetFloat("Speed", movement.sqrMagnitude);
-            
+
             if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift) || controls.Gameplay.Dash.triggered) && Time.time > lastDashTime + dashCooldown)
             {
                 StartDash();
@@ -114,7 +119,7 @@ public class playerMovement : MonoBehaviour
         {
             EndDash();
         }
-        
+
         HandleEscapeKey();
 
 
@@ -123,17 +128,18 @@ public class playerMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (animator.GetFloat("Speed")==0){
+        if (animator.GetFloat("Speed") == 0)
+        {
             //musicManagement.AudioLoop(3, 0.3f);
         }
-        
-        if (animator.GetBool("CanMove") &&! isKnockbackActive )
+
+        if (animator.GetBool("CanMove") && !isKnockbackActive)
         {
-            lastMovement.x= (int)animator.GetFloat("lastMoveX");
-            lastMovement.y= (int)animator.GetFloat("lastMoveY");
+            lastMovement.x = (int)animator.GetFloat("lastMoveX");
+            lastMovement.y = (int)animator.GetFloat("lastMoveY");
             if (isDashing)
             {
-                rb.velocity = lastMovement.normalized * dashSpeed; 
+                rb.velocity = lastMovement.normalized * dashSpeed;
             }
             else
             {
@@ -148,7 +154,7 @@ public class playerMovement : MonoBehaviour
             }
 
         }
-        
+
     }
 
     private void StartDash()
@@ -171,26 +177,27 @@ public class playerMovement : MonoBehaviour
         isKnockbackActive = value;
     }
 
-    public void ChangeScene(int NewActual, int OldActual){
+    public void ChangeScene(int NewActual, int OldActual)
+    {
         ActualScene = NewActual;
         PreviousScene = OldActual;
     }
 
     private void HandleEscapeKey()
     {
-    if (Input.GetKeyDown(KeyCode.Escape) || controls.Gameplay.Pausa.triggered)
-    {
-        if (managementMenu != null)
+        if (Input.GetKeyDown(KeyCode.Escape) || controls.Gameplay.Pausa.triggered)
         {
-            if (comprobar)
+            if (managementMenu != null)
             {
-                comprobar = false;
-                managementMenu.ReanudarPartida();
+                if (comprobar)
+                {
+                    comprobar = false;
+                    managementMenu.ReanudarPartida();
                 }
-            else
-            {
-                comprobar = true;
-                managementMenu.PausarPartida();
+                else
+                {
+                    comprobar = true;
+                    managementMenu.PausarPartida();
                 }
             }
         }
@@ -199,11 +206,13 @@ public class playerMovement : MonoBehaviour
 
     public void Velocity(float value)
     {
-        
-        if(!speedMod){moveSpeed +=value;
-       
-        StartCoroutine(VolverNormalVelocidad(value));
-        speedMod=true;
+
+        if (!speedMod)
+        {
+            moveSpeed += value;
+
+            StartCoroutine(VolverNormalVelocidad(value));
+            speedMod = true;
         }
 
     }
@@ -213,11 +222,11 @@ public class playerMovement : MonoBehaviour
     public IEnumerator VolverNormalVelocidad(float value)
 
     {
-        
+
         yield return new WaitForSeconds(10f);
-        moveSpeed -=value;
-        speedMod= false;
-        
+        moveSpeed -= value;
+        speedMod = false;
+
 
     }
 }

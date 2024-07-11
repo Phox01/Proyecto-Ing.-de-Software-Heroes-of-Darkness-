@@ -27,6 +27,8 @@ public class TutorialController : MonoBehaviour
 
     void Start()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        playerTransform = player.transform;
         InitializeTutorial();
     }
 

@@ -9,6 +9,7 @@ public class JefeFuego : Enemigo
     public float initialLaunchInterval = 2.0f; // Intervalo de lanzamiento inicial en segundos
     private float currentLaunchInterval;
 
+    public JefeFuegoP2 jefe2;
     protected override void Start()
     {
         base.Start();
@@ -30,6 +31,7 @@ public class JefeFuego : Enemigo
             }
             else
             {
+                Instantiate(jefe2, transform.position, Quaternion.identity);
                 // Destruir al enemigo cuando ya no queden objetos
                 Destroy(gameObject);
                 yield break; // Terminar la coroutine

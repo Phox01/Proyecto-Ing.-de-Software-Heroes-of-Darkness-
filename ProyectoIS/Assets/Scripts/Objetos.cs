@@ -21,6 +21,7 @@ public class Objetos : Colisiones //Herencia
             if (col.tag == "Player")
             {
                 ControladorDeAtaque player = col.gameObject.GetComponent<ControladorDeAtaque>();
+                playerMovement jefes = col.gameObject.GetComponent<playerMovement>();
                 Debug.Log("MrMenu");
                 stopBug = 1;
                 switch (idObjeto) //Pongan el ID en el script juego EN UNITY
@@ -84,7 +85,10 @@ public class Objetos : Colisiones //Herencia
                          if (y == 1)
                         {
                             player.AddHealth(100);
-                            // slowPerson.moveSpeed = 20f;
+                            playerMovement velocidad = player.GetComponent<playerMovement>();
+                            if (velocidad != null){
+                                velocidad.Velocity(20);
+                                }
                             SpriteRenderer playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
                             if (playerSpriteRenderer != null)
                             {
@@ -95,7 +99,10 @@ public class Objetos : Colisiones //Herencia
                         else
                         {
                             player.AddHealth(-50);
-                            // slowPerson.moveSpeed = 5f;
+                            playerMovement velocidad = player.GetComponent<playerMovement>();
+                            if (velocidad != null){
+                                velocidad.Velocity(20);
+                                }
                             SpriteRenderer playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
                             if (playerSpriteRenderer != null)
                             {
@@ -105,6 +112,12 @@ public class Objetos : Colisiones //Herencia
                         break;
 
 
+                    case 9: //llave 1
+                        jefes.boss1 = true;
+                        break;
+                    case 10: //llave 2
+                        jefes.boss2 = true;
+                        break;
 
                     default:
                         break;

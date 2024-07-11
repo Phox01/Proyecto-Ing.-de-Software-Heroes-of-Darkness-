@@ -367,7 +367,7 @@ Transform:
   m_GameObject: {fileID: 7952955149612037982}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.02, y: 0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -405,9 +405,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07457495, y: 0}
+  m_Offset: {x: 0, y: 0.24}
   serializedVersion: 2
-  m_Radius: 4.3281674
+  m_Radius: 0.9
 --- !u!1 &9062917913962890164
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +422,8 @@ GameObject:
   - component: {fileID: 410837612013855437}
   - component: {fileID: 7982507292857799765}
   - component: {fileID: 8563749681919573257}
+  - component: {fileID: 3740338457198641267}
+  - component: {fileID: 4230411312160323796}
   m_Layer: 23
   m_Name: JefeFase2
   m_TagString: Untagged
@@ -486,7 +488,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -8665026667067327718, guid: 0a683adc0c072504e819f1964eddbf4e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -619,3 +621,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3740338457198641267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9062917913962890164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ec2e976aa3c7f4eb45bc393636b025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteFlah: {fileID: 2100000, guid: da455a81febabfe4796638670e768074, type: 2}
+  restoreMatTime: 0.2
+--- !u!114 &4230411312160323796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9062917913962890164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5868332d3eb22eb4a87125c462a1a3d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootItems: []
+  dropRadius: 1

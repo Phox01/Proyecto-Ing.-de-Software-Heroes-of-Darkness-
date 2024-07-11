@@ -35,6 +35,10 @@ MonoBehaviour:
     m_Key: C4-2
     m_Metadata:
       m_Items: []
+  - m_Id: 2246989492056064
+    m_Key: CF
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
