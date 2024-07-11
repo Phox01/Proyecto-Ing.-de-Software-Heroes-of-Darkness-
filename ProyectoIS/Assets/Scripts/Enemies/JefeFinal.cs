@@ -13,8 +13,8 @@ public class JefeFinal : Enemigo
     private Color originalColor = Color.white; // Color FFFFFF
     public float forceDash = 35;
     public float dashInterval = 10.0f;
-    
 
+    private Vector2 direccionMovimiento;
     // Duración del aturdimiento antes del dash
     public float stunDuration = 1.5f;
 
@@ -24,14 +24,13 @@ public class JefeFinal : Enemigo
     private Vector2 direction;
 
     private bool isDashing = false;
-    //public float dashSpeed = 3f;
-    //public float attackImpulse = 2f;
-    //public float dashDuration = 0.2f;
-    //public float dashCooldown = 1f;
+    
     public float dashTime = 1f;
-    //private float lastDashTime;
+    public PolygonCollider2D hitbox;
 
-    // Start is called before the first frame update
+
+
+
     protected override void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -59,6 +58,8 @@ public class JefeFinal : Enemigo
             }
             
         }
+
+        ActualizarPuntoAtaque();
     }
 
     protected override void Following()
@@ -184,5 +185,17 @@ public class JefeFinal : Enemigo
         
         Invoke("ExecuteDash", stunDuration);
     }
-   
+
+    void ActualizarPuntoAtaque()
+    {
+        if (direccionMovimiento != Vector2.zero)
+        {
+            Vector3 nuevaPosicion = transform.position + (Vector3)direccionMovimiento * 0.5f;
+            hitbox.transform.position = nuevaPosicion;
+
+            float angle = Mathf.Atan2(direccionMovimiento.y, direccionMovimiento.x) * Mathf.Rad2Deg;
+            hitbox.transform.rotation = Quaternion.Euler(0, 0, angle + 90);
+        }
+    }
+
 }
