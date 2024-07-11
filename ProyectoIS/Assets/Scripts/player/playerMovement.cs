@@ -31,8 +31,6 @@ public class playerMovement : MonoBehaviour
 
     private bool comprobar = false;
     private bool speedMod = false;
-    public bool boss1;
-    public bool boss2;
 
  
 

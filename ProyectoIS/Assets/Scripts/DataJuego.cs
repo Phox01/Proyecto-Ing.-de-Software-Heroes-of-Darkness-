@@ -15,7 +15,6 @@ public class DataJuego : MonoBehaviour
 
     // Referencia al script Atributos
     public Atributos atributos;
-    public playerMovement jefes;
 
     [Serializable]
     class DatosGuardar // Guarda todos los elementos
@@ -23,7 +22,6 @@ public class DataJuego : MonoBehaviour
         public int DTdinero; //Data de las variables 
         public int DThealth, DTattack, DTcurrentHealth, DTcurrentMana, DTmana; //Data de las variables 
         public float DTcritChance, DTcritAttack; //Data de las variables 
-        public bool DTjefe1, DTjefe2;
         public List<SerializableInventoryItem> inventoryItems;
     }
 
@@ -46,7 +44,6 @@ public class DataJuego : MonoBehaviour
 {
     int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     atributos = FindObjectOfType<Atributos>();
-    jefes = FindObjectOfType<playerMovement>();
     InventoryController inventoryController = FindObjectOfType<InventoryController>();
     
     if (currentSceneIndex == 1)
@@ -70,8 +67,6 @@ public class DataJuego : MonoBehaviour
         atributos.maná = dat.DTmana;
         atributos.critChance = dat.DTcritChance;
         atributos.critAttack = dat.DTcritAttack;
-        jefes.boss1 = dat.DTjefe1;
-        jefes.boss2 = dat.DTjefe2;
 
         // Load inventory items
         inventoryController.inventoryData.Initialize();
@@ -122,8 +117,6 @@ private ItemSO GetItemSOByID(int id)
     dat.DTmana = atributos.maná;
     dat.DTcritChance = atributos.critChance;
     dat.DTcritAttack = atributos.critAttack;
-    dat.DTjefe1 = jefes.boss1;
-    dat.DTjefe2 = jefes.boss2;
 
     // Save inventory items
     InventoryController inventoryController = FindObjectOfType<InventoryController>();
@@ -152,8 +145,6 @@ private ItemSO GetItemSOByID(int id)
         atributos.maná = 30;
         atributos.critChance = 0.5f;
         atributos.critAttack = 1.5f;
-        jefes.boss1 = false;
-        jefes.boss2 = false;
     }
     [Serializable]
 class SerializableInventoryItem
