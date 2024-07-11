@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,19 +8,57 @@ public class JefeFinal : Enemigo
     public int poisonDamage = 10;
     public float poisonDuration = 3f;
     public float poisonInterval = 1f;
+    public bool move=true;
     private Color poisonColor = new Color(1f, 0.05f, 0.59f); // Color FF0D97 en formato RGBA
     private Color originalColor = Color.white; // Color FFFFFF
+    public float forceDash = 35;
+    public float dashInterval = 10.0f;
+    
+
+    // Duración del aturdimiento antes del dash
+    public float stunDuration = 1.5f;
+
+    // Velocidad del dash
+    public float dashSpeed = 10.0f;
+    private float nextDashTime;
+    private Vector2 direction;
+
+    private bool isDashing = false;
+    //public float dashSpeed = 3f;
+    //public float attackImpulse = 2f;
+    //public float dashDuration = 0.2f;
+    //public float dashCooldown = 1f;
+    public float dashTime = 1f;
+    //private float lastDashTime;
 
     // Start is called before the first frame update
     protected override void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         base.Start();
+        
+        
+        ResetTimer();
     }
 
     // Update is called once per frame
     protected override void Update()
     {
-        base.Update();
+        if (move)
+        {
+            base.Update();
+        }
+        
+
+        if (IsTimeToDash())
+        {
+
+            if (!isDashing)
+            {
+                DashTowardsPlayer();
+            }
+            
+        }
     }
 
     protected override void Following()
@@ -79,4 +118,71 @@ public class JefeFinal : Enemigo
             StartCoroutine(ApplyPoisonDamage(jugador));
         }
     }
+
+    //private void StartDash()
+    //{
+
+    //    //animator.SetBool("Dash", true);
+    //    isDashing = true;
+    //    dashTime = Time.time + dashDuration;
+    //    lastDashTime = Time.time;
+    //}
+
+    //private void EndDash()
+    //{
+    //    isDashing = false;
+    //    //animator.SetBool("Dash", false);
+    //}
+
+
+    private void ResetTimer()
+    {
+        nextDashTime = Time.time + dashInterval;
+    }
+
+    private bool IsTimeToDash()
+    {
+        return Time.time >= nextDashTime;
+    }
+
+    private void ExecuteDash()
+    {
+        
+        // Obtener la dirección hacia el personaje
+
+
+        // Aplicar la velocidad del dash a la dirección
+        
+
+        isDashing = true;
+
+        
+
+        rb.velocity = direction * dashSpeed;
+        StartCoroutine(StopDash());
+        // Esperar un tiempo breve para que el dash sea visible
+        
+    }
+
+    private IEnumerator StopDash()
+    {
+        yield return new WaitForSeconds(dashTime);
+        rb.velocity = Vector2.zero;
+        isDashing = false;
+        move = true;
+        
+        ResetTimer();
+    }
+    private void DashTowardsPlayer()
+    {
+         direction = (player.transform.position - transform.position).normalized;
+        Debug.Log(rb.mass);
+        Vector2 diference = direction * forceDash* rb.mass;
+        Debug.Log(diference);
+        move = false;
+        isDashing = true;
+        
+        Invoke("ExecuteDash", stunDuration);
+    }
+   
 }
