@@ -653,8 +653,6 @@ MonoBehaviour:
   animator: {fileID: 1899253404670520504}
   ActualScene: 0
   PreviousScene: 0
-  boss1: 0
-  boss2: 0
 --- !u!114 &607767498239099414
 MonoBehaviour:
   m_ObjectHideFlags: 0
