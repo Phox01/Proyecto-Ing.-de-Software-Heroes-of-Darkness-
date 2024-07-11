@@ -16,7 +16,7 @@ MonoBehaviour:
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: ManaPotion
   <Description>k__BackingField: ManaPotionD
-  <ItemImage>k__BackingField: {fileID: 21300000, guid: de8e8df9cf0980f4ba5eb9d86bf83f49,
+  <ItemImage>k__BackingField: {fileID: 21300000, guid: fa580b7750acae240adbe74611edb549,
     type: 3}
   <Price>k__BackingField: 20
   modifiersData:

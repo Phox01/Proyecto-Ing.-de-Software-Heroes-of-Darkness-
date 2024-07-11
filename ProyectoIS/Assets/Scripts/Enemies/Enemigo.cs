@@ -14,7 +14,7 @@ public class Enemigo : MonoBehaviour
     protected int netDamage;
     public bool gettingKnockedBack { get; private set; }
     [SerializeField] private float knockBackTime = .2f;
-    protected Rigidbody2D rb;
+    public Rigidbody2D rb;
     protected MusicManagement musicManagement;
     [SerializeField] protected float speed;
     [SerializeField] protected LayerMask layerMask;
@@ -177,6 +177,7 @@ public class Enemigo : MonoBehaviour
     {
         gettingKnockedBack = true;
         Vector2 diference = (transform.position - damageSource.position).normalized * knockBackThrust * rb.mass;
+        Debug.Log(diference);
         rb.AddForce(diference, ForceMode2D.Impulse);
         StartCoroutine(KnockRoutine());
     }
