@@ -50,8 +50,13 @@ public class PanelSwitcher : MonoBehaviour
 
         if (currentPanelIndex >= panels.Length)
         {
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             currentPanelIndex = panels.Length - 1;
-            SceneManager.LoadScene(4);
+            if (currentSceneIndex == 5){
+            SceneManager.LoadScene(4);}
+            else{
+                SceneManager.LoadScene(0);
+            }
             return;
         }
 

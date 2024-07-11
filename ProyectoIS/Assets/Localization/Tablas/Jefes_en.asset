@@ -42,6 +42,34 @@ MonoBehaviour:
     m_Localized: I am the last before your doom arrives. You cannot defeat HIM.
     m_Metadata:
       m_Items: []
+  - m_Id: 149315696046080
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149255566503936
+    m_Localized: You've come far, but you will go no further...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149349854457856
+    m_Localized: Brother... free our home...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149499154903040
+    m_Localized: Forgive me... and save our village...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149597653938176
+    m_Localized: The darkness controls m...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149703635611648
+    m_Localized: The darkness within me... fades away thanks to you...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149705820844032
+    m_Localized: You did it, brother. Now we are free, as is our village.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

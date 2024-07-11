@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class JefeFinal : Enemigo
 {
     public int poisonDamage = 10;
@@ -29,6 +30,10 @@ public class JefeFinal : Enemigo
     private bool ataque = true;
     private float nextAttackTime;
     public float attackInterval = 5.0f;
+    
+    public Dialogue dialogue; 
+    private bool isDialogueFinished = false;
+    private bool isDialogueFinished2 = false;
     protected override void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,6 +41,19 @@ public class JefeFinal : Enemigo
         
         
         ResetTimer();
+        if (dialogue != null && !isDialogueFinished)
+        {
+            dialogue.localizationController.OnLocalizationReady += OnLocalizationReady;
+        }
+    }
+
+    private void OnLocalizationReady()
+    {
+        dialogue.SetupDialogue();
+        
+            dialogue.dialoguePanel.SetActive(true);
+            dialogue.StartDialogue(0, true); 
+            dialogue.OnDialogueFinished += OnDialogueFinished;
     }
 
     // Update is called once per frame
@@ -151,7 +169,6 @@ public class JefeFinal : Enemigo
             ataque = false;
             List<Collider2D> resultados = new List<Collider2D>();
             hitbox.OverlapCollider(new ContactFilter2D(), resultados);
-            bool playerDetected = false;
 
             foreach (Collider2D player in resultados)
             {
@@ -242,6 +259,30 @@ public class JefeFinal : Enemigo
             // Rotate the hitbox to face the player
             hitbox.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
+    }
+    protected override void Die()
+    {
+        if (dialogue != null && !isDialogueFinished2)
+        {
+            dialogue.dialoguePanel.SetActive(true);
+            dialogue.StartDialogue(1, true); 
+            dialogue.OnDialogueFinished += OnDialogueFinished2;
+        }
+    }
+
+    private void OnDialogueFinished()
+    {
+        isDialogueFinished = true;
+        dialogue.OnDialogueFinished -= OnDialogueFinished;
+        dialogue.dialoguePanel.SetActive(false);
+    }
+    private void OnDialogueFinished2()
+    {
+        isDialogueFinished2 = true;
+        dialogue.OnDialogueFinished -= OnDialogueFinished2;
+        dialogue.dialoguePanel.SetActive(false);
+        base.Die();
+        SceneManager.LoadScene(10);
     }
 
 }
