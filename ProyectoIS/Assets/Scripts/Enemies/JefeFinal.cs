@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +11,7 @@ public class JefeFinal : Enemigo
     private Color originalColor = Color.white; // Color FFFFFF
     public float forceDash = 35;
     public float dashInterval = 10.0f;
-
+    
     private Vector2 direccionMovimiento;
     // Duración del aturdimiento antes del dash
     public float stunDuration = 1.5f;
@@ -27,9 +26,9 @@ public class JefeFinal : Enemigo
     public float dashTime = 1f;
     public PolygonCollider2D hitbox;
 
-
-
-
+    private bool ataque = true;
+    private float nextAttackTime;
+    public float attackInterval = 5.0f;
     protected override void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -57,6 +56,25 @@ public class JefeFinal : Enemigo
             }
             
         }
+
+
+        if (IsTimeToAttack())
+        {
+            Debug.Log(ataque);
+            if (ataque)
+            {
+                
+                EjecutarAtaqueMele();
+            }
+
+        }
+
+
+
+
+
+
+
         Vector2 hitDirection = (player.transform.position - transform.position).normalized;
 
         // Calculate the movement direction (normalized)
@@ -124,20 +142,36 @@ public class JefeFinal : Enemigo
         }
     }
 
-    //private void StartDash()
-    //{
+    private void EjecutarAtaqueMele()
+    {
 
-    //    //animator.SetBool("Dash", true);
-    //    isDashing = true;
-    //    dashTime = Time.time + dashDuration;
-    //    lastDashTime = Time.time;
-    //}
+        if (ataque)
+        {
+            Debug.Log("cada 5 segudnos");
+            ataque = false;
+            List<Collider2D> resultados = new List<Collider2D>();
+            hitbox.OverlapCollider(new ContactFilter2D(), resultados);
+            bool playerDetected = false;
 
-    //private void EndDash()
-    //{
-    //    isDashing = false;
-    //    //animator.SetBool("Dash", false);
-    //}
+            foreach (Collider2D player in resultados)
+            {
+                if (player != null && player.CompareTag("Player"))
+                {
+                    Debug.Log("si");
+                    //player.GetComponent<ControladorDeAtaque>().GetDamaged(15);
+                    ataque = true;
+                    ResetTimerAttack();
+                    break;
+                }
+            }
+            
+            
+
+
+        }
+        ataque = true;
+        ResetTimerAttack();
+    }
 
 
     private void ResetTimer()
@@ -145,23 +179,26 @@ public class JefeFinal : Enemigo
         nextDashTime = Time.time + dashInterval;
     }
 
+    private void ResetTimerAttack()
+    {
+        nextAttackTime = Time.time + attackInterval;
+    }
+
     private bool IsTimeToDash()
     {
         return Time.time >= nextDashTime;
     }
 
+    private bool IsTimeToAttack()
+    {
+        return Time.time >= nextAttackTime;
+    }
     private void ExecuteDash()
     {
-        
-        // Obtener la dirección hacia el personaje
-
-
-        // Aplicar la velocidad del dash a la dirección
+       
         
 
         isDashing = true;
-
-        
 
         rb.velocity = direction * dashSpeed;
         StartCoroutine(StopDash());
