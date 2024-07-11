@@ -14361,6 +14361,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriggerTeleport
       objectReference: {fileID: 0}
+    - target: {fileID: 3580140794384340667, guid: 7f12c8c829fb53b4695b7e0c64e6d8ba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

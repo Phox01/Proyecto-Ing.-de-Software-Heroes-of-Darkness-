@@ -18,7 +18,7 @@ public class JefeFuegoP2 : Enemigo
     protected override void Update()
     {
         Pisoton();
-        // LÓGICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
+        // Lï¿½GICA PARA QUE EL ENEMIGO SIEMPRE MIRE AL PERSONAJE PRINCIPAL
         if (player != null)
         {
             Vector3 direction = player.transform.position - transform.position;
