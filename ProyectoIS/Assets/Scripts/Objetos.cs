@@ -84,10 +84,7 @@ public class Objetos : Colisiones //Herencia
                          if (y == 1)
                         {
                             player.AddHealth(100);
-                            playerMovement velocidad = player.GetComponent<playerMovement>();
-                            if (velocidad != null){
-                                velocidad.Velocity(20);
-                                }
+                            // slowPerson.moveSpeed = 20f;
                             SpriteRenderer playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
                             if (playerSpriteRenderer != null)
                             {
@@ -98,10 +95,7 @@ public class Objetos : Colisiones //Herencia
                         else
                         {
                             player.AddHealth(-50);
-                            playerMovement velocidad = player.GetComponent<playerMovement>();
-                            if (velocidad != null){
-                                velocidad.Velocity(20);
-                                }
+                            // slowPerson.moveSpeed = 5f;
                             SpriteRenderer playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
                             if (playerSpriteRenderer != null)
                             {
