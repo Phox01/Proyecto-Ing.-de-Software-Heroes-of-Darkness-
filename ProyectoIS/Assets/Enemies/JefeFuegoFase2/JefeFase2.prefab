@@ -563,11 +563,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802167885a753a44d86df9953398eea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMax: 150
+  vidaMax: 200
   vida: 150
   maxAttack: 15
   attack: 15
-  defensaMax: 0
+  defensaMax: 10
   knockBackTime: 0.2
   rb: {fileID: 0}
   speed: 1
