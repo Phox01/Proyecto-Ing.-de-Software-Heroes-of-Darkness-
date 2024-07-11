@@ -44,22 +44,27 @@ public class JefeFuegoP2 : Enemigo
         
         if (timer >= 15f)
         {
-            StartCoroutine(ActivateDeactivateCoroutine());
+            
             timer = 0f;
+            StartCoroutine(ActivateDeactivateCoroutine());
+            
         }
     }
 
     IEnumerator ActivateDeactivateCoroutine()
     {
         // Activate the object after 5 seconds
+        
         animator.SetBool("isMoving", true);
-
-        circleCollider1.SetActive(true);
-
-        // Wait for another 5 seconds before deactivating
-        yield return new WaitForSeconds(1f);
-        circleCollider1.SetActive(false);
+        yield return new WaitForSeconds(1.8f);
         animator.SetBool("isMoving", false);
+        circleCollider1.SetActive(true);
+        
+        // Wait for another 5 seconds before deactivating
+        yield return new WaitForSeconds(0.1f);
+        circleCollider1.SetActive(false);
+        
+
 
     }
 
