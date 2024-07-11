@@ -123,11 +123,12 @@ MonoBehaviour:
   poisonInterval: 1
   move: 1
   forceDash: 10
-  dashInterval: 20
+  dashInterval: 17
   stunDuration: 1.5
-  dashSpeed: 10
+  dashSpeed: 20
   dashTime: 0.5
   hitbox: {fileID: 57857639465253682}
+  attackInterval: 5
 --- !u!61 &7432246869742433071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -160,7 +161,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.47611296}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -171,7 +172,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.24, y: 6.34}
+  m_Size: {x: 4.24, y: 5.3877745}
   m_EdgeRadius: 0
 --- !u!50 &3151361440942929566
 Rigidbody2D:
@@ -185,7 +186,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 150
+  m_Mass: 15
   m_LinearDrag: 2
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -637,7 +638,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -652,10 +653,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -2.5788305, y: 0.063315034}
-      - {x: -2.2769847, y: -3.2046099}
-      - {x: -0.26966354, y: -4.4203176}
-      - {x: 1.9698573, y: -3.3888857}
-      - {x: 2.5788305, y: -0.1516726}
+    - - {x: 1.8748524, y: 1.06696}
+      - {x: -5.6290045, y: 1.3190163}
+      - {x: -4.800085, y: -1.5590909}
+      - {x: -4.7971625, y: -3.2148724}
+      - {x: -0.26966354, y: -3.127928}
+      - {x: 4.3019776, y: -3.6245637}
+      - {x: 4.2213397, y: 1.0137837}
   m_UseDelaunayMesh: 0

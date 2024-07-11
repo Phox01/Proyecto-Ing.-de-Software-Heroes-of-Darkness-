@@ -60,7 +60,7 @@ public class JefeFinal : Enemigo
 
         if (IsTimeToAttack())
         {
-            Debug.Log(ataque);
+            
             if (ataque)
             {
                 
@@ -158,7 +158,8 @@ public class JefeFinal : Enemigo
                 if (player != null && player.CompareTag("Player"))
                 {
                     Debug.Log("si");
-                    //player.GetComponent<ControladorDeAtaque>().GetDamaged(15);
+                    //player.GetComponent<ControladorDeAtaque>().GetDamaged(5);
+                    StartCoroutine(ApplyPoisonDamage(player.GetComponent<ControladorDeAtaque>()));
                     ataque = true;
                     ResetTimerAttack();
                     break;
