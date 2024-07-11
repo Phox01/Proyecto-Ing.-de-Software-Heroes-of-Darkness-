@@ -9,10 +9,8 @@ public class JefeFuegoP2 : Enemigo
     public GameObject circleCollider1;
     private float timer = 0f;
     private Vector3 previousDirection;
-    void Start()
-    {
-        base.Start();
-    }
+    public Dialogue dialogue; 
+    private bool isDialogueFinished = false;
 
     // Update is called once per frame
     protected override void Update()
@@ -85,5 +83,23 @@ public class JefeFuegoP2 : Enemigo
                 }
             }
         }
+    }
+
+    protected override void Die()
+    {
+        if (dialogue != null && !isDialogueFinished)
+        {
+            dialogue.dialoguePanel.SetActive(true);
+            dialogue.StartDialogue(0, true); 
+            dialogue.OnDialogueFinished += OnDialogueFinished;
+        }
+    }
+
+    private void OnDialogueFinished()
+    {
+        isDialogueFinished = true;
+        dialogue.OnDialogueFinished -= OnDialogueFinished;
+        dialogue.dialoguePanel.SetActive(false);
+        base.Die();
     }
 }

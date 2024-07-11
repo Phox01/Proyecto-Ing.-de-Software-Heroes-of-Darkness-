@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class JefeFuego : Enemigo
@@ -10,6 +11,9 @@ public class JefeFuego : Enemigo
     private float currentLaunchInterval;
 
     public JefeFuegoP2 jefe2;
+    
+    public GameObject dialoguePanel;
+    public TextMeshProUGUI textComponent;
     protected override void Start()
     {
         base.Start();
@@ -31,7 +35,9 @@ public class JefeFuego : Enemigo
             }
             else
             {
-                Instantiate(jefe2, transform.position, Quaternion.identity);
+                JefeFuegoP2 instanciaJefe2 = Instantiate(jefe2, transform.position, Quaternion.identity);
+                instanciaJefe2.dialogue.dialoguePanel = dialoguePanel;
+                instanciaJefe2.dialogue.textComponent = textComponent;
                 // Destruir al enemigo cuando ya no queden objetos
                 Destroy(gameObject);
                 yield break; // Terminar la coroutine

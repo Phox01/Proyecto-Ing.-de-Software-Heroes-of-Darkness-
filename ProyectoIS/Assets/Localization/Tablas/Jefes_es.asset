@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Jefes_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: bd82bc387df7e624c82fb07a3afaa6f7, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 12414083072
+    m_Localized: "El hielo se derrite, pero el verdadero fr\xEDo est\xE1 por venir..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157474086912
+    m_Localized: "Mi derrota no detendr\xE1 la tormenta que se avecina..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177489305600
+    m_Localized: "Otro vino antes que t\xFA, y su destino fue peor que la muerte."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14246585819136
+    m_Localized: "El fuego de la ira arde a\xFAn m\xE1s fuerte..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14280857477120
+    m_Localized: Mis llamas pueden apagarse, pero el odio perdura...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14325090607104
+    m_Localized: "Soy el \xFAltimo antes de que llegue tu perdici\xF3n. No podr\xE1s
+      contra \xC9L"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

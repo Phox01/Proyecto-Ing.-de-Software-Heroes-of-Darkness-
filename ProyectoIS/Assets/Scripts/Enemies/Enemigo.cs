@@ -139,11 +139,10 @@ public class Enemigo : MonoBehaviour
     protected virtual IEnumerator OnDieAnimationComplete()
     {
         yield return new WaitForSeconds(0.5f);
-        Destroy(gameObject);
         Die();
     }
 
-    protected void Die()
+    protected virtual void Die()
     {
         if (OnEnemyKilled != null)
         {

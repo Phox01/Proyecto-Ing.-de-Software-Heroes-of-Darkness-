@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Jefes_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: bd82bc387df7e624c82fb07a3afaa6f7, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 12414083072
+    m_Localized: The ice melts, but the true cold is yet to come...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157474086912
+    m_Localized: My defeat will not stop the approaching storm...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177489305600
+    m_Localized: Another one came before you, and his fate was worse than death.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14246585819136
+    m_Localized: The fire of wrath burns even stronger...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14280857477120
+    m_Localized: My flames may extinguish, but hatred endures...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14325090607104
+    m_Localized: I am the last before your doom arrives. You cannot defeat HIM.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

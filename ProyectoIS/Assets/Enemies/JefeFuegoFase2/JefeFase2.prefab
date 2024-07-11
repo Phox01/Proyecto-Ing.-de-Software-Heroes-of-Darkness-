@@ -424,6 +424,9 @@ GameObject:
   - component: {fileID: 8563749681919573257}
   - component: {fileID: 3740338457198641267}
   - component: {fileID: 4230411312160323796}
+  - component: {fileID: 1314561277422177089}
+  - component: {fileID: -722645245735072349}
+  - component: {fileID: 4265763850214001018}
   m_Layer: 23
   m_Name: JefeFase2
   m_TagString: Untagged
@@ -573,6 +576,7 @@ MonoBehaviour:
   damageTextPrefab: {fileID: 6456827237543253423, guid: 9e621419e5bb1604c90439089c2de82a,
     type: 3}
   circleCollider1: {fileID: 7952955149612037982}
+  dialogue: {fileID: -722645245735072349}
 --- !u!50 &7982507292857799765
 Rigidbody2D:
   serializedVersion: 4
@@ -647,5 +651,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5868332d3eb22eb4a87125c462a1a3d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootItems: []
+  lootItems:
+  - itemPrefab: {fileID: 1256577099798364894, guid: 6454e8632f83b2a4d9ee5ff9f0a6639f,
+      type: 3}
+    dropProbability: 1
   dropRadius: 1
+--- !u!114 &1314561277422177089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9062917913962890164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89baae6d9cdbc984dbb5c2a18875c07c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizeStringEvent: {fileID: 4265763850214001018}
+  dialoguesKeysList:
+  - keys:
+    - J2-1
+    - J2-2
+    - J2-3
+  tablename: Jefes
+--- !u!114 &-722645245735072349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9062917913962890164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905bec0a45c5c2c4e99916412af2b345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 0}
+  localizationController: {fileID: 1314561277422177089}
+  dialoguePanel: {fileID: 0}
+  textSpeed: 0.05
+--- !u!114 &4265763850214001018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9062917913962890164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
