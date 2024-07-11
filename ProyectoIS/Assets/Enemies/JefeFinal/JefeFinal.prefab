@@ -127,7 +127,7 @@ MonoBehaviour:
   stunDuration: 1.5
   dashSpeed: 10
   dashTime: 0.5
-  hitbox: {fileID: 4099343635056185849}
+  hitbox: {fileID: 57857639465253682}
 --- !u!61 &7432246869742433071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -585,7 +585,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7853729800396630455}
-  - component: {fileID: 4099343635056185849}
+  - component: {fileID: 57857639465253682}
   m_Layer: 23
   m_Name: HitboxAtauqe
   m_TagString: Untagged
@@ -608,7 +608,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9182024054679870154}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &4099343635056185849
+--- !u!60 &57857639465253682
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -637,7 +637,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -652,12 +652,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 4.593145, y: -3.362985}
-      - {x: 3.3056114, y: -0.68676966}
-      - {x: 0, y: 1}
-      - {x: -3.8160722, y: -0.40557733}
-      - {x: -5.21853, y: -3.5832949}
-      - {x: -2.9794436, y: -4.0447955}
-      - {x: -0.20943514, y: -4.4199553}
-      - {x: 4.6088934, y: -3.3957145}
+    - - {x: 0, y: 1}
+      - {x: -2.5788305, y: 0.063315034}
+      - {x: -2.2769847, y: -3.2046099}
+      - {x: -0.26966354, y: -4.4203176}
+      - {x: 1.9698573, y: -3.3888857}
+      - {x: 2.5788305, y: -0.1516726}
   m_UseDelaunayMesh: 0

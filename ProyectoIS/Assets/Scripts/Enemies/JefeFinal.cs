@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class JefeFinal : Enemigo
 {
     public int poisonDamage = 10;
@@ -58,8 +57,13 @@ public class JefeFinal : Enemigo
             }
             
         }
+        Vector2 hitDirection = (player.transform.position - transform.position).normalized;
 
-        ActualizarPuntoAtaque();
+        // Calculate the movement direction (normalized)
+        direccionMovimiento = new Vector2(hitDirection.x, hitDirection.y).normalized;
+
+        // Update the position and rotation of the hitbox
+        UpdateAttackPoint();
     }
 
     protected override void Following()
@@ -186,15 +190,19 @@ public class JefeFinal : Enemigo
         Invoke("ExecuteDash", stunDuration);
     }
 
-    void ActualizarPuntoAtaque()
+    private void UpdateAttackPoint()
     {
+        
         if (direccionMovimiento != Vector2.zero)
         {
-            Vector3 nuevaPosicion = transform.position + (Vector3)direccionMovimiento * 0.5f;
-            hitbox.transform.position = nuevaPosicion;
+            Vector3 newPosition = transform.position + (Vector3)direccionMovimiento * 0.5f;
+            hitbox.transform.position = newPosition;
 
+            // Calculate the angle based on the movement direction
             float angle = Mathf.Atan2(direccionMovimiento.y, direccionMovimiento.x) * Mathf.Rad2Deg;
-            hitbox.transform.rotation = Quaternion.Euler(0, 0, angle + 90);
+
+            // Rotate the hitbox to face the player
+            hitbox.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
 
