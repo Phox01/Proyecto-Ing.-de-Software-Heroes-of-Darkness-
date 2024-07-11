@@ -43,6 +43,34 @@ MonoBehaviour:
       contra \xC9L"
     m_Metadata:
       m_Items: []
+  - m_Id: 149255566503936
+    m_Localized: "Llegaste muy lejos, pero no pasar\xE1s de aqu\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149315696046080
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149349854457856
+    m_Localized: Hermano... libera nuestro hogar...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149499154903040
+    m_Localized: "Perd\xF3name... y salva nuestra aldea..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149597653938176
+    m_Localized: La oscuridad me contr...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149703635611648
+    m_Localized: "La oscuridad en m\xED... se desvanece gracias a ti..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149705820844032
+    m_Localized: Lo lograste hermano, ahora somos libres, al igual que nuestra aldea
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
