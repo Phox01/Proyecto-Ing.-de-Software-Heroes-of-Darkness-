@@ -62,6 +62,16 @@ public class JefeFinal : Enemigo
         if (move)
         {
             base.Update();
+            //currentMoveDirection =Vector2.Distance(transform.position, player.transform.position);
+            
+            if (player != null)
+            {
+                if (hasLineOfSight && !animator.GetBool("Death"))
+                {
+                    Following();
+                }
+        
+    }
         }
         
 
@@ -98,18 +108,28 @@ public class JefeFinal : Enemigo
         // Calculate the movement direction (normalized)
         direccionMovimiento = new Vector2(hitDirection.x, hitDirection.y).normalized;
 
+        UpdateAnimator(direccionMovimiento);
         // Update the position and rotation of the hitbox
         UpdateAttackPoint();
     }
 
     protected override void Following()
     {
-        base.Following();
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         // Comienza a atacar si está cerca del jugador
         if (hasLineOfSight && !animator.GetBool("Death"))
         {
             AttackPlayer();
         }
+    }
+    void UpdateAnimator(Vector2 moveDirection)
+    {
+        // Assuming you have parameters in your Animator controller to control NPC animations based on direction
+        animator.SetFloat("Horizontal", moveDirection.x);
+        animator.SetFloat("Vertical", moveDirection.y);
+
+        // You can also set bools or triggers based on conditions
+        // animator.SetBool("IsMoving", moveDirection != Vector2.zero);
     }
 
     private void AttackPlayer()
@@ -165,6 +185,7 @@ public class JefeFinal : Enemigo
 
         if (ataque)
         {
+            animator.SetBool("Attack", true);
             Debug.Log("cada 5 segudnos");
             ataque = false;
             List<Collider2D> resultados = new List<Collider2D>();
@@ -228,6 +249,7 @@ public class JefeFinal : Enemigo
     {
         yield return new WaitForSeconds(dashTime);
         rb.velocity = Vector2.zero;
+        animator.SetBool("Dash", false);
         isDashing = false;
         move = true;
         
@@ -235,7 +257,7 @@ public class JefeFinal : Enemigo
     }
     private void DashTowardsPlayer()
     {
-         direction = (player.transform.position - transform.position).normalized;
+        direction = (player.transform.position - transform.position).normalized;
         Debug.Log(rb.mass);
         Vector2 diference = direction * forceDash* rb.mass;
         Debug.Log(diference);
@@ -243,6 +265,7 @@ public class JefeFinal : Enemigo
         isDashing = true;
         
         Invoke("ExecuteDash", stunDuration);
+        animator.SetBool("Dash", true);
     }
 
     private void UpdateAttackPoint()

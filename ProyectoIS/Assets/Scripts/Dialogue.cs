@@ -13,11 +13,16 @@ public class Dialogue : MonoBehaviour
     private string[] lines;
     private int index;
     private Dictionary<int, bool> dialogueStarted;
+    PS4 controls;
 
     public event System.Action OnDialogueFinished;
-
+    private void Awake()
+        {
+            controls = new PS4();
+        }
     void Start()
     {
+        controls.Gameplay.Attack.Enable();
         if (textComponent == null)
         {
             Debug.LogError("TextMeshProUGUI component is not assigned.");
@@ -77,7 +82,7 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) ||  controls.Gameplay.Attack.triggered)
         {
             if (lines != null && textComponent.text == lines[index])
             {

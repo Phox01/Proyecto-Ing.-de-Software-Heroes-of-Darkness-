@@ -21,7 +21,7 @@ public class Enemigo : MonoBehaviour
     protected GameObject player;
     public Slider sliderVidas;
     protected bool hasLineOfSight = false;
-    private bool isFacingRight = true;
+    protected bool isFacingRight = true;
     public Animator animator;
     protected Flash flash;
     public delegate void EnemyKilledHandler(Enemigo enemy);
